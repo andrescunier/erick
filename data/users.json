@@ -15,6 +15,14 @@
         "*"
       ],
       "admin": false
+    },
+    {
+      "username": "hnegro@openpass.com.ar",
+      "password_hash": "e43eced972fdc15455dceb7be014f38cdaebe95892bfaa61bf8b70a322feb26f",
+      "allowed": [
+        "*"
+      ],
+      "admin": false
     }
   ]
 }
