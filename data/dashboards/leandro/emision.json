@@ -1,0 +1,1771 @@
+{
+  "title": "Emisión · Leandro",
+  "generado_en": "2026-09-08T17:49:45.417205-03:00",
+  "_procedencia": {
+    "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
+    "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
+    "periodo_desde": "2026-08-10",
+    "ultima_recepcion": "2026-09-08T17:49:38.100075-03:00",
+    "dias_con_datos": 1,
+    "archivos_leidos": 399,
+    "pings_excluidos": 2,
+    "sin_id_evento": 0,
+    "sin_id_entidad": 0,
+    "sin_tenant": 397,
+    "sin_fecha_origen": 0,
+    "eventos_unicos": 397,
+    "entidades_observadas": 392,
+    "entidades_con_seguimiento": 4,
+    "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
+  },
+  "_analytics": {
+    "version": 1,
+    "title": "EMISIÓN · BHUB",
+    "notice": "Cobertura: 1 día(s) con notificaciones. Son eventos recibidos, no un padrón completo de emisión. Hay eventos sin tenant identificado.",
+    "datasets": [
+      {
+        "id": "operaciones_ARS",
+        "title": "Operaciones · ARS",
+        "description": "Último estado observado por tenant, familia e ID de entidad, ordenado por la fecha del evento BHUB; recepción como respaldo. El gráfico agrupa por hora de recepción de ese último evento (Argentina). No es una serie de stock ni garantiza el estado actual en BHUB. Importes brutos por tipo y sentido: no representan saldo, liquidación ni dinero neto; una transferencia interna puede generar dos movimientos. La tasa usa aprobadas + rechazadas del filtro; no incluye pendientes. Las monedas se separan.",
+        "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
+        "updatedAt": "2026-09-08T17:49:38.100075-03:00",
+        "columns": [
+          "fecha",
+          "tenant",
+          "distribuidor",
+          "tipo",
+          "estado",
+          "sentido",
+          "operaciones",
+          "aprobadas",
+          "rechazadas",
+          "resueltas",
+          "pendientes",
+          "aprobado_cents",
+          "rechazado_cents"
+        ],
+        "dimensions": [
+          "tenant",
+          "distribuidor",
+          "tipo",
+          "estado",
+          "sentido"
+        ],
+        "metrics": [
+          {
+            "key": "operaciones",
+            "label": "Operaciones observadas",
+            "format": "count"
+          },
+          {
+            "key": "aprobadas",
+            "label": "Aprobadas",
+            "format": "count"
+          },
+          {
+            "key": "rechazadas",
+            "label": "Rechazadas",
+            "format": "count"
+          },
+          {
+            "key": "pendientes",
+            "label": "Pendientes observadas",
+            "format": "count"
+          },
+          {
+            "key": "rechazadas",
+            "label": "Rechazo / resueltas filtradas",
+            "format": "percent",
+            "denominator": "resueltas",
+            "scale": 100
+          },
+          {
+            "key": "aprobado_cents",
+            "label": "Importe aprobado ARS",
+            "format": "money_cents"
+          },
+          {
+            "key": "rechazado_cents",
+            "label": "Importe rechazado ARS",
+            "format": "money_cents"
+          }
+        ],
+        "rows": [
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            17,
+            17,
+            0,
+            17,
+            0,
+            127762710,
+            0
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            27,
+            27,
+            0,
+            27,
+            0,
+            658853197,
+            0
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "Debit",
+            11,
+            0,
+            11,
+            11,
+            0,
+            0,
+            81210000
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "P2pInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            6,
+            6,
+            0,
+            6,
+            0,
+            123700200,
+            0
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "P2pOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            6,
+            6,
+            0,
+            6,
+            0,
+            123700200,
+            0
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "PaymentProvider.Rejected",
+            "Rechazada",
+            "Debit",
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            5000000
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "Rechazada",
+            "Debit",
+            9,
+            0,
+            9,
+            9,
+            0,
+            0,
+            549539500
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            1009634,
+            0
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            5,
+            5,
+            0,
+            5,
+            0,
+            17200000,
+            0
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            11,
+            11,
+            0,
+            11,
+            0,
+            71305000,
+            0
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "Debit",
+            2,
+            0,
+            2,
+            2,
+            0,
+            0,
+            64641900
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentClient.Confirmed",
+            "Aprobada",
+            "Credit",
+            3,
+            3,
+            0,
+            3,
+            0,
+            93000000,
+            0
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            17,
+            17,
+            0,
+            17,
+            0,
+            114265000,
+            0
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            17,
+            17,
+            0,
+            17,
+            0,
+            416170000,
+            0
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "P2pInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            100002000,
+            0
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "P2pOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            100002000,
+            0
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "PaymentProvider.Confirmed",
+            "Aprobada",
+            "Debit",
+            2,
+            2,
+            0,
+            2,
+            0,
+            1676560,
+            0
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "Rechazada",
+            "Debit",
+            10,
+            0,
+            10,
+            10,
+            0,
+            0,
+            501892100
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "AuthorizationCard.Rejected",
+            "Rechazada",
+            "Debit",
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            449800
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            11,
+            11,
+            0,
+            11,
+            0,
+            60183000,
+            0
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            11,
+            11,
+            0,
+            11,
+            0,
+            61072714,
+            0
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentClient.Confirmed",
+            "Aprobada",
+            "Credit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            2000000,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            19,
+            19,
+            0,
+            19,
+            0,
+            112862600,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            23,
+            23,
+            0,
+            23,
+            0,
+            144512100,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Confirmed",
+            "Aprobada",
+            "Debit",
+            18,
+            18,
+            0,
+            18,
+            0,
+            292826909,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "Rechazada",
+            "Debit",
+            5,
+            0,
+            5,
+            5,
+            0,
+            0,
+            53229300
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            7,
+            7,
+            0,
+            7,
+            0,
+            11260000,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            9,
+            9,
+            0,
+            9,
+            0,
+            37151000,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentClient.Confirmed",
+            "Aprobada",
+            "Credit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            2000000,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentProvider.Confirmed",
+            "Aprobada",
+            "Debit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            695900,
+            0
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            23,
+            23,
+            0,
+            23,
+            0,
+            383204200,
+            0
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            22,
+            22,
+            0,
+            22,
+            0,
+            427956700,
+            0
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "PaymentProvider.Confirmed",
+            "Aprobada",
+            "Debit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            3000000,
+            0
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Confirmed",
+            "Aprobada",
+            "Debit",
+            8,
+            8,
+            0,
+            8,
+            0,
+            353354800,
+            0
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "Rechazada",
+            "Debit",
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            152867200
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            9,
+            9,
+            0,
+            9,
+            0,
+            17050000,
+            0
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            13,
+            13,
+            0,
+            13,
+            0,
+            158890000,
+            0
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "Debit",
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            5000000
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentClient.Confirmed",
+            "Aprobada",
+            "Credit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            2200000,
+            0
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentProvider.Confirmed",
+            "Aprobada",
+            "Debit",
+            4,
+            4,
+            0,
+            4,
+            0,
+            75250000,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "rechazos",
+        "title": "Rechazos · código y origen",
+        "description": "Último estado observado por tenant, familia e ID de entidad, ordenado por la fecha del evento BHUB; recepción como respaldo. El gráfico agrupa por hora de recepción de ese último evento (Argentina). No es una serie de stock ni garantiza el estado actual en BHUB. Código y origen informados por BHUB; sin inferir causas a partir del texto libre.",
+        "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
+        "updatedAt": "2026-09-08T17:49:38.100075-03:00",
+        "columns": [
+          "fecha",
+          "tenant",
+          "distribuidor",
+          "tipo",
+          "codigo",
+          "origen",
+          "moneda",
+          "rechazos"
+        ],
+        "dimensions": [
+          "tenant",
+          "distribuidor",
+          "tipo",
+          "codigo",
+          "origen",
+          "moneda"
+        ],
+        "metrics": [
+          {
+            "key": "rechazos",
+            "label": "Operaciones rechazadas",
+            "format": "count"
+          }
+        ],
+        "rows": [
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Rejected",
+            "402",
+            "Provider",
+            "ARS",
+            11
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "PaymentProvider.Rejected",
+            "402",
+            "Provider",
+            "ARS",
+            1
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "310",
+            "Local",
+            "ARS",
+            2
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "402",
+            "Local",
+            "ARS",
+            2
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "402",
+            "Provider",
+            "ARS",
+            5
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Rejected",
+            "402",
+            "Provider",
+            "ARS",
+            2
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "310",
+            "Local",
+            "ARS",
+            3
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "402",
+            "Provider",
+            "ARS",
+            7
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "AuthorizationCard.Rejected",
+            "310",
+            "Local",
+            "ARS",
+            1
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "310",
+            "Local",
+            "ARS",
+            5
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "310",
+            "Local",
+            "ARS",
+            1
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Rejected",
+            "346",
+            "Local",
+            "ARS",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "solicitudes_tarjeta",
+        "title": "Solicitudes de tarjeta",
+        "description": "Último estado observado por tenant, familia e ID de entidad, ordenado por la fecha del evento BHUB; recepción como respaldo. El gráfico agrupa por hora de recepción de ese último evento (Argentina). No es una serie de stock ni garantiza el estado actual en BHUB. Solicitudes de titular/adicional; aprobación de solicitud no equivale a tarjeta fabricada o entregada.",
+        "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
+        "updatedAt": "2026-09-08T17:49:38.100075-03:00",
+        "columns": [
+          "fecha",
+          "tenant",
+          "distribuidor",
+          "tipo",
+          "estado",
+          "tipo_tarjeta",
+          "operaciones",
+          "aprobadas",
+          "rechazadas",
+          "resueltas",
+          "pendientes"
+        ],
+        "dimensions": [
+          "tenant",
+          "distribuidor",
+          "tipo",
+          "estado",
+          "tipo_tarjeta"
+        ],
+        "metrics": [
+          {
+            "key": "operaciones",
+            "label": "Solicitudes observadas",
+            "format": "count"
+          },
+          {
+            "key": "aprobadas",
+            "label": "Aprobadas",
+            "format": "count"
+          },
+          {
+            "key": "rechazadas",
+            "label": "Rechazadas",
+            "format": "count"
+          },
+          {
+            "key": "pendientes",
+            "label": "Pendientes observadas",
+            "format": "count"
+          },
+          {
+            "key": "rechazadas",
+            "label": "Rechazo / resueltas filtradas",
+            "format": "percent",
+            "denominator": "resueltas",
+            "scale": 100
+          }
+        ],
+        "rows": [
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Confirmed",
+            "Aprobada",
+            "Virtual",
+            4,
+            4,
+            0,
+            4,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Confirmed",
+            "Aprobada",
+            "Virtual",
+            2,
+            2,
+            0,
+            2,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Rejected",
+            "Rechazada",
+            "Virtual",
+            3,
+            0,
+            3,
+            3,
+            0
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Confirmed",
+            "Aprobada",
+            "Virtual",
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "tarjetas",
+        "title": "Tarjetas · último estado observado",
+        "description": "Último estado observado por tenant, familia e ID de entidad, ordenado por la fecha del evento BHUB; recepción como respaldo. El gráfico agrupa por hora de recepción de ese último evento (Argentina). No es una serie de stock ni garantiza el estado actual en BHUB. Sólo tarjetas notificadas en el período; no es el parque total emitido. Normal, Delivered e InTransit son estados de origen.",
+        "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
+        "updatedAt": "2026-09-08T17:49:38.100075-03:00",
+        "columns": [
+          "fecha",
+          "tenant",
+          "estado",
+          "tipo_tarjeta",
+          "adicional",
+          "tarjetas"
+        ],
+        "dimensions": [
+          "tenant",
+          "estado",
+          "tipo_tarjeta",
+          "adicional"
+        ],
+        "metrics": [
+          {
+            "key": "tarjetas",
+            "label": "Tarjetas observadas",
+            "format": "count"
+          }
+        ],
+        "rows": [
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "InTransit",
+            "Physical",
+            "No",
+            1
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Normal",
+            "Physical",
+            "No",
+            2
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "InTransit",
+            "Physical",
+            "No",
+            2
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Normal",
+            "Physical",
+            "No",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "cuentas",
+        "title": "Cuentas · altas y estados",
+        "description": "Último estado observado por tenant, familia e ID de entidad, ordenado por la fecha del evento BHUB; recepción como respaldo. El gráfico agrupa por hora de recepción de ese último evento (Argentina). No es una serie de stock ni garantiza el estado actual en BHUB. Las altas cuentan IDs con un evento Created observado en el período; no equivalen a cuentas activas totales.",
+        "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
+        "updatedAt": "2026-09-08T17:49:38.100075-03:00",
+        "columns": [
+          "fecha",
+          "tenant",
+          "estado",
+          "cuentas",
+          "altas"
+        ],
+        "dimensions": [
+          "tenant",
+          "estado"
+        ],
+        "metrics": [
+          {
+            "key": "cuentas",
+            "label": "Cuentas observadas",
+            "format": "count"
+          },
+          {
+            "key": "altas",
+            "label": "Con alta observada",
+            "format": "count"
+          }
+        ],
+        "rows": [
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "Open",
+            7,
+            7
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Open",
+            9,
+            8
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Preventive Suspension",
+            1,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Open",
+            11,
+            11
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "Open",
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "id": "prestamos",
+        "title": "Solicitudes de préstamo",
+        "description": "Último estado observado por tenant, familia e ID de entidad, ordenado por la fecha del evento BHUB; recepción como respaldo. El gráfico agrupa por hora de recepción de ese último evento (Argentina). No es una serie de stock ni garantiza el estado actual en BHUB. Confirmada se normaliza a Aprobada. Los préstamos sin moneda declarada no se suman a ARS; aprobación tampoco acredita desembolso.",
+        "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
+        "updatedAt": "2026-09-08T17:49:38.100075-03:00",
+        "columns": [
+          "fecha",
+          "tenant",
+          "distribuidor",
+          "tipo",
+          "estado",
+          "operaciones",
+          "aprobadas",
+          "rechazadas",
+          "resueltas",
+          "pendientes"
+        ],
+        "dimensions": [
+          "tenant",
+          "distribuidor",
+          "tipo",
+          "estado"
+        ],
+        "metrics": [
+          {
+            "key": "operaciones",
+            "label": "Solicitudes observadas",
+            "format": "count"
+          },
+          {
+            "key": "aprobadas",
+            "label": "Aprobadas",
+            "format": "count"
+          },
+          {
+            "key": "rechazadas",
+            "label": "Rechazadas",
+            "format": "count"
+          },
+          {
+            "key": "pendientes",
+            "label": "Pendientes observadas",
+            "format": "count"
+          },
+          {
+            "key": "rechazadas",
+            "label": "Rechazo / resueltas filtradas",
+            "format": "percent",
+            "denominator": "resueltas",
+            "scale": 100
+          }
+        ],
+        "rows": [
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "lending.loanRequest.Confirmed",
+            "Aprobada",
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "lending.loanRequest.Confirmed",
+            "Aprobada",
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "lending.loanRequest.Confirmed",
+            "Aprobada",
+            2,
+            2,
+            0,
+            2,
+            0
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "lending.loanRequest.Confirmed",
+            "Aprobada",
+            5,
+            5,
+            0,
+            5,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "actividad",
+        "title": "Actividad · notificaciones recibidas",
+        "description": "Notificaciones únicas por ID de evento y tenant, excluyendo pings. Una entidad puede generar varias notificaciones. Agrupadas por recepción en hora argentina; esta vista mide actividad del webhook, no operaciones únicas ni importes.",
+        "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
+        "updatedAt": "2026-09-08T17:49:38.100075-03:00",
+        "columns": [
+          "fecha",
+          "tenant",
+          "distribuidor",
+          "tipo",
+          "estado",
+          "categoria",
+          "eventos"
+        ],
+        "dimensions": [
+          "tenant",
+          "distribuidor",
+          "tipo",
+          "estado",
+          "categoria"
+        ],
+        "metrics": [
+          {
+            "key": "eventos",
+            "label": "Notificaciones únicas",
+            "format": "count"
+          }
+        ],
+        "rows": [
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            17
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            27
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "transferencia",
+            11
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "P2pInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            6
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "P2pOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            6
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "PaymentProvider.Rejected",
+            "Rechazada",
+            "pago",
+            1
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "Rechazada",
+            "pago",
+            9
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "account.Account.Created",
+            "Open",
+            "cuenta",
+            7
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "lending.loanRequest.Confirmed",
+            "Aprobada",
+            "bnpl",
+            1
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            5
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            11
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "transferencia",
+            2
+          ],
+          [
+            "2026-09-08T14:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentClient.Confirmed",
+            "Aprobada",
+            "pago",
+            3
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            17
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            17
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "P2pInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "P2pOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "PaymentProvider.Confirmed",
+            "Aprobada",
+            "pago",
+            2
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "Rechazada",
+            "pago",
+            10
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "account.Account.Change-State",
+            "Open",
+            "cuenta",
+            2
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "account.Account.Change-State",
+            "Preventive Suspension",
+            "cuenta",
+            1
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "account.Account.Created",
+            "Open",
+            "cuenta",
+            8
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.Card.Change-State",
+            "Delivered",
+            "tarjeta",
+            1
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.Card.Change-State",
+            "InTransit",
+            "tarjeta",
+            2
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.Card.Change-State",
+            "Normal",
+            "tarjeta",
+            2
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Confirmed",
+            "Aprobada",
+            "tarjeta",
+            4
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "lending.loanRequest.Confirmed",
+            "Aprobada",
+            "bnpl",
+            1
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "AuthorizationCard.Rejected",
+            "Rechazada",
+            "tarjeta",
+            1
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            11
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            11
+          ],
+          [
+            "2026-09-08T15:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentClient.Confirmed",
+            "Aprobada",
+            "pago",
+            1
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            19
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            23
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Confirmed",
+            "Aprobada",
+            "pago",
+            18
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "Rechazada",
+            "pago",
+            5
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "account.Account.Created",
+            "Open",
+            "cuenta",
+            11
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.Card.Change-State",
+            "Delivered",
+            "tarjeta",
+            2
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.Card.Change-State",
+            "InTransit",
+            "tarjeta",
+            2
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.Card.Change-State",
+            "Normal",
+            "tarjeta",
+            1
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Confirmed",
+            "Aprobada",
+            "tarjeta",
+            2
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Rejected",
+            "Rechazada",
+            "tarjeta",
+            3
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "lending.loanRequest.Confirmed",
+            "Aprobada",
+            "bnpl",
+            2
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            7
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            9
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentClient.Confirmed",
+            "Aprobada",
+            "pago",
+            1
+          ],
+          [
+            "2026-09-08T16:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentProvider.Confirmed",
+            "Aprobada",
+            "pago",
+            1
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            23
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            22
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "PaymentProvider.Confirmed",
+            "Aprobada",
+            "pago",
+            1
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Confirmed",
+            "Aprobada",
+            "pago",
+            8
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "Rechazada",
+            "pago",
+            1
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "account.Account.Created",
+            "Open",
+            "cuenta",
+            2
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Confirmed",
+            "Aprobada",
+            "tarjeta",
+            1
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "lending.loanRequest.Confirmed",
+            "Aprobada",
+            "bnpl",
+            5
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            9
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            13
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentClient.Confirmed",
+            "Aprobada",
+            "pago",
+            1
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "PaymentProvider.Confirmed",
+            "Aprobada",
+            "pago",
+            4
+          ]
+        ]
+      }
+    ],
+    "warnings": [
+      "397 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
+    ]
+  }
+}
