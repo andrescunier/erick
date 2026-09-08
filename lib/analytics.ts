@@ -6,7 +6,7 @@ export type Dataset = {
   columns: string[]; dimensions: string[]; metrics: Metric[];
   rows: (string | number | null)[][];
 };
-export type Analytics = { version: 1; datasets: Dataset[]; warnings: string[] };
+export type Analytics = { version: 1; title?: string; notice?: string; datasets: Dataset[]; warnings: string[] };
 export type Row = Record<string, string | number | null>;
 
 export function timeValue(value: string): number {
@@ -18,7 +18,9 @@ export function timeValue(value: string): number {
 export function isAnalytics(value: unknown): value is Analytics {
   if (!value || typeof value !== "object") return false;
   const a = value as Analytics;
-  return a.version === 1 && Array.isArray(a.warnings) && a.warnings.every(w => typeof w === "string") &&
+  return a.version === 1 && (a.title === undefined || typeof a.title === "string") &&
+    (a.notice === undefined || typeof a.notice === "string") &&
+    Array.isArray(a.warnings) && a.warnings.every(w => typeof w === "string") &&
     Array.isArray(a.datasets) && a.datasets.every(d => d &&
       [d.id, d.title, d.description, d.source, d.updatedAt].every(v => typeof v === "string") &&
       Array.isArray(d.columns) && d.columns.includes("fecha") && d.columns.every(c => typeof c === "string") &&

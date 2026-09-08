@@ -47,7 +47,7 @@ export default async function PaginaDashboard({ params }: Props) {
     <main>
       {miga}
       <h1>
-        {params.user} / {params.project}
+        {typeof datos.title === "string" ? datos.title : `${params.user} / ${params.project}`}
       </h1>
       <AutoDashboard data={datos} />
     </main>

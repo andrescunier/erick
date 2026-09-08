@@ -12,6 +12,12 @@ Esto reemplaza la exclusión de gráficos temporales y de desgloses que figura
 más abajo: el historial proviene de los CSV ya acumulados, no de sumar POSTs.
 La lectura de GitHub usa contenido raw para soportar JSON mayores a 1 MB.
 
+Emisión se publica por separado en `leandro/emision` con
+`scripts/sincronizar_emision.py`. Lee eventos de Leandro y reutiliza su catálogo;
+deduplica notificaciones y entidades antes de agregar. No mezcla monedas ni
+publica datos personales. Ver [docs/EMISION.md](docs/EMISION.md) para la
+diferencia entre actividad recibida, operaciones y tarjetas/cuentas observadas.
+
 Dashboard genérico en Vercel: cada proyecto/usuario tiene su propio JSON,
 cargado por API (`POST`/`PATCH`), y la pantalla se arma sola según la forma
 de esos datos — no hay un esquema fijo tipo "tabla de tenants" hardcodeado.

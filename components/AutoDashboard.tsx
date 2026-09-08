@@ -17,7 +17,7 @@ export function AutoDashboard({ data }: { data: Record<string, unknown> }) {
   return (
     <div>
       {analytics && <AnalyticsDashboard analytics={analytics} />}
-      {analytics && <h2>Último resumen por tenant</h2>}
+      {analytics && forma.registros && <h2>Resumen de registros</h2>}
       {forma.procedencia && forma.procedencia.length > 0 && (
         <div className="meta-tira">
           {forma.procedencia.map(([key, value]) => (

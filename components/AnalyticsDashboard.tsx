@@ -10,12 +10,13 @@ export function AnalyticsDashboard({ analytics }: { analytics: Analytics }) {
   const [selected, setSelected] = useState(analytics.datasets[0]?.id ?? "");
   const dataset = analytics.datasets.find(d => d.id === selected) ?? analytics.datasets[0];
   return <section className="analytics" aria-label="Explorador de indicadores">
-    <div className="analytics-heading"><div><p className="analytics-eyebrow">RECAUDACIÓN Y OPERACIÓN</p>
+    <div className="analytics-heading"><div><p className="analytics-eyebrow">{analytics.title ?? "ANÁLISIS DE DATOS"}</p>
       <h2>Explorar los datos</h2><p>Filtrá una fuente y compará su evolución y distribución.</p></div>
       <label>Indicador / fuente<select value={dataset?.id ?? ""} onChange={e => setSelected(e.target.value)}>
         {analytics.datasets.map(d => <option key={d.id} value={d.id}>{d.title}</option>)}
       </select></label></div>
-    {analytics.warnings.length > 0 && <details className="analytics-warning"><summary>Fuentes incompletas ({analytics.warnings.length})</summary>
+    {analytics.notice && <p className="analytics-warning" role="status">{analytics.notice}</p>}
+    {analytics.warnings.length > 0 && <details className="analytics-warning"><summary>Calidad y cobertura de las fuentes ({analytics.warnings.length})</summary>
       {analytics.warnings.map((w, i) => <p key={i}>{w}</p>)}</details>}
     {dataset ? <DatasetView key={dataset.id} dataset={dataset} /> : <p className="vacio">No hay fuentes analíticas disponibles.</p>}
   </section>;

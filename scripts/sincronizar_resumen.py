@@ -226,14 +226,14 @@ def _armar_resumen() -> dict[str, Any]:
     }
 
 
-def _publicar(resumen: dict[str, Any]) -> None:
+def _publicar(resumen: dict[str, Any], usuario: str | None = None, proyecto: str | None = None) -> None:
     api_url = os.environ.get("ERICK_API_URL")
     api_key = os.environ.get("ERICK_API_KEY")
     if not api_url or not api_key:
         raise SystemExit("Faltan ERICK_API_URL y/o ERICK_API_KEY en el entorno.")
 
-    usuario = os.environ.get("ERICK_USER", "opentransit")
-    proyecto = os.environ.get("ERICK_PROJECT", "resumen")
+    usuario = usuario or os.environ.get("ERICK_USER", "opentransit")
+    proyecto = proyecto or os.environ.get("ERICK_PROJECT", "resumen")
 
     url = f"{api_url.rstrip('/')}/api/dashboards/{usuario}/{proyecto}"
     payload = json.dumps(resumen).encode("utf-8")

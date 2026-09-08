@@ -22,7 +22,9 @@ assert.equal(filterRows(rows, "2026-09-02", "2026-09-02", { tenant: "A" }).lengt
 assert.equal(filterRows(rows, "2026-10-01", "", {}).length, 0);
 assert.equal(groupRows(rows, "tenant", ratio).find(r => r.label === "B").value, null);
 assert.equal(isAnalytics({ version: 1, datasets: [{}], warnings: [] }), false);
-if (fs.existsSync(".preview/resumen.json")) {
-  assert.ok(isAnalytics(JSON.parse(fs.readFileSync(".preview/resumen.json", "utf8"))._analytics));
+for (const name of ["resumen", "emision"]) {
+  if (fs.existsSync(`.preview/${name}.json`)) {
+    assert.ok(isAnalytics(JSON.parse(fs.readFileSync(`.preview/${name}.json`, "utf8"))._analytics));
+  }
 }
 console.log("Agregados, ratios, filtros y contrato analítico: OK");
