@@ -48,7 +48,7 @@ export default function PaginaLogin() {
         <label className="login-campo">
           <span>Usuario</span>
           <input
-            type="email"
+            type="text"
             value={usuario}
             onChange={(e) => setUsuario(e.target.value)}
             autoComplete="username"

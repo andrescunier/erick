@@ -1,4 +1,6 @@
-import { COOKIE_SESION, credencialesValidas, tokenSesionEsperado } from "@/lib/session";
+import { COOKIE_SESION, crearTokenSesion, verificarSesion } from "@/lib/session";
+import { obtenerUsuario } from "@/lib/user-store";
+import { hashPassword } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
 
@@ -7,17 +9,21 @@ export async function POST(req: Request) {
   const usuario = typeof body?.usuario === "string" ? body.usuario : "";
   const clave = typeof body?.clave === "string" ? body.clave : "";
 
-  const token = await tokenSesionEsperado();
-  if (!token) {
-    return Response.json(
-      { error: "VIEWER_USER / VIEWER_PASSWORD no están configurados en el servidor." },
-      { status: 500 }
-    );
+  if (!usuario || !clave) {
+    return Response.json({ error: "Usuario y contraseña son obligatorios." }, { status: 400 });
   }
 
-  if (!(await credencialesValidas(usuario, clave))) {
+  const userRecord = await obtenerUsuario(usuario);
+  if (!userRecord) {
     return Response.json({ error: "Usuario o contraseña incorrectos." }, { status: 401 });
   }
+
+  const hashProvisto = await hashPassword(clave);
+  if (hashProvisto !== userRecord.password_hash) {
+    return Response.json({ error: "Usuario o contraseña incorrectos." }, { status: 401 });
+  }
+
+  const token = await crearTokenSesion(userRecord.username, userRecord.allowed, userRecord.admin);
 
   const seguro = process.env.NODE_ENV === "production" ? " Secure;" : "";
   return Response.json(
@@ -28,4 +34,26 @@ export async function POST(req: Request) {
       },
     }
   );
+}
+
+export async function GET(req: Request) {
+  const cookieHeader = req.headers.get("cookie") ?? "";
+  const match = cookieHeader.split(";").find((c) => c.trim().startsWith(`${COOKIE_SESION}=`));
+  const token = match ? match.trim().slice(COOKIE_SESION.length + 1) : null;
+
+  if (!token) {
+    return Response.json({ authenticated: false });
+  }
+
+  const sesion = await verificarSesion(token);
+  if (!sesion) {
+    return Response.json({ authenticated: false });
+  }
+
+  return Response.json({
+    authenticated: true,
+    username: sesion.u,
+    admin: sesion.admin,
+    allowed: sesion.a,
+  });
 }
