@@ -25,6 +25,7 @@ export type ColumnaVentana = {
 export type StatCard = {
   label: string;
   valor: number;
+  cobertura?: string;
   formato: Formato;
   delta: number | null; // % vs. la ventana de comparación más reciente, si se pudo inferir
 };
@@ -61,7 +62,7 @@ function pareceMapaDeVentanas(v: unknown): v is Record<string, Record<string, un
   return entradas.every(
     ([, val]) =>
       esObjetoPlano(val) &&
-      Object.entries(val).some(([k, x]) => typeof x === "number" && /pct|percent|variation/i.test(k))
+      Object.entries(val).some(([k, x]) => (typeof x === "number" || x === null) && /pct|percent|variation/i.test(k))
   );
 }
 
@@ -80,16 +81,8 @@ function labelDeCampo(key: string): string {
 }
 
 export function encontrarPctEnVentana(ventana: Record<string, unknown>): number | null {
-  const numeros = Object.entries(ventana).filter(([, v]) => typeof v === "number");
-
-  // Una ventana con TODOS los numeros en cero no es estabilidad: es que falta
-  // el snapshot de esa ventana. Mostrar "0,00%" ahi miente — se lee "no
-  // cambio" cuando en realidad es "no hay con que comparar". Medido: la
-  // ventana de 7d viene asi para los 32 tenants.
-  if (numeros.length > 0 && numeros.every(([, v]) => v === 0)) return null;
-
-  for (const [k, v] of numeros) {
-    if (/pct|percent|variation/i.test(k)) return v as number;
+  for (const [k, v] of Object.entries(ventana)) {
+    if (typeof v === "number" && /pct|percent|variation/i.test(k)) return v;
   }
   return null;
 }
@@ -233,6 +226,7 @@ export function detectarForma(data: Record<string, unknown>): FormaDetectada {
   for (const registro of registrosRaw) {
     for (const [key, value] of Object.entries(registro)) {
       if (key === labelKey || key === "_key" || clavesVistas.has(key)) continue;
+      if (value === null || value === undefined) continue;
       clavesVistas.add(key);
 
       if (pareceMapaDeVentanas(value)) {
@@ -276,7 +270,10 @@ export function detectarForma(data: Record<string, unknown>): FormaDetectada {
 
   const stats: StatCard[] = statsFuente.map((c) => ({
     label: c.label,
-    valor: registrosRaw!.reduce((acc, r) => acc + ((r[c.key] as number) ?? 0), 0),
+    valor: registrosRaw!.reduce((acc, r) => acc + (typeof r[c.key] === "number" ? r[c.key] as number : 0), 0),
+    cobertura: registrosRaw!.some((r) => typeof r[c.key] !== "number")
+      ? `Total parcial: ${registrosRaw!.filter((r) => typeof r[c.key] === "number").length} de ${registrosRaw!.length} registros con datos`
+      : undefined,
     formato: c.formato,
     delta: calcularDeltaStat(
       registrosRaw!,
@@ -286,6 +283,9 @@ export function detectarForma(data: Record<string, unknown>): FormaDetectada {
     ),
   }));
   stats.push({ label: "Registros", valor: registrosRaw.length, formato: "count", delta: null });
+
+  // Conservar también las columnas y objetos omitidos por los límites visuales.
+  if (campoColeccion) resto[campoColeccion] = data[campoColeccion];
 
   return {
     titulo: typeof data.title === "string" ? data.title : null,

@@ -18,6 +18,7 @@ Uso: py scripts/sincronizar_resumen.py
 from __future__ import annotations
 
 import json
+import argparse
 import os
 import urllib.error
 import urllib.request
@@ -103,6 +104,27 @@ def _derivados(crudo: dict[str, Any]) -> dict[str, Any]:
     return salida
 
 
+def _normalizar_ventanas(ventanas: Any) -> Any:
+    """El productor legacy usa ceros tambi?n cuando no tiene snapshot.
+
+    Esa ventana es ambigua, no demuestra estabilidad. La marcamos sin dato
+    en este adaptador de opentransit, sin cambiar el significado de cero en
+    los dashboards de otros proyectos.
+    """
+    if not isinstance(ventanas, dict):
+        return ventanas
+    salida = {}
+    for clave, ventana in ventanas.items():
+        if isinstance(ventana, dict) and ventana and all(
+            isinstance(v, (int, float)) and not isinstance(v, bool) and v == 0
+            for v in ventana.values()
+        ):
+            salida[clave] = {k: None for k in ventana}
+        else:
+            salida[clave] = ventana
+    return salida
+
+
 def _tenants_declarados() -> set[str] | None:
     """Los tenants declarados en config/tenants.yaml de opentransit, o None si
     no se pudo leer. Sirve para distinguir un tenant real de una carpeta
@@ -115,7 +137,7 @@ def _tenants_declarados() -> set[str] | None:
     try:
         datos = yaml.safe_load(TENANTS_YAML.read_text(encoding="utf-8"))
         return set(datos.get("tenants", {}))
-    except (OSError, ValueError, AttributeError):
+    except (OSError, ValueError, AttributeError, TypeError, yaml.YAMLError):
         return None
 
 
@@ -145,6 +167,8 @@ def _armar_resumen() -> dict[str, Any]:
         raise SystemExit(f"No encuentro {ARTIFACTS_DIR}. ¿Corre esto en la misma maquina que opentransit?")
 
     declarados = _tenants_declarados()
+    if declarados is None:
+        print("  aviso: no se pudo verificar tenants.yaml; no se validaron los tenants declarados.")
     tenants: dict[str, Any] = {}
     saltados: list[str] = []
     huerfanos: list[str] = []
@@ -161,6 +185,7 @@ def _armar_resumen() -> dict[str, Any]:
         tenants[carpeta.name] = {
             **{campo: crudo.get(campo) for campo in CAMPOS_RELEVANTES},
             **_derivados(crudo),
+            "comparison_windows": _normalizar_ventanas(crudo.get("comparison_windows")),
         }
 
     print(f"{len(tenants)} tenants con datos, {len(saltados)} sin business_summary.json todavia.")
@@ -179,7 +204,7 @@ def _armar_resumen() -> dict[str, Any]:
         "sistema": "opentransit — pipeline de archivos (no tiene base de datos ni API HTTP propia)",
         "informe": (
             f"business_summary.json ({len(CAMPOS_RELEVANTES)} de sus 26 campos) "
-            "+ 4 indicadores derivados (no cobrado, validadores caidos, viajes por tarjeta)"
+            "+ 4 indicadores derivados (no cobrado, validadores sin taps hoy, viajes por tarjeta)"
         ),
         "ruta": str(ARTIFACTS_DIR / "<tenant>" / "<fecha>" / "<run_id>" / "structured"),
         "insumos_del_informe": INSUMOS_DEL_INFORME,
@@ -231,7 +256,29 @@ def _publicar(resumen: dict[str, Any]) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, help="Guardar una vista previa local sin publicar")
+    parser.add_argument("--days", type=int, default=30, help="Días de histórico BI (default: 30)")
+    args = parser.parse_args()
+    if not 1 <= args.days <= 365:
+        parser.error("--days debe estar entre 1 y 365")
+    from analytics_csv import build_analytics
+
     resumen = _armar_resumen()
+    resumen["_analytics"] = build_analytics(
+        Path(os.environ.get("ERICK_BI_DIR", str(ARTIFACTS_DIR.parent / "datos_bi"))),
+        Path(os.environ.get("ERICK_ALARMBOT_DIR", r"C:\andybot\alarmbot\output")),
+        days=args.days,
+    )
+    datasets = resumen["_analytics"]["datasets"]
+    print(f"Analítica: {len(datasets)} fuentes, {sum(len(d['rows']) for d in datasets)} filas.")
+    for warning in resumen["_analytics"]["warnings"]:
+        print(f"  aviso: {warning}")
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(resumen, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        print(f"Vista previa guardada: {args.output} ({args.output.stat().st_size:,} bytes). No se publicó.")
+        return
     _publicar(resumen)
 
 

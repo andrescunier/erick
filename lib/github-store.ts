@@ -51,15 +51,16 @@ export async function getDashboard(
   const { repo, branch } = repoConfig();
   const path = dashboardPath(user, project);
   const res = await githubRequest(
-    `/repos/${repo}/contents/${path}?ref=${encodeURIComponent(branch)}`
+    `/repos/${repo}/contents/${path}?ref=${encodeURIComponent(branch)}`,
+    { headers: { Accept: "application/vnd.github.raw+json" } }
   );
   if (res.status === 404) return null;
   if (!res.ok) {
     throw new Error(`No pude leer ${path}: ${res.status} ${await res.text()}`);
   }
-  const body = (await res.json()) as { content: string; encoding: string };
-  const raw = Buffer.from(body.content, "base64").toString("utf-8");
-  return JSON.parse(raw);
+  // Raw también funciona para históricos de más de 1 MB, donde GitHub ya
+  // no entrega `content` en base64 en la respuesta de metadatos.
+  return res.json();
 }
 
 export async function listDashboards(): Promise<DashboardRef[]> {

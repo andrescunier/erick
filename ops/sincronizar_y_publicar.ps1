@@ -15,3 +15,4 @@ foreach ($variable in @("ERICK_API_URL", "ERICK_API_KEY")) {
 }
 
 py scripts\sincronizar_resumen.py
+exit $LASTEXITCODE

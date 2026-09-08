@@ -40,20 +40,17 @@ export async function middleware(req: NextRequest) {
   }
 
   // Inyectar info de sesión en headers para que los server components la lean
-  const res = NextResponse.next();
-  res.headers.set("x-erick-user", sesion.u);
-  res.headers.set("x-erick-admin", String(sesion.admin));
-  res.headers.set("x-erick-allowed", JSON.stringify(sesion.a));
-  return res;
+  const requestHeaders = new Headers(req.headers);
+  requestHeaders.set("x-erick-user", sesion.u);
+  requestHeaders.set("x-erick-admin", String(sesion.admin));
+  requestHeaders.set("x-erick-allowed", JSON.stringify(sesion.a));
+  return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {
-  // Los archivos estaticos de public/ tienen que quedar AFUERA de la puerta.
-  // Si no, el optimizador de imagenes de Next (/_next/image) pide el archivo
-  // original por dentro y sin la cookie del usuario, se come el redirect al
-  // login y devuelve 400: los logos no cargan en ningun lado, y menos que
-  // menos en la pantalla de login, donde por definicion todavia no hay sesion.
+  // Excluir sólo los assets públicos conocidos, nunca extensiones arbitrarias
+  // que también pueden formar parte del nombre de un dashboard.
   matcher: [
-    "/((?!api|login|_next/static|_next/image|favicon\\.ico|.*\\.(?:webp|png|jpe?g|gif|svg|ico|woff2?|ttf)$).*)",
+    "/((?!api(?:/|$)|login$|_next/static(?:/|$)|_next/image$|favicon\\.ico$|(?:logo|icono)-openpass\\.webp$).*)",
   ],
 };

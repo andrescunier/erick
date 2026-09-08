@@ -19,3 +19,7 @@
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Vistas previas locales y cache Python
+/.preview/
+__pycache__/

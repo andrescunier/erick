@@ -1,5 +1,17 @@
 # Erick
 
+## Ampliación analítica (septiembre 2026)
+
+El sync ahora agrega `_analytics` con históricos de CSV de BI de opentransit y
+las últimas fotos CSV de AlarmBot. `components/AnalyticsDashboard.tsx` permite
+filtrar, graficar y exportar esos datasets mediante un contrato genérico en
+`lib/analytics.ts`. Ver [docs/ANALYTICS.md](docs/ANALYTICS.md) para fuentes,
+semántica, pruebas y vista previa local sin publicar.
+
+Esto reemplaza la exclusión de gráficos temporales y de desgloses que figura
+más abajo: el historial proviene de los CSV ya acumulados, no de sumar POSTs.
+La lectura de GitHub usa contenido raw para soportar JSON mayores a 1 MB.
+
 Dashboard genérico en Vercel: cada proyecto/usuario tiene su propio JSON,
 cargado por API (`POST`/`PATCH`), y la pantalla se arma sola según la forma
 de esos datos — no hay un esquema fijo tipo "tabla de tenants" hardcodeado.
