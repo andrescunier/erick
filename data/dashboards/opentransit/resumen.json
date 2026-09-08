@@ -1,12 +1,12 @@
 {
-  "generado_en": "2026-09-08T18:52:11.131753",
+  "generado_en": "2026-09-08T18:57:11.207272",
   "_procedencia": {
     "sistema": "opentransit — pipeline de archivos (no tiene base de datos ni API HTTP propia)",
     "informe": "business_summary.json (14 de sus 26 campos) + 4 indicadores derivados (no cobrado, validadores sin taps hoy, viajes por tarjeta)",
     "ruta": "C:\\andybot\\opentransit\\emova\\tenants\\artifacts\\<tenant>\\<fecha>\\<run_id>\\structured",
     "insumos_del_informe": "BACKFILE, STPOP, DAILYTAPS, VQR, RECOVERY, STPOP de ayer y JT_EMOVA (CSV diarios de 2 servidores SFTP)",
     "sincronizado_por": "scripts/sincronizar_resumen.py",
-    "sincronizado_en": "2026-09-08T18:52:11",
+    "sincronizado_en": "2026-09-08T18:57:11",
     "tenants_publicados": 32,
     "tenants_declarados_en_config": 25,
     "tenants_sin_declarar": "scabral, tagostosa, tcolegiales, tldevega, triachuelo, tsantafe, tsesentayocho",
@@ -61451,7 +61451,7 @@
     "warnings": []
   },
   "_sync": {
-    "checked_at": "2026-09-08T18:52:11-03:00",
+    "checked_at": "2026-09-08T18:57:11-03:00",
     "cadence_seconds": 300
   }
 }
