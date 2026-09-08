@@ -1,12 +1,12 @@
 {
-  "generado_en": "2026-09-08T16:29:34.974694",
+  "generado_en": "2026-09-08T16:58:19.678971",
   "_procedencia": {
     "sistema": "opentransit — pipeline de archivos (no tiene base de datos ni API HTTP propia)",
-    "informe": "business_summary.json (14 de sus 26 campos)",
+    "informe": "business_summary.json (14 de sus 26 campos) + 4 indicadores derivados (no cobrado, validadores caidos, viajes por tarjeta)",
     "ruta": "C:\\andybot\\opentransit\\emova\\tenants\\artifacts\\<tenant>\\<fecha>\\<run_id>\\structured",
     "insumos_del_informe": "BACKFILE, STPOP, DAILYTAPS, VQR, RECOVERY, STPOP de ayer y JT_EMOVA (CSV diarios de 2 servidores SFTP)",
     "sincronizado_por": "scripts/sincronizar_resumen.py",
-    "sincronizado_en": "2026-09-08T16:29:34",
+    "sincronizado_en": "2026-09-08T16:58:19",
     "tenants_publicados": 32,
     "tenants_declarados_en_config": 25,
     "tenants_sin_declarar": "scabral, tagostosa, tcolegiales, tldevega, triachuelo, tsantafe, tsesentayocho",
@@ -53,7 +53,11 @@
           "money_per_validator_previous_cents": 4912704,
           "money_per_validator_variation_pct": 87.95
         }
-      }
+      },
+      "no_cobrado_cents": 4817346,
+      "no_cobrado_pct": 4.01,
+      "validadores_sin_taps_7d": 0,
+      "viajes_por_tarjeta": 1.32
     },
     "aumer": {
       "tenant": "AUMER",
@@ -94,7 +98,11 @@
           "money_per_validator_previous_cents": 83092485,
           "money_per_validator_variation_pct": -7.32
         }
-      }
+      },
+      "no_cobrado_cents": 125973304,
+      "no_cobrado_pct": 7.44,
+      "validadores_sin_taps_7d": 1,
+      "viajes_por_tarjeta": 1.81
     },
     "ausol": {
       "tenant": "AUSOL",
@@ -135,7 +143,11 @@
           "money_per_validator_previous_cents": 21071432,
           "money_per_validator_variation_pct": -17.23
         }
-      }
+      },
+      "no_cobrado_cents": 19486508,
+      "no_cobrado_pct": 3.72,
+      "validadores_sin_taps_7d": 1,
+      "viajes_por_tarjeta": 1.3
     },
     "bbelgrano": {
       "tenant": "BBELGRANO",
@@ -176,7 +188,11 @@
           "money_per_validator_previous_cents": 936690,
           "money_per_validator_variation_pct": 63.18
         }
-      }
+      },
+      "no_cobrado_cents": 2960100,
+      "no_cobrado_pct": 3.65,
+      "validadores_sin_taps_7d": 5,
+      "viajes_por_tarjeta": 1.26
     },
     "cadsa": {
       "tenant": "CADSA",
@@ -217,7 +233,11 @@
           "money_per_validator_previous_cents": 77123540,
           "money_per_validator_variation_pct": -21.83
         }
-      }
+      },
+      "no_cobrado_cents": 24294864,
+      "no_cobrado_pct": 4.48,
+      "validadores_sin_taps_7d": 1,
+      "viajes_por_tarjeta": 1.16
     },
     "cunidos": {
       "tenant": "CUNIDOS",
@@ -258,7 +278,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 7498920,
+      "no_cobrado_pct": 4.82,
+      "validadores_sin_taps_7d": 3,
+      "viajes_por_tarjeta": 1.26
     },
     "dotasa": {
       "tenant": "DOTASA",
@@ -299,7 +323,11 @@
           "money_per_validator_previous_cents": 550856,
           "money_per_validator_variation_pct": 16.25
         }
-      }
+      },
+      "no_cobrado_cents": 1282710,
+      "no_cobrado_pct": 4.09,
+      "validadores_sin_taps_7d": 5,
+      "viajes_por_tarjeta": 1.28
     },
     "emova": {
       "tenant": "EMOVA",
@@ -340,7 +368,11 @@
           "money_per_validator_previous_cents": 43722769,
           "money_per_validator_variation_pct": 115.31
         }
-      }
+      },
+      "no_cobrado_cents": 908790260,
+      "no_cobrado_pct": 3.07,
+      "validadores_sin_taps_7d": 10,
+      "viajes_por_tarjeta": 1.62
     },
     "gco": {
       "tenant": "GCO",
@@ -381,7 +413,11 @@
           "money_per_validator_previous_cents": 12731306,
           "money_per_validator_variation_pct": -0.05
         }
-      }
+      },
+      "no_cobrado_cents": 20797621,
+      "no_cobrado_pct": 3.71,
+      "validadores_sin_taps_7d": 0,
+      "viajes_por_tarjeta": 1.44
     },
     "gralroca": {
       "tenant": "GRALROCA",
@@ -422,7 +458,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 1480050,
+      "no_cobrado_pct": 5.81,
+      "validadores_sin_taps_7d": 11,
+      "viajes_por_tarjeta": 1.13
     },
     "jbjusto": {
       "tenant": "JBJUSTO",
@@ -463,7 +503,11 @@
           "money_per_validator_previous_cents": 850920,
           "money_per_validator_variation_pct": -89.71
         }
-      }
+      },
+      "no_cobrado_cents": 0,
+      "no_cobrado_pct": 0,
+      "validadores_sin_taps_7d": 104,
+      "viajes_por_tarjeta": 1
     },
     "juanbjusto": {
       "tenant": "JUANBJUSTO",
@@ -504,7 +548,11 @@
           "money_per_validator_previous_cents": 848200,
           "money_per_validator_variation_pct": 7.25
         }
-      }
+      },
+      "no_cobrado_cents": 2960100,
+      "no_cobrado_pct": 3.97,
+      "validadores_sin_taps_7d": 6,
+      "viajes_por_tarjeta": 1.17
     },
     "lersrl": {
       "tenant": "LERSRL",
@@ -520,7 +568,11 @@
       "money_per_validator_cents": 0,
       "month_projection_cents": 0,
       "unique_cards": 0,
-      "comparison_windows": {}
+      "comparison_windows": {},
+      "no_cobrado_cents": null,
+      "no_cobrado_pct": null,
+      "validadores_sin_taps_7d": 0,
+      "viajes_por_tarjeta": null
     },
     "lnmetropol": {
       "tenant": "LNMETROPOL",
@@ -561,7 +613,11 @@
           "money_per_validator_previous_cents": 189542,
           "money_per_validator_variation_pct": 219.68
         }
-      }
+      },
+      "no_cobrado_cents": 2269410,
+      "no_cobrado_pct": 4.8,
+      "validadores_sin_taps_7d": 17,
+      "viajes_por_tarjeta": 1.17
     },
     "metropolitana": {
       "tenant": "METROPOLITANA",
@@ -602,7 +658,11 @@
           "money_per_validator_previous_cents": 10566017,
           "money_per_validator_variation_pct": 75.61
         }
-      }
+      },
+      "no_cobrado_cents": 182251885,
+      "no_cobrado_pct": 5.4,
+      "validadores_sin_taps_7d": 9,
+      "viajes_por_tarjeta": 1.56
     },
     "microomnibus": {
       "tenant": "MICROOMNIBUS",
@@ -643,7 +703,11 @@
           "money_per_validator_previous_cents": 265359,
           "money_per_validator_variation_pct": 31.65
         }
-      }
+      },
+      "no_cobrado_cents": 789360,
+      "no_cobrado_pct": 6.11,
+      "validadores_sin_taps_7d": 6,
+      "viajes_por_tarjeta": 1.26
     },
     "nrumbos": {
       "tenant": "NRUMBOS",
@@ -684,7 +748,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 3058770,
+      "no_cobrado_pct": 3.23,
+      "validadores_sin_taps_7d": 7,
+      "viajes_por_tarjeta": 1.19
     },
     "nudosa": {
       "tenant": "NUDOSA",
@@ -725,7 +793,11 @@
           "money_per_validator_previous_cents": 424076,
           "money_per_validator_variation_pct": 51.15
         }
-      }
+      },
+      "no_cobrado_cents": 4933500,
+      "no_cobrado_pct": 5.46,
+      "validadores_sin_taps_7d": 18,
+      "viajes_por_tarjeta": 1.22
     },
     "rsuratlantico": {
       "tenant": "RSURATLANTICO",
@@ -766,7 +838,11 @@
           "money_per_validator_previous_cents": 11020440,
           "money_per_validator_variation_pct": 112.46
         }
-      }
+      },
+      "no_cobrado_cents": 43200193,
+      "no_cobrado_pct": 5.27,
+      "validadores_sin_taps_7d": 5,
+      "viajes_por_tarjeta": 1.3
     },
     "salta": {
       "tenant": "SALTA",
@@ -807,7 +883,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 0,
+      "no_cobrado_pct": 0,
+      "validadores_sin_taps_7d": 0,
+      "viajes_por_tarjeta": 2
     },
     "scabral": {
       "tenant": "SCABRAL",
@@ -848,7 +928,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 690690,
+      "no_cobrado_pct": 5,
+      "validadores_sin_taps_7d": 26,
+      "viajes_por_tarjeta": 1.11
     },
     "stmsaupe": {
       "tenant": "STMSAUPE",
@@ -889,7 +973,11 @@
           "money_per_validator_previous_cents": 116875,
           "money_per_validator_variation_pct": -27.27
         }
-      }
+      },
+      "no_cobrado_cents": 0,
+      "no_cobrado_pct": 0,
+      "validadores_sin_taps_7d": 18,
+      "viajes_por_tarjeta": 1
     },
     "tagostosa": {
       "tenant": "TAGOSTOSA",
@@ -930,7 +1018,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 2466750,
+      "no_cobrado_pct": 3.87,
+      "validadores_sin_taps_7d": 7,
+      "viajes_por_tarjeta": 1.22
     },
     "tcolegiales": {
       "tenant": "TCOLEGIALES",
@@ -971,7 +1063,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 1480050,
+      "no_cobrado_pct": 6.3,
+      "validadores_sin_taps_7d": 4,
+      "viajes_por_tarjeta": 1.13
     },
     "tldevega": {
       "tenant": "TLDEVEGA",
@@ -1012,7 +1108,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 986700,
+      "no_cobrado_pct": 3.86,
+      "validadores_sin_taps_7d": 3,
+      "viajes_por_tarjeta": 1.27
     },
     "tndejulio": {
       "tenant": "TNDEJULIO",
@@ -1053,7 +1153,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 1381380,
+      "no_cobrado_pct": 4.83,
+      "validadores_sin_taps_7d": 6,
+      "viajes_por_tarjeta": 1.08
     },
     "triachuelo": {
       "tenant": "TRIACHUELO",
@@ -1094,7 +1198,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 7893600,
+      "no_cobrado_pct": 6.85,
+      "validadores_sin_taps_7d": 2,
+      "viajes_por_tarjeta": 1.29
     },
     "tsantafe": {
       "tenant": "TSANTAFE",
@@ -1135,7 +1243,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 296010,
+      "no_cobrado_pct": 4.29,
+      "validadores_sin_taps_7d": 34,
+      "viajes_por_tarjeta": 1.08
     },
     "tsesentayocho": {
       "tenant": "TSESENTAYOCHO",
@@ -1176,7 +1288,11 @@
           "money_per_validator_previous_cents": 0,
           "money_per_validator_variation_pct": 0
         }
-      }
+      },
+      "no_cobrado_cents": 0,
+      "no_cobrado_pct": 0,
+      "validadores_sin_taps_7d": 44,
+      "viajes_por_tarjeta": 1.2
     },
     "tucuman": {
       "tenant": "TUCUMAN",
@@ -1192,7 +1308,11 @@
       "money_per_validator_cents": 0,
       "month_projection_cents": 0,
       "unique_cards": 0,
-      "comparison_windows": {}
+      "comparison_windows": {},
+      "no_cobrado_cents": null,
+      "no_cobrado_pct": null,
+      "validadores_sin_taps_7d": 0,
+      "viajes_por_tarjeta": null
     },
     "vderocha": {
       "tenant": "VDEROCHA",
@@ -1233,7 +1353,11 @@
           "money_per_validator_previous_cents": 2297670,
           "money_per_validator_variation_pct": 10.94
         }
-      }
+      },
+      "no_cobrado_cents": 5821530,
+      "no_cobrado_pct": 4.23,
+      "validadores_sin_taps_7d": 3,
+      "viajes_por_tarjeta": 1.26
     },
     "vlopez": {
       "tenant": "VLOPEZ",
@@ -1274,7 +1398,11 @@
           "money_per_validator_previous_cents": 524886,
           "money_per_validator_variation_pct": 99.89
         }
-      }
+      },
+      "no_cobrado_cents": 986700,
+      "no_cobrado_pct": 3.13,
+      "validadores_sin_taps_7d": 5,
+      "viajes_por_tarjeta": 1.11
     }
   }
 }
