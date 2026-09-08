@@ -1,0 +1,1280 @@
+{
+  "generado_en": "2026-09-08T16:28:59.635707",
+  "_procedencia": {
+    "sistema": "opentransit — pipeline de archivos (no tiene base de datos ni API HTTP propia)",
+    "informe": "business_summary.json (14 de sus 26 campos)",
+    "ruta": "C:\\andybot\\opentransit\\emova\\tenants\\artifacts\\<tenant>\\<fecha>\\<run_id>\\structured",
+    "insumos_del_informe": "BACKFILE, STPOP, DAILYTAPS, VQR, RECOVERY, STPOP de ayer y JT_EMOVA (CSV diarios de 2 servidores SFTP)",
+    "sincronizado_por": "scripts/sincronizar_resumen.py",
+    "sincronizado_en": "2026-09-08T16:28:59",
+    "tenants_publicados": 32,
+    "tenants_declarados_en_config": 25,
+    "tenants_sin_declarar": "scabral, tagostosa, tcolegiales, tldevega, triachuelo, tsantafe, tsesentayocho",
+    "dato_mas_nuevo": "2026-09-08 (vlopez)",
+    "dato_mas_viejo": "2026-03-31 (lersrl)"
+  },
+  "tenants": {
+    "atlantida": {
+      "tenant": "ATLANTIDA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T08:45:47.845806-03:00",
+      "transaction_volume": 1173,
+      "money_processed_cents": 120034069,
+      "tap_count": 1414,
+      "average_ticket_cents": 84890,
+      "average_transaction_cents": 102331,
+      "validators_active_day": 13,
+      "validators_active_7d": 13,
+      "money_per_validator_cents": 9233390,
+      "month_projection_cents": 3601022070,
+      "unique_cards": 1074,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 34809208,
+          "validators_previous": 8,
+          "money_variation_pct": 244.83,
+          "validators_variation_pct": 62.5,
+          "money_per_validator_previous_cents": 4351151,
+          "money_per_validator_variation_pct": 112.21
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 49127040,
+          "validators_previous": 10,
+          "money_variation_pct": 144.33,
+          "validators_variation_pct": 30,
+          "money_per_validator_previous_cents": 4912704,
+          "money_per_validator_variation_pct": 87.95
+        }
+      }
+    },
+    "aumer": {
+      "tenant": "AUMER",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:06:59.868206-03:00",
+      "transaction_volume": 1854,
+      "money_processed_cents": 1694193468,
+      "tap_count": 1854,
+      "average_ticket_cents": 913804,
+      "average_transaction_cents": 913804,
+      "validators_active_day": 22,
+      "validators_active_7d": 23,
+      "money_per_validator_cents": 77008794,
+      "month_projection_cents": 50825804040,
+      "unique_cards": 1026,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 2047770976,
+          "validators_previous": 21,
+          "money_variation_pct": -17.27,
+          "validators_variation_pct": 4.76,
+          "money_per_validator_previous_cents": 97512904,
+          "money_per_validator_variation_pct": -21.03
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 1744942177,
+          "validators_previous": 21,
+          "money_variation_pct": -2.91,
+          "validators_variation_pct": 4.76,
+          "money_per_validator_previous_cents": 83092485,
+          "money_per_validator_variation_pct": -7.32
+        }
+      }
+    },
+    "ausol": {
+      "tenant": "AUSOL",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:06:26.941023-03:00",
+      "transaction_volume": 2376,
+      "money_processed_cents": 523202225,
+      "tap_count": 2376,
+      "average_ticket_cents": 220203,
+      "average_transaction_cents": 220203,
+      "validators_active_day": 30,
+      "validators_active_7d": 31,
+      "money_per_validator_cents": 17440074,
+      "month_projection_cents": 15696066750,
+      "unique_cards": 1833,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 538351754,
+          "validators_previous": 28,
+          "money_variation_pct": -2.81,
+          "validators_variation_pct": 7.14,
+          "money_per_validator_previous_cents": 19226848,
+          "money_per_validator_variation_pct": -9.29
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 695357261,
+          "validators_previous": 33,
+          "money_variation_pct": -24.76,
+          "validators_variation_pct": -9.09,
+          "money_per_validator_previous_cents": 21071432,
+          "money_per_validator_variation_pct": -17.23
+        }
+      }
+    },
+    "bbelgrano": {
+      "tenant": "BBELGRANO",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:09:00.667309-03:00",
+      "transaction_volume": 717,
+      "money_processed_cents": 81008070,
+      "tap_count": 821,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 112982,
+      "validators_active_day": 53,
+      "validators_active_7d": 58,
+      "money_per_validator_cents": 1528454,
+      "month_projection_cents": 2430242100,
+      "unique_cards": 654,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 36803910,
+          "validators_previous": 30,
+          "money_variation_pct": 120.11,
+          "validators_variation_pct": 76.67,
+          "money_per_validator_previous_cents": 1226797,
+          "money_per_validator_variation_pct": 24.59
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 40277675,
+          "validators_previous": 43,
+          "money_variation_pct": 101.12,
+          "validators_variation_pct": 23.26,
+          "money_per_validator_previous_cents": 936690,
+          "money_per_validator_variation_pct": 63.18
+        }
+      }
+    },
+    "cadsa": {
+      "tenant": "CADSA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:05:55.653301-03:00",
+      "transaction_volume": 353,
+      "money_processed_cents": 542585296,
+      "tap_count": 353,
+      "average_ticket_cents": 1537069,
+      "average_transaction_cents": 1537069,
+      "validators_active_day": 9,
+      "validators_active_7d": 10,
+      "money_per_validator_cents": 60287255,
+      "month_projection_cents": 16277558880,
+      "unique_cards": 305,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 898403825,
+          "validators_previous": 9,
+          "money_variation_pct": -39.61,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 99822647,
+          "money_per_validator_variation_pct": -39.61
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 616988317,
+          "validators_previous": 8,
+          "money_variation_pct": -12.06,
+          "validators_variation_pct": 12.5,
+          "money_per_validator_previous_cents": 77123540,
+          "money_per_validator_variation_pct": -21.83
+        }
+      }
+    },
+    "cunidos": {
+      "tenant": "CUNIDOS",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:09:14.295802-03:00",
+      "transaction_volume": 1358,
+      "money_processed_cents": 155594792,
+      "tap_count": 1577,
+      "average_ticket_cents": 98665,
+      "average_transaction_cents": 114576,
+      "validators_active_day": 93,
+      "validators_active_7d": 96,
+      "money_per_validator_cents": 1673062,
+      "month_projection_cents": 4667843760,
+      "unique_cards": 1252,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 48841650,
+          "validators_previous": 46,
+          "money_variation_pct": 218.57,
+          "validators_variation_pct": 102.17,
+          "money_per_validator_previous_cents": 1061775,
+          "money_per_validator_variation_pct": 57.57
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "dotasa": {
+      "tenant": "DOTASA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T08:46:19.836263-03:00",
+      "transaction_volume": 269,
+      "money_processed_cents": 31377060,
+      "tap_count": 318,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 116643,
+      "validators_active_day": 49,
+      "validators_active_7d": 54,
+      "money_per_validator_cents": 640348,
+      "month_projection_cents": 941311800,
+      "unique_cards": 248,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 13221780,
+          "validators_previous": 25,
+          "money_variation_pct": 137.31,
+          "validators_variation_pct": 96,
+          "money_per_validator_previous_cents": 528871,
+          "money_per_validator_variation_pct": 21.08
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 17627406,
+          "validators_previous": 32,
+          "money_variation_pct": 78,
+          "validators_variation_pct": 53.12,
+          "money_per_validator_previous_cents": 550856,
+          "money_per_validator_variation_pct": 16.25
+        }
+      }
+    },
+    "emova": {
+      "tenant": "EMOVA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T08:46:33.623490-03:00",
+      "transaction_volume": 123273,
+      "money_processed_cents": 29559235005,
+      "tap_count": 169360,
+      "average_ticket_cents": 174535,
+      "average_transaction_cents": 239787,
+      "validators_active_day": 314,
+      "validators_active_7d": 324,
+      "money_per_validator_cents": 94137691,
+      "month_projection_cents": 886777050150,
+      "unique_cards": 104353,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 8004434655,
+          "validators_previous": 294,
+          "money_variation_pct": 269.29,
+          "validators_variation_pct": 6.8,
+          "money_per_validator_previous_cents": 27225968,
+          "money_per_validator_variation_pct": 245.76
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 13335444440,
+          "validators_previous": 305,
+          "money_variation_pct": 121.66,
+          "validators_variation_pct": 2.95,
+          "money_per_validator_previous_cents": 43722769,
+          "money_per_validator_variation_pct": 115.31
+        }
+      }
+    },
+    "gco": {
+      "tenant": "GCO",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:06:07.550835-03:00",
+      "transaction_volume": 2667,
+      "money_processed_cents": 559890407,
+      "tap_count": 2667,
+      "average_ticket_cents": 209933,
+      "average_transaction_cents": 209933,
+      "validators_active_day": 44,
+      "validators_active_7d": 44,
+      "money_per_validator_cents": 12724782,
+      "month_projection_cents": 16796712210,
+      "unique_cards": 1854,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 591143813,
+          "validators_previous": 44,
+          "money_variation_pct": -5.29,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 13435087,
+          "money_per_validator_variation_pct": -5.29
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 572908748,
+          "validators_previous": 45,
+          "money_variation_pct": -2.27,
+          "validators_variation_pct": -2.22,
+          "money_per_validator_previous_cents": 12731306,
+          "money_per_validator_variation_pct": -0.05
+        }
+      }
+    },
+    "gralroca": {
+      "tenant": "GRALROCA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:09:30.529919-03:00",
+      "transaction_volume": 236,
+      "money_processed_cents": 25456860,
+      "tap_count": 258,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 107868,
+      "validators_active_day": 33,
+      "validators_active_7d": 44,
+      "money_per_validator_cents": 771420,
+      "month_projection_cents": 763705800,
+      "unique_cards": 228,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 15688530,
+          "validators_previous": 20,
+          "money_variation_pct": 62.26,
+          "validators_variation_pct": 65,
+          "money_per_validator_previous_cents": 784426,
+          "money_per_validator_variation_pct": -1.66
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "jbjusto": {
+      "tenant": "JBJUSTO",
+      "process_date": "2026-06-19",
+      "process_ts": "2026-06-19T08:25:36.555970-03:00",
+      "transaction_volume": 2,
+      "money_processed_cents": 175180,
+      "tap_count": 2,
+      "average_ticket_cents": 87590,
+      "average_transaction_cents": 87590,
+      "validators_active_day": 2,
+      "validators_active_7d": 106,
+      "money_per_validator_cents": 87590,
+      "month_projection_cents": 5255400,
+      "unique_cards": 2,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 51853280,
+          "validators_previous": 92,
+          "money_variation_pct": -99.66,
+          "validators_variation_pct": -97.83,
+          "money_per_validator_previous_cents": 563623,
+          "money_per_validator_variation_pct": -84.46
+        },
+        "7d": {
+          "money_previous_cents": 125604060,
+          "validators_previous": 100,
+          "money_variation_pct": -99.86,
+          "validators_variation_pct": -98,
+          "money_per_validator_previous_cents": 1256041,
+          "money_per_validator_variation_pct": -93.03
+        },
+        "30d": {
+          "money_previous_cents": 85092032,
+          "validators_previous": 100,
+          "money_variation_pct": -99.79,
+          "validators_variation_pct": -98,
+          "money_per_validator_previous_cents": 850920,
+          "money_per_validator_variation_pct": -89.71
+        }
+      }
+    },
+    "juanbjusto": {
+      "tenant": "JUANBJUSTO",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:06:46.542020-03:00",
+      "transaction_volume": 694,
+      "money_processed_cents": 74594520,
+      "tap_count": 756,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 107485,
+      "validators_active_day": 82,
+      "validators_active_7d": 88,
+      "money_per_validator_cents": 909689,
+      "month_projection_cents": 2237835600,
+      "unique_cards": 646,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 33050551,
+          "validators_previous": 54,
+          "money_variation_pct": 125.7,
+          "validators_variation_pct": 51.85,
+          "money_per_validator_previous_cents": 612047,
+          "money_per_validator_variation_pct": 48.63
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 50892027,
+          "validators_previous": 60,
+          "money_variation_pct": 46.57,
+          "validators_variation_pct": 36.67,
+          "money_per_validator_previous_cents": 848200,
+          "money_per_validator_variation_pct": 7.25
+        }
+      }
+    },
+    "lersrl": {
+      "tenant": "LERSRL",
+      "process_date": "2026-03-31",
+      "process_ts": "2026-03-31T09:28:30.259339-03:00",
+      "transaction_volume": 0,
+      "money_processed_cents": 0,
+      "tap_count": 0,
+      "average_ticket_cents": 0,
+      "average_transaction_cents": 0,
+      "validators_active_day": 0,
+      "validators_active_7d": 0,
+      "money_per_validator_cents": 0,
+      "month_projection_cents": 0,
+      "unique_cards": 0,
+      "comparison_windows": {}
+    },
+    "lnmetropol": {
+      "tenant": "LNMETROPOL",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:08:47.414979-03:00",
+      "transaction_volume": 438,
+      "money_processed_cents": 47262930,
+      "tap_count": 479,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 107906,
+      "validators_active_day": 78,
+      "validators_active_7d": 95,
+      "money_per_validator_cents": 605935,
+      "month_projection_cents": 1417887900,
+      "unique_cards": 411,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 21214050,
+          "validators_previous": 35,
+          "money_variation_pct": 122.79,
+          "validators_variation_pct": 122.86,
+          "money_per_validator_previous_cents": 606116,
+          "money_per_validator_variation_pct": -0.03
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 189542,
+          "validators_previous": 1,
+          "money_variation_pct": 24835.33,
+          "validators_variation_pct": 7700,
+          "money_per_validator_previous_cents": 189542,
+          "money_per_validator_variation_pct": 219.68
+        }
+      }
+    },
+    "metropolitana": {
+      "tenant": "METROPOLITANA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:07:52.578347-03:00",
+      "transaction_volume": 13233,
+      "money_processed_cents": 3376982220,
+      "tap_count": 17222,
+      "average_ticket_cents": 196085,
+      "average_transaction_cents": 255194,
+      "validators_active_day": 182,
+      "validators_active_7d": 191,
+      "money_per_validator_cents": 18554847,
+      "month_projection_cents": 101309466600,
+      "unique_cards": 11067,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 648578160,
+          "validators_previous": 113,
+          "money_variation_pct": 420.67,
+          "validators_variation_pct": 61.06,
+          "money_per_validator_previous_cents": 5739630,
+          "money_per_validator_variation_pct": 223.28
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 1595468515,
+          "validators_previous": 151,
+          "money_variation_pct": 111.66,
+          "validators_variation_pct": 20.53,
+          "money_per_validator_previous_cents": 10566017,
+          "money_per_validator_variation_pct": 75.61
+        }
+      }
+    },
+    "microomnibus": {
+      "tenant": "MICROOMNIBUS",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:09:43.217271-03:00",
+      "transaction_volume": 111,
+      "money_processed_cents": 12925770,
+      "tap_count": 131,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 116448,
+      "validators_active_day": 37,
+      "validators_active_7d": 43,
+      "money_per_validator_cents": 349345,
+      "month_projection_cents": 387773100,
+      "unique_cards": 104,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 3157440,
+          "validators_previous": 12,
+          "money_variation_pct": 309.38,
+          "validators_variation_pct": 208.33,
+          "money_per_validator_previous_cents": 263120,
+          "money_per_validator_variation_pct": 32.77
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 5307176,
+          "validators_previous": 20,
+          "money_variation_pct": 143.55,
+          "validators_variation_pct": 85,
+          "money_per_validator_previous_cents": 265359,
+          "money_per_validator_variation_pct": 31.65
+        }
+      }
+    },
+    "nrumbos": {
+      "tenant": "NRUMBOS",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:09:56.405237-03:00",
+      "transaction_volume": 861,
+      "money_processed_cents": 94723200,
+      "tap_count": 960,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 110015,
+      "validators_active_day": 80,
+      "validators_active_7d": 87,
+      "money_per_validator_cents": 1184040,
+      "month_projection_cents": 2841696000,
+      "unique_cards": 805,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 40553370,
+          "validators_previous": 39,
+          "money_variation_pct": 133.58,
+          "validators_variation_pct": 105.13,
+          "money_per_validator_previous_cents": 1039830,
+          "money_per_validator_variation_pct": 13.87
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "nudosa": {
+      "tenant": "NUDOSA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:05:12.286420-03:00",
+      "transaction_volume": 820,
+      "money_processed_cents": 90381720,
+      "tap_count": 917,
+      "average_ticket_cents": 98562,
+      "average_transaction_cents": 110222,
+      "validators_active_day": 141,
+      "validators_active_7d": 159,
+      "money_per_validator_cents": 641005,
+      "month_projection_cents": 2711451600,
+      "unique_cards": 752,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 31673070,
+          "validators_previous": 61,
+          "money_variation_pct": 185.36,
+          "validators_variation_pct": 131.15,
+          "money_per_validator_previous_cents": 519231,
+          "money_per_validator_variation_pct": 23.45
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 41983553,
+          "validators_previous": 99,
+          "money_variation_pct": 115.28,
+          "validators_variation_pct": 42.42,
+          "money_per_validator_previous_cents": 424076,
+          "money_per_validator_variation_pct": 51.15
+        }
+      }
+    },
+    "rsuratlantico": {
+      "tenant": "RSURATLANTICO",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:10:11.991200-03:00",
+      "transaction_volume": 1986,
+      "money_processed_cents": 819480550,
+      "tap_count": 1986,
+      "average_ticket_cents": 412629,
+      "average_transaction_cents": 412629,
+      "validators_active_day": 35,
+      "validators_active_7d": 40,
+      "money_per_validator_cents": 23413730,
+      "month_projection_cents": 24584416500,
+      "unique_cards": 1529,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 889129951,
+          "validators_previous": 26,
+          "money_variation_pct": -7.83,
+          "validators_variation_pct": 34.62,
+          "money_per_validator_previous_cents": 34197306,
+          "money_per_validator_variation_pct": -31.53
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 132245279,
+          "validators_previous": 12,
+          "money_variation_pct": 519.67,
+          "validators_variation_pct": 191.67,
+          "money_per_validator_previous_cents": 11020440,
+          "money_per_validator_variation_pct": 112.46
+        }
+      }
+    },
+    "salta": {
+      "tenant": "SALTA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:05:27.639571-03:00",
+      "transaction_volume": 1,
+      "money_processed_cents": 290000,
+      "tap_count": 2,
+      "average_ticket_cents": 145000,
+      "average_transaction_cents": 290000,
+      "validators_active_day": 1,
+      "validators_active_7d": 1,
+      "money_per_validator_cents": 290000,
+      "month_projection_cents": 8700000,
+      "unique_cards": 1,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "scabral": {
+      "tenant": "SCABRAL",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:10:25.873973-03:00",
+      "transaction_volume": 134,
+      "money_processed_cents": 13813800,
+      "tap_count": 140,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 103088,
+      "validators_active_day": 16,
+      "validators_active_7d": 42,
+      "money_per_validator_cents": 863362,
+      "month_projection_cents": 414414000,
+      "unique_cards": 126,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 10360350,
+          "validators_previous": 9,
+          "money_variation_pct": 33.33,
+          "validators_variation_pct": 77.78,
+          "money_per_validator_previous_cents": 1151150,
+          "money_per_validator_variation_pct": -25
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "stmsaupe": {
+      "tenant": "STMSAUPE",
+      "process_date": "2026-07-03",
+      "process_ts": "2026-07-03T08:21:48.514570-03:00",
+      "transaction_volume": 1,
+      "money_processed_cents": 85000,
+      "tap_count": 1,
+      "average_ticket_cents": 85000,
+      "average_transaction_cents": 85000,
+      "validators_active_day": 1,
+      "validators_active_7d": 19,
+      "money_per_validator_cents": 85000,
+      "month_projection_cents": 2635000,
+      "unique_cards": 1,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 1020000,
+          "validators_previous": 6,
+          "money_variation_pct": -91.67,
+          "validators_variation_pct": -83.33,
+          "money_per_validator_previous_cents": 170000,
+          "money_per_validator_variation_pct": -50
+        },
+        "7d": {
+          "money_previous_cents": 765000,
+          "validators_previous": 6,
+          "money_variation_pct": -88.89,
+          "validators_variation_pct": -83.33,
+          "money_per_validator_previous_cents": 127500,
+          "money_per_validator_variation_pct": -33.33
+        },
+        "30d": {
+          "money_previous_cents": 935000,
+          "validators_previous": 8,
+          "money_variation_pct": -90.91,
+          "validators_variation_pct": -87.5,
+          "money_per_validator_previous_cents": 116875,
+          "money_per_validator_variation_pct": -27.27
+        }
+      }
+    },
+    "tagostosa": {
+      "tenant": "TAGOSTOSA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:10:39.301952-03:00",
+      "transaction_volume": 572,
+      "money_processed_cents": 63740820,
+      "tap_count": 646,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 111435,
+      "validators_active_day": 45,
+      "validators_active_7d": 52,
+      "money_per_validator_cents": 1416463,
+      "month_projection_cents": 1912224600,
+      "unique_cards": 530,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 34139820,
+          "validators_previous": 24,
+          "money_variation_pct": 86.71,
+          "validators_variation_pct": 87.5,
+          "money_per_validator_previous_cents": 1422492,
+          "money_per_validator_variation_pct": -0.42
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "tcolegiales": {
+      "tenant": "TCOLEGIALES",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:10:52.478059-03:00",
+      "transaction_volume": 216,
+      "money_processed_cents": 23483460,
+      "tap_count": 238,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 108720,
+      "validators_active_day": 27,
+      "validators_active_7d": 31,
+      "money_per_validator_cents": 869758,
+      "month_projection_cents": 704503800,
+      "unique_cards": 211,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 12333750,
+          "validators_previous": 14,
+          "money_variation_pct": 90.4,
+          "validators_variation_pct": 92.86,
+          "money_per_validator_previous_cents": 880982,
+          "money_per_validator_variation_pct": -1.27
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "tldevega": {
+      "tenant": "TLDEVEGA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:11:06.120950-03:00",
+      "transaction_volume": 224,
+      "money_processed_cents": 25555530,
+      "tap_count": 259,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 114087,
+      "validators_active_day": 50,
+      "validators_active_7d": 53,
+      "money_per_validator_cents": 511111,
+      "month_projection_cents": 766665900,
+      "unique_cards": 204,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 14899170,
+          "validators_previous": 27,
+          "money_variation_pct": 71.52,
+          "validators_variation_pct": 85.19,
+          "money_per_validator_previous_cents": 551821,
+          "money_per_validator_variation_pct": -7.38
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "tndejulio": {
+      "tenant": "TNDEJULIO",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:07:26.531086-03:00",
+      "transaction_volume": 273,
+      "money_processed_cents": 28614300,
+      "tap_count": 290,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 104814,
+      "validators_active_day": 30,
+      "validators_active_7d": 36,
+      "money_per_validator_cents": 953810,
+      "month_projection_cents": 858429000,
+      "unique_cards": 269,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 14307150,
+          "validators_previous": 19,
+          "money_variation_pct": 100,
+          "validators_variation_pct": 57.89,
+          "money_per_validator_previous_cents": 753008,
+          "money_per_validator_variation_pct": 26.67
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "triachuelo": {
+      "tenant": "TRIACHUELO",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:11:18.858235-03:00",
+      "transaction_volume": 1008,
+      "money_processed_cents": 115246560,
+      "tap_count": 1168,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 114332,
+      "validators_active_day": 137,
+      "validators_active_7d": 139,
+      "money_per_validator_cents": 841216,
+      "month_projection_cents": 3457396800,
+      "unique_cards": 905,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 25259520,
+          "validators_previous": 50,
+          "money_variation_pct": 356.25,
+          "validators_variation_pct": 174,
+          "money_per_validator_previous_cents": 505190,
+          "money_per_validator_variation_pct": 66.51
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "tsantafe": {
+      "tenant": "TSANTAFE",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:11:32.593029-03:00",
+      "transaction_volume": 70,
+      "money_processed_cents": 6906900,
+      "tap_count": 70,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 98670,
+      "validators_active_day": 21,
+      "validators_active_7d": 55,
+      "money_per_validator_cents": 328900,
+      "month_projection_cents": 207207000,
+      "unique_cards": 65,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 3848130,
+          "validators_previous": 10,
+          "money_variation_pct": 79.49,
+          "validators_variation_pct": 110,
+          "money_per_validator_previous_cents": 384813,
+          "money_per_validator_variation_pct": -14.53
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "tsesentayocho": {
+      "tenant": "TSESENTAYOCHO",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:11:44.563657-03:00",
+      "transaction_volume": 16,
+      "money_processed_cents": 1776060,
+      "tap_count": 18,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 111004,
+      "validators_active_day": 10,
+      "validators_active_7d": 54,
+      "money_per_validator_cents": 177606,
+      "month_projection_cents": 53281800,
+      "unique_cards": 15,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 197340,
+          "validators_previous": 2,
+          "money_variation_pct": 800,
+          "validators_variation_pct": 400,
+          "money_per_validator_previous_cents": 98670,
+          "money_per_validator_variation_pct": 80
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        }
+      }
+    },
+    "tucuman": {
+      "tenant": "TUCUMAN",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:05:44.121585-03:00",
+      "transaction_volume": 0,
+      "money_processed_cents": 0,
+      "tap_count": 0,
+      "average_ticket_cents": 0,
+      "average_transaction_cents": 0,
+      "validators_active_day": 0,
+      "validators_active_7d": 0,
+      "money_per_validator_cents": 0,
+      "month_projection_cents": 0,
+      "unique_cards": 0,
+      "comparison_windows": {}
+    },
+    "vderocha": {
+      "tenant": "VDEROCHA",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:07:39.119937-03:00",
+      "transaction_volume": 1217,
+      "money_processed_cents": 137644650,
+      "tap_count": 1395,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 113102,
+      "validators_active_day": 54,
+      "validators_active_7d": 57,
+      "money_per_validator_cents": 2548975,
+      "month_projection_cents": 4129339500,
+      "unique_cards": 1108,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 94525860,
+          "validators_previous": 32,
+          "money_variation_pct": 45.62,
+          "validators_variation_pct": 68.75,
+          "money_per_validator_previous_cents": 2953933,
+          "money_per_validator_variation_pct": -13.71
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 103395161,
+          "validators_previous": 45,
+          "money_variation_pct": 33.12,
+          "validators_variation_pct": 20,
+          "money_per_validator_previous_cents": 2297670,
+          "money_per_validator_variation_pct": 10.94
+        }
+      }
+    },
+    "vlopez": {
+      "tenant": "VLOPEZ",
+      "process_date": "2026-09-08",
+      "process_ts": "2026-09-08T09:07:13.215513-03:00",
+      "transaction_volume": 299,
+      "money_processed_cents": 31475730,
+      "tap_count": 319,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 105270,
+      "validators_active_day": 30,
+      "validators_active_7d": 35,
+      "money_per_validator_cents": 1049191,
+      "month_projection_cents": 944271900,
+      "unique_cards": 288,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 2466750,
+          "validators_previous": 4,
+          "money_variation_pct": 1176,
+          "validators_variation_pct": 650,
+          "money_per_validator_previous_cents": 616688,
+          "money_per_validator_variation_pct": 70.13
+        },
+        "7d": {
+          "money_previous_cents": 0,
+          "validators_previous": 0,
+          "money_variation_pct": 0,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 0,
+          "money_per_validator_variation_pct": 0
+        },
+        "30d": {
+          "money_previous_cents": 6823512,
+          "validators_previous": 13,
+          "money_variation_pct": 361.28,
+          "validators_variation_pct": 130.77,
+          "money_per_validator_previous_cents": 524886,
+          "money_per_validator_variation_pct": 99.89
+        }
+      }
+    }
+  }
+}
