@@ -80,8 +80,16 @@ function labelDeCampo(key: string): string {
 }
 
 export function encontrarPctEnVentana(ventana: Record<string, unknown>): number | null {
-  for (const [k, v] of Object.entries(ventana)) {
-    if (typeof v === "number" && /pct|percent|variation/i.test(k)) return v;
+  const numeros = Object.entries(ventana).filter(([, v]) => typeof v === "number");
+
+  // Una ventana con TODOS los numeros en cero no es estabilidad: es que falta
+  // el snapshot de esa ventana. Mostrar "0,00%" ahi miente — se lee "no
+  // cambio" cuando en realidad es "no hay con que comparar". Medido: la
+  // ventana de 7d viene asi para los 32 tenants.
+  if (numeros.length > 0 && numeros.every(([, v]) => v === 0)) return null;
+
+  for (const [k, v] of numeros) {
+    if (/pct|percent|variation/i.test(k)) return v as number;
   }
   return null;
 }
@@ -91,19 +99,41 @@ export function encontrarPctEnVentana(ventana: Record<string, unknown>): number 
 // cualquier otro dashboard que use vocabulario parecido (plata, taps,
 // validadores, tarjetas), sin acoplarse a nombres exactos de campo.
 const PRIORIDAD_PALABRAS: RegExp[] = [
+  // Primero lo que NO se cobro: en un dashboard de recaudacion la plata que se
+  // escapo importa mas que la que entro, y es la que nadie mira si no esta
+  // arriba. Va antes que "money" a proposito.
+  /no_cobrado|sin_cobrar|unpaid|impago|perdid/i,
   /money|amount|revenue|processed|ingreso|monto/i,
-  /^tap|_tap|transaction/i,
+  /^tap|_tap/i,
   /validator|validador/i,
   /card|tarjeta|unique/i,
+  /transaction|transaccion/i,
 ];
+
+// Una tarjeta de arriba es una SUMA de la columna sobre todos los registros, y
+// eso solo tiene sentido para cantidades aditivas. Sumar el ticket promedio de
+// 32 tenants, o una tasa, no significa nada: esos campos se quedan como
+// columna de la tabla y no suben a tarjeta.
+const NO_SUMABLE = /average|promedio|_per_|_por_|ratio|pct|percent|variation|projection|proyecc/i;
+
+function esSumable(col: Columna): boolean {
+  if (col.formato === "percent" || col.formato === "variation" || col.formato === "text") {
+    return false;
+  }
+  return !NO_SUMABLE.test(col.key);
+}
 
 function prioridadColumna(col: Columna): number {
   const k = col.key.toLowerCase();
-  if (/_ts$|timestamp/.test(k)) return 90; // redundante con la fecha, casi al final
+  if (/_ts$|timestamp/.test(k)) return 900; // redundante con la fecha, al final
+  // La fecha del dato va segunda, apenas despues de lo no cobrado: sin ella no
+  // se sabe si lo que se esta mirando es de hoy o de hace tres meses, y hay
+  // tenants con meses de atraso.
+  if (/date|fecha/.test(k)) return 5;
   const idx = PRIORIDAD_PALABRAS.findIndex((re) => re.test(k));
-  if (idx !== -1) return idx;
-  if (col.formato === "text") return 10;
-  return 20;
+  if (idx !== -1) return idx * 10;
+  if (col.formato === "text") return 100;
+  return 200;
 }
 
 function tokenBase(key: string): string {
@@ -222,7 +252,7 @@ export function detectarForma(data: Record<string, unknown>): FormaDetectada {
   const columnasOrdenadas = [...columnas].sort(
     (a, b) => prioridadColumna(a) - prioridadColumna(b)
   );
-  const columnasLimitadas = columnasOrdenadas.slice(0, 8);
+  const columnasLimitadas = columnasOrdenadas.slice(0, 10);
   const ventanasLimitadas = columnasVentana.slice(0, 3);
   const primeraVentana = ventanasLimitadas[0];
 
@@ -240,7 +270,7 @@ export function detectarForma(data: Record<string, unknown>): FormaDetectada {
   const registrosConLabel = registros.map((r) => ({ ...r, _label: r[labelKey] ?? r._key ?? "—" }));
 
   const statsFuente = [...columnasLimitadas]
-    .filter((c) => c.formato !== "text")
+    .filter(esSumable)
     .sort((a, b) => prioridadColumna(a) - prioridadColumna(b))
     .slice(0, 4);
 

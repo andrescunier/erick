@@ -48,5 +48,12 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|login|_next/static|_next/image|favicon.ico).*)"],
+  // Los archivos estaticos de public/ tienen que quedar AFUERA de la puerta.
+  // Si no, el optimizador de imagenes de Next (/_next/image) pide el archivo
+  // original por dentro y sin la cookie del usuario, se come el redirect al
+  // login y devuelve 400: los logos no cargan en ningun lado, y menos que
+  // menos en la pantalla de login, donde por definicion todavia no hay sesion.
+  matcher: [
+    "/((?!api|login|_next/static|_next/image|favicon\\.ico|.*\\.(?:webp|png|jpe?g|gif|svg|ico|woff2?|ttf)$).*)",
+  ],
 };
