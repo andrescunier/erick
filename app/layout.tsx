@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Erick — Panel de Tránsito",
-  description: "Datos diarios de opentransit, por tenant.",
+  title: "Erick — Dashboards",
+  description: "Dashboards que se arman solos a partir de lo que llega por API.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

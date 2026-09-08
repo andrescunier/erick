@@ -1,12 +1,16 @@
-"""Junta el ultimo business_summary.json de cada tenant de opentransit en un
-solo archivo (data/resumen.json), que es lo que el dashboard de Next.js lee.
+"""Junta el ultimo business_summary.json de cada tenant de opentransit y lo
+empuja al dashboard via API (POST /api/dashboards/{user}/{project}).
 
-Por que un archivo commiteado y no una base de datos: el dashboard se aloja en
-Vercel, los datos viven en esta maquina Windows (local/tailnet), y todavia no
-hay ninguna base en la nube conectada. Un JSON en el repo es lo minimo que
-funciona hoy: correr este script, commitear, pushear, y Vercel redeploya con
-el dato nuevo. El dia que haga falta actualizar mas seguido que "cada vez que
-alguien corre esto a mano", ahi si conviene una base de datos real — no antes.
+Por que un POST y no un archivo commiteado: el dashboard ahora guarda cada
+proyecto como un JSON en el repo de GitHub, pero escrito por la API (que hace
+el commit por vos), no por un `git push` manual. Este script solo arma el
+JSON y lo manda — no toca git para nada.
+
+Variables de entorno necesarias:
+    ERICK_API_URL   ej. https://erick.vercel.app
+    ERICK_API_KEY   el mismo valor que INGEST_API_KEY en Vercel
+    ERICK_USER      opcional, default "opentransit"
+    ERICK_PROJECT   opcional, default "resumen"
 
 Uso: py scripts/sincronizar_resumen.py
 """
@@ -14,12 +18,14 @@ Uso: py scripts/sincronizar_resumen.py
 from __future__ import annotations
 
 import json
+import os
+import urllib.error
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 ARTIFACTS_DIR = Path(r"C:\andybot\opentransit\emova\tenants\artifacts")
-SALIDA = Path(__file__).resolve().parent.parent / "data" / "resumen.json"
 
 # Los campos que le importan al dashboard. Se dejan afuera los desgloses mas
 # finos (by_issuer, by_brand, by_line, by_payment_type, by_tap_state,
@@ -60,7 +66,7 @@ def _ultimo_resumen(carpeta_tenant: Path) -> dict[str, Any] | None:
         return None
 
 
-def main() -> None:
+def _armar_resumen() -> dict[str, Any]:
     if not ARTIFACTS_DIR.exists():
         raise SystemExit(f"No encuentro {ARTIFACTS_DIR}. ¿Corre esto en la misma maquina que opentransit?")
 
@@ -76,18 +82,45 @@ def main() -> None:
             continue
         tenants[carpeta.name] = {campo: crudo.get(campo) for campo in CAMPOS_RELEVANTES}
 
-    resumen = {
-        "generado_en": datetime.now().isoformat(),
-        "tenants": tenants,
-    }
-
-    SALIDA.parent.mkdir(parents=True, exist_ok=True)
-    SALIDA.write_text(json.dumps(resumen, ensure_ascii=False, indent=2), encoding="utf-8")
-
     print(f"{len(tenants)} tenants con datos, {len(saltados)} sin business_summary.json todavia.")
     if saltados:
         print("  sin datos:", ", ".join(saltados))
-    print(f"Escrito: {SALIDA}")
+
+    return {"generado_en": datetime.now().isoformat(), "tenants": tenants}
+
+
+def _publicar(resumen: dict[str, Any]) -> None:
+    api_url = os.environ.get("ERICK_API_URL")
+    api_key = os.environ.get("ERICK_API_KEY")
+    if not api_url or not api_key:
+        raise SystemExit("Faltan ERICK_API_URL y/o ERICK_API_KEY en el entorno.")
+
+    usuario = os.environ.get("ERICK_USER", "opentransit")
+    proyecto = os.environ.get("ERICK_PROJECT", "resumen")
+
+    url = f"{api_url.rstrip('/')}/api/dashboards/{usuario}/{proyecto}"
+    payload = json.dumps(resumen).encode("utf-8")
+
+    request = urllib.request.Request(
+        url,
+        data=payload,
+        method="POST",
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}",
+        },
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as respuesta:
+            print(f"Publicado en {url}: HTTP {respuesta.status}")
+    except urllib.error.HTTPError as error:
+        cuerpo = error.read().decode("utf-8", errors="replace")
+        raise SystemExit(f"Fallo el POST a {url}: HTTP {error.code} — {cuerpo}") from error
+
+
+def main() -> None:
+    resumen = _armar_resumen()
+    _publicar(resumen)
 
 
 if __name__ == "__main__":

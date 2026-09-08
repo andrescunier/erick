@@ -13,6 +13,7 @@
 *.pem
 
 # env
+.env
 .env*.local
 
 # typescript

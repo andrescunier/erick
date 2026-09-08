@@ -1,28 +1,17 @@
-# Corre el sync de opentransit -> data/resumen.json, lo commitea y lo pushea.
-# Un push a la rama conectada en Vercel dispara un redeploy automatico: asi es
-# como el dashboard se entera de datos nuevos (ver AGENTS.md, "Como se
-# actualiza el dashboard").
+# Corre el sync de opentransit y lo publica en el dashboard via API
+# (POST /api/dashboards/{user}/{project}). Ya no toca git: el commit lo hace
+# el propio endpoint en GitHub. Ver AGENTS.md, "Como se actualiza el
+# dashboard".
 $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
 Set-Location $repoRoot
 
+foreach ($variable in @("ERICK_API_URL", "ERICK_API_KEY")) {
+    if (-not (Get-Item "env:$variable" -ErrorAction SilentlyContinue)) {
+        Write-Error "Falta la variable de entorno $variable. Configurala una vez con: setx $variable ""<valor>"""
+        exit 1
+    }
+}
+
 py scripts\sincronizar_resumen.py
-
-git add data\resumen.json
-
-$hayCambios = git status --porcelain data\resumen.json
-if (-not $hayCambios) {
-    Write-Output "Sin cambios en data/resumen.json, no hay nada que publicar."
-    exit 0
-}
-
-$momento = Get-Date -Format "yyyy-MM-dd HH:mm"
-git commit -m "Actualizar resumen ($momento)" | Out-Null
-
-try {
-    git push
-    Write-Output "Publicado. Vercel deberia redeployar solo."
-} catch {
-    Write-Output "Commit local hecho, pero el push fallo (¿hay un remoto 'origin' configurado?): $($_.Exception.Message)"
-}

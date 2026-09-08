@@ -113,3 +113,83 @@ tbody tr:hover {
   padding: 40px 0;
   text-align: center;
 }
+
+.vacio code {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.miga {
+  color: var(--muted);
+  font-size: 12.5px;
+  margin: 0 0 12px;
+}
+
+.miga a {
+  color: var(--muted);
+}
+
+.meta-tira {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  color: var(--muted);
+  font-size: 12.5px;
+  margin-bottom: 20px;
+}
+
+.meta-tira strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.grupos {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.grupo h2 {
+  font-size: 15px;
+  color: var(--muted);
+  font-weight: 500;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+a.tarjeta-link {
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease;
+}
+
+a.tarjeta-link:hover {
+  border-color: var(--muted);
+}
+
+.resto {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.resto summary {
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.resto pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  overflow-x: auto;
+  color: var(--text);
+}
