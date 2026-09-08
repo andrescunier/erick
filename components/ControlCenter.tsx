@@ -7,6 +7,7 @@ import { expandRows, metricValue, type Dataset, type Metric } from "@/lib/analyt
 import { ageLabel, delta, indexed, modeOf, previousPeriod, selectPeriod, series, sourceAge, sourceLabel, DAY, type Period } from "@/lib/control-math";
 import { formatearValor } from "@/lib/format";
 import { LineChart } from "@/components/LineChart";
+import { BusinessDashboard } from "@/components/BusinessDashboard";
 
 const COLORS = ["#ee883b", "#617df3", "#16a593", "#bf73d5"];
 function defaultDataset(project: ControlProject) {
@@ -26,7 +27,7 @@ export function ControlCenter({ initial }: { initial: ControlData }) {
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState("");
   const [auto, setAuto] = useState(true);
-  const [tab, setTab] = useState("overview");
+  const [tab, setTab] = useState("business");
   const [now, setNow] = useState(Date.parse(initial.fetchedAt));
   const [period, setPeriod] = useState<Period>({ from: new Date(Date.parse(`${day(initial.fetchedAt)}T00:00:00Z`) - 6 * DAY).toISOString().slice(0,10), to: day(initial.fetchedAt) });
   const [preset, setPreset] = useState(7);
@@ -76,11 +77,11 @@ export function ControlCenter({ initial }: { initial: ControlData }) {
     </section>
 
     {error && <div className="control-alert" role="alert"><strong>No se pudo refrescar.</strong> {error} Última consulta correcta: {formatDate(data.fetchedAt)}.</div>}
-    <div className="control-navigation"><nav aria-label="Vistas del tablero">{[["overview","Visión general"],["compare","Comparar proyectos"],["sources","Fuentes y actualización"]].map(([key, text]) =>
+    <div className="control-navigation"><nav aria-label="Vistas del tablero">{[["business","Negocio"],["overview","Detalle por proyecto"],["compare","Explorar comparaciones"],["sources","Fuentes y actualización"]].map(([key, text]) =>
       <button key={key} className={tab === key ? "active" : ""} aria-pressed={tab === key} onClick={() => setTab(key)}>{text}</button>)}</nav>
       <span className="consulted-at"><i />Consulta {ageLabel(sourceAge(data.fetchedAt, now))}</span></div>
 
-    {tab !== "sources" && <section className="control-period"><div><span className="control-eyebrow">PERÍODO COMPARTIDO</span><p>Los dos proyectos usan las mismas fechas.</p></div>
+    {tab !== "sources" && tab !== "business" && <section className="control-period"><div><span className="control-eyebrow">PERÍODO COMPARTIDO</span><p>Los dos proyectos usan las mismas fechas.</p></div>
       <div className="period-presets">{[[1,"Hoy"],[7,"7 días"],[30,"30 días"]].map(([n, label]) => <button key={n} className={preset === n ? "active" : ""} onClick={() => choosePeriod(Number(n))}>{label}</button>)}</div>
       <label>Desde<input type="date" value={period.from} onChange={e => { setPreset(0); setPeriod({ ...period, from: e.target.value }); }} /></label>
       <label>Hasta<input type="date" value={period.to} onChange={e => { setPreset(0); setPeriod({ ...period, to: e.target.value }); }} /></label>
@@ -88,6 +89,7 @@ export function ControlCenter({ initial }: { initial: ControlData }) {
     </section>}
 
     {!projects.length && <div className="control-empty">No tenés dashboards autorizados para mostrar aquí.</div>}
+    {tab === "business" && <BusinessDashboard projects={projects} now={now} />}
     {tab === "overview" && <>
       <div className="project-grid">{projects.map((p, i) => <ProjectPanel key={p.id} project={p} color={COLORS[i % COLORS.length]} period={period} prior={prior} now={now}
         datasetId={selections[p.id]} onDataset={id => setSelections({ ...selections, [p.id]: id })} />)}</div>

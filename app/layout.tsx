@@ -7,6 +7,7 @@ import { COOKIE_SESION } from "@/lib/session";
 import { LogoutButton } from "@/components/LogoutButton";
 import "./globals.css";
 import "./control.css";
+import "./business.css";
 
 const openSans = Open_Sans({
   subsets: ["latin", "latin-ext"],

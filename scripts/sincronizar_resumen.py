@@ -275,6 +275,13 @@ def main() -> None:
         Path(os.environ.get("ERICK_ALARMBOT_DIR", r"C:\andybot\alarmbot\output")),
         days=args.days,
     )
+    from transport_business import build_live, build_collection_history
+    live, live_warnings = build_live()
+    resumen["_analytics"]["datasets"].append(live)
+    if live["rows"]:
+        resumen["_analytics"]["datasets"].append(build_collection_history(live))
+    resumen["_analytics"]["warnings"].extend(live_warnings)
+    resumen["title"] = "Transporte · Opentransit y Alarmbot"
     datasets = resumen["_analytics"]["datasets"]
     print(f"Analítica: {len(datasets)} fuentes, {sum(len(d['rows']) for d in datasets)} filas.")
     for warning in resumen["_analytics"]["warnings"]:
