@@ -1,6 +1,14 @@
 {
   "users": [
     {
+      "username": "acunier@openpass.com.ar",
+      "password_hash": "bc646896c7b1092f3a9ed55846d8350844ec1ff2e4f6998d18c8346d2cc757c4",
+      "allowed": [
+        "*"
+      ],
+      "admin": true
+    },
+    {
       "username": "fcalcaterra@openpass.com.ar",
       "password_hash": "da99c42a7a511caabd9c469e94d1fbc64065984bed9983097172b7006a17ddcd",
       "allowed": [
