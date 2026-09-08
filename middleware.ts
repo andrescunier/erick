@@ -1,37 +1,31 @@
 import { NextRequest, NextResponse } from "next/server";
+import { COOKIE_SESION, tokenSesionEsperado } from "@/lib/session";
 
 /**
- * Basic Auth para ver el dashboard en el navegador. No protege /api/*, que
- * ya tiene su propia autenticación (INGEST_API_KEY, ver lib/auth.ts) pensada
- * para llamadas de máquina a máquina, no para un humano en un browser.
+ * Puerta de acceso a las páginas del dashboard: si no hay cookie de sesión
+ * válida, redirige a /login (conservando a dónde quería ir). No protege
+ * /api/dashboards/*, que tiene su propia autenticación por API key
+ * (lib/auth.ts) para llamadas de máquina a máquina.
  */
-export function middleware(req: NextRequest) {
-  const usuario = process.env.VIEWER_USER;
-  const clave = process.env.VIEWER_PASSWORD;
+export async function middleware(req: NextRequest) {
+  const esperado = await tokenSesionEsperado();
 
-  if (!usuario || !clave) {
+  if (!esperado) {
     return new NextResponse("VIEWER_USER / VIEWER_PASSWORD no están configurados en el servidor.", {
       status: 500,
     });
   }
 
-  const auth = req.headers.get("authorization");
-  if (auth?.startsWith("Basic ")) {
-    const decoded = atob(auth.slice(6));
-    const separador = decoded.indexOf(":");
-    const u = decoded.slice(0, separador);
-    const p = decoded.slice(separador + 1);
-    if (u === usuario && p === clave) {
-      return NextResponse.next();
-    }
+  if (req.cookies.get(COOKIE_SESION)?.value === esperado) {
+    return NextResponse.next();
   }
 
-  return new NextResponse("Acceso restringido.", {
-    status: 401,
-    headers: { "WWW-Authenticate": 'Basic realm="Erick"' },
-  });
+  const url = req.nextUrl.clone();
+  url.pathname = "/login";
+  url.search = `?next=${encodeURIComponent(req.nextUrl.pathname)}`;
+  return NextResponse.redirect(url);
 }
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!api|login|_next/static|_next/image|favicon.ico).*)"],
 };

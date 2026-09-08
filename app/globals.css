@@ -1,111 +1,183 @@
+/* Look & feel de openpass.la aplicado a un dashboard de datos.
+   Los valores marcados [SITIO] salen del sitio (tema Salient: tokens de marca,
+   tipografía base) o del muestreo del logo. Los [DASH] los derivamos acá porque
+   el sitio es una landing y no tiene tablas densas ni tarjetas de métricas.
+   El acento es NARANJA #ec7803 (--nectar-accent-color), no turquesa. */
+
 :root {
-  --bg: #0f1216;
-  --surface: #171b21;
-  --border: #262c35;
-  --text: #e6e9ee;
-  --muted: #8b93a1;
-  --good: #3fb950;
-  --bad: #f85149;
+  /* Marca */
+  --accent: #ec7803;        /* [SITIO] */
+  --accent-hover: #d06a02;  /* [DASH] -11% luminancia */
+  --accent-300: #f3ab62;    /* [SITIO] muestreado del logo */
+  --accent-150: #f8cda1;    /* [SITIO] muestreado del logo */
+  --accent-075: #fadec1;    /* [SITIO] fondo de badge */
+  --accent-025: #fef7f0;    /* [SITIO] hover de fila */
+  --accent-glow: rgba(236, 120, 3, 0.28);
+
+  /* Neutros */
+  --bg: #f4f5f6;            /* [DASH] el sitio es #fff puro; el dashboard necesita piso */
+  --surface: #ffffff;       /* [SITIO] */
+  --surface-2: #fafafa;     /* [DASH] thead, zebra */
+  --text-strong: #000000;   /* [SITIO] títulos y cifras */
+  --text: #4c4c4c;          /* [SITIO] cuerpo */
+  --muted: #676767;         /* [SITIO] color por defecto del body */
+  --muted-2: #919191;       /* [SITIO] timestamps, ejes */
+  --invert: #ffffff;        /* [SITIO] */
+  --ink-band: #000000;      /* [SITIO] la banda oscura del header del sitio */
+
+  /* Bordes */
+  --border: #d9d9d9;        /* [SITIO] único borde real del markup */
+  --border-strong: #c2c2c2; /* [DASH] contorno de tabla, regla bajo thead */
+  --border-soft: #ececec;   /* [DASH] divisores de fila */
+
+  /* Estado — el sitio no define ninguno */
+  --good: #157f4f;          /* [DASH] verde profundo, ~5.3:1 sobre blanco */
+  --good-bg: #e7f3ec;
+  --bad: #c0233c;           /* [DASH] corrido al magenta para no pisarse con el naranja */
+  --bad-bg: #fdeaee;
+
+  /* Tipografía */
+  --font: var(--font-open-sans), "Open Sans", Helvetica, Arial, sans-serif;
+  --fs-label: 12px;         /* [SITIO] patrón .wpb_pie_chart_heading */
+  --ls-label: 2px;          /* [SITIO] */
+  --fs-metric: 42px;        /* [SITIO] .vc_pie_chart_value */
+  --fw-metric: 300;         /* [SITIO] las cifras grandes van en light, no bold */
+  --fw-title: 600;          /* [SITIO] h1..h6 son 600, nunca 700 */
+
+  /* Layout */
+  --maxw: 1425px;           /* [SITIO] .container */
+  --pad-x: 32px;            /* [DASH] el sitio usa 90px: mucho aire perdido en una tabla */
+  --gap: 20px;              /* [SITIO] */
+
+  /* Radios */
+  --radius: 10px;           /* [SITIO] firma del sitio */
+  --radius-sm: 5px;         /* [SITIO] .nectar-button */
+  --radius-pill: 1000px;    /* [SITIO] */
+
+  /* Sombras — skin material: blur grande, alfa baja */
+  --shadow-card: 0 1px 1px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 17px 25px rgba(0, 0, 0, 0.13);
+  --shadow-inset: 0 -3px rgba(0, 0, 0, 0.1) inset;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  color-scheme: light;
+}
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font: 400 14px/1.45 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header — la banda oscura del sitio, con el naranja como única chispa */
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 var(--pad-x);
+  background: var(--ink-band);
+  color: var(--invert);
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.app-logo:hover {
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+.app-logo img {
+  height: 26px;
+  width: auto;
+}
+
+.salir {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.salir:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 main {
-  max-width: 1180px;
+  max-width: var(--maxw);
   margin: 0 auto;
-  padding: 32px 20px 64px;
+  padding: 32px var(--pad-x) 72px;
 }
 
 h1 {
-  font-size: 22px;
-  margin: 0 0 4px;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: var(--fw-title);
+  color: var(--text-strong);
+  letter-spacing: 0;
+  margin: 0 0 6px;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: var(--fw-title);
+  color: var(--text-strong);
+  margin: 0;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.miga {
+  color: var(--muted-2);
+  font-size: 12.5px;
+  margin: 0 0 12px;
+}
+
+.miga a {
+  color: var(--muted);
 }
 
 .generado {
   color: var(--muted);
   font-size: 12.5px;
   margin: 0 0 28px;
-}
-
-.tarjetas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
-  margin-bottom: 32px;
-}
-
-.tarjeta {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 18px;
-}
-
-.tarjeta .rotulo {
-  color: var(--muted);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 6px;
-}
-
-.tarjeta .valor {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.tabla-envoltorio {
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 900px;
-}
-
-th, td {
-  text-align: right;
-  padding: 10px 14px;
-  white-space: nowrap;
-  border-bottom: 1px solid var(--border);
-}
-
-th:first-child, td:first-child {
-  text-align: left;
-}
-
-th {
-  color: var(--muted);
-  font-weight: 500;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  background: var(--surface);
-}
-
-tbody tr:hover {
-  background: var(--surface);
-}
-
-.pct-pos {
-  color: var(--good);
-}
-
-.pct-neg {
-  color: var(--bad);
 }
 
 .vacio {
@@ -115,39 +187,101 @@ tbody tr:hover {
 }
 
 .vacio code {
-  background: var(--surface);
+  background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 1px 6px;
 }
 
 .muted {
-  color: var(--muted);
-}
-
-.miga {
-  color: var(--muted);
-  font-size: 12.5px;
-  margin: 0 0 12px;
-}
-
-.miga a {
-  color: var(--muted);
+  color: var(--muted-2);
 }
 
 .meta-tira {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 20px;
+  gap: 8px 24px;
   color: var(--muted);
   font-size: 12.5px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .meta-tira strong {
-  color: var(--text);
-  font-weight: 500;
+  color: var(--text-strong);
+  font-weight: 600;
 }
+
+/* Tarjeta de métrica — label + cifra, el patrón sale del sitio tal cual */
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--gap);
+  margin-bottom: 28px;
+}
+
+.tarjeta {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+}
+
+.tarjeta .rotulo {
+  font-size: var(--fs-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-label);
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.tarjeta .valor {
+  font-size: var(--fs-metric);
+  font-weight: var(--fw-metric);
+  line-height: 1;
+  color: var(--text-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.delta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.delta-flecha {
+  font-size: 9px;
+}
+
+.delta-pos {
+  color: var(--good);
+}
+
+.delta-neg {
+  color: var(--bad);
+}
+
+a.tarjeta-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.tarjeta-link:hover {
+  transform: translateY(-4px); /* [SITIO] .col.boxed:hover, exacto */
+  box-shadow: var(--shadow-hover);
+  text-decoration: none;
+}
+
+/* Grupos (índice) */
 
 .grupos {
   display: flex;
@@ -156,23 +290,149 @@ tbody tr:hover {
 }
 
 .grupo h2 {
-  font-size: 15px;
-  color: var(--muted);
-  font-weight: 500;
-  margin: 0 0 10px;
+  font-size: var(--fs-label);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: var(--ls-label);
+  color: var(--muted);
+  margin: 0 0 12px;
 }
 
-a.tarjeta-link {
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.15s ease;
+/* Controles de tabla */
+
+.tabla-controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-a.tarjeta-link:hover {
-  border-color: var(--muted);
+.buscador {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 9px 12px;
+  width: 240px;
+  outline: none;
 }
+
+.buscador::placeholder {
+  color: var(--muted-2);
+}
+
+.buscador:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.tabla-contador {
+  color: var(--muted-2);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Tabla densa */
+
+.tabla-envoltorio {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+th,
+td {
+  text-align: right;
+  padding: 8px 12px; /* [SITIO] body td{padding:8px} */
+  white-space: nowrap;
+}
+
+th:first-child,
+td:first-child {
+  text-align: left;
+}
+
+th {
+  background: var(--surface-2);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* [DASH] 1px y no 2px: con muchas columnas 2px no entra */
+  color: var(--muted);
+  border-bottom: 1px solid var(--border-strong);
+  user-select: none;
+}
+
+td {
+  color: var(--text);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+td:first-child {
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+th.ordenable {
+  cursor: pointer;
+}
+
+th.ordenable:hover {
+  color: var(--text-strong);
+}
+
+tbody tr:hover {
+  background: var(--accent-025); /* tinte sacado del logo */
+}
+
+.pct-pos {
+  color: var(--good);
+  font-variant-numeric: tabular-nums;
+}
+
+.pct-neg {
+  color: var(--bad);
+  font-variant-numeric: tabular-nums;
+}
+
+.celda-barra {
+  position: relative;
+  min-width: 150px;
+}
+
+.barra-fondo {
+  position: absolute;
+  inset: 6px 4px;
+  right: auto;
+  background: var(--accent-150);
+  border-radius: 3px;
+  z-index: 0;
+}
+
+.barra-texto {
+  position: relative;
+  z-index: 1;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+/* Fallback JSON */
 
 .resto {
   margin-top: 24px;
@@ -188,8 +448,143 @@ a.tarjeta-link:hover {
 .resto pre {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: 16px;
   overflow-x: auto;
   color: var(--text);
+}
+
+/* Login */
+
+.login-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+  max-width: none;
+}
+
+.login-caja {
+  width: 100%;
+  max-width: 360px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 32px;
+}
+
+.login-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 6px;
+}
+
+.login-encabezado h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.login-sub {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 24px;
+}
+
+.login-campo {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.login-campo span {
+  display: block;
+  font-size: var(--fs-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+
+.login-campo input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.login-campo input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.login-error {
+  color: var(--bad);
+  background: var(--bad-bg);
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  padding: 8px 12px;
+  margin: 0 0 16px;
+}
+
+.login-boton {
+  width: 100%;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--invert);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 13px;
+  margin-top: 6px;
+  box-shadow: var(--shadow-inset), 0 2px 6px var(--accent-glow);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-boton:hover {
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-inset), 0 8px 18px rgba(236, 120, 3, 0.32);
+}
+
+.login-boton:disabled {
+  opacity: 0.55;
+  cursor: default;
+  box-shadow: var(--shadow-inset);
+}
+
+@media (max-width: 1300px) {
+  :root {
+    --fs-metric: 32px; /* [SITIO] mismo breakpoint que usa el sitio */
+  }
+}
+
+@media (max-width: 999px) {
+  :root {
+    --pad-x: 20px;
+  }
+}
+
+@media (max-width: 690px) {
+  :root {
+    --pad-x: 16px;
+    --fs-metric: 28px;
+  }
+
+  .tabla-controles {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buscador {
+    width: 100%;
+  }
 }

@@ -38,9 +38,22 @@ configurada, la API rechaza todo (fail closed) en vez de quedar abierta por
 un olvido.
 
 Ver la página del dashboard en el navegador es otro mecanismo, separado del
-API key: `middleware.ts` pide Basic Auth (usuario/contraseña) contra
-`VIEWER_USER` / `VIEWER_PASSWORD`, y no toca `/api/*` (esas rutas siguen
-usando `INGEST_API_KEY`, no tiene sentido pedirles Basic Auth a un script).
+API key: `middleware.ts` exige una cookie de sesión válida y si no la hay
+redirige a `/login`, una pantalla propia con el estilo del dashboard. Se
+empezó con Basic Auth (el cartel nativo del navegador) y se cambió porque es
+feo y no se puede personalizar.
+
+La sesión no necesita base de datos ni store: la cookie guarda
+`sha256(VIEWER_USER:VIEWER_PASSWORD:erick-session)` (ver `lib/session.ts`),
+así el middleware recalcula el mismo valor desde las variables de entorno y
+compara. Consecuencia a tener en cuenta: cambiar `VIEWER_PASSWORD` invalida
+todas las sesiones abiertas, que es justo lo que uno quiere. Se usa Web
+Crypto (`crypto.subtle`) y no `crypto`/`Buffer` de Node porque el middleware
+corre en el runtime Edge, donde esos no existen.
+
+`/api/*` queda afuera de esta puerta: esas rutas usan `INGEST_API_KEY`, no
+tiene sentido mandar a un script a una pantalla de login.
+
 Es intencionalmente un solo usuario compartido, no un sistema de cuentas —
 si más adelante hace falta más de un viewer con permisos distintos, ahí
 conviene pasar a algo real (NextAuth, Clerk, etc.), no antes.

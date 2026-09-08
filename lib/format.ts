@@ -14,9 +14,13 @@ export function formatearValor(valor: unknown, formato: Formato): string {
   if (formato === "money_cents" && typeof valor === "number") {
     return formatoMoneda.format(valor / 100);
   }
-  if (formato === "percent" && typeof valor === "number") {
+  // Una variación lleva signo ("+5,1% vs. ayer"); una tasa no ("3,1% sin cobrar").
+  if (formato === "variation" && typeof valor === "number") {
     const signo = valor > 0 ? "+" : "";
     return `${signo}${valor.toFixed(1)}%`;
+  }
+  if (formato === "percent" && typeof valor === "number") {
+    return `${valor.toFixed(2)}%`;
   }
   if (formato === "count" && typeof valor === "number") {
     return formatoNumero.format(valor);
