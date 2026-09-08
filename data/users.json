@@ -28,7 +28,7 @@
       "username": "lsosa@openpass.com.ar",
       "password_hash": "28b640afd93706cb794a71aa89da9cc9accd5cadf60d157ed63e3ebf75962ec7",
       "allowed": [
-        "opentransit"
+        "opentransit/*"
       ],
       "admin": false
     }
