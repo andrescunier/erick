@@ -3,6 +3,8 @@ import type { Formato } from "./dashboard-shape";
 export type Metric = { key: string; label: string; format: Formato; denominator?: string; scale?: number };
 export type Dataset = {
   id: string; title: string; description: string; source: string; updatedAt: string;
+  mode?: "history" | "snapshot" | "events";
+  cadenceMinutes?: number;
   columns: string[]; dimensions: string[]; metrics: Metric[];
   rows: (string | number | null)[][];
 };
@@ -23,6 +25,8 @@ export function isAnalytics(value: unknown): value is Analytics {
     Array.isArray(a.warnings) && a.warnings.every(w => typeof w === "string") &&
     Array.isArray(a.datasets) && a.datasets.every(d => d &&
       [d.id, d.title, d.description, d.source, d.updatedAt].every(v => typeof v === "string") &&
+      (d.mode === undefined || ["history", "snapshot", "events"].includes(d.mode)) &&
+      (d.cadenceMinutes === undefined || (Number.isFinite(d.cadenceMinutes) && d.cadenceMinutes > 0)) &&
       Array.isArray(d.columns) && d.columns.includes("fecha") && d.columns.every(c => typeof c === "string") &&
       Array.isArray(d.dimensions) && d.dimensions.every(c => d.columns.includes(c)) &&
       Array.isArray(d.metrics) && d.metrics.length > 0 && d.metrics.every(m => m &&

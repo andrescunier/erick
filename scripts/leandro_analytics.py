@@ -185,6 +185,7 @@ def build_emision(root: Path, resolve, days=30, now=None):
     updated = max(observed_dates).isoformat() if observed_dates else now.isoformat()
     def add(id, title, description, records, dimensions, values, metrics):
         datasets.append({"id": id, "title": title, "description": description, "source": source,
+                         "mode": "events" if id == "actividad" else "snapshot", "cadenceMinutes": 5,
                          "updatedAt": updated, "columns": ["fecha", *dimensions, *values],
                          "dimensions": dimensions, "metrics": metrics,
                          "rows": aggregate(records, dimensions, values)})

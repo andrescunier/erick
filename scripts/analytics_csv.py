@@ -97,7 +97,7 @@ def read_bi(root, spec, cutoff):
                       *[number(row[k], v.endswith("_cents")) for k, v in fields.items()]]
             entries[tuple(row[d] for d in dimensions)] = values
             groups[key] = (run, entries)
-    return {"id": name, "title": title, "description": description, "source": str(path),
+    return {"id": name, "title": title, "description": description, "source": str(path), "mode": "history", "cadenceMinutes": 1440,
             "updatedAt": datetime.fromtimestamp(path.stat().st_mtime).astimezone().isoformat(),
             "columns": ["fecha", "tenant", *dimensions, *fields.values()],
             "dimensions": ["tenant", *dimensions], "metrics": metrics,
@@ -119,7 +119,7 @@ def read_alarm(root, buses):
         for row in reader:
             hour = datetime.fromisoformat(row["hora"]).isoformat(timespec="seconds")
             rows.append([hour, row["Base"] if buses else "EMOVA", row["ativo"], number(row["cantidad"])])
-    return {"id": query, "title": "Operación buses" if buses else "Pendientes EMOVA",
+    return {"id": query, "title": "Operación buses" if buses else "Pendientes EMOVA", "mode": "snapshot", "cadenceMinutes": 30 if buses else 60,
             "description": ("Última foto disponible, por hora de sam_dt (zona horaria de la base, sin conversión). "
                 "Ativo 0 → 1 es el ciclo habitual; otros estados requieren revisión. No se asignan severidades automáticamente. "
                 + ("Buses: cuenta registros de mtt_log; no prueba deuda monetaria ni transacciones únicas. " if buses else

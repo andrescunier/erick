@@ -232,6 +232,11 @@ def _publicar(resumen: dict[str, Any], usuario: str | None = None, proyecto: str
     if not api_url or not api_key:
         raise SystemExit("Faltan ERICK_API_URL y/o ERICK_API_KEY en el entorno.")
 
+    resumen["_sync"] = {
+        "checked_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "cadence_seconds": int(os.environ.get("ERICK_SYNC_SECONDS", "0")),
+    }
+
     usuario = usuario or os.environ.get("ERICK_USER", "opentransit")
     proyecto = proyecto or os.environ.get("ERICK_PROJECT", "resumen")
 

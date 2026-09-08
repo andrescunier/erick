@@ -37,6 +37,7 @@ export default async function Pagina() {
   return (
     <main>
       <h1>Dashboards</h1>
+      <Link href="/control" className="control-entry"><span>Centro de control</span><strong>Compará proyectos, revisá tendencias y verificá la actualización de tus fuentes →</strong></Link>
       <p className="generado">
         {visibles.length === 0
           ? "No tenés permiso para ver ningún dashboard."

@@ -6,6 +6,7 @@ import { headers } from "next/headers";
 import { COOKIE_SESION } from "@/lib/session";
 import { LogoutButton } from "@/components/LogoutButton";
 import "./globals.css";
+import "./control.css";
 
 const openSans = Open_Sans({
   subsets: ["latin", "latin-ext"],
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               />
             </Link>
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <Link href="/control" className="salir">Centro de control</Link>
               {isAdmin && (
                 <Link href="/admin" className="salir" style={{ textDecoration: "none" }}>
                   Usuarios

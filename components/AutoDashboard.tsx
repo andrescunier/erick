@@ -6,7 +6,7 @@ import { isAnalytics } from "@/lib/analytics";
 
 export function AutoDashboard({ data }: { data: Record<string, unknown> }) {
   const analytics = isAnalytics(data._analytics) ? data._analytics : null;
-  const summary = analytics ? Object.fromEntries(Object.entries(data).filter(([k]) => k !== "_analytics")) : data;
+  const summary = Object.fromEntries(Object.entries(data).filter(([k]) => k !== "_sync" && (!analytics || k !== "_analytics")));
   const forma = detectarForma(summary);
   const sinNada =
     forma.meta.length === 0 &&
