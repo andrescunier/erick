@@ -1,12 +1,12 @@
 {
-  "generado_en": "2026-09-08T17:37:47.627199",
+  "generado_en": "2026-09-08T18:25:23.773535",
   "_procedencia": {
     "sistema": "opentransit — pipeline de archivos (no tiene base de datos ni API HTTP propia)",
     "informe": "business_summary.json (14 de sus 26 campos) + 4 indicadores derivados (no cobrado, validadores sin taps hoy, viajes por tarjeta)",
     "ruta": "C:\\andybot\\opentransit\\emova\\tenants\\artifacts\\<tenant>\\<fecha>\\<run_id>\\structured",
     "insumos_del_informe": "BACKFILE, STPOP, DAILYTAPS, VQR, RECOVERY, STPOP de ayer y JT_EMOVA (CSV diarios de 2 servidores SFTP)",
     "sincronizado_por": "scripts/sincronizar_resumen.py",
-    "sincronizado_en": "2026-09-08T17:37:47",
+    "sincronizado_en": "2026-09-08T18:25:23",
     "tenants_publicados": 32,
     "tenants_declarados_en_config": 25,
     "tenants_sin_declarar": "scabral, tagostosa, tcolegiales, tldevega, triachuelo, tsantafe, tsesentayocho",
@@ -1413,6 +1413,8 @@
         "title": "Recaudación y viajes",
         "description": "Histórico diario del proceso. Monto procesado no equivale a dinero efectivamente cobrado. Ticket = monto / taps del período filtrado.",
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\resumen_diario.csv",
+        "mode": "history",
+        "cadenceMinutes": 1440,
         "updatedAt": "2026-09-08T09:12:14.732940-03:00",
         "columns": [
           "fecha",
@@ -5662,6 +5664,8 @@
         "title": "Estados · PRESENTACION",
         "description": "PRESENTACION y TAP describen los mismos viajes desde perspectivas distintas. Elegí un tipo para evitar contarlos dos veces. UNPAID identifica presentación sin cobrar.",
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_estados.csv",
+        "mode": "history",
+        "cadenceMinutes": 1440,
         "updatedAt": "2026-09-08T09:12:17.556688-03:00",
         "columns": [
           "fecha",
@@ -16500,6 +16504,8 @@
         "title": "Estados · TAP",
         "description": "PRESENTACION y TAP describen los mismos viajes desde perspectivas distintas. Elegí un tipo para evitar contarlos dos veces. UNPAID identifica presentación sin cobrar.",
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_estados.csv",
+        "mode": "history",
+        "cadenceMinutes": 1440,
         "updatedAt": "2026-09-08T09:12:17.556688-03:00",
         "columns": [
           "fecha",
@@ -22902,6 +22908,8 @@
         "title": "Marcas de tarjeta",
         "description": "Distribución por marca de los registros procesados; no contiene identificadores de tarjetas.",
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_marcas.csv",
+        "mode": "history",
+        "cadenceMinutes": 1440,
         "updatedAt": "2026-09-08T09:12:17.471061-03:00",
         "columns": [
           "fecha",
@@ -39391,6 +39399,8 @@
         "title": "Medios de pago",
         "description": "Distribución de los registros procesados por medio de pago.",
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_medios_pago.csv",
+        "mode": "history",
+        "cadenceMinutes": 1440,
         "updatedAt": "2026-09-08T09:12:17.351894-03:00",
         "columns": [
           "fecha",
@@ -47676,6 +47686,8 @@
         "title": "Recuperos",
         "description": "Importes del archivo RECOVERY. No se suman a recaudación ni se asumen liquidación bancaria; son una fuente separada.",
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_recovery.csv",
+        "mode": "history",
+        "cadenceMinutes": 1440,
         "updatedAt": "2026-09-08T09:12:17.663982-03:00",
         "columns": [
           "fecha",
@@ -51558,6 +51570,8 @@
         "title": "VQR y descuentos",
         "description": "Montos bruto y neto informados por VQR. Neto cero no significa por sí solo un subsidio incorrecto.",
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_vqr.csv",
+        "mode": "history",
+        "cadenceMinutes": 1440,
         "updatedAt": "2026-09-08T09:12:17.613894-03:00",
         "columns": [
           "fecha",
@@ -51960,9 +51974,11 @@
       {
         "id": "control_ativo_48hs_buses",
         "title": "Operación buses",
+        "mode": "snapshot",
+        "cadenceMinutes": 30,
         "description": "Última foto disponible, por hora de sam_dt (zona horaria de la base, sin conversión). Ativo 0 → 1 es el ciclo habitual; otros estados requieren revisión. No se asignan severidades automáticamente. Buses: cuenta registros de mtt_log; no prueba deuda monetaria ni transacciones únicas. Las exportaciones pueden usar parámetros de fecha: el CSV no registra la ventana solicitada; se muestra el rango observado.",
-        "source": "C:\\andybot\\alarmbot\\output\\20260908_173100_buses_main_control_ativo_48hs_buses.csv",
-        "updatedAt": "2026-09-08T17:31:00",
+        "source": "C:\\andybot\\alarmbot\\output\\20260908_180101_buses_main_control_ativo_48hs_buses.csv",
+        "updatedAt": "2026-09-08T18:01:01",
         "columns": [
           "fecha",
           "base",
@@ -51985,7 +52001,7 @@
             "2026-09-08T22:00:00",
             "pms-rsuratlantico-hml",
             "1",
-            5
+            11
           ],
           [
             "2026-09-08T21:00:00",
@@ -52007,333 +52023,393 @@
           ],
           [
             "2026-09-08T18:00:00",
-            "pms-rsuratlantico-hml",
-            "1",
-            7
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-atlantida-hml",
-            "0",
-            74
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-atlantida-hml",
-            "1",
-            36
-          ],
-          [
-            "2026-09-08T17:00:00",
             "pms-atlantida-hml",
             "2",
             4
           ],
           [
-            "2026-09-08T17:00:00",
+            "2026-09-08T18:00:00",
             "pms-aumer-hml",
+            "1",
+            2
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-ausol-hml",
+            "1",
+            2
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-cunidos-hml",
+            "2",
+            3
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-dotasa-hml",
+            "2",
+            1
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-gco-hml",
+            "1",
+            3
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-metropolitana-hml",
+            "1",
+            3
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-metropolitana-hml",
+            "2",
+            19
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-nudosa-hml",
+            "2",
+            2
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-rsuratlantico-hml",
+            "1",
+            10
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-tagostosa-hml",
+            "2",
+            1
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-tcolegiales-hml",
+            "2",
+            1
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-tldevega-hml",
+            "2",
+            1
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-triachuelo-hml",
+            "2",
+            1
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-vderocha-hml",
+            "2",
+            1
+          ],
+          [
+            "2026-09-08T18:00:00",
+            "pms-vlopez-hml",
+            "2",
+            1
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-atlantida-hml",
+            "0",
+            104
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-atlantida-hml",
             "1",
             57
           ],
           [
             "2026-09-08T17:00:00",
+            "pms-aumer-hml",
+            "1",
+            119
+          ],
+          [
+            "2026-09-08T17:00:00",
             "pms-ausol-hml",
             "1",
-            104
+            192
           ],
           [
             "2026-09-08T17:00:00",
             "pms-bbelgrano-hml",
             "0",
-            29
+            49
           ],
           [
             "2026-09-08T17:00:00",
             "pms-bbelgrano-hml",
             "1",
-            10
+            25
           ],
           [
             "2026-09-08T17:00:00",
             "pms-bbelgrano-hml",
             "2",
-            3
+            1
           ],
           [
             "2026-09-08T17:00:00",
             "pms-cadsa-hml",
             "1",
+            24
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-cunidos-hml",
+            "0",
+            94
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-cunidos-hml",
+            "1",
+            64
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-dotasa-hml",
+            "0",
+            25
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-dotasa-hml",
+            "1",
             8
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-cunidos-hml",
-            "0",
-            34
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-cunidos-hml",
-            "1",
-            38
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-cunidos-hml",
-            "2",
-            2
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-dotasa-hml",
-            "0",
-            10
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-dotasa-hml",
-            "1",
-            7
           ],
           [
             "2026-09-08T17:00:00",
             "pms-gco-hml",
             "1",
-            86
+            161
           ],
           [
             "2026-09-08T17:00:00",
             "pms-gralroca-hml",
             "0",
+            18
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-gralroca-hml",
+            "1",
             13
           ],
           [
             "2026-09-08T17:00:00",
             "pms-gralroca-hml",
-            "1",
-            7
+            "2",
+            1
           ],
           [
             "2026-09-08T17:00:00",
             "pms-juanbjusto-hml",
             "0",
-            28
+            41
           ],
           [
             "2026-09-08T17:00:00",
             "pms-juanbjusto-hml",
             "1",
-            16
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-lnmetropol-hml",
-            "0",
             23
           ],
           [
             "2026-09-08T17:00:00",
             "pms-lnmetropol-hml",
+            "0",
+            37
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-lnmetropol-hml",
             "1",
-            11
+            18
           ],
           [
             "2026-09-08T17:00:00",
             "pms-metropolitana-hml",
             "0",
+            832
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-metropolitana-hml",
+            "1",
             455
           ],
           [
             "2026-09-08T17:00:00",
             "pms-metropolitana-hml",
-            "1",
-            249
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-metropolitana-hml",
             "2",
-            15
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-microomnibus-hml",
-            "0",
-            7
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-microomnibus-hml",
-            "1",
-            1
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-nrumbos-hml",
-            "0",
-            14
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-nrumbos-hml",
-            "1",
-            8
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-nudosa-hml",
-            "0",
-            24
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-nudosa-hml",
-            "1",
-            15
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-nudosa-hml",
-            "2",
-            1
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-rsuratlantico-hml",
-            "1",
-            94
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-scabral-hml",
-            "0",
             4
           ],
           [
             "2026-09-08T17:00:00",
-            "pms-scabral-hml",
-            "1",
-            5
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-scabral-hml",
-            "2",
-            1
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-tagostosa-hml",
-            "0",
-            21
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-tagostosa-hml",
-            "1",
-            10
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-tagostosa-hml",
-            "2",
-            1
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-tcolegiales-hml",
-            "0",
-            1
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-tcolegiales-hml",
-            "1",
-            6
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-tldevega-hml",
-            "0",
-            8
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-tldevega-hml",
-            "1",
-            4
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-tldevega-hml",
-            "2",
-            2
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-tndejulio-hml",
+            "pms-microomnibus-hml",
             "0",
             12
           ],
           [
             "2026-09-08T17:00:00",
-            "pms-tndejulio-hml",
+            "pms-microomnibus-hml",
             "1",
             5
           ],
           [
             "2026-09-08T17:00:00",
-            "pms-triachuelo-hml",
+            "pms-nrumbos-hml",
             "0",
-            20
+            51
           ],
           [
             "2026-09-08T17:00:00",
-            "pms-triachuelo-hml",
+            "pms-nrumbos-hml",
+            "1",
+            24
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-nudosa-hml",
+            "0",
+            46
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-nudosa-hml",
+            "1",
+            22
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-rsuratlantico-hml",
+            "1",
+            170
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-scabral-hml",
+            "0",
+            5
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-scabral-hml",
+            "1",
+            5
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-tagostosa-hml",
+            "0",
+            36
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-tagostosa-hml",
+            "1",
+            24
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-tcolegiales-hml",
+            "0",
+            4
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-tcolegiales-hml",
+            "1",
+            7
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-tldevega-hml",
+            "0",
+            16
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-tldevega-hml",
+            "1",
+            9
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-tndejulio-hml",
+            "0",
+            18
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-tndejulio-hml",
             "1",
             13
           ],
           [
             "2026-09-08T17:00:00",
             "pms-triachuelo-hml",
-            "2",
-            1
+            "0",
+            39
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-triachuelo-hml",
+            "1",
+            26
           ],
           [
             "2026-09-08T17:00:00",
             "pms-tsantafe-hml",
             "0",
+            4
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-tsantafe-hml",
+            "1",
+            1
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "pms-tsesentayocho-hml",
+            "1",
             1
           ],
           [
             "2026-09-08T17:00:00",
             "pms-vderocha-hml",
             "0",
-            62
+            100
           ],
           [
             "2026-09-08T17:00:00",
             "pms-vderocha-hml",
             "1",
-            29
-          ],
-          [
-            "2026-09-08T17:00:00",
-            "pms-vderocha-hml",
-            "2",
-            5
+            46
           ],
           [
             "2026-09-08T17:00:00",
             "pms-vlopez-hml",
             "0",
-            24
+            32
           ],
           [
             "2026-09-08T17:00:00",
             "pms-vlopez-hml",
             "1",
-            8
+            10
           ],
           [
             "2026-09-08T16:00:00",
@@ -60637,7 +60713,7 @@
             "2026-09-06T18:00:00",
             "gcba-reports",
             "1",
-            454
+            448
           ],
           [
             "2026-09-06T18:00:00",
@@ -60655,25 +60731,25 @@
             "2026-09-06T18:00:00",
             "pms-aumer-hml",
             "1",
-            229
+            228
           ],
           [
             "2026-09-06T18:00:00",
             "pms-ausol-hml",
             "1",
-            182
+            178
           ],
           [
             "2026-09-06T18:00:00",
             "pms-bbelgrano-hml",
             "1",
-            36
+            35
           ],
           [
             "2026-09-06T18:00:00",
             "pms-cadsa-hml",
             "1",
-            84
+            82
           ],
           [
             "2026-09-06T18:00:00",
@@ -60691,7 +60767,7 @@
             "2026-09-06T18:00:00",
             "pms-gco-hml",
             "1",
-            221
+            215
           ],
           [
             "2026-09-06T18:00:00",
@@ -60721,7 +60797,7 @@
             "2026-09-06T18:00:00",
             "pms-metropolitana-hml",
             "1",
-            284
+            280
           ],
           [
             "2026-09-06T18:00:00",
@@ -60739,13 +60815,13 @@
             "2026-09-06T18:00:00",
             "pms-nudosa-hml",
             "1",
-            24
+            23
           ],
           [
             "2026-09-06T18:00:00",
             "pms-rsuratlantico-hml",
             "1",
-            148
+            142
           ],
           [
             "2026-09-06T18:00:00",
@@ -60775,7 +60851,7 @@
             "2026-09-06T18:00:00",
             "pms-tndejulio-hml",
             "1",
-            13
+            12
           ],
           [
             "2026-09-06T18:00:00",
@@ -60799,184 +60875,24 @@
             "2026-09-06T18:00:00",
             "pms-vderocha-hml",
             "1",
-            91
+            88
           ],
           [
             "2026-09-06T18:00:00",
             "pms-vlopez-hml",
             "1",
             2
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "gcba-reports",
-            "1",
-            230
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "gcba-reports",
-            "6",
-            3
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-atlantida-hml",
-            "1",
-            18
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-aumer-hml",
-            "1",
-            108
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-ausol-hml",
-            "1",
-            77
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-bbelgrano-hml",
-            "1",
-            22
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-cadsa-hml",
-            "1",
-            28
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-cunidos-hml",
-            "1",
-            29
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-dotasa-hml",
-            "1",
-            5
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-gco-hml",
-            "1",
-            93
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-gralroca-hml",
-            "1",
-            11
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-juanbjusto-hml",
-            "1",
-            10
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-lnmetropol-hml",
-            "1",
-            4
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-lnmetropol-hml",
-            "6",
-            3
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-metropolitana-hml",
-            "1",
-            121
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-microomnibus-hml",
-            "1",
-            2
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-nrumbos-hml",
-            "1",
-            18
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-nudosa-hml",
-            "1",
-            15
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-rsuratlantico-hml",
-            "1",
-            84
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-scabral-hml",
-            "1",
-            5
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-tagostosa-hml",
-            "1",
-            11
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-tcolegiales-hml",
-            "1",
-            5
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-tldevega-hml",
-            "1",
-            9
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-tndejulio-hml",
-            "1",
-            11
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-triachuelo-hml",
-            "1",
-            8
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-tsantafe-hml",
-            "1",
-            1
-          ],
-          [
-            "2026-09-06T17:00:00",
-            "pms-vderocha-hml",
-            "1",
-            46
           ]
         ]
       },
       {
         "id": "control_ativo_48hs_emova",
         "title": "Pendientes EMOVA",
+        "mode": "snapshot",
+        "cadenceMinutes": 60,
         "description": "Última foto disponible, por hora de sam_dt (zona horaria de la base, sin conversión). Ativo 0 → 1 es el ciclo habitual; otros estados requieren revisión. No se asignan severidades automáticamente. EMOVA: sólo filas vinculadas a confirmation_pend, con estado 0/255; no representa el total de taps. Las exportaciones pueden usar parámetros de fecha: el CSV no registra la ventana solicitada; se muestra el rango observado.",
-        "source": "C:\\andybot\\alarmbot\\output\\20260908_171102_subte_main_control_ativo_48hs_emova.csv",
-        "updatedAt": "2026-09-08T17:11:02",
+        "source": "C:\\andybot\\alarmbot\\output\\20260908_181104_subte_main_control_ativo_48hs_emova.csv",
+        "updatedAt": "2026-09-08T18:11:04",
         "columns": [
           "fecha",
           "base",
@@ -60996,16 +60912,28 @@
         ],
         "rows": [
           [
+            "2026-09-08T17:00:00",
+            "EMOVA",
+            "0",
+            2576
+          ],
+          [
+            "2026-09-08T17:00:00",
+            "EMOVA",
+            "1",
+            1037
+          ],
+          [
             "2026-09-08T16:00:00",
             "EMOVA",
             "0",
-            1583
+            9765
           ],
           [
             "2026-09-08T16:00:00",
             "EMOVA",
             "1",
-            721
+            4073
           ],
           [
             "2026-09-08T15:00:00",
@@ -61281,5 +61209,9 @@
       }
     ],
     "warnings": []
+  },
+  "_sync": {
+    "checked_at": "2026-09-08T18:25:24-03:00",
+    "cadence_seconds": 0
   }
 }
