@@ -1,20 +1,20 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-08T22:02:30.082820-03:00",
+  "generado_en": "2026-09-08T22:07:27.620446-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-10",
-    "ultima_recepcion": "2026-09-08T22:01:47.192269-03:00",
+    "ultima_recepcion": "2026-09-08T22:07:24.847414-03:00",
     "dias_con_datos": 1,
-    "archivos_leidos": 875,
+    "archivos_leidos": 887,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 873,
+    "sin_tenant": 885,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 873,
-    "entidades_observadas": 863,
+    "eventos_unicos": 885,
+    "entidades_observadas": 875,
     "entidades_con_seguimiento": 8,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-08T22:01:47.192269-03:00",
+        "updatedAt": "2026-09-08T22:07:24.847414-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -1387,6 +1387,51 @@
             "2026-09-08T22:00:00",
             "sin_tenant",
             "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            2,
+            2,
+            0,
+            2,
+            0,
+            20900000,
+            0
+          ],
+          [
+            "2026-09-08T22:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            5,
+            5,
+            0,
+            5,
+            0,
+            4525139,
+            0
+          ],
+          [
+            "2026-09-08T22:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "Debit",
+            4,
+            0,
+            4,
+            4,
+            0,
+            0,
+            2000000
+          ],
+          [
+            "2026-09-08T22:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
@@ -1395,7 +1440,7 @@
             0,
             1,
             0,
-            500000,
+            1000000,
             0
           ]
         ]
@@ -1407,7 +1452,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-08T22:01:47.192269-03:00",
+        "updatedAt": "2026-09-08T22:07:24.847414-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -1633,6 +1678,16 @@
             "Local",
             "ARS",
             1
+          ],
+          [
+            "2026-09-08T22:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Rejected",
+            "308",
+            "Local",
+            "ARS",
+            4
           ]
         ]
       },
@@ -1643,7 +1698,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-08T22:01:47.192269-03:00",
+        "updatedAt": "2026-09-08T22:07:24.847414-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -1872,7 +1927,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-08T22:01:47.192269-03:00",
+        "updatedAt": "2026-09-08T22:07:24.847414-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -1992,7 +2047,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-08T22:01:47.192269-03:00",
+        "updatedAt": "2026-09-08T22:07:24.847414-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -2079,6 +2134,13 @@
             "Open",
             11,
             11
+          ],
+          [
+            "2026-09-08T22:00:00",
+            "sin_tenant",
+            "Open",
+            1,
+            1
           ]
         ]
       },
@@ -2089,7 +2151,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-08T22:01:47.192269-03:00",
+        "updatedAt": "2026-09-08T22:07:24.847414-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -2231,7 +2293,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-08T22:01:47.192269-03:00",
+        "updatedAt": "2026-09-08T22:07:24.847414-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -3403,9 +3465,36 @@
             "2026-09-08T22:00:00",
             "sin_tenant",
             "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            2
+          ],
+          [
+            "2026-09-08T22:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
+            5
+          ],
+          [
+            "2026-09-08T22:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "transferencia",
+            4
+          ],
+          [
+            "2026-09-08T22:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "account.Account.Created",
+            "Open",
+            "cuenta",
             1
           ],
           [
@@ -3416,17 +3505,26 @@
             "Aprobada",
             "tarjeta",
             3
+          ],
+          [
+            "2026-09-08T22:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
           ]
         ]
       }
     ],
     "warnings": [
-      "873 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "885 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-08T22:02:30-03:00",
+    "checked_at": "2026-09-08T22:07:27-03:00",
     "cadence_seconds": 300
   }
 }
