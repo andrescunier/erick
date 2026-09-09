@@ -1,5 +1,10 @@
 const { execFileSync } = require("node:child_process");
 try {
+  const subject = execFileSync("git", ["log", "-1", "--format=%s"], { encoding: "utf8" }).trim();
+  if (subject.startsWith("deploy:")) {
+    console.log("Despliegue solicitado explícitamente: construir.");
+    process.exit(1);
+  }
   const previous = /^[a-f0-9]{40}$/i.test(process.env.VERCEL_GIT_PREVIOUS_SHA ?? "") ? process.env.VERCEL_GIT_PREVIOUS_SHA : "HEAD^";
   const changed = execFileSync("git", ["diff", "--name-only", previous, "HEAD", "--"], { encoding: "utf8" }).trim().split(/\r?\n/).filter(Boolean);
   const dataOnly = changed.length > 0 && changed.every(p => /^data\/(dashboards\/[^/]+\/[^/]+\.json|users\.json)$/.test(p));
