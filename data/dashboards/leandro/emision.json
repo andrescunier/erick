@@ -1,21 +1,21 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-09T10:52:44.673310-03:00",
+  "generado_en": "2026-09-09T10:57:45.552420-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-11",
-    "ultima_recepcion": "2026-09-09T10:52:19.974763-03:00",
+    "ultima_recepcion": "2026-09-09T10:57:35.260163-03:00",
     "dias_con_datos": 2,
-    "archivos_leidos": 1652,
+    "archivos_leidos": 1659,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 1650,
+    "sin_tenant": 1657,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 1650,
-    "entidades_observadas": 1626,
-    "entidades_con_seguimiento": 19,
+    "eventos_unicos": 1657,
+    "entidades_observadas": 1632,
+    "entidades_con_seguimiento": 20,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
   "_analytics": {
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-09T10:52:19.974763-03:00",
+        "updatedAt": "2026-09-09T10:57:35.260163-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -2695,12 +2695,12 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
-            17,
-            17,
+            20,
+            20,
             0,
-            17,
+            20,
             0,
-            28600800,
+            54600800,
             0
           ],
           [
@@ -2785,12 +2785,12 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
-            7,
-            7,
+            9,
+            9,
             0,
-            7,
+            9,
             0,
-            95876300,
+            118876300,
             0
           ],
           [
@@ -2847,7 +2847,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-09T10:52:19.974763-03:00",
+        "updatedAt": "2026-09-09T10:57:35.260163-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -3333,7 +3333,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-09T10:52:19.974763-03:00",
+        "updatedAt": "2026-09-09T10:57:35.260163-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -3692,7 +3692,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-09T10:52:19.974763-03:00",
+        "updatedAt": "2026-09-09T10:57:35.260163-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -3870,10 +3870,18 @@
           [
             "2026-09-09T10:00:00",
             "sin_tenant",
+            "Delivered",
+            "Physical",
+            "No",
+            1
+          ],
+          [
+            "2026-09-09T10:00:00",
+            "sin_tenant",
             "InTransit",
             "Physical",
             "No",
-            3
+            2
           ],
           [
             "2026-09-09T10:00:00",
@@ -3900,7 +3908,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-09T10:52:19.974763-03:00",
+        "updatedAt": "2026-09-09T10:57:35.260163-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -4041,8 +4049,8 @@
             "2026-09-09T10:00:00",
             "sin_tenant",
             "Open",
-            11,
-            10
+            12,
+            11
           ]
         ]
       },
@@ -4053,7 +4061,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-09T10:52:19.974763-03:00",
+        "updatedAt": "2026-09-09T10:57:35.260163-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -4279,7 +4287,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-09T10:52:19.974763-03:00",
+        "updatedAt": "2026-09-09T10:57:35.260163-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -6552,7 +6560,7 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            17
+            20
           ],
           [
             "2026-09-09T10:00:00",
@@ -6606,7 +6614,16 @@
             "account.Account.Created",
             "Open",
             "cuenta",
-            10
+            11
+          ],
+          [
+            "2026-09-09T10:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.Card.Change-State",
+            "Delivered",
+            "tarjeta",
+            1
           ],
           [
             "2026-09-09T10:00:00",
@@ -6669,7 +6686,7 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            7
+            9
           ],
           [
             "2026-09-09T10:00:00",
@@ -6702,12 +6719,12 @@
       }
     ],
     "warnings": [
-      "1650 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "1657 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-09T10:52:45-03:00",
+    "checked_at": "2026-09-09T10:57:46-03:00",
     "cadence_seconds": 300
   }
 }
