@@ -281,6 +281,10 @@ def main() -> None:
     if live["rows"]:
         resumen["_analytics"]["datasets"].append(build_collection_history(live))
     resumen["_analytics"]["warnings"].extend(live_warnings)
+    from trip_baseline import build_baseline
+    baseline, baseline_warnings = build_baseline(max_queries=0 if live_warnings else 2)
+    resumen["_analytics"]["datasets"].append(baseline)
+    resumen["_analytics"]["warnings"].extend(baseline_warnings)
     resumen["title"] = "Transporte · Opentransit y Alarmbot"
     datasets = resumen["_analytics"]["datasets"]
     print(f"Analítica: {len(datasets)} fuentes, {sum(len(d['rows']) for d in datasets)} filas.")

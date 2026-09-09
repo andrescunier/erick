@@ -1,4 +1,5 @@
 .business-board { color:#20312f; }
+.trip-reference-label{font-size:12px;color:#60786c;margin-left:auto}.trip-current-hour{display:flex;gap:20px;align-items:center;background:#edf1e9;border-radius:8px;padding:17px 20px;margin-top:18px;font-size:13px;color:#58735b}.trips-board .business-deltas{display:flex;flex-direction:column;gap:7px}.trips-board .business-deltas small{font-size:11px;color:#7a8a80}.trips-board .business-card>strong{white-space:normal}.trips-board .business-card{min-height:170px}@media(max-width:650px){.trip-current-hour{align-items:flex-start;flex-direction:column;gap:8px}.trip-reference-label{margin:0}.trips-board .business-card>strong{font-size:21px}}
 .business-title {display:flex;justify-content:space-between;align-items:center;margin:30px 0 28px;gap:20px}
 .business-kicker{font-size:11px;letter-spacing:2px;color:#60827a;font-weight:700}
 .business-title h1{font-size:clamp(28px,3vw,42px);line-height:1.15;letter-spacing:-1.5px;margin:12px 0 0;font-weight:600;color:#1c302d}

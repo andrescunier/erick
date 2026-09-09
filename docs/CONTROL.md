@@ -1,5 +1,30 @@
 # Centro de control
 
+## Referencia de viajes (portada)
+
+“Tránsito de hoy” compara cantidades, no cobros. `trip_baseline.py` recupera por
+Alarmbot ocho días de la misma semana (7, 14, …, 56 días atrás), con ventanas
+completas [00:00, 00:00 siguiente). Guarda cada fecha/tenant en
+`.sync/baseline-viajes`, evitando volver a sumar o consultar la misma ventana.
+Los CSV viejos de última hora usan `rec_dt`; los de 48 h de buses no traen estado
+y los de EMOVA filtran por confirmation_pend. No son un universo compatible:
+se conserva su vista operativa y se reconstruye la referencia histórica con
+`Erick_Transporte_Horario[_Buses]`, por `sam_dt` y estados 0/255.
+
+El cálculo usa mediana y percentiles 25/75 por empresa/día de semana/hora.
+Para todas las empresas, suma cada día antes de calcular cuantiles. El acumulado
+es la mediana de los acumulados de cada fecha, no la suma de medianas horarias.
+La hora abierta se informa aparte y no participa en la variación. Los rangos y
+las variaciones se habilitan desde cuatro observaciones; se informa n por hora.
+Una consulta histórica fallida queda ausente, no se transforma en cero.
+
+La sincronización completa hasta dos ventanas faltantes por ejecución y, cuando
+hoy ya está preparado, adelanta las de mañana con el mismo presupuesto. Para
+precargar las ocho semanas del día actual: `py -B scripts/trip_baseline.py`.
+El selector permite usar las últimas cuatro u ocho semanas. No hay ajuste de
+feriados o cambios de servicio. Las reglas se prueban en `tests/trip-baseline.cjs`
+y `tests/test_trip_baseline.py`.
+
 ## Vista de negocio de transporte
 
 La portada usa Alarmbot para consultar, cada cinco minutos, las 32 bases del
