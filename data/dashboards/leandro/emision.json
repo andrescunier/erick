@@ -1,6 +1,6 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-10T10:38:58.770741-03:00",
+  "generado_en": "2026-09-10T10:43:56.869684-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
@@ -8074,7 +8074,7 @@
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-10T10:38:59-03:00",
+    "checked_at": "2026-09-10T10:43:57-03:00",
     "cadence_seconds": 300
   }
 }
