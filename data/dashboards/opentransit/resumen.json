@@ -1,16 +1,16 @@
 {
-  "generado_en": "2026-09-10T08:32:15.229290",
+  "generado_en": "2026-09-10T08:37:10.868656",
   "_procedencia": {
     "sistema": "opentransit — pipeline de archivos (no tiene base de datos ni API HTTP propia)",
     "informe": "business_summary.json (14 de sus 26 campos) + 4 indicadores derivados (no cobrado, validadores sin taps hoy, viajes por tarjeta)",
     "ruta": "C:\\andybot\\opentransit\\emova\\tenants\\artifacts\\<tenant>\\<fecha>\\<run_id>\\structured",
     "insumos_del_informe": "BACKFILE, STPOP, DAILYTAPS, VQR, RECOVERY, STPOP de ayer y JT_EMOVA (CSV diarios de 2 servidores SFTP)",
     "sincronizado_por": "scripts/sincronizar_resumen.py",
-    "sincronizado_en": "2026-09-10T08:32:15",
+    "sincronizado_en": "2026-09-10T08:37:10",
     "tenants_publicados": 32,
     "tenants_declarados_en_config": 25,
     "tenants_sin_declarar": "scabral, tagostosa, tcolegiales, tldevega, triachuelo, tsantafe, tsesentayocho",
-    "dato_mas_nuevo": "2026-09-10 (tucuman)",
+    "dato_mas_nuevo": "2026-09-10 (vlopez)",
     "dato_mas_viejo": "2026-03-31 (lersrl)"
   },
   "tenants": {
@@ -61,214 +61,214 @@
     },
     "aumer": {
       "tenant": "AUMER",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:28:55.267822-03:00",
-      "transaction_volume": 1581,
-      "money_processed_cents": 1647646404,
-      "tap_count": 1581,
-      "average_ticket_cents": 1042155,
-      "average_transaction_cents": 1042155,
-      "validators_active_day": 23,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:33:04.206183-03:00",
+      "transaction_volume": 1672,
+      "money_processed_cents": 1772938340,
+      "tap_count": 1672,
+      "average_ticket_cents": 1060370,
+      "average_transaction_cents": 1060370,
+      "validators_active_day": 21,
       "validators_active_7d": 23,
-      "money_per_validator_cents": 71636800,
-      "month_projection_cents": 49429392120,
-      "unique_cards": 896,
+      "money_per_validator_cents": 84425635,
+      "month_projection_cents": 53188150200,
+      "unique_cards": 927,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 1694193468,
-          "validators_previous": 22,
-          "money_variation_pct": -2.75,
-          "validators_variation_pct": 4.55,
-          "money_per_validator_previous_cents": 77008794,
-          "money_per_validator_variation_pct": -6.98
+          "money_previous_cents": 1647646404,
+          "validators_previous": 23,
+          "money_variation_pct": 7.6,
+          "validators_variation_pct": -8.7,
+          "money_per_validator_previous_cents": 71636800,
+          "money_per_validator_variation_pct": 17.85
         },
         "7d": {
-          "money_previous_cents": 1520975942,
+          "money_previous_cents": 1836610817,
           "validators_previous": 22,
-          "money_variation_pct": 8.33,
-          "validators_variation_pct": 4.55,
-          "money_per_validator_previous_cents": 69135270,
-          "money_per_validator_variation_pct": 3.62
+          "money_variation_pct": -3.47,
+          "validators_variation_pct": -4.55,
+          "money_per_validator_previous_cents": 83482310,
+          "money_per_validator_variation_pct": 1.13
         },
         "30d": {
-          "money_previous_cents": 1892560294,
+          "money_previous_cents": 1490484481,
           "validators_previous": 22,
-          "money_variation_pct": -12.94,
-          "validators_variation_pct": 4.55,
-          "money_per_validator_previous_cents": 86025468,
-          "money_per_validator_variation_pct": -16.73
+          "money_variation_pct": 18.95,
+          "validators_variation_pct": -4.55,
+          "money_per_validator_previous_cents": 67749295,
+          "money_per_validator_variation_pct": 24.61
         }
       },
-      "no_cobrado_cents": 126397649,
-      "no_cobrado_pct": 7.67,
-      "validadores_sin_taps_7d": 0,
-      "viajes_por_tarjeta": 1.76
+      "no_cobrado_cents": 116748395,
+      "no_cobrado_pct": 6.59,
+      "validadores_sin_taps_7d": 2,
+      "viajes_por_tarjeta": 1.8
     },
     "ausol": {
       "tenant": "AUSOL",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:28:22.330915-03:00",
-      "transaction_volume": 2693,
-      "money_processed_cents": 596326567,
-      "tap_count": 2693,
-      "average_ticket_cents": 221436,
-      "average_transaction_cents": 221436,
-      "validators_active_day": 33,
-      "validators_active_7d": 33,
-      "money_per_validator_cents": 18070502,
-      "month_projection_cents": 17889797010,
-      "unique_cards": 1978,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:32:34.362141-03:00",
+      "transaction_volume": 3062,
+      "money_processed_cents": 685768597,
+      "tap_count": 3062,
+      "average_ticket_cents": 223961,
+      "average_transaction_cents": 223961,
+      "validators_active_day": 34,
+      "validators_active_7d": 35,
+      "money_per_validator_cents": 20169665,
+      "month_projection_cents": 20573057910,
+      "unique_cards": 2207,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 523202225,
-          "validators_previous": 30,
-          "money_variation_pct": 13.98,
-          "validators_variation_pct": 10,
-          "money_per_validator_previous_cents": 17440074,
-          "money_per_validator_variation_pct": 3.61
+          "money_previous_cents": 596326567,
+          "validators_previous": 33,
+          "money_variation_pct": 15,
+          "validators_variation_pct": 3.03,
+          "money_per_validator_previous_cents": 18070502,
+          "money_per_validator_variation_pct": 11.62
         },
         "7d": {
-          "money_previous_cents": 497222917,
-          "validators_previous": 29,
-          "money_variation_pct": 19.93,
-          "validators_variation_pct": 13.79,
-          "money_per_validator_previous_cents": 17145618,
-          "money_per_validator_variation_pct": 5.39
+          "money_previous_cents": 573762198,
+          "validators_previous": 31,
+          "money_variation_pct": 19.52,
+          "validators_variation_pct": 9.68,
+          "money_per_validator_previous_cents": 18508458,
+          "money_per_validator_variation_pct": 8.98
         },
         "30d": {
-          "money_previous_cents": 520961724,
-          "validators_previous": 31,
-          "money_variation_pct": 14.47,
-          "validators_variation_pct": 6.45,
-          "money_per_validator_previous_cents": 16805217,
-          "money_per_validator_variation_pct": 7.53
+          "money_previous_cents": 555409666,
+          "validators_previous": 33,
+          "money_variation_pct": 23.47,
+          "validators_variation_pct": 3.03,
+          "money_per_validator_previous_cents": 16830596,
+          "money_per_validator_variation_pct": 19.84
         }
       },
-      "no_cobrado_cents": 18570720,
-      "no_cobrado_pct": 3.11,
-      "validadores_sin_taps_7d": 0,
-      "viajes_por_tarjeta": 1.36
+      "no_cobrado_cents": 20877149,
+      "no_cobrado_pct": 3.04,
+      "validadores_sin_taps_7d": 1,
+      "viajes_por_tarjeta": 1.39
     },
     "bbelgrano": {
       "tenant": "BBELGRANO",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:30:20.764042-03:00",
-      "transaction_volume": 731,
-      "money_processed_cents": 83770830,
-      "tap_count": 849,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:34:31.737124-03:00",
+      "transaction_volume": 703,
+      "money_processed_cents": 80317380,
+      "tap_count": 814,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 114598,
+      "average_transaction_cents": 114249,
       "validators_active_day": 55,
-      "validators_active_7d": 58,
-      "money_per_validator_cents": 1523106,
-      "month_projection_cents": 2513124900,
-      "unique_cards": 673,
+      "validators_active_7d": 57,
+      "money_per_validator_cents": 1460316,
+      "month_projection_cents": 2409521400,
+      "unique_cards": 646,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 81008070,
-          "validators_previous": 53,
-          "money_variation_pct": 3.41,
-          "validators_variation_pct": 3.77,
-          "money_per_validator_previous_cents": 1528454,
-          "money_per_validator_variation_pct": -0.35
+          "money_previous_cents": 83770830,
+          "validators_previous": 55,
+          "money_variation_pct": -4.12,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 1523106,
+          "money_per_validator_variation_pct": -4.12
         },
         "7d": {
-          "money_previous_cents": 84077028,
-          "validators_previous": 57,
-          "money_variation_pct": -0.36,
-          "validators_variation_pct": -3.51,
-          "money_per_validator_previous_cents": 1475036,
-          "money_per_validator_variation_pct": 3.26
+          "money_previous_cents": 71042400,
+          "validators_previous": 54,
+          "money_variation_pct": 13.06,
+          "validators_variation_pct": 1.85,
+          "money_per_validator_previous_cents": 1315600,
+          "money_per_validator_variation_pct": 11
         },
         "30d": {
-          "money_previous_cents": 29284239,
-          "validators_previous": 39,
-          "money_variation_pct": 186.06,
-          "validators_variation_pct": 41.03,
-          "money_per_validator_previous_cents": 750878,
-          "money_per_validator_variation_pct": 102.84
+          "money_previous_cents": 55441035,
+          "validators_previous": 60,
+          "money_variation_pct": 44.87,
+          "validators_variation_pct": -8.33,
+          "money_per_validator_previous_cents": 924017,
+          "money_per_validator_variation_pct": 58.04
         }
       },
-      "no_cobrado_cents": 3848130,
-      "no_cobrado_pct": 4.59,
-      "validadores_sin_taps_7d": 3,
+      "no_cobrado_cents": 2762760,
+      "no_cobrado_pct": 3.44,
+      "validadores_sin_taps_7d": 2,
       "viajes_por_tarjeta": 1.26
     },
     "cadsa": {
       "tenant": "CADSA",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:27:57.235818-03:00",
-      "transaction_volume": 318,
-      "money_processed_cents": 535499294,
-      "tap_count": 318,
-      "average_ticket_cents": 1683960,
-      "average_transaction_cents": 1683960,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:32:08.275373-03:00",
+      "transaction_volume": 279,
+      "money_processed_cents": 431233836,
+      "tap_count": 279,
+      "average_ticket_cents": 1545641,
+      "average_transaction_cents": 1545641,
       "validators_active_day": 9,
       "validators_active_7d": 10,
-      "money_per_validator_cents": 59499922,
-      "month_projection_cents": 16064978820,
-      "unique_cards": 259,
+      "money_per_validator_cents": 47914871,
+      "month_projection_cents": 12937015080,
+      "unique_cards": 227,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 542585296,
+          "money_previous_cents": 535499294,
           "validators_previous": 9,
-          "money_variation_pct": -1.31,
+          "money_variation_pct": -19.47,
           "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 60287255,
-          "money_per_validator_variation_pct": -1.31
+          "money_per_validator_previous_cents": 59499922,
+          "money_per_validator_variation_pct": -19.47
         },
         "7d": {
-          "money_previous_cents": 470206847,
-          "validators_previous": 9,
-          "money_variation_pct": 13.89,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 52245205,
-          "money_per_validator_variation_pct": 13.89
+          "money_previous_cents": 636221751,
+          "validators_previous": 10,
+          "money_variation_pct": -32.22,
+          "validators_variation_pct": -10,
+          "money_per_validator_previous_cents": 63622175,
+          "money_per_validator_variation_pct": -24.69
         },
         "30d": {
-          "money_previous_cents": 834629807,
-          "validators_previous": 9,
-          "money_variation_pct": -35.84,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 92736645,
-          "money_per_validator_variation_pct": -35.84
+          "money_previous_cents": 514747431,
+          "validators_previous": 8,
+          "money_variation_pct": -16.22,
+          "validators_variation_pct": 12.5,
+          "money_per_validator_previous_cents": 64343429,
+          "money_per_validator_variation_pct": -25.53
         }
       },
-      "no_cobrado_cents": 39479154,
-      "no_cobrado_pct": 7.37,
+      "no_cobrado_cents": 47577442,
+      "no_cobrado_pct": 11.03,
       "validadores_sin_taps_7d": 1,
       "viajes_por_tarjeta": 1.23
     },
     "cunidos": {
       "tenant": "CUNIDOS",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:30:35.313901-03:00",
-      "transaction_volume": 1495,
-      "money_processed_cents": 167344320,
-      "tap_count": 1696,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:34:44.630246-03:00",
+      "transaction_volume": 1504,
+      "money_processed_cents": 169515060,
+      "tap_count": 1718,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 111936,
-      "validators_active_day": 93,
+      "average_transaction_cents": 112709,
+      "validators_active_day": 92,
       "validators_active_7d": 96,
-      "money_per_validator_cents": 1799401,
-      "month_projection_cents": 5020329600,
-      "unique_cards": 1380,
+      "money_per_validator_cents": 1842555,
+      "month_projection_cents": 5085451800,
+      "unique_cards": 1389,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 155594792,
+          "money_previous_cents": 167344320,
           "validators_previous": 93,
-          "money_variation_pct": 7.55,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 1673062,
-          "money_per_validator_variation_pct": 7.55
+          "money_variation_pct": 1.3,
+          "validators_variation_pct": -1.08,
+          "money_per_validator_previous_cents": 1799401,
+          "money_per_validator_variation_pct": 2.4
         },
         "7d": {
-          "money_previous_cents": 142612927,
-          "validators_previous": 92,
-          "money_variation_pct": 17.34,
-          "validators_variation_pct": 1.09,
-          "money_per_validator_previous_cents": 1550141,
-          "money_per_validator_variation_pct": 16.08
+          "money_previous_cents": 155701260,
+          "validators_previous": 94,
+          "money_variation_pct": 8.87,
+          "validators_variation_pct": -2.13,
+          "money_per_validator_previous_cents": 1656396,
+          "money_per_validator_variation_pct": 11.24
         },
         "30d": {
           "money_previous_cents": null,
@@ -279,10 +279,10 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 5821530,
-      "no_cobrado_pct": 3.48,
-      "validadores_sin_taps_7d": 3,
-      "viajes_por_tarjeta": 1.23
+      "no_cobrado_cents": 6413550,
+      "no_cobrado_pct": 3.78,
+      "validadores_sin_taps_7d": 4,
+      "viajes_por_tarjeta": 1.24
     },
     "dotasa": {
       "tenant": "DOTASA",
@@ -376,79 +376,79 @@
     },
     "gco": {
       "tenant": "GCO",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:28:09.381449-03:00",
-      "transaction_volume": 2710,
-      "money_processed_cents": 571894805,
-      "tap_count": 2710,
-      "average_ticket_cents": 211031,
-      "average_transaction_cents": 211031,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:32:21.496736-03:00",
+      "transaction_volume": 2752,
+      "money_processed_cents": 589114803,
+      "tap_count": 2752,
+      "average_ticket_cents": 214068,
+      "average_transaction_cents": 214068,
       "validators_active_day": 44,
       "validators_active_7d": 44,
-      "money_per_validator_cents": 12997609,
-      "month_projection_cents": 17156844150,
-      "unique_cards": 1875,
+      "money_per_validator_cents": 13388973,
+      "month_projection_cents": 17673444090,
+      "unique_cards": 1895,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 559890407,
+          "money_previous_cents": 571894805,
           "validators_previous": 44,
-          "money_variation_pct": 2.14,
+          "money_variation_pct": 3.01,
           "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 12724782,
-          "money_per_validator_variation_pct": 2.14
+          "money_per_validator_previous_cents": 12997609,
+          "money_per_validator_variation_pct": 3.01
         },
         "7d": {
-          "money_previous_cents": 542189632,
-          "validators_previous": 42,
-          "money_variation_pct": 5.48,
-          "validators_variation_pct": 4.76,
-          "money_per_validator_previous_cents": 12909277,
-          "money_per_validator_variation_pct": 0.68
+          "money_previous_cents": 590207081,
+          "validators_previous": 43,
+          "money_variation_pct": -0.19,
+          "validators_variation_pct": 2.33,
+          "money_per_validator_previous_cents": 13725746,
+          "money_per_validator_variation_pct": -2.45
         },
         "30d": {
-          "money_previous_cents": 542947401,
+          "money_previous_cents": 494492873,
           "validators_previous": 45,
-          "money_variation_pct": 5.33,
+          "money_variation_pct": 19.14,
           "validators_variation_pct": -2.22,
-          "money_per_validator_previous_cents": 12065498,
-          "money_per_validator_variation_pct": 7.73
+          "money_per_validator_previous_cents": 10988731,
+          "money_per_validator_variation_pct": 21.84
         }
       },
-      "no_cobrado_cents": 22169546,
-      "no_cobrado_pct": 3.88,
+      "no_cobrado_cents": 23243228,
+      "no_cobrado_pct": 3.95,
       "validadores_sin_taps_7d": 0,
       "viajes_por_tarjeta": 1.45
     },
     "gralroca": {
       "tenant": "GRALROCA",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:30:49.862890-03:00",
-      "transaction_volume": 259,
-      "money_processed_cents": 28219620,
-      "tap_count": 286,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:34:58.198331-03:00",
+      "transaction_volume": 354,
+      "money_processed_cents": 37790610,
+      "tap_count": 383,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 108956,
-      "validators_active_day": 32,
+      "average_transaction_cents": 106753,
+      "validators_active_day": 33,
       "validators_active_7d": 44,
-      "money_per_validator_cents": 881863,
-      "month_projection_cents": 846588600,
-      "unique_cards": 251,
+      "money_per_validator_cents": 1145170,
+      "month_projection_cents": 1133718300,
+      "unique_cards": 336,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 25456860,
-          "validators_previous": 33,
-          "money_variation_pct": 10.85,
-          "validators_variation_pct": -3.03,
-          "money_per_validator_previous_cents": 771420,
-          "money_per_validator_variation_pct": 14.32
+          "money_previous_cents": 28219620,
+          "validators_previous": 32,
+          "money_variation_pct": 33.92,
+          "validators_variation_pct": 3.12,
+          "money_per_validator_previous_cents": 881863,
+          "money_per_validator_variation_pct": 29.86
         },
         "7d": {
-          "money_previous_cents": 23767773,
-          "validators_previous": 28,
-          "money_variation_pct": 18.73,
-          "validators_variation_pct": 14.29,
-          "money_per_validator_previous_cents": 848849,
-          "money_per_validator_variation_pct": 3.89
+          "money_previous_cents": 24766170,
+          "validators_previous": 36,
+          "money_variation_pct": 52.59,
+          "validators_variation_pct": -8.33,
+          "money_per_validator_previous_cents": 687949,
+          "money_per_validator_variation_pct": 66.46
         },
         "30d": {
           "money_previous_cents": null,
@@ -460,8 +460,8 @@
         }
       },
       "no_cobrado_cents": 986700,
-      "no_cobrado_pct": 3.5,
-      "validadores_sin_taps_7d": 12,
+      "no_cobrado_pct": 2.61,
+      "validadores_sin_taps_7d": 11,
       "viajes_por_tarjeta": 1.14
     },
     "jbjusto": {
@@ -511,48 +511,48 @@
     },
     "juanbjusto": {
       "tenant": "JUANBJUSTO",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:28:42.274925-03:00",
-      "transaction_volume": 635,
-      "money_processed_cents": 72621120,
-      "tap_count": 736,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:32:51.053749-03:00",
+      "transaction_volume": 751,
+      "money_processed_cents": 82685460,
+      "tap_count": 838,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 114364,
-      "validators_active_day": 82,
+      "average_transaction_cents": 110100,
+      "validators_active_day": 79,
       "validators_active_7d": 88,
-      "money_per_validator_cents": 885623,
-      "month_projection_cents": 2178633600,
-      "unique_cards": 600,
+      "money_per_validator_cents": 1046651,
+      "month_projection_cents": 2480563800,
+      "unique_cards": 689,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 74594520,
+          "money_previous_cents": 72621120,
           "validators_previous": 82,
-          "money_variation_pct": -2.65,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 909689,
-          "money_per_validator_variation_pct": -2.65
+          "money_variation_pct": 13.86,
+          "validators_variation_pct": -3.66,
+          "money_per_validator_previous_cents": 885623,
+          "money_per_validator_variation_pct": 18.18
         },
         "7d": {
-          "money_previous_cents": 85375334,
-          "validators_previous": 81,
-          "money_variation_pct": -14.94,
-          "validators_variation_pct": 1.23,
-          "money_per_validator_previous_cents": 1054016,
-          "money_per_validator_variation_pct": -15.98
+          "money_previous_cents": 71141070,
+          "validators_previous": 79,
+          "money_variation_pct": 16.23,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 900520,
+          "money_per_validator_variation_pct": 16.23
         },
         "30d": {
-          "money_previous_cents": 33264621,
-          "validators_previous": 50,
-          "money_variation_pct": 118.31,
-          "validators_variation_pct": 64,
-          "money_per_validator_previous_cents": 665292,
-          "money_per_validator_variation_pct": 33.12
+          "money_previous_cents": 75911571,
+          "validators_previous": 82,
+          "money_variation_pct": 8.92,
+          "validators_variation_pct": -3.66,
+          "money_per_validator_previous_cents": 925751,
+          "money_per_validator_variation_pct": 13.06
         }
       },
-      "no_cobrado_cents": 3058770,
-      "no_cobrado_pct": 4.21,
-      "validadores_sin_taps_7d": 6,
-      "viajes_por_tarjeta": 1.23
+      "no_cobrado_cents": 2565420,
+      "no_cobrado_pct": 3.1,
+      "validadores_sin_taps_7d": 9,
+      "viajes_por_tarjeta": 1.22
     },
     "lersrl": {
       "tenant": "LERSRL",
@@ -576,169 +576,169 @@
     },
     "lnmetropol": {
       "tenant": "LNMETROPOL",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:30:06.761336-03:00",
-      "transaction_volume": 467,
-      "money_processed_cents": 49828350,
-      "tap_count": 505,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:34:18.747231-03:00",
+      "transaction_volume": 450,
+      "money_processed_cents": 46670910,
+      "tap_count": 473,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 106699,
-      "validators_active_day": 69,
-      "validators_active_7d": 96,
-      "money_per_validator_cents": 722150,
-      "month_projection_cents": 1494850500,
-      "unique_cards": 452,
+      "average_transaction_cents": 103713,
+      "validators_active_day": 73,
+      "validators_active_7d": 95,
+      "money_per_validator_cents": 639328,
+      "month_projection_cents": 1400127300,
+      "unique_cards": 424,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 47262930,
-          "validators_previous": 78,
-          "money_variation_pct": 5.43,
-          "validators_variation_pct": -11.54,
-          "money_per_validator_previous_cents": 605935,
-          "money_per_validator_variation_pct": 19.18
+          "money_previous_cents": 49828350,
+          "validators_previous": 69,
+          "money_variation_pct": -6.34,
+          "validators_variation_pct": 5.8,
+          "money_per_validator_previous_cents": 722150,
+          "money_per_validator_variation_pct": -11.47
         },
         "7d": {
-          "money_previous_cents": 15278254,
-          "validators_previous": 32,
-          "money_variation_pct": 226.14,
-          "validators_variation_pct": 115.62,
-          "money_per_validator_previous_cents": 477445,
-          "money_per_validator_variation_pct": 51.25
+          "money_previous_cents": 21115380,
+          "validators_previous": 59,
+          "money_variation_pct": 121.03,
+          "validators_variation_pct": 23.73,
+          "money_per_validator_previous_cents": 357888,
+          "money_per_validator_variation_pct": 78.64
         },
         "30d": {
-          "money_previous_cents": null,
-          "validators_previous": null,
-          "money_variation_pct": null,
-          "validators_variation_pct": null,
-          "money_per_validator_previous_cents": null,
-          "money_per_validator_variation_pct": null
+          "money_previous_cents": 284313,
+          "validators_previous": 2,
+          "money_variation_pct": 16315.33,
+          "validators_variation_pct": 3550,
+          "money_per_validator_previous_cents": 142156,
+          "money_per_validator_variation_pct": 349.74
         }
       },
-      "no_cobrado_cents": 2861430,
-      "no_cobrado_pct": 5.74,
-      "validadores_sin_taps_7d": 27,
+      "no_cobrado_cents": 2664090,
+      "no_cobrado_pct": 5.71,
+      "validadores_sin_taps_7d": 22,
       "viajes_por_tarjeta": 1.12
     },
     "metropolitana": {
       "tenant": "METROPOLITANA",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:29:46.303189-03:00",
-      "transaction_volume": 12798,
-      "money_processed_cents": 3296336855,
-      "tap_count": 16759,
-      "average_ticket_cents": 196691,
-      "average_transaction_cents": 257567,
-      "validators_active_day": 186,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:33:58.404596-03:00",
+      "transaction_volume": 13616,
+      "money_processed_cents": 3461984160,
+      "tap_count": 17652,
+      "average_ticket_cents": 196124,
+      "average_transaction_cents": 254259,
+      "validators_active_day": 178,
       "validators_active_7d": 192,
-      "money_per_validator_cents": 17722241,
-      "month_projection_cents": 98890105650,
-      "unique_cards": 10674,
+      "money_per_validator_cents": 19449349,
+      "month_projection_cents": 103859524800,
+      "unique_cards": 11267,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 3376982220,
-          "validators_previous": 182,
-          "money_variation_pct": -2.39,
-          "validators_variation_pct": 2.2,
-          "money_per_validator_previous_cents": 18554847,
-          "money_per_validator_variation_pct": -4.49
+          "money_previous_cents": 3296336855,
+          "validators_previous": 186,
+          "money_variation_pct": 5.03,
+          "validators_variation_pct": -4.3,
+          "money_per_validator_previous_cents": 17722241,
+          "money_per_validator_variation_pct": 9.75
         },
         "7d": {
-          "money_previous_cents": 3442461775,
+          "money_previous_cents": 3231665430,
           "validators_previous": 182,
-          "money_variation_pct": -4.24,
-          "validators_variation_pct": 2.2,
-          "money_per_validator_previous_cents": 18914625,
-          "money_per_validator_variation_pct": -6.3
+          "money_variation_pct": 7.13,
+          "validators_variation_pct": -2.2,
+          "money_per_validator_previous_cents": 17756403,
+          "money_per_validator_variation_pct": 9.53
         },
         "30d": {
-          "money_previous_cents": 741095440,
-          "validators_previous": 117,
-          "money_variation_pct": 344.79,
-          "validators_variation_pct": 58.97,
-          "money_per_validator_previous_cents": 6334149,
-          "money_per_validator_variation_pct": 179.79
+          "money_previous_cents": 3253568175,
+          "validators_previous": 178,
+          "money_variation_pct": 6.41,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 18278473,
+          "money_per_validator_variation_pct": 6.41
         }
       },
-      "no_cobrado_cents": 164956030,
-      "no_cobrado_pct": 5,
-      "validadores_sin_taps_7d": 6,
+      "no_cobrado_cents": 187100700,
+      "no_cobrado_pct": 5.4,
+      "validadores_sin_taps_7d": 14,
       "viajes_por_tarjeta": 1.57
     },
     "microomnibus": {
       "tenant": "MICROOMNIBUS",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:31:03.877237-03:00",
-      "transaction_volume": 130,
-      "money_processed_cents": 14899170,
-      "tap_count": 151,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:35:11.150360-03:00",
+      "transaction_volume": 116,
+      "money_processed_cents": 12728430,
+      "tap_count": 129,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 114609,
-      "validators_active_day": 40,
+      "average_transaction_cents": 109728,
+      "validators_active_day": 38,
       "validators_active_7d": 43,
-      "money_per_validator_cents": 372479,
-      "month_projection_cents": 446975100,
-      "unique_cards": 121,
+      "money_per_validator_cents": 334959,
+      "month_projection_cents": 381852900,
+      "unique_cards": 106,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 12925770,
-          "validators_previous": 37,
-          "money_variation_pct": 15.27,
-          "validators_variation_pct": 8.11,
-          "money_per_validator_previous_cents": 349345,
-          "money_per_validator_variation_pct": 6.62
+          "money_previous_cents": 14899170,
+          "validators_previous": 40,
+          "money_variation_pct": -14.57,
+          "validators_variation_pct": -5,
+          "money_per_validator_previous_cents": 372479,
+          "money_per_validator_variation_pct": -10.07
         },
         "7d": {
-          "money_previous_cents": 14109810,
+          "money_previous_cents": 14405820,
           "validators_previous": 38,
-          "money_variation_pct": 5.59,
-          "validators_variation_pct": 5.26,
-          "money_per_validator_previous_cents": 371311,
-          "money_per_validator_variation_pct": 0.31
+          "money_variation_pct": -11.64,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 379101,
+          "money_per_validator_variation_pct": -11.64
         },
         "30d": {
-          "money_previous_cents": 1516336,
-          "validators_previous": 11,
-          "money_variation_pct": 882.58,
-          "validators_variation_pct": 263.64,
-          "money_per_validator_previous_cents": 137849,
-          "money_per_validator_variation_pct": 170.21
+          "money_previous_cents": 12415001,
+          "validators_previous": 36,
+          "money_variation_pct": 2.52,
+          "validators_variation_pct": 5.56,
+          "money_per_validator_previous_cents": 344861,
+          "money_per_validator_variation_pct": -2.87
         }
       },
-      "no_cobrado_cents": 888030,
-      "no_cobrado_pct": 5.96,
-      "validadores_sin_taps_7d": 3,
-      "viajes_por_tarjeta": 1.25
+      "no_cobrado_cents": 296010,
+      "no_cobrado_pct": 2.33,
+      "validadores_sin_taps_7d": 5,
+      "viajes_por_tarjeta": 1.22
     },
     "nrumbos": {
       "tenant": "NRUMBOS",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:31:17.629783-03:00",
-      "transaction_volume": 862,
-      "money_processed_cents": 94723200,
-      "tap_count": 960,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 109888,
-      "validators_active_day": 81,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:35:23.381991-03:00",
+      "transaction_volume": 973,
+      "money_processed_cents": 109030350,
+      "tap_count": 1107,
+      "average_ticket_cents": 98492,
+      "average_transaction_cents": 112056,
+      "validators_active_day": 79,
       "validators_active_7d": 87,
-      "money_per_validator_cents": 1169422,
-      "month_projection_cents": 2841696000,
-      "unique_cards": 822,
+      "money_per_validator_cents": 1380131,
+      "month_projection_cents": 3270910500,
+      "unique_cards": 912,
       "comparison_windows": {
         "1d": {
           "money_previous_cents": 94723200,
-          "validators_previous": 80,
-          "money_variation_pct": 0,
-          "validators_variation_pct": 1.25,
-          "money_per_validator_previous_cents": 1184040,
-          "money_per_validator_variation_pct": -1.23
+          "validators_previous": 81,
+          "money_variation_pct": 15.1,
+          "validators_variation_pct": -2.47,
+          "money_per_validator_previous_cents": 1169422,
+          "money_per_validator_variation_pct": 18.02
         },
         "7d": {
-          "money_previous_cents": 90193373,
-          "validators_previous": 84,
-          "money_variation_pct": 5.02,
-          "validators_variation_pct": -3.57,
-          "money_per_validator_previous_cents": 1073731,
-          "money_per_validator_variation_pct": 8.91
+          "money_previous_cents": 88506990,
+          "validators_previous": 81,
+          "money_variation_pct": 23.19,
+          "validators_variation_pct": -2.47,
+          "money_per_validator_previous_cents": 1092679,
+          "money_per_validator_variation_pct": 26.31
         },
         "30d": {
           "money_previous_cents": null,
@@ -749,10 +749,10 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 5130840,
-      "no_cobrado_pct": 5.42,
-      "validadores_sin_taps_7d": 6,
-      "viajes_por_tarjeta": 1.17
+      "no_cobrado_cents": 6413550,
+      "no_cobrado_pct": 5.88,
+      "validadores_sin_taps_7d": 8,
+      "viajes_por_tarjeta": 1.21
     },
     "nudosa": {
       "tenant": "NUDOSA",
@@ -801,48 +801,48 @@
     },
     "rsuratlantico": {
       "tenant": "RSURATLANTICO",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:31:31.878748-03:00",
-      "transaction_volume": 2073,
-      "money_processed_cents": 851088294,
-      "tap_count": 2073,
-      "average_ticket_cents": 410559,
-      "average_transaction_cents": 410559,
-      "validators_active_day": 40,
-      "validators_active_7d": 42,
-      "money_per_validator_cents": 21277207,
-      "month_projection_cents": 25532648820,
-      "unique_cards": 1576,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:35:36.768321-03:00",
+      "transaction_volume": 2619,
+      "money_processed_cents": 1054770056,
+      "tap_count": 2619,
+      "average_ticket_cents": 402738,
+      "average_transaction_cents": 402738,
+      "validators_active_day": 38,
+      "validators_active_7d": 44,
+      "money_per_validator_cents": 27757107,
+      "month_projection_cents": 31643101680,
+      "unique_cards": 1875,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 819480550,
-          "validators_previous": 35,
-          "money_variation_pct": 3.86,
-          "validators_variation_pct": 14.29,
-          "money_per_validator_previous_cents": 23413730,
-          "money_per_validator_variation_pct": -9.13
+          "money_previous_cents": 851088294,
+          "validators_previous": 40,
+          "money_variation_pct": 23.93,
+          "validators_variation_pct": -5,
+          "money_per_validator_previous_cents": 21277207,
+          "money_per_validator_variation_pct": 30.45
         },
         "7d": {
-          "money_previous_cents": 490868579,
-          "validators_previous": 32,
-          "money_variation_pct": 73.38,
-          "validators_variation_pct": 25,
-          "money_per_validator_previous_cents": 15339643,
-          "money_per_validator_variation_pct": 38.71
+          "money_previous_cents": 481635222,
+          "validators_previous": 29,
+          "money_variation_pct": 119,
+          "validators_variation_pct": 31.03,
+          "money_per_validator_previous_cents": 16608111,
+          "money_per_validator_variation_pct": 67.13
         },
         "30d": {
-          "money_previous_cents": 166569559,
-          "validators_previous": 12,
-          "money_variation_pct": 410.95,
-          "validators_variation_pct": 233.33,
-          "money_per_validator_previous_cents": 13880797,
-          "money_per_validator_variation_pct": 53.29
+          "money_previous_cents": 234896334,
+          "validators_previous": 17,
+          "money_variation_pct": 349.04,
+          "validators_variation_pct": 123.53,
+          "money_per_validator_previous_cents": 13817431,
+          "money_per_validator_variation_pct": 100.88
         }
       },
-      "no_cobrado_cents": 47489201,
-      "no_cobrado_pct": 5.58,
-      "validadores_sin_taps_7d": 2,
-      "viajes_por_tarjeta": 1.32
+      "no_cobrado_cents": 51492298,
+      "no_cobrado_pct": 4.88,
+      "validadores_sin_taps_7d": 6,
+      "viajes_por_tarjeta": 1.4
     },
     "salta": {
       "tenant": "SALTA",
@@ -891,34 +891,34 @@
     },
     "scabral": {
       "tenant": "SCABRAL",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:31:46.647809-03:00",
-      "transaction_volume": 90,
-      "money_processed_cents": 8978970,
-      "tap_count": 91,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:35:54.672074-03:00",
+      "transaction_volume": 48,
+      "money_processed_cents": 4933500,
+      "tap_count": 50,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 99766,
-      "validators_active_day": 15,
-      "validators_active_7d": 42,
-      "money_per_validator_cents": 598598,
-      "month_projection_cents": 269369100,
-      "unique_cards": 88,
+      "average_transaction_cents": 102781,
+      "validators_active_day": 8,
+      "validators_active_7d": 41,
+      "money_per_validator_cents": 616688,
+      "month_projection_cents": 148005000,
+      "unique_cards": 48,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 13813800,
-          "validators_previous": 16,
-          "money_variation_pct": -35,
-          "validators_variation_pct": -6.25,
-          "money_per_validator_previous_cents": 863362,
-          "money_per_validator_variation_pct": -30.67
+          "money_previous_cents": 8978970,
+          "validators_previous": 15,
+          "money_variation_pct": -45.05,
+          "validators_variation_pct": -46.67,
+          "money_per_validator_previous_cents": 598598,
+          "money_per_validator_variation_pct": 3.02
         },
         "7d": {
-          "money_previous_cents": 38568273,
-          "validators_previous": 39,
-          "money_variation_pct": -76.72,
-          "validators_variation_pct": -61.54,
-          "money_per_validator_previous_cents": 988930,
-          "money_per_validator_variation_pct": -39.47
+          "money_previous_cents": 39961350,
+          "validators_previous": 41,
+          "money_variation_pct": -87.65,
+          "validators_variation_pct": -80.49,
+          "money_per_validator_previous_cents": 974667,
+          "money_per_validator_variation_pct": -36.73
         },
         "30d": {
           "money_previous_cents": null,
@@ -930,9 +930,9 @@
         }
       },
       "no_cobrado_cents": 197340,
-      "no_cobrado_pct": 2.2,
-      "validadores_sin_taps_7d": 27,
-      "viajes_por_tarjeta": 1.03
+      "no_cobrado_pct": 4,
+      "validadores_sin_taps_7d": 33,
+      "viajes_por_tarjeta": 1.04
     },
     "stmsaupe": {
       "tenant": "STMSAUPE",
@@ -981,34 +981,34 @@
     },
     "tagostosa": {
       "tenant": "TAGOSTOSA",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:32:02.056383-03:00",
-      "transaction_volume": 672,
-      "money_processed_cents": 73410480,
-      "tap_count": 744,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:36:08.405672-03:00",
+      "transaction_volume": 627,
+      "money_processed_cents": 66996930,
+      "tap_count": 679,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 109242,
-      "validators_active_day": 45,
-      "validators_active_7d": 52,
-      "money_per_validator_cents": 1631344,
-      "month_projection_cents": 2202314400,
-      "unique_cards": 629,
+      "average_transaction_cents": 106853,
+      "validators_active_day": 44,
+      "validators_active_7d": 50,
+      "money_per_validator_cents": 1522658,
+      "month_projection_cents": 2009907900,
+      "unique_cards": 596,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 63740820,
+          "money_previous_cents": 73410480,
           "validators_previous": 45,
-          "money_variation_pct": 15.17,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 1416463,
-          "money_per_validator_variation_pct": 15.17
+          "money_variation_pct": -8.74,
+          "validators_variation_pct": -2.22,
+          "money_per_validator_previous_cents": 1631344,
+          "money_per_validator_variation_pct": -6.66
         },
         "7d": {
-          "money_previous_cents": 61716733,
-          "validators_previous": 43,
-          "money_variation_pct": 18.95,
-          "validators_variation_pct": 4.65,
-          "money_per_validator_previous_cents": 1435273,
-          "money_per_validator_variation_pct": 13.66
+          "money_previous_cents": 58313970,
+          "validators_previous": 40,
+          "money_variation_pct": 14.89,
+          "validators_variation_pct": 10,
+          "money_per_validator_previous_cents": 1457849,
+          "money_per_validator_variation_pct": 4.45
         },
         "30d": {
           "money_previous_cents": null,
@@ -1019,131 +1019,41 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 3946800,
-      "no_cobrado_pct": 5.38,
-      "validadores_sin_taps_7d": 7,
-      "viajes_por_tarjeta": 1.18
+      "no_cobrado_cents": 2368080,
+      "no_cobrado_pct": 3.53,
+      "validadores_sin_taps_7d": 6,
+      "viajes_por_tarjeta": 1.14
     },
     "tcolegiales": {
       "tenant": "TCOLEGIALES",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:32:17.602649-03:00",
-      "transaction_volume": 187,
-      "money_processed_cents": 19536660,
-      "tap_count": 198,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:36:24.005971-03:00",
+      "transaction_volume": 241,
+      "money_processed_cents": 25160850,
+      "tap_count": 255,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 104474,
-      "validators_active_day": 28,
-      "validators_active_7d": 31,
-      "money_per_validator_cents": 697738,
-      "month_projection_cents": 586099800,
-      "unique_cards": 184,
+      "average_transaction_cents": 104402,
+      "validators_active_day": 27,
+      "validators_active_7d": 32,
+      "money_per_validator_cents": 931883,
+      "month_projection_cents": 754825500,
+      "unique_cards": 229,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 23483460,
-          "validators_previous": 27,
-          "money_variation_pct": -16.81,
-          "validators_variation_pct": 3.7,
-          "money_per_validator_previous_cents": 869758,
-          "money_per_validator_variation_pct": -19.78
-        },
-        "7d": {
-          "money_previous_cents": 27193930,
+          "money_previous_cents": 19536660,
           "validators_previous": 28,
-          "money_variation_pct": -28.16,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 971212,
-          "money_per_validator_variation_pct": -28.16
-        },
-        "30d": {
-          "money_previous_cents": null,
-          "validators_previous": null,
-          "money_variation_pct": null,
-          "validators_variation_pct": null,
-          "money_per_validator_previous_cents": null,
-          "money_per_validator_variation_pct": null
-        }
-      },
-      "no_cobrado_cents": 1282710,
-      "no_cobrado_pct": 6.57,
-      "validadores_sin_taps_7d": 3,
-      "viajes_por_tarjeta": 1.08
-    },
-    "tldevega": {
-      "tenant": "TLDEVEGA",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:32:32.769397-03:00",
-      "transaction_volume": 248,
-      "money_processed_cents": 27627600,
-      "tap_count": 280,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 111402,
-      "validators_active_day": 50,
-      "validators_active_7d": 53,
-      "money_per_validator_cents": 552552,
-      "month_projection_cents": 828828000,
-      "unique_cards": 225,
-      "comparison_windows": {
-        "1d": {
-          "money_previous_cents": 25555530,
-          "validators_previous": 50,
-          "money_variation_pct": 8.11,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 511111,
-          "money_per_validator_variation_pct": 8.11
+          "money_variation_pct": 28.79,
+          "validators_variation_pct": -3.57,
+          "money_per_validator_previous_cents": 697738,
+          "money_per_validator_variation_pct": 33.56
         },
         "7d": {
-          "money_previous_cents": 21687905,
-          "validators_previous": 47,
-          "money_variation_pct": 27.39,
-          "validators_variation_pct": 6.38,
-          "money_per_validator_previous_cents": 461445,
-          "money_per_validator_variation_pct": 19.74
-        },
-        "30d": {
-          "money_previous_cents": null,
-          "validators_previous": null,
-          "money_variation_pct": null,
-          "validators_variation_pct": null,
-          "money_per_validator_previous_cents": null,
-          "money_per_validator_variation_pct": null
-        }
-      },
-      "no_cobrado_cents": 1282710,
-      "no_cobrado_pct": 4.64,
-      "validadores_sin_taps_7d": 3,
-      "viajes_por_tarjeta": 1.24
-    },
-    "tndejulio": {
-      "tenant": "TNDEJULIO",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:29:20.737161-03:00",
-      "transaction_volume": 305,
-      "money_processed_cents": 31771740,
-      "tap_count": 322,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 104170,
-      "validators_active_day": 30,
-      "validators_active_7d": 36,
-      "money_per_validator_cents": 1059058,
-      "month_projection_cents": 953152200,
-      "unique_cards": 294,
-      "comparison_windows": {
-        "1d": {
-          "money_previous_cents": 28614300,
+          "money_previous_cents": 26147550,
           "validators_previous": 30,
-          "money_variation_pct": 11.03,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 953810,
-          "money_per_validator_variation_pct": 11.03
-        },
-        "7d": {
-          "money_previous_cents": 23870342,
-          "validators_previous": 26,
-          "money_variation_pct": 33.1,
-          "validators_variation_pct": 15.38,
-          "money_per_validator_previous_cents": 918090,
-          "money_per_validator_variation_pct": 15.35
+          "money_variation_pct": -3.77,
+          "validators_variation_pct": -10,
+          "money_per_validator_previous_cents": 871585,
+          "money_per_validator_variation_pct": 6.92
         },
         "30d": {
           "money_previous_cents": null,
@@ -1155,40 +1065,40 @@
         }
       },
       "no_cobrado_cents": 1578720,
-      "no_cobrado_pct": 4.97,
-      "validadores_sin_taps_7d": 6,
-      "viajes_por_tarjeta": 1.1
+      "no_cobrado_pct": 6.27,
+      "validadores_sin_taps_7d": 5,
+      "viajes_por_tarjeta": 1.11
     },
-    "triachuelo": {
-      "tenant": "TRIACHUELO",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:32:45.815015-03:00",
-      "transaction_volume": 639,
-      "money_processed_cents": 70351710,
-      "tap_count": 713,
+    "tldevega": {
+      "tenant": "TLDEVEGA",
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:36:38.864658-03:00",
+      "transaction_volume": 234,
+      "money_processed_cents": 26838240,
+      "tap_count": 272,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 110097,
-      "validators_active_day": 131,
-      "validators_active_7d": 140,
-      "money_per_validator_cents": 537036,
-      "month_projection_cents": 2110551300,
-      "unique_cards": 581,
+      "average_transaction_cents": 114693,
+      "validators_active_day": 45,
+      "validators_active_7d": 53,
+      "money_per_validator_cents": 596405,
+      "month_projection_cents": 805147200,
+      "unique_cards": 220,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 115246560,
-          "validators_previous": 137,
-          "money_variation_pct": -38.96,
-          "validators_variation_pct": -4.38,
-          "money_per_validator_previous_cents": 841216,
-          "money_per_validator_variation_pct": -36.16
+          "money_previous_cents": 27627600,
+          "validators_previous": 50,
+          "money_variation_pct": -2.86,
+          "validators_variation_pct": -10,
+          "money_per_validator_previous_cents": 552552,
+          "money_per_validator_variation_pct": 7.94
         },
         "7d": {
-          "money_previous_cents": 57181812,
-          "validators_previous": 123,
-          "money_variation_pct": 23.03,
-          "validators_variation_pct": 6.5,
-          "money_per_validator_previous_cents": 464893,
-          "money_per_validator_variation_pct": 15.52
+          "money_previous_cents": 23088780,
+          "validators_previous": 48,
+          "money_variation_pct": 16.24,
+          "validators_variation_pct": -6.25,
+          "money_per_validator_previous_cents": 481016,
+          "money_per_validator_variation_pct": 23.99
         },
         "30d": {
           "money_previous_cents": null,
@@ -1199,10 +1109,100 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 3157440,
-      "no_cobrado_pct": 4.49,
-      "validadores_sin_taps_7d": 9,
-      "viajes_por_tarjeta": 1.23
+      "no_cobrado_cents": 1184040,
+      "no_cobrado_pct": 4.41,
+      "validadores_sin_taps_7d": 8,
+      "viajes_por_tarjeta": 1.24
+    },
+    "tndejulio": {
+      "tenant": "TNDEJULIO",
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:33:31.391222-03:00",
+      "transaction_volume": 353,
+      "money_processed_cents": 36705240,
+      "tap_count": 372,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 103981,
+      "validators_active_day": 25,
+      "validators_active_7d": 30,
+      "money_per_validator_cents": 1468210,
+      "month_projection_cents": 1101157200,
+      "unique_cards": 337,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 31771740,
+          "validators_previous": 30,
+          "money_variation_pct": 15.53,
+          "validators_variation_pct": -16.67,
+          "money_per_validator_previous_cents": 1059058,
+          "money_per_validator_variation_pct": 38.63
+        },
+        "7d": {
+          "money_previous_cents": 22990110,
+          "validators_previous": 26,
+          "money_variation_pct": 59.66,
+          "validators_variation_pct": -3.85,
+          "money_per_validator_previous_cents": 884235,
+          "money_per_validator_variation_pct": 66.04
+        },
+        "30d": {
+          "money_previous_cents": null,
+          "validators_previous": null,
+          "money_variation_pct": null,
+          "validators_variation_pct": null,
+          "money_per_validator_previous_cents": null,
+          "money_per_validator_variation_pct": null
+        }
+      },
+      "no_cobrado_cents": 986700,
+      "no_cobrado_pct": 2.69,
+      "validadores_sin_taps_7d": 5,
+      "viajes_por_tarjeta": 1.1
+    },
+    "triachuelo": {
+      "tenant": "TRIACHUELO",
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:36:51.520529-03:00",
+      "transaction_volume": 670,
+      "money_processed_cents": 75778560,
+      "tap_count": 768,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 113102,
+      "validators_active_day": 124,
+      "validators_active_7d": 139,
+      "money_per_validator_cents": 611117,
+      "month_projection_cents": 2273356800,
+      "unique_cards": 627,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 70351710,
+          "validators_previous": 131,
+          "money_variation_pct": 7.71,
+          "validators_variation_pct": -5.34,
+          "money_per_validator_previous_cents": 537036,
+          "money_per_validator_variation_pct": 13.79
+        },
+        "7d": {
+          "money_previous_cents": 20954326,
+          "validators_previous": 87,
+          "money_variation_pct": 261.64,
+          "validators_variation_pct": 42.53,
+          "money_per_validator_previous_cents": 240854,
+          "money_per_validator_variation_pct": 153.73
+        },
+        "30d": {
+          "money_previous_cents": null,
+          "validators_previous": null,
+          "money_variation_pct": null,
+          "validators_variation_pct": null,
+          "money_per_validator_previous_cents": null,
+          "money_per_validator_variation_pct": null
+        }
+      },
+      "no_cobrado_cents": 5328180,
+      "no_cobrado_pct": 7.03,
+      "validadores_sin_taps_7d": 15,
+      "viajes_por_tarjeta": 1.22
     },
     "tsantafe": {
       "tenant": "TSANTAFE",
@@ -1316,93 +1316,93 @@
     },
     "vderocha": {
       "tenant": "VDEROCHA",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:29:33.537652-03:00",
-      "transaction_volume": 1141,
-      "money_processed_cents": 129948390,
-      "tap_count": 1317,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:33:45.192663-03:00",
+      "transaction_volume": 1113,
+      "money_processed_cents": 123436170,
+      "tap_count": 1251,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 113890,
-      "validators_active_day": 55,
+      "average_transaction_cents": 110904,
+      "validators_active_day": 54,
       "validators_active_7d": 57,
-      "money_per_validator_cents": 2362698,
-      "month_projection_cents": 3898451700,
-      "unique_cards": 1036,
+      "money_per_validator_cents": 2285855,
+      "month_projection_cents": 3703085100,
+      "unique_cards": 1009,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 137644650,
-          "validators_previous": 54,
-          "money_variation_pct": -5.59,
-          "validators_variation_pct": 1.85,
-          "money_per_validator_previous_cents": 2548975,
-          "money_per_validator_variation_pct": -7.31
+          "money_previous_cents": 129948390,
+          "validators_previous": 55,
+          "money_variation_pct": -5.01,
+          "validators_variation_pct": -1.82,
+          "money_per_validator_previous_cents": 2362698,
+          "money_per_validator_variation_pct": -3.25
         },
         "7d": {
-          "money_previous_cents": 128808434,
-          "validators_previous": 56,
-          "money_variation_pct": 0.89,
-          "validators_variation_pct": -1.79,
-          "money_per_validator_previous_cents": 2300151,
-          "money_per_validator_variation_pct": 2.72
+          "money_previous_cents": 129455040,
+          "validators_previous": 57,
+          "money_variation_pct": -4.65,
+          "validators_variation_pct": -5.26,
+          "money_per_validator_previous_cents": 2271141,
+          "money_per_validator_variation_pct": 0.65
         },
         "30d": {
-          "money_previous_cents": 92401725,
-          "validators_previous": 34,
-          "money_variation_pct": 40.63,
-          "validators_variation_pct": 61.76,
-          "money_per_validator_previous_cents": 2717698,
-          "money_per_validator_variation_pct": -13.06
+          "money_previous_cents": 120169628,
+          "validators_previous": 55,
+          "money_variation_pct": 2.72,
+          "validators_variation_pct": -1.82,
+          "money_per_validator_previous_cents": 2184902,
+          "money_per_validator_variation_pct": 4.62
         }
       },
-      "no_cobrado_cents": 4637490,
-      "no_cobrado_pct": 3.57,
-      "validadores_sin_taps_7d": 2,
-      "viajes_por_tarjeta": 1.27
+      "no_cobrado_cents": 4834830,
+      "no_cobrado_pct": 3.92,
+      "validadores_sin_taps_7d": 3,
+      "viajes_por_tarjeta": 1.24
     },
     "vlopez": {
       "tenant": "VLOPEZ",
-      "process_date": "2026-09-09",
-      "process_ts": "2026-09-09T08:29:08.325311-03:00",
-      "transaction_volume": 330,
-      "money_processed_cents": 34435830,
-      "tap_count": 349,
+      "process_date": "2026-09-10",
+      "process_ts": "2026-09-10T08:33:18.546592-03:00",
+      "transaction_volume": 299,
+      "money_processed_cents": 31969080,
+      "tap_count": 324,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 104351,
-      "validators_active_day": 30,
+      "average_transaction_cents": 106920,
+      "validators_active_day": 29,
       "validators_active_7d": 35,
-      "money_per_validator_cents": 1147861,
-      "month_projection_cents": 1033074900,
-      "unique_cards": 316,
+      "money_per_validator_cents": 1102382,
+      "month_projection_cents": 959072400,
+      "unique_cards": 287,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 31475730,
+          "money_previous_cents": 34435830,
           "validators_previous": 30,
-          "money_variation_pct": 9.4,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 1049191,
-          "money_per_validator_variation_pct": 9.4
+          "money_variation_pct": -7.16,
+          "validators_variation_pct": -3.33,
+          "money_per_validator_previous_cents": 1147861,
+          "money_per_validator_variation_pct": -3.96
         },
         "7d": {
-          "money_previous_cents": 37494600,
-          "validators_previous": 31,
-          "money_variation_pct": -8.16,
-          "validators_variation_pct": -3.23,
-          "money_per_validator_previous_cents": 1209503,
-          "money_per_validator_variation_pct": -5.1
+          "money_previous_cents": 29798340,
+          "validators_previous": 32,
+          "money_variation_pct": 7.28,
+          "validators_variation_pct": -9.38,
+          "money_per_validator_previous_cents": 931198,
+          "money_per_validator_variation_pct": 18.38
         },
         "30d": {
-          "money_previous_cents": 8055535,
-          "validators_previous": 7,
-          "money_variation_pct": 327.48,
-          "validators_variation_pct": 328.57,
-          "money_per_validator_previous_cents": 1150791,
-          "money_per_validator_variation_pct": -0.25
+          "money_previous_cents": 31463972,
+          "validators_previous": 35,
+          "money_variation_pct": 1.61,
+          "validators_variation_pct": -17.14,
+          "money_per_validator_previous_cents": 898971,
+          "money_per_validator_variation_pct": 22.63
         }
       },
-      "no_cobrado_cents": 888030,
-      "no_cobrado_pct": 2.58,
-      "validadores_sin_taps_7d": 5,
-      "viajes_por_tarjeta": 1.1
+      "no_cobrado_cents": 690690,
+      "no_cobrado_pct": 2.16,
+      "validadores_sin_taps_7d": 6,
+      "viajes_por_tarjeta": 1.13
     }
   },
   "_analytics": {
@@ -63414,7 +63414,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63425,7 +63425,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63436,7 +63436,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63447,7 +63447,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63458,7 +63458,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63469,7 +63469,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63480,7 +63480,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63491,7 +63491,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63502,7 +63502,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63513,7 +63513,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63524,7 +63524,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63535,7 +63535,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63546,7 +63546,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63557,7 +63557,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63568,7 +63568,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63579,7 +63579,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63590,7 +63590,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63601,7 +63601,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63612,7 +63612,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63623,7 +63623,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63634,7 +63634,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63645,7 +63645,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63656,7 +63656,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63667,7 +63667,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63678,7 +63678,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63689,7 +63689,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63700,7 +63700,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63711,7 +63711,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63722,7 +63722,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63733,7 +63733,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63744,7 +63744,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63755,7 +63755,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -63766,7 +63766,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-09T06:00:00",
@@ -85348,7 +85348,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85359,7 +85359,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85370,7 +85370,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85381,7 +85381,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85392,7 +85392,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85403,7 +85403,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85414,7 +85414,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85425,7 +85425,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85436,7 +85436,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85447,7 +85447,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85458,7 +85458,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85469,7 +85469,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85480,7 +85480,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85491,7 +85491,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85502,7 +85502,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85513,7 +85513,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85524,7 +85524,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85535,7 +85535,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85546,7 +85546,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85557,7 +85557,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85568,7 +85568,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85579,7 +85579,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85590,7 +85590,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85601,7 +85601,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85612,7 +85612,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85623,7 +85623,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85634,7 +85634,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85645,7 +85645,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85656,7 +85656,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85667,7 +85667,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85678,7 +85678,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85689,7 +85689,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -85700,7 +85700,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ]
         ]
       },
@@ -85750,7 +85750,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85761,7 +85761,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85772,7 +85772,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85783,7 +85783,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85794,7 +85794,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85805,7 +85805,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85816,7 +85816,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85827,7 +85827,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85838,7 +85838,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85849,7 +85849,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85860,7 +85860,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85871,7 +85871,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85882,7 +85882,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85893,7 +85893,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85904,7 +85904,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85915,7 +85915,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85926,7 +85926,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85937,7 +85937,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85948,7 +85948,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85959,7 +85959,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85970,7 +85970,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85981,7 +85981,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -85992,7 +85992,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -86003,7 +86003,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -86014,7 +86014,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -86025,7 +86025,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -86036,7 +86036,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -86047,7 +86047,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -86058,7 +86058,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -86069,7 +86069,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -86080,7 +86080,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -86091,7 +86091,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-10T00:00:00",
@@ -86102,7 +86102,7 @@
             null,
             null,
             "",
-            "2026-09-10T08:32:16"
+            "2026-09-10T08:37:11"
           ],
           [
             "2026-09-09T06:00:00",
@@ -94605,7 +94605,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94616,7 +94616,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94627,7 +94627,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94638,7 +94638,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94649,7 +94649,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94660,7 +94660,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94671,7 +94671,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94682,7 +94682,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94693,7 +94693,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94704,7 +94704,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94715,7 +94715,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94726,7 +94726,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94737,7 +94737,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94748,7 +94748,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94759,7 +94759,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94770,7 +94770,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94781,7 +94781,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94792,7 +94792,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94803,7 +94803,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94814,7 +94814,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94825,7 +94825,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94836,7 +94836,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94847,7 +94847,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94858,7 +94858,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94869,7 +94869,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94880,7 +94880,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94891,7 +94891,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94902,7 +94902,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94913,7 +94913,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94924,7 +94924,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94935,7 +94935,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94946,7 +94946,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ],
           [
             "2026-09-03T00:00:00",
@@ -94957,7 +94957,7 @@
             null,
             null,
             "",
-            "2026-09-03T08:32:16"
+            "2026-09-03T08:37:11"
           ]
         ]
       },
@@ -94966,7 +94966,7 @@
         "title": "Histórico horario para referencia de viajes",
         "mode": "history",
         "source": "Alarmbot · ventanas completas de 24 horas · sam_dt · estados 0/255",
-        "updatedAt": "2026-09-10T08:33:59.457351-03:00",
+        "updatedAt": "2026-09-10T08:38:53.487608-03:00",
         "description": "Ocho días equivalentes de las últimas ocho semanas. Una observación por empresa, fecha y hora. Las horas sin viajes son cero sólo cuando la consulta completa fue exitosa. No se suman exportaciones superpuestas. Los CSV de recepción de última hora y pendientes de 48 horas no se mezclan con este universo.",
         "columns": [
           "fecha",
@@ -133015,7 +133015,7 @@
   },
   "title": "Transporte · Opentransit y Alarmbot",
   "_sync": {
-    "checked_at": "2026-09-10T08:33:59-03:00",
+    "checked_at": "2026-09-10T08:38:53-03:00",
     "cadence_seconds": 300
   }
 }
