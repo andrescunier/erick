@@ -46,35 +46,53 @@ al toque — no hace falta esperar un redeploy de Vercel.
 
 ## Autenticación
 
-Un solo secreto fijo, `INGEST_API_KEY`, cargado como variable de entorno en
-Vercel. Cualquier `POST`/`PATCH`/`DELETE`/`GET` a `/api/dashboards/*` tiene
-que mandar `Authorization: Bearer <esa key>` — si no matchea, `401`. No hay
-login de usuario ni formulario: es autenticación máquina a máquina, pensada
-para que la use un script (`scripts/sincronizar_resumen.py`) o cualquier otro
-proceso que quiera publicar un dashboard. Si `INGEST_API_KEY` no está
-configurada, la API rechaza todo (fail closed) en vez de quedar abierta por
-un olvido.
+Dos mecanismos separados, para dos consumidores distintos.
 
-Ver la página del dashboard en el navegador es otro mecanismo, separado del
-API key: `middleware.ts` exige una cookie de sesión válida y si no la hay
-redirige a `/login`, una pantalla propia con el estilo del dashboard. Se
-empezó con Basic Auth (el cartel nativo del navegador) y se cambió porque es
-feo y no se puede personalizar.
+**Scripts y procesos (`/api/dashboards/*`, `/api/control`)**: un solo secreto
+fijo, `INGEST_API_KEY`, cargado como variable de entorno en Vercel. Cualquier
+`POST`/`PATCH`/`DELETE`/`GET` tiene que mandar `Authorization: Bearer <esa
+key>` — si no matchea, `401` (`lib/auth.ts`, `checkApiKey`). Pensado para que
+lo use un script (`scripts/sincronizar_resumen.py`, `transport_business.py`,
+etc.), no una persona. Si `INGEST_API_KEY` no está configurada, la API
+rechaza todo (fail closed) en vez de quedar abierta por un olvido.
 
-La sesión no necesita base de datos ni store: la cookie guarda
-`sha256(VIEWER_USER:VIEWER_PASSWORD:erick-session)` (ver `lib/session.ts`),
-así el middleware recalcula el mismo valor desde las variables de entorno y
-compara. Consecuencia a tener en cuenta: cambiar `VIEWER_PASSWORD` invalida
-todas las sesiones abiertas, que es justo lo que uno quiere. Se usa Web
-Crypto (`crypto.subtle`) y no `crypto`/`Buffer` de Node porque el middleware
-corre en el runtime Edge, donde esos no existen.
+**Personas viendo el dashboard en el navegador**: multi-usuario real, con
+permisos por proyecto. `data/users.json` (leído/escrito vía GitHub Contents
+API, mismo patrón que los dashboards — ver `lib/user-store.ts`) guarda por
+usuario un `password_hash`, una lista `allowed` de patrones tipo
+`"opentransit/*"` o `"*"`, y un flag `admin`. Al loguearse (`/api/login`) se
+emite una cookie de sesión (`erick_session`, ver `lib/session.ts`) con el
+username, los patrones permitidos y una firma HMAC-SHA256 — el middleware
+valida la firma sin volver a pegarle a GitHub en cada request. `puedeVer()`
+en `lib/session.ts` es la función que decide, dado un patrón de la sesión y
+un `{user}/{project}`, si esa persona puede ver ese dashboard puntual. Un
+usuario `admin: true` puede gestionar el resto vía `/api/users`
+(`lib/admin-auth.ts`, que acepta tanto `INGEST_API_KEY` como una sesión de
+admin — así el propio panel de administración puede llamar a la misma API
+que un script). Se usa Web Crypto (`crypto.subtle`) y no `crypto`/`Buffer` de
+Node porque el middleware corre en el runtime Edge.
 
-`/api/*` queda afuera de esta puerta: esas rutas usan `INGEST_API_KEY`, no
-tiene sentido mandar a un script a una pantalla de login.
+`SESSION_SECRET` (o, si no está, el propio `INGEST_API_KEY`) es lo que firma
+las sesiones — cambiarlo invalida todas las sesiones abiertas.
 
-Es intencionalmente un solo usuario compartido, no un sistema de cuentas —
-si más adelante hace falta más de un viewer con permisos distintos, ahí
-conviene pasar a algo real (NextAuth, Clerk, etc.), no antes.
+## Principio: reusar antes que reconstruir
+
+Todo dato nuevo que entra a un dashboard tiene que salir de una de estas dos
+fuentes — nunca de una conexión a base de datos nueva ni de reimplementar acá
+una lógica de negocio que ya existe en otro proyecto del workspace:
+
+1. **Un artifact que el proyecto dueño ya publica.** `scripts/sincronizar_resumen.py`
+   junta el `business_summary.json` que opentransit ya calculó y lo empuja tal
+   cual — no recalcula recaudación ni taps.
+2. **La API que el proyecto dueño ya expone.** `scripts/transport_business.py`
+   y `scripts/trip_baseline.py` piden datos a AlarmBot vía
+   `POST {ERICK_ALARMBOT_URL}/api/queries/execute` (ver `fetch_query` en
+   `transport_business.py`) en vez de conectarse directo a SQL Server o
+   PostgreSQL desde acá.
+
+Si un dato que hace falta no existe todavía como artifact ni como endpoint en
+el proyecto dueño, el paso siguiente es pedir que lo exponga ahí — no armar
+un atajo propio en erick que termine siendo la única fuente de esa lógica.
 
 ## Cómo se publica un dashboard
 
@@ -151,26 +169,56 @@ Necesita las mismas variables de entorno que Vercel (`.env` local, ver
 app/
   page.tsx                          lista de dashboards (usuario -> proyectos)
   [user]/[project]/page.tsx         el dashboard, auto-armado
+  login/, admin/                    login propio y panel de gestión de usuarios
   api/dashboards/route.ts           GET: listar todos
   api/dashboards/[user]/[project]/  GET/POST/PATCH/DELETE de un dashboard
+  api/users/                        alta/baja/edición de usuarios (solo admin)
+  api/preferences/                  qué widgets ve cada persona por dashboard (sesión propia)
+  api/login/, api/logout/           sesión de personas
 lib/
-  github-store.ts                   leer/escribir JSON como archivos en GitHub
-  auth.ts                           chequeo del API key
-  dashboard-shape.ts                heurísticas de "cómo se arma solo"
+  github-store.ts                   leer/escribir JSON de dashboards como archivos en GitHub
+  user-store.ts                     idem, para data/users.json
+  preferences-store.ts              idem, para data/preferences/{username}.json
+  auth.ts                           chequeo de INGEST_API_KEY (scripts)
+  session.ts                        cookie de sesión firmada + puedeVer() + sesionDesdeRequest() (personas)
+  admin-auth.ts                     autorización de /api/users (API key o sesión admin)
+  dashboard-shape.ts                heurísticas de "cómo se arma solo" + aplicarPreferencia()
+  analytics.ts                      contrato genérico de AnalyticsDashboard
   format.ts                         plata/número/porcentaje
 components/
-  AutoDashboard.tsx                 arma tarjetas + tabla + fallback JSON
-data/dashboards/{user}/{project}.json   un archivo por dashboard (lo escribe la API)
+  AutoDashboard.tsx, BusinessDashboard.tsx, AnalyticsDashboard.tsx, ControlCenter.tsx
+  WidgetPicker.tsx                  elegir qué columnas/tarjetas mostrar (client component)
+data/
+  dashboards/{user}/{project}.json  un archivo por dashboard (lo escribe la API)
+  users.json                        usuarios, password_hash, allowed, admin
+  preferences/{username}.json       por persona: columnas habilitadas por dashboard que ve
 scripts/
-  sincronizar_resumen.py            opentransit -> POST a la API
+  sincronizar_resumen.py            opentransit (artifact ya publicado) -> POST a la API
+  transport_business.py            AlarmBot (API /api/queries/execute) -> snapshot
+  trip_baseline.py                 idem, histórico horario de referencia
+  sincronizar_emision.py           leandro/eventos -> POST a la API
 ops/
-  sincronizar_y_publicar.ps1        corre el sync
+  sincronizar_y_publicar.ps1, registrar_control.ps1   corren los syncs / registran la tarea
 ```
+
+## Preferencia por widget (2026-09-12)
+
+Además del permiso por proyecto entero (`allowed`), cada persona puede elegir
+QUÉ columnas/tarjetas ver de un dashboard al que ya tiene acceso. Se guarda en
+`data/preferences/{username}.json`, una entrada por `{user}/{project}` con la
+lista de `Columna.key`/`StatCard.key` habilitadas (ver `dashboard-shape.ts`).
+
+Sin entrada para un dashboard, se muestra todo — la ausencia de preferencia es
+"no filtrar", nunca "ocultar todo", así que nadie pierde widgets por no haber
+configurado nada. `AutoDashboard` calcula la forma completa, la filtra con
+`aplicarPreferencia()`, y muestra el botón "Personalizar widgets"
+(`WidgetPicker.tsx`) que lee/escribe contra `/api/preferences` con la cookie
+de sesión propia — no `INGEST_API_KEY`, esa ruta es la única bajo `/api/*`
+que autentica a una persona y no a un script. La tarjeta "Registros" nunca se
+filtra: es un conteo estructural, no una métrica de negocio.
 
 ## Explícitamente fuera de esta versión
 
-- Más de un usuario/rol para ver el dashboard (hoy es un solo usuario
-  compartido vía Basic Auth). Ver sección "Autenticación" arriba.
 - Gráficos de tendencia en el tiempo: cada `POST` reemplaza el dashboard
   entero, no se guarda histórico. Si hace falta ver una serie temporal, hay
   que decidir primero cómo se acumula (¿un archivo por fecha? ¿un array

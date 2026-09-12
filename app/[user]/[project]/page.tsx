@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { getDashboard } from "@/lib/github-store";
+import { leerPreferencias } from "@/lib/preferences-store";
 import { AutoDashboard } from "@/components/AutoDashboard";
 import { puedeVer } from "@/lib/session";
 
@@ -43,13 +44,21 @@ export default async function PaginaDashboard({ params }: Props) {
   }
   if (!datos) notFound();
 
+  const dashboardKey = `${params.user}/${params.project}`;
+  // Si no se puede leer la preferencia (p.ej. GITHUB_TOKEN mal configurado en
+  // un entorno de prueba) se muestra todo, igual que sin preferencia guardada
+  // — el error de storage ya se ve arriba si getDashboard también fallo.
+  const habilitadas = await leerPreferencias(username)
+    .then((p) => p[dashboardKey]?.columnas ?? null)
+    .catch(() => null);
+
   return (
     <main>
       {miga}
       <h1>
         {typeof datos.title === "string" ? datos.title : `${params.user} / ${params.project}`}
       </h1>
-      <AutoDashboard data={datos} />
+      <AutoDashboard data={datos} dashboardKey={dashboardKey} habilitadas={habilitadas} />
     </main>
   );
 }

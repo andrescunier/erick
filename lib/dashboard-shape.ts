@@ -23,6 +23,10 @@ export type ColumnaVentana = {
 };
 
 export type StatCard = {
+  // Clave estable para preferencias: la misma que la Columna que la origina,
+  // o "_registros" para la tarjeta de conteo que no sale de ninguna columna
+  // (esa nunca se filtra: es estructural, no una métrica de negocio).
+  key: string;
   label: string;
   valor: number;
   cobertura?: string;
@@ -269,6 +273,7 @@ export function detectarForma(data: Record<string, unknown>): FormaDetectada {
     .slice(0, 4);
 
   const stats: StatCard[] = statsFuente.map((c) => ({
+    key: c.key,
     label: c.label,
     valor: registrosRaw!.reduce((acc, r) => acc + (typeof r[c.key] === "number" ? r[c.key] as number : 0), 0),
     cobertura: registrosRaw!.some((r) => typeof r[c.key] !== "number")
@@ -282,7 +287,7 @@ export function detectarForma(data: Record<string, unknown>): FormaDetectada {
       primeraVentana?.ventanaKey
     ),
   }));
-  stats.push({ label: "Registros", valor: registrosRaw.length, formato: "count", delta: null });
+  stats.push({ key: "_registros", label: "Registros", valor: registrosRaw.length, formato: "count", delta: null });
 
   // Conservar también las columnas y objetos omitidos por los límites visuales.
   if (campoColeccion) resto[campoColeccion] = data[campoColeccion];
@@ -297,5 +302,26 @@ export function detectarForma(data: Record<string, unknown>): FormaDetectada {
     stats,
     procedencia,
     resto,
+  };
+}
+
+/**
+ * Filtra columnas y tarjetas según las claves habilitadas por el usuario.
+ *
+ * `habilitadas === null` (sin preferencia guardada) devuelve `forma` tal
+ * cual: se sigue mostrando todo, que es el comportamiento de siempre para
+ * quien nunca configuró nada. `_registros` nunca se filtra: es la tarjeta de
+ * conteo estructural, no una métrica de negocio que alguien elija ocultar.
+ */
+export function aplicarPreferencia(
+  forma: FormaDetectada,
+  habilitadas: string[] | null
+): FormaDetectada {
+  if (habilitadas === null) return forma;
+  const set = new Set(habilitadas);
+  return {
+    ...forma,
+    columnas: forma.columnas.filter((c) => set.has(c.key)),
+    stats: forma.stats.filter((s) => s.key === "_registros" || set.has(s.key)),
   };
 }

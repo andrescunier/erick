@@ -104,6 +104,21 @@ export async function verificarSesion(token: string): Promise<Sesion | null> {
   return sesion;
 }
 
+/**
+ * La sesión de quien hace el request, leyendo la cookie directo del header
+ * (no del middleware): rutas bajo /api/* no pasan por el middleware —usan
+ * INGEST_API_KEY para máquina a máquina— así que una ruta que necesita saber
+ * QUÉ PERSONA está pidiendo algo (no un script) tiene que resolverla ella
+ * misma. Mismo patrón que `checkAdminOrApiKey` en admin-auth.ts.
+ */
+export async function sesionDesdeRequest(req: Request): Promise<Sesion | null> {
+  const cookieHeader = req.headers.get("cookie") ?? "";
+  const match = cookieHeader.split(";").find((c) => c.trim().startsWith(`${COOKIE_SESION}=`));
+  if (!match) return null;
+  const token = match.trim().slice(COOKIE_SESION.length + 1);
+  return verificarSesion(token);
+}
+
 export function puedeVer(sesion: Sesion, user: string, project: string): boolean {
   if (sesion.admin) return true;
   const target = `${user}/${project}`;

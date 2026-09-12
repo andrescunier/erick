@@ -7,7 +7,7 @@ const output = ts.transpileModule(fs.readFileSync("lib/dashboard-shape.ts", "utf
 }).outputText;
 const context = { exports: {} };
 vm.runInNewContext(output, context);
-const { detectarForma, encontrarPctEnVentana } = context.exports;
+const { detectarForma, encontrarPctEnVentana, aplicarPreferencia } = context.exports;
 assert.equal(encontrarPctEnVentana({ variation_pct: 0 }), 0);
 assert.equal(encontrarPctEnVentana({ variation_pct: null }), null);
 const data = { tenants: {
@@ -22,6 +22,16 @@ assert.match(shape.stats[0].cobertura, /1 de 2/);
 assert.ok(!shape.stats.some(c => c.label === "Average ticket"));
 assert.equal(shape.columnasVentana.length, 1);
 assert.equal(shape.resto.tenants, data.tenants);
+
+// aplicarPreferencia: null = todo (default); una lista filtra columnas+stats
+// por la misma clave, pero nunca la tarjeta estructural "_registros".
+assert.equal(aplicarPreferencia(shape, null), shape);
+const filtrado = aplicarPreferencia(shape, ["no_cobrado_cents"]);
+assert.equal(filtrado.columnas.length, 1);
+assert.ok(filtrado.columnas.every(c => c.key === "no_cobrado_cents"));
+assert.ok(filtrado.stats.some(s => s.key === "_registros"), "_registros nunca se filtra");
+assert.ok(!filtrado.stats.some(s => s.key === "average_ticket_cents"));
+assert.equal(aplicarPreferencia(shape, []).columnas.length, 0);
 const middleware = fs.readFileSync("middleware.ts", "utf8");
 const matcher = JSON.parse(middleware.match(/matcher: \[\s*(".*")/)[1]);
 const pattern = new RegExp("^" + matcher + "$" );

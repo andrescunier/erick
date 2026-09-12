@@ -624,3 +624,38 @@ tbody tr:hover {
     width: 100%;
   }
 }
+
+/* Personalizacion de widgets por dashboard (AutoDashboard + WidgetPicker) */
+.widget-picker { margin-block-end: 16px; }
+.widget-picker > button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+}
+.widget-picker-panel {
+  margin-block-start: 10px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  max-width: 100%;
+}
+.widget-picker-item { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text); }
+.widget-picker-acciones { flex-basis: 100%; display: flex; gap: 10px; padding-block-start: 6px; border-top: 1px solid var(--border); }
+.widget-picker-acciones button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 7px 12px;
+}
+.widget-picker-mensaje { flex-basis: 100%; margin: 0; font-size: 13px; color: var(--muted); }
