@@ -12,6 +12,11 @@ Variables de entorno necesarias:
     ERICK_USER      opcional, default "opentransit"
     ERICK_PROJECT   opcional, default "resumen"
 
+Variables de entorno opcionales (default: donde esta opentransit en esta
+maquina hoy; mismo patron que ERICK_ALARMBOT_PROJECT/ERICK_LEANDRO_DIR):
+    ERICK_OPENTRANSIT_ARTIFACTS_DIR
+    ERICK_OPENTRANSIT_TENANTS_YAML
+
 Uso: py scripts/sincronizar_resumen.py
 """
 
@@ -26,8 +31,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-ARTIFACTS_DIR = Path(r"C:\andybot\opentransit\emova\tenants\artifacts")
-TENANTS_YAML = Path(r"C:\andybot\opentransit\config\tenants.yaml")
+ARTIFACTS_DIR = Path(
+    os.environ.get("ERICK_OPENTRANSIT_ARTIFACTS_DIR", r"C:\andybot\opentransit\emova\tenants\artifacts")
+)
+TENANTS_YAML = Path(
+    os.environ.get("ERICK_OPENTRANSIT_TENANTS_YAML", r"C:\andybot\opentransit\config\tenants.yaml")
+)
 
 # De donde sale cada business_summary.json. Se declara aca para poder mostrarlo
 # en el dashboard: si alguien pregunta "de donde sale este numero", la respuesta
