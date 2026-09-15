@@ -1,20 +1,20 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-15T00:47:19.543255-03:00",
+  "generado_en": "2026-09-15T00:52:19.893889-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-17",
-    "ultima_recepcion": "2026-09-15T00:46:47.635662-03:00",
+    "ultima_recepcion": "2026-09-15T00:48:11.459405-03:00",
     "dias_con_datos": 3,
-    "archivos_leidos": 2094,
+    "archivos_leidos": 2095,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 2092,
+    "sin_tenant": 2093,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 2092,
-    "entidades_observadas": 2058,
+    "eventos_unicos": 2093,
+    "entidades_observadas": 2059,
     "entidades_con_seguimiento": 22,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T00:46:47.635662-03:00",
+        "updatedAt": "2026-09-15T00:48:11.459405-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -3475,13 +3475,13 @@
             "Sale.Rejected",
             "Rechazada",
             "Debit",
-            2,
+            3,
             0,
-            2,
-            2,
+            3,
+            3,
             0,
             0,
-            15472400
+            25776800
           ],
           [
             "2026-09-15T00:00:00",
@@ -3537,7 +3537,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T00:46:47.635662-03:00",
+        "updatedAt": "2026-09-15T00:48:11.459405-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -4072,7 +4072,7 @@
             "310",
             "Local",
             "ARS",
-            2
+            3
           ]
         ]
       },
@@ -4083,7 +4083,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T00:46:47.635662-03:00",
+        "updatedAt": "2026-09-15T00:48:11.459405-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -4546,7 +4546,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T00:46:47.635662-03:00",
+        "updatedAt": "2026-09-15T00:48:11.459405-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -4802,7 +4802,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T00:46:47.635662-03:00",
+        "updatedAt": "2026-09-15T00:48:11.459405-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -4990,7 +4990,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T00:46:47.635662-03:00",
+        "updatedAt": "2026-09-15T00:48:11.459405-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -5252,7 +5252,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T00:46:47.635662-03:00",
+        "updatedAt": "2026-09-15T00:48:11.459405-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -8254,7 +8254,7 @@
             "Sale.Rejected",
             "Rechazada",
             "pago",
-            2
+            3
           ],
           [
             "2026-09-15T00:00:00",
@@ -8323,12 +8323,12 @@
       }
     ],
     "warnings": [
-      "2092 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "2093 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-15T00:47:20-03:00",
+    "checked_at": "2026-09-15T00:52:20-03:00",
     "cadence_seconds": 300
   }
 }
