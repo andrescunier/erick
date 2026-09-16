@@ -1,20 +1,20 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-16T14:12:22.891270-03:00",
+  "generado_en": "2026-09-16T14:17:22.145569-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-18",
-    "ultima_recepcion": "2026-09-16T14:11:46.380713-03:00",
+    "ultima_recepcion": "2026-09-16T14:16:48.353290-03:00",
     "dias_con_datos": 4,
-    "archivos_leidos": 4886,
+    "archivos_leidos": 4890,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 4884,
+    "sin_tenant": 4888,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 4884,
-    "entidades_observadas": 4676,
+    "eventos_unicos": 4888,
+    "entidades_observadas": 4680,
     "entidades_con_seguimiento": 69,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-16T14:11:46.380713-03:00",
+        "updatedAt": "2026-09-16T14:16:48.353290-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -8290,12 +8290,12 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
-            5,
-            5,
+            6,
+            6,
             0,
-            5,
+            6,
             0,
-            211358300,
+            326478300,
             0
           ],
           [
@@ -8335,12 +8335,12 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
-            3,
-            3,
+            4,
+            4,
             0,
-            3,
+            4,
             0,
-            25500000,
+            144500000,
             0
           ],
           [
@@ -8382,7 +8382,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-16T14:11:46.380713-03:00",
+        "updatedAt": "2026-09-16T14:16:48.353290-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -9478,7 +9478,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-16T14:11:46.380713-03:00",
+        "updatedAt": "2026-09-16T14:16:48.353290-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -10591,7 +10591,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-16T14:11:46.380713-03:00",
+        "updatedAt": "2026-09-16T14:16:48.353290-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -11159,7 +11159,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-16T14:11:46.380713-03:00",
+        "updatedAt": "2026-09-16T14:16:48.353290-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -11559,8 +11559,8 @@
             "2026-09-16T14:00:00",
             "sin_tenant",
             "Open",
-            1,
-            1
+            3,
+            3
           ]
         ]
       },
@@ -11571,7 +11571,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-16T14:11:46.380713-03:00",
+        "updatedAt": "2026-09-16T14:16:48.353290-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -12121,7 +12121,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-16T14:11:46.380713-03:00",
+        "updatedAt": "2026-09-16T14:16:48.353290-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -19578,7 +19578,7 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            5
+            6
           ],
           [
             "2026-09-16T14:00:00",
@@ -19596,7 +19596,7 @@
             "account.Account.Created",
             "Open",
             "cuenta",
-            1
+            3
           ],
           [
             "2026-09-16T14:00:00",
@@ -19650,7 +19650,7 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            3
+            4
           ],
           [
             "2026-09-16T14:00:00",
@@ -19674,12 +19674,12 @@
       }
     ],
     "warnings": [
-      "4884 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "4888 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-16T14:12:24-03:00",
+    "checked_at": "2026-09-16T14:17:23-03:00",
     "cadence_seconds": 300
   }
 }
