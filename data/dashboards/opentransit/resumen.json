@@ -1,12 +1,12 @@
 {
-  "generado_en": "2026-09-15T23:12:12.340531",
+  "generado_en": "2026-09-15T23:17:12.437234",
   "_procedencia": {
     "sistema": "opentransit — pipeline de archivos (no tiene base de datos ni API HTTP propia)",
     "informe": "business_summary.json (14 de sus 26 campos) + 4 indicadores derivados (no cobrado, validadores sin taps hoy, viajes por tarjeta)",
     "ruta": "C:\\andybot\\opentransit\\emova\\tenants\\artifacts\\<tenant>\\<fecha>\\<run_id>\\structured",
     "insumos_del_informe": "BACKFILE, STPOP, DAILYTAPS, VQR, RECOVERY, STPOP de ayer y JT_EMOVA (CSV diarios de 2 servidores SFTP)",
     "sincronizado_por": "scripts/sincronizar_resumen.py",
-    "sincronizado_en": "2026-09-15T23:12:12",
+    "sincronizado_en": "2026-09-15T23:17:12",
     "tenants_publicados": 32,
     "tenants_declarados_en_config": 25,
     "tenants_sin_declarar": "scabral, tagostosa, tcolegiales, tldevega, triachuelo, tsantafe, tsesentayocho",
@@ -61094,394 +61094,6 @@
             1145997455,
             101779180,
             6292
-          ]
-        ]
-      },
-      {
-        "id": "control_ativo_48hs_emova",
-        "title": "Pendientes EMOVA",
-        "mode": "snapshot",
-        "cadenceMinutes": 60,
-        "description": "Última foto disponible, por hora de sam_dt (zona horaria de la base, sin conversión). Ativo 0 → 1 es el ciclo habitual; otros estados requieren revisión. No se asignan severidades automáticamente. EMOVA: sólo filas vinculadas a confirmation_pend, con estado 0/255; no representa el total de taps. Las exportaciones pueden usar parámetros de fecha: el CSV no registra la ventana solicitada; se muestra el rango observado.",
-        "source": "C:\\andybot\\alarmbot\\output\\20260915_221121_subte_main_control_ativo_48hs_emova.csv",
-        "updatedAt": "2026-09-15T22:11:21",
-        "columns": [
-          "fecha",
-          "base",
-          "ativo",
-          "cantidad"
-        ],
-        "dimensions": [
-          "base",
-          "ativo"
-        ],
-        "metrics": [
-          {
-            "key": "cantidad",
-            "label": "Registros en la foto",
-            "format": "count"
-          }
-        ],
-        "rows": [
-          [
-            "2026-09-15T21:00:00",
-            "EMOVA",
-            "0",
-            664
-          ],
-          [
-            "2026-09-15T21:00:00",
-            "EMOVA",
-            "1",
-            290
-          ],
-          [
-            "2026-09-15T20:00:00",
-            "EMOVA",
-            "0",
-            4585
-          ],
-          [
-            "2026-09-15T20:00:00",
-            "EMOVA",
-            "1",
-            1993
-          ],
-          [
-            "2026-09-15T19:00:00",
-            "EMOVA",
-            "0",
-            6229
-          ],
-          [
-            "2026-09-15T19:00:00",
-            "EMOVA",
-            "1",
-            2584
-          ],
-          [
-            "2026-09-15T18:00:00",
-            "EMOVA",
-            "0",
-            13550
-          ],
-          [
-            "2026-09-15T18:00:00",
-            "EMOVA",
-            "1",
-            4978
-          ],
-          [
-            "2026-09-15T17:00:00",
-            "EMOVA",
-            "0",
-            14470
-          ],
-          [
-            "2026-09-15T17:00:00",
-            "EMOVA",
-            "1",
-            5585
-          ],
-          [
-            "2026-09-15T17:00:00",
-            "EMOVA",
-            "2",
-            1417
-          ],
-          [
-            "2026-09-15T16:00:00",
-            "EMOVA",
-            "0",
-            10032
-          ],
-          [
-            "2026-09-15T16:00:00",
-            "EMOVA",
-            "1",
-            4388
-          ],
-          [
-            "2026-09-15T15:00:00",
-            "EMOVA",
-            "0",
-            7365
-          ],
-          [
-            "2026-09-15T15:00:00",
-            "EMOVA",
-            "1",
-            3308
-          ],
-          [
-            "2026-09-15T14:00:00",
-            "EMOVA",
-            "0",
-            6012
-          ],
-          [
-            "2026-09-15T14:00:00",
-            "EMOVA",
-            "1",
-            2607
-          ],
-          [
-            "2026-09-15T13:00:00",
-            "EMOVA",
-            "0",
-            7093
-          ],
-          [
-            "2026-09-15T13:00:00",
-            "EMOVA",
-            "1",
-            3199
-          ],
-          [
-            "2026-09-15T12:00:00",
-            "EMOVA",
-            "0",
-            6405
-          ],
-          [
-            "2026-09-15T12:00:00",
-            "EMOVA",
-            "1",
-            2930
-          ],
-          [
-            "2026-09-15T11:00:00",
-            "EMOVA",
-            "0",
-            5210
-          ],
-          [
-            "2026-09-15T11:00:00",
-            "EMOVA",
-            "1",
-            2357
-          ],
-          [
-            "2026-09-15T10:00:00",
-            "EMOVA",
-            "0",
-            5833
-          ],
-          [
-            "2026-09-15T10:00:00",
-            "EMOVA",
-            "1",
-            2446
-          ],
-          [
-            "2026-09-15T09:00:00",
-            "EMOVA",
-            "0",
-            10243
-          ],
-          [
-            "2026-09-15T09:00:00",
-            "EMOVA",
-            "1",
-            4150
-          ],
-          [
-            "2026-09-15T08:00:00",
-            "EMOVA",
-            "0",
-            14538
-          ],
-          [
-            "2026-09-15T08:00:00",
-            "EMOVA",
-            "1",
-            5296
-          ],
-          [
-            "2026-09-15T07:00:00",
-            "EMOVA",
-            "0",
-            9360
-          ],
-          [
-            "2026-09-15T07:00:00",
-            "EMOVA",
-            "1",
-            4146
-          ],
-          [
-            "2026-09-15T06:00:00",
-            "EMOVA",
-            "0",
-            2179
-          ],
-          [
-            "2026-09-15T06:00:00",
-            "EMOVA",
-            "1",
-            1155
-          ],
-          [
-            "2026-09-15T05:00:00",
-            "EMOVA",
-            "0",
-            258
-          ],
-          [
-            "2026-09-15T05:00:00",
-            "EMOVA",
-            "1",
-            177
-          ],
-          [
-            "2026-09-14T23:00:00",
-            "EMOVA",
-            "0",
-            33
-          ],
-          [
-            "2026-09-14T23:00:00",
-            "EMOVA",
-            "1",
-            291
-          ],
-          [
-            "2026-09-14T22:00:00",
-            "EMOVA",
-            "1",
-            2164
-          ],
-          [
-            "2026-09-14T21:00:00",
-            "EMOVA",
-            "1",
-            4493
-          ],
-          [
-            "2026-09-14T20:00:00",
-            "EMOVA",
-            "1",
-            6274
-          ],
-          [
-            "2026-09-14T19:00:00",
-            "EMOVA",
-            "1",
-            8444
-          ],
-          [
-            "2026-09-14T18:00:00",
-            "EMOVA",
-            "1",
-            16556
-          ],
-          [
-            "2026-09-14T17:00:00",
-            "EMOVA",
-            "0",
-            27
-          ],
-          [
-            "2026-09-14T17:00:00",
-            "EMOVA",
-            "1",
-            19708
-          ],
-          [
-            "2026-09-14T16:00:00",
-            "EMOVA",
-            "1",
-            13635
-          ],
-          [
-            "2026-09-14T16:00:00",
-            "EMOVA",
-            "2",
-            533
-          ],
-          [
-            "2026-09-14T15:00:00",
-            "EMOVA",
-            "1",
-            10719
-          ],
-          [
-            "2026-09-14T14:00:00",
-            "EMOVA",
-            "1",
-            8220
-          ],
-          [
-            "2026-09-14T13:00:00",
-            "EMOVA",
-            "1",
-            9517
-          ],
-          [
-            "2026-09-14T12:00:00",
-            "EMOVA",
-            "1",
-            8836
-          ],
-          [
-            "2026-09-14T11:00:00",
-            "EMOVA",
-            "1",
-            7120
-          ],
-          [
-            "2026-09-14T10:00:00",
-            "EMOVA",
-            "1",
-            8017
-          ],
-          [
-            "2026-09-14T09:00:00",
-            "EMOVA",
-            "1",
-            13385
-          ],
-          [
-            "2026-09-14T08:00:00",
-            "EMOVA",
-            "0",
-            32
-          ],
-          [
-            "2026-09-14T08:00:00",
-            "EMOVA",
-            "1",
-            18095
-          ],
-          [
-            "2026-09-14T07:00:00",
-            "EMOVA",
-            "1",
-            12832
-          ],
-          [
-            "2026-09-14T06:00:00",
-            "EMOVA",
-            "1",
-            3303
-          ],
-          [
-            "2026-09-14T05:00:00",
-            "EMOVA",
-            "1",
-            399
-          ],
-          [
-            "2026-09-14T04:00:00",
-            "EMOVA",
-            "1",
-            1
-          ],
-          [
-            "2026-09-14T02:00:00",
-            "EMOVA",
-            "1",
-            2
           ]
         ]
       },
@@ -162119,7 +161731,7 @@
         "title": "Histórico horario para referencia de viajes",
         "mode": "history",
         "source": "Alarmbot · ventanas completas de 24 horas · sam_dt · estados 0/255",
-        "updatedAt": "2026-09-15T23:13:43.439203-03:00",
+        "updatedAt": "2026-09-15T23:18:43.525099-03:00",
         "description": "Ocho días equivalentes de las últimas ocho semanas. Una observación por empresa, fecha y hora. Las horas sin viajes son cero sólo cuando la consulta completa fue exitosa. No se suman exportaciones superpuestas. Los CSV de recepción de última hora y pendientes de 48 horas no se mezclan con este universo.",
         "columns": [
           "fecha",
@@ -200159,6 +199771,7 @@
     ],
     "warnings": [
       "AlarmBot buses: fuente no disponible (Columnas requeridas ausentes en 20260915_230715_buses_main_control_ativo_48hs_buses.csv).",
+      "AlarmBot EMOVA: fuente no disponible (Columnas requeridas ausentes en 20260915_231650_subte_main_control_ativo_48hs_emova.csv).",
       "Alarmbot buses, 2026-09-15: consulta fallida. La última captura conserva su fecha; no se reemplaza por cero.",
       "Alarmbot subte, 2026-09-15: consulta fallida. La última captura conserva su fecha; no se reemplaza por cero.",
       "Alarmbot buses, 2026-09-14: consulta fallida. La última captura conserva su fecha; no se reemplaza por cero.",
@@ -200169,7 +199782,7 @@
   },
   "title": "Transporte · Opentransit y Alarmbot",
   "_sync": {
-    "checked_at": "2026-09-15T23:13:43-03:00",
+    "checked_at": "2026-09-15T23:18:43-03:00",
     "cadence_seconds": 300
   }
 }
