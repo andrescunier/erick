@@ -1,12 +1,12 @@
 {
-  "generado_en": "2026-09-15T23:37:11.540967",
+  "generado_en": "2026-09-15T23:42:11.213751",
   "_procedencia": {
     "sistema": "opentransit — pipeline de archivos (no tiene base de datos ni API HTTP propia)",
     "informe": "business_summary.json (14 de sus 26 campos) + 4 indicadores derivados (no cobrado, validadores sin taps hoy, viajes por tarjeta)",
     "ruta": "C:\\andybot\\opentransit\\emova\\tenants\\artifacts\\<tenant>\\<fecha>\\<run_id>\\structured",
     "insumos_del_informe": "BACKFILE, STPOP, DAILYTAPS, VQR, RECOVERY, STPOP de ayer y JT_EMOVA (CSV diarios de 2 servidores SFTP)",
     "sincronizado_por": "scripts/sincronizar_resumen.py",
-    "sincronizado_en": "2026-09-15T23:37:11",
+    "sincronizado_en": "2026-09-15T23:42:11",
     "tenants_publicados": 32,
     "tenants_declarados_en_config": 25,
     "tenants_sin_declarar": "scabral, tagostosa, tcolegiales, tldevega, triachuelo, tsantafe, tsesentayocho",
@@ -161731,7 +161731,7 @@
         "title": "Histórico horario para referencia de viajes",
         "mode": "history",
         "source": "Alarmbot · ventanas completas de 24 horas · sam_dt · estados 0/255",
-        "updatedAt": "2026-09-15T23:38:42.599765-03:00",
+        "updatedAt": "2026-09-15T23:43:42.383571-03:00",
         "description": "Ocho días equivalentes de las últimas ocho semanas. Una observación por empresa, fecha y hora. Las horas sin viajes son cero sólo cuando la consulta completa fue exitosa. No se suman exportaciones superpuestas. Los CSV de recepción de última hora y pendientes de 48 horas no se mezclan con este universo.",
         "columns": [
           "fecha",
@@ -199770,7 +199770,7 @@
       }
     ],
     "warnings": [
-      "AlarmBot buses: fuente no disponible (Columnas requeridas ausentes en 20260915_230715_buses_main_control_ativo_48hs_buses.csv).",
+      "AlarmBot buses: fuente no disponible (Columnas requeridas ausentes en 20260915_233718_buses_main_control_ativo_48hs_buses.csv).",
       "AlarmBot EMOVA: fuente no disponible (Columnas requeridas ausentes en 20260915_231650_subte_main_control_ativo_48hs_emova.csv).",
       "Alarmbot buses, 2026-09-15: consulta fallida. La última captura conserva su fecha; no se reemplaza por cero.",
       "Alarmbot subte, 2026-09-15: consulta fallida. La última captura conserva su fecha; no se reemplaza por cero.",
@@ -199782,7 +199782,7 @@
   },
   "title": "Transporte · Opentransit y Alarmbot",
   "_sync": {
-    "checked_at": "2026-09-15T23:38:42-03:00",
+    "checked_at": "2026-09-15T23:43:42-03:00",
     "cadence_seconds": 300
   }
 }
