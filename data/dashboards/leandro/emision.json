@@ -1,20 +1,20 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-15T21:42:31.420117-03:00",
+  "generado_en": "2026-09-15T21:47:24.795215-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-17",
-    "ultima_recepcion": "2026-09-15T21:40:58.609961-03:00",
+    "ultima_recepcion": "2026-09-15T21:46:49.722748-03:00",
     "dias_con_datos": 3,
-    "archivos_leidos": 3852,
+    "archivos_leidos": 3860,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 3850,
+    "sin_tenant": 3858,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 3850,
-    "entidades_observadas": 3688,
+    "eventos_unicos": 3858,
+    "entidades_observadas": 3696,
     "entidades_con_seguimiento": 47,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T21:40:58.609961-03:00",
+        "updatedAt": "2026-09-15T21:46:49.722748-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -6205,12 +6205,12 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "Credit",
-            8,
-            8,
+            9,
+            9,
             0,
-            8,
+            9,
             0,
-            29200000,
+            192100000,
             0
           ],
           [
@@ -6220,12 +6220,57 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
-            13,
-            13,
+            16,
+            16,
             0,
-            13,
+            16,
             0,
-            354150301,
+            424300301,
+            0
+          ],
+          [
+            "2026-09-15T21:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "Debit",
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            65000000
+          ],
+          [
+            "2026-09-15T21:00:00",
+            "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            10000,
+            0
+          ],
+          [
+            "2026-09-15T21:00:00",
+            "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            10000,
             0
           ],
           [
@@ -6292,6 +6337,21 @@
             "2026-09-15T21:00:00",
             "sin_tenant",
             "TR Argentina S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "Debit",
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            50000
+          ],
+          [
+            "2026-09-15T21:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
             "PaymentProvider.Confirmed",
             "Aprobada",
             "Debit",
@@ -6312,7 +6372,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T21:40:58.609961-03:00",
+        "updatedAt": "2026-09-15T21:46:49.722748-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -7148,6 +7208,26 @@
             "Local",
             "ARS",
             1
+          ],
+          [
+            "2026-09-15T21:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Rejected",
+            "402",
+            "Local",
+            "ARS",
+            1
+          ],
+          [
+            "2026-09-15T21:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Rejected",
+            "344",
+            "Local",
+            "ARS",
+            1
           ]
         ]
       },
@@ -7158,7 +7238,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T21:40:58.609961-03:00",
+        "updatedAt": "2026-09-15T21:46:49.722748-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -7998,7 +8078,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T21:40:58.609961-03:00",
+        "updatedAt": "2026-09-15T21:46:49.722748-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -8446,7 +8526,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T21:40:58.609961-03:00",
+        "updatedAt": "2026-09-15T21:46:49.722748-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -8760,7 +8840,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T21:40:58.609961-03:00",
+        "updatedAt": "2026-09-15T21:46:49.722748-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -9190,7 +9270,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-15T21:40:58.609961-03:00",
+        "updatedAt": "2026-09-15T21:46:49.722748-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -14739,7 +14819,7 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            8
+            9
           ],
           [
             "2026-09-15T21:00:00",
@@ -14748,7 +14828,34 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            13
+            16
+          ],
+          [
+            "2026-09-15T21:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-15T21:00:00",
+            "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-15T21:00:00",
+            "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
           ],
           [
             "2026-09-15T21:00:00",
@@ -14826,6 +14933,15 @@
             "2026-09-15T21:00:00",
             "sin_tenant",
             "TR Argentina S.A.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-15T21:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
             "PaymentProvider.Confirmed",
             "Aprobada",
             "pago",
@@ -14835,12 +14951,12 @@
       }
     ],
     "warnings": [
-      "3850 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "3858 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-15T21:42:32-03:00",
+    "checked_at": "2026-09-15T21:47:25-03:00",
     "cadence_seconds": 300
   }
 }
