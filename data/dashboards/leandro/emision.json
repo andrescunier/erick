@@ -1,20 +1,20 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-18T12:47:27.012197-03:00",
+  "generado_en": "2026-09-18T12:52:31.620036-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-20",
-    "ultima_recepcion": "2026-09-18T12:46:41.584310-03:00",
+    "ultima_recepcion": "2026-09-18T12:52:23.930000-03:00",
     "dias_con_datos": 6,
-    "archivos_leidos": 8796,
+    "archivos_leidos": 8813,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 8794,
+    "sin_tenant": 8811,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 8794,
-    "entidades_observadas": 8408,
+    "eventos_unicos": 8811,
+    "entidades_observadas": 8424,
     "entidades_con_seguimiento": 133,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T12:46:41.584310-03:00",
+        "updatedAt": "2026-09-18T12:52:23.930000-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -14740,12 +14740,12 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "Credit",
-            26,
-            26,
+            27,
+            27,
             0,
-            26,
+            27,
             0,
-            255497027,
+            255797027,
             0
           ],
           [
@@ -14755,12 +14755,12 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
-            15,
-            15,
+            18,
+            18,
             0,
-            15,
+            18,
             0,
-            211600000,
+            217500000,
             0
           ],
           [
@@ -14785,12 +14785,12 @@
             "PaymentProvider.Confirmed",
             "Aprobada",
             "Debit",
-            1,
-            1,
+            2,
+            2,
             0,
-            1,
+            2,
             0,
-            350000,
+            700000,
             0
           ],
           [
@@ -14800,13 +14800,28 @@
             "Sale.Confirmed",
             "Aprobada",
             "Debit",
-            9,
-            9,
+            10,
+            10,
             0,
-            9,
+            10,
             0,
-            260311100,
+            261311100,
             0
+          ],
+          [
+            "2026-09-18T12:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "Rechazada",
+            "Debit",
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            9180000
           ],
           [
             "2026-09-18T12:00:00",
@@ -14826,16 +14841,31 @@
           [
             "2026-09-18T12:00:00",
             "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "Debit",
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            3800000
+          ],
+          [
+            "2026-09-18T12:00:00",
+            "sin_tenant",
             "TR Argentina S.A.",
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "Credit",
-            14,
-            14,
+            16,
+            16,
             0,
-            14,
+            16,
             0,
-            18530854,
+            31530854,
             0
           ],
           [
@@ -14845,12 +14875,12 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
-            3,
-            3,
+            6,
+            6,
             0,
-            3,
+            6,
             0,
-            15000000,
+            17108000,
             0
           ],
           [
@@ -14892,7 +14922,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T12:46:41.584310-03:00",
+        "updatedAt": "2026-09-18T12:52:23.930000-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -17058,6 +17088,26 @@
             "Local",
             "ARS",
             2
+          ],
+          [
+            "2026-09-18T12:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "310",
+            "Local",
+            "ARS",
+            1
+          ],
+          [
+            "2026-09-18T12:00:00",
+            "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankOutputTransfer.Rejected",
+            "343",
+            "Local",
+            "ARS",
+            1
           ]
         ]
       },
@@ -17068,7 +17118,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T12:46:41.584310-03:00",
+        "updatedAt": "2026-09-18T12:52:23.930000-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -19104,7 +19154,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T12:46:41.584310-03:00",
+        "updatedAt": "2026-09-18T12:52:23.930000-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -20053,7 +20103,7 @@
             "InTransit",
             "Physical",
             "No",
-            7
+            6
           ],
           [
             "2026-09-18T09:00:00",
@@ -20114,6 +20164,14 @@
           [
             "2026-09-18T12:00:00",
             "sin_tenant",
+            "Delivered",
+            "Physical",
+            "No",
+            1
+          ],
+          [
+            "2026-09-18T12:00:00",
+            "sin_tenant",
             "InTransit",
             "Physical",
             "No",
@@ -20136,7 +20194,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T12:46:41.584310-03:00",
+        "updatedAt": "2026-09-18T12:52:23.930000-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -20851,14 +20909,14 @@
             "2026-09-18T12:00:00",
             "sin_tenant",
             "Open",
-            6,
-            6
+            7,
+            7
           ],
           [
             "2026-09-18T12:00:00",
             "sin_tenant",
             "Preventive Suspension",
-            3,
+            4,
             1
           ]
         ]
@@ -20870,7 +20928,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T12:46:41.584310-03:00",
+        "updatedAt": "2026-09-18T12:52:23.930000-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -21729,10 +21787,10 @@
             "Sin distribuidor",
             "lending.loanRequest.Confirmed",
             "Aprobada",
-            2,
-            2,
+            3,
+            3,
             0,
-            2,
+            3,
             0
           ]
         ]
@@ -21744,7 +21802,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T12:46:41.584310-03:00",
+        "updatedAt": "2026-09-18T12:52:23.930000-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -35141,7 +35199,7 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            26
+            27
           ],
           [
             "2026-09-18T12:00:00",
@@ -35150,7 +35208,7 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            15
+            18
           ],
           [
             "2026-09-18T12:00:00",
@@ -35168,7 +35226,7 @@
             "PaymentProvider.Confirmed",
             "Aprobada",
             "pago",
-            1
+            2
           ],
           [
             "2026-09-18T12:00:00",
@@ -35177,7 +35235,16 @@
             "Sale.Confirmed",
             "Aprobada",
             "pago",
-            9
+            10
+          ],
+          [
+            "2026-09-18T12:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Rejected",
+            "Rechazada",
+            "pago",
+            1
           ],
           [
             "2026-09-18T12:00:00",
@@ -35191,11 +35258,20 @@
           [
             "2026-09-18T12:00:00",
             "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankOutputTransfer.Rejected",
+            "Rechazada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-18T12:00:00",
+            "sin_tenant",
             "Sin distribuidor",
             "account.Account.Change-State",
             "Preventive Suspension",
             "cuenta",
-            3
+            4
           ],
           [
             "2026-09-18T12:00:00",
@@ -35204,7 +35280,16 @@
             "account.Account.Created",
             "Open",
             "cuenta",
-            6
+            7
+          ],
+          [
+            "2026-09-18T12:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.Card.Change-State",
+            "Delivered",
+            "tarjeta",
+            1
           ],
           [
             "2026-09-18T12:00:00",
@@ -35249,7 +35334,7 @@
             "lending.loanRequest.Confirmed",
             "Aprobada",
             "bnpl",
-            2
+            3
           ],
           [
             "2026-09-18T12:00:00",
@@ -35258,7 +35343,7 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            14
+            16
           ],
           [
             "2026-09-18T12:00:00",
@@ -35267,7 +35352,7 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            3
+            6
           ],
           [
             "2026-09-18T12:00:00",
@@ -35291,12 +35376,12 @@
       }
     ],
     "warnings": [
-      "8794 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "8811 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-18T12:47:34-03:00",
+    "checked_at": "2026-09-18T12:52:40-03:00",
     "cadence_seconds": 300
   }
 }
