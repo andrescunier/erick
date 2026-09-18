@@ -27,3 +27,13 @@ export function formatearValor(valor: unknown, formato: Formato): string {
   }
   return String(valor);
 }
+
+/**
+ * "2026-09-17T08:35:31.929627-03:00" -> "2026-09-17 08:35".
+ * Los microsegundos y el offset son ruido en pantalla: nadie lee la corrida al
+ * microsegundo y el offset ya es el de Argentina en todas estas fuentes.
+ */
+export function fechaHoraCorta(valor: string): string {
+  const m = /^(\d{4}-\d{2}-\d{2})[T ](\d{2}:\d{2})/.exec(valor.trim());
+  return m ? `${m[1]} ${m[2]}` : valor;
+}

@@ -19,11 +19,20 @@ export default function PaginaLogin() {
     setEnviando(true);
     setError(null);
 
-    const res = await fetch("/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ usuario, clave }),
-    });
+    // Sin el try, un corte de red deja el botón en "Entrando…" para siempre y
+    // sin ningún mensaje: el formulario queda muerto y no se entiende por qué.
+    let res: Response;
+    try {
+      res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ usuario, clave }),
+      });
+    } catch {
+      setError("No hay conexión con el servidor. Probá de nuevo.");
+      setEnviando(false);
+      return;
+    }
 
     if (res.ok) {
       router.replace(destino);
@@ -43,7 +52,7 @@ export default function PaginaLogin() {
           <Image src="/icono-openpass.webp" alt="OpenPass" width={36} height={35} priority />
           <h1>Erick</h1>
         </div>
-        <p className="login-sub">Ingresá para ver los dashboards.</p>
+        <p className="login-sub">Tableros de recaudación, operación y monitoreo de flota.</p>
 
         <label className="login-campo">
           <span>Usuario</span>
@@ -68,7 +77,7 @@ export default function PaginaLogin() {
           />
         </label>
 
-        {error && <p className="login-error">{error}</p>}
+        {error && <p className="login-error" role="alert">{error}</p>}
 
         <button type="submit" className="login-boton" disabled={enviando}>
           {enviando ? "Entrando…" : "Entrar"}

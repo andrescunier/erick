@@ -93,9 +93,12 @@ export function OTMonitorMap({ dispositivos }: { dispositivos: Dispositivo[] }) 
         zoom: 11,
         preferCanvas: true,
       });
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "&copy; OpenStreetMap",
-        maxZoom: 19,
+      // Basemap gris oscuro, el mismo que usa la herramienta original: sobre
+      // un mapa claro los marcadores de severidad (rojo/naranja/verde) pierden
+      // contraste y la pantalla deja de leerse como una consola.
+      L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+        attribution: "Tiles &copy; Esri",
+        maxZoom: 16,
       }).addTo(mapa);
       mapRef.current = mapa;
       clusterRef.current = L.markerClusterGroup({
@@ -114,9 +117,14 @@ export function OTMonitorMap({ dispositivos }: { dispositivos: Dispositivo[] }) 
           const color = colorClusterPredominante(colores);
           const cantidad = cluster.getChildCount();
           const tamano = cantidad < 10 ? "small" : cantidad < 50 ? "medium" : "large";
+          // iconSize explicito: sin esto Leaflet no dimensiona ni centra el
+          // divIcon, y el numero terminaba dibujado al lado del circulo en vez
+          // de adentro. El CSS se queda solo con el aspecto (color y borde).
+          const lado = tamano === "small" ? 34 : tamano === "medium" ? 42 : 52;
           return L.divIcon({
             html: `<div>${cantidad}</div>`,
             className: `otmonitor-cluster otmonitor-cluster--${tamano} ${claseSeveridad(color)}`,
+            iconSize: L.point(lado, lado),
           });
         },
       });

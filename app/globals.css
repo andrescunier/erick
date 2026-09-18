@@ -96,6 +96,54 @@
 .analytics summary { cursor: pointer; font-weight: 600; }
 @media (max-width: 850px) { .analytics-charts { grid-template-columns: 1fr; } .analytics-filters label { flex: 1 1 140px; } .analytics select, .analytics input { max-width: 100%; } }
 
+/* Panel general: todas las fuentes del informe a la vez. Una tarjeta por
+   fuente; la tarjeta entera es el disparador del detalle (el ::after del
+   botón cubre la tarjeta) para no obligar a apuntarle a un link chico. */
+.panel-fuentes { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin: 18px 0 8px; }
+.fuente-tarjeta { position: relative; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 16px 12px; box-shadow: var(--shadow-card); transition: border-color .15s ease, box-shadow .15s ease; }
+.fuente-tarjeta:hover { border-color: var(--accent-300); box-shadow: var(--shadow-hover); }
+.fuente-tarjeta.selected { border-color: var(--accent); box-shadow: inset 0 3px var(--accent); }
+.fuente-tarjeta.sin-datos { opacity: .72; }
+.analytics .fuente-boton { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left; border: 0; background: none; padding: 0; width: 100%; }
+.analytics .fuente-boton:hover { border: 0; }
+.fuente-boton::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
+.fuente-cabecera { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 4px; }
+.fuente-nota { font-size: 10px; color: var(--muted-2); }
+/* min-height de dos líneas: alinea las cifras de toda la fila aunque un título
+   ocupe una línea y el de al lado dos, que es lo que hace comparables doce
+   tarjetas de un vistazo. */
+.fuente-titulo { font-size: 13px; font-weight: 600; color: var(--text-strong); line-height: 1.3; min-height: 2.6em; }
+.fuente-valor { font-size: clamp(20px, 2.1vw, 27px); font-weight: var(--fw-metric); line-height: 1.1; color: var(--text-strong); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.fuente-rotulo { font-size: 11px; color: var(--muted); }
+.fuente-cambio { font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.fuente-cambio.pos { color: var(--good); }
+.fuente-cambio.neg { color: var(--bad); }
+.fuente-cambio.neutra { color: var(--muted-2); font-weight: 400; }
+/* Composición: cómo se reparte el total de una fuente que corta la misma plata
+   por marca, medio de pago o estado. */
+.fuente-composicion { margin: 10px 0 0; }
+.fuente-barra { display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: var(--border-soft); }
+.fuente-barra span { display: block; min-width: 2px; }
+.fuente-leyenda { margin: 5px 0 0; font-size: 10px; color: var(--muted); line-height: 1.4; }
+/* margin-top:auto: la curva y el pie se apoyan abajo, asi las cifras de la
+   fila quedan a la misma altura aunque una tarjeta tenga composicion y la de
+   al lado no. */
+.fuente-spark { margin: auto 0 2px; padding-top: 8px; min-height: 34px; width: 100%; }
+.fuente-pie { margin: 0; font-size: 10px; color: var(--muted-2); font-variant-numeric: tabular-nums; }
+.sparkline svg { display: block; width: 100%; height: auto; }
+
+/* Detalle de una fuente: se separa del panel con una regla de acento para que
+   se lea como "estoy adentro de una fuente", no como otro tablero pegado. */
+.analytics-detalle { margin-top: 26px; padding-top: 22px; border-top: 3px solid var(--accent-150); }
+.analytics-detalle > .analytics-heading { align-items: flex-start; margin-bottom: 14px; }
+.analytics-detalle > .analytics-heading p:last-child { max-width: 780px; font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+.detalle-controles { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; }
+.analytics-ambito { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 12px; background: var(--accent-025); border: 1px solid var(--accent-150); border-radius: 8px; padding: 9px 12px; }
+.analytics-chips { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 11px; color: var(--muted); margin: 12px 0 0; }
+.analytics .chip { border-radius: var(--radius-pill); background: var(--accent-075); border-color: var(--accent-150); font-size: 11px; padding: 4px 10px; }
+.analytics .enlace { border: 0; background: none; padding: 0; color: var(--accent-hover); text-decoration: underline; font-size: 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
 * {
   box-sizing: border-box;
 }
@@ -144,6 +192,20 @@ body {
   width: auto;
 }
 
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.app-usuario {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 600;
+}
+
 .salir {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.28);
@@ -154,6 +216,7 @@ body {
   font-weight: 600;
   padding: 6px 14px;
   cursor: pointer;
+  text-decoration: none;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
@@ -233,18 +296,48 @@ a:hover {
   color: var(--muted-2);
 }
 
-.meta-tira {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  color: var(--muted);
-  font-size: 12.5px;
-  margin-bottom: 24px;
+/* Ficha de procedencia: pares rótulo/valor. Antes era una tira de texto
+   corrido donde la ruta de un archivo de Windows quedaba mezclada con los
+   datos del negocio; como lista de definiciones se lee como lo que es (la
+   ficha técnica) y se puede saltear de un vistazo. */
+.ficha-fuente {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px 22px;
+  margin: 16px 0 24px;
+  font-size: 12px;
 }
 
-.meta-tira strong {
-  color: var(--text-strong);
+.ficha-fuente dt {
+  color: var(--muted-2);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ficha-fuente dd {
+  margin: 2px 0 0;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+/* Lectura secundaria del mismo dato (filas originales del archivo). */
+.bloque-secundario {
+  margin: 34px 0 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+}
+
+.bloque-secundario > summary {
+  cursor: pointer;
   font-weight: 600;
+  color: var(--text-strong);
+  font-size: 15px;
+}
+
+.bloque-secundario > summary::marker {
+  color: var(--accent);
 }
 
 /* Tarjeta de métrica — label + cifra, el patrón sale del sitio tal cual */
@@ -274,11 +367,15 @@ a:hover {
 }
 
 .tarjeta .valor {
-  font-size: var(--fs-metric);
+  /* clamp + wrap: un total de 32 tenants en centavos da cifras de 13
+     caracteres ("$ 419.788.084.512") que a 42px se cortaban contra el borde
+     de la tarjeta. */
+  font-size: clamp(24px, 2.6vw, var(--fs-metric));
   font-weight: var(--fw-metric);
-  line-height: 1;
+  line-height: 1.05;
   color: var(--text-strong);
   font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
 }
 
 .delta {
@@ -317,21 +414,60 @@ a.tarjeta-link:hover {
   text-decoration: none;
 }
 
-/* Grupos (índice) */
+/* Índice de tableros: una fila por tablero, con nombre y explicación. El
+   nombre técnico (usuario/proyecto) queda al pie, para quien lo necesite. */
 
-.grupos {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+.lista-tableros {
+  list-style: none;
+  margin: 18px 0 32px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
 }
 
-.grupo h2 {
-  font-size: var(--fs-label);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: var(--ls-label);
-  color: var(--muted);
-  margin: 0 0 12px;
+.lista-tableros a {
+  display: grid;
+  gap: 5px;
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.lista-tableros a:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.tablero-nombre {
+  font-size: 19px;
+  font-weight: var(--fw-title);
+  color: var(--text-strong);
+}
+
+.tablero-descripcion {
+  color: var(--text);
+  max-width: 70ch;
+}
+
+.tablero-pie {
+  display: flex;
+  gap: 10px 18px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted-2);
+}
+
+.tablero-destacado {
+  color: var(--accent-hover);
+  font-weight: 600;
 }
 
 /* Controles de tabla */

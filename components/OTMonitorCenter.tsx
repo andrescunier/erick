@@ -395,13 +395,13 @@ function TabMtt({ mtt, generadoEn }: { mtt: RegistroMTT[]; generadoEn: string })
   }, [filtrados]);
 
   const columnas = useMemo<ColumnaTabla<RegistroMTT>[]>(() => [
-    { key: "base", header: "Base", texto: (r) => r.base_datos_mssql, render: (r) => r.base_datos_mssql },
+    { key: "base", header: "Base", texto: (r) => r.base_datos_mssql, render: (r) => <span className="otmonitor-mono">{r.base_datos_mssql}</span> },
     { key: "interno", header: "Interno", texto: (r) => r.interno, ordenar: (r) => Number(r.interno) || r.interno, render: (r) => r.interno },
     { key: "tap", header: "Último tap", texto: (r) => formatFecha(r.ultimo_tap), ordenar: (r) => Date.parse(r.ultimo_tap) || 0, render: (r) => formatFecha(r.ultimo_tap) },
     { key: "kal", header: "Último KAL", texto: (r) => formatFecha(r.fecha_kal), ordenar: (r) => Date.parse(r.fecha_kal) || 0, render: (r) => formatFecha(r.fecha_kal) },
     { key: "estado", header: "Estado KAL", texto: (r) => r.estado_kal, render: (r) => <Badge texto={r.estado_kal} color={r.badge_color_kal} titulo={r.diagnostico_kal} /> },
-    { key: "serial", header: "Serial", texto: (r) => r.serial_number, render: (r) => r.serial_number },
-    { key: "sam", header: "SAM UID", texto: (r) => r.sam_uid, render: (r) => r.sam_uid },
+    { key: "serial", header: "Serial", texto: (r) => r.serial_number, render: (r) => <span className="otmonitor-mono">{r.serial_number}</span> },
+    { key: "sam", header: "SAM UID", texto: (r) => r.sam_uid, render: (r) => <span className="otmonitor-mono">{r.sam_uid}</span> },
     { key: "company", header: "Company", texto: (r) => r.id_company, render: (r) => r.id_company },
     { key: "linea", header: "Línea", texto: (r) => r.linea_mtt, render: (r) => r.linea_mtt },
     { key: "appver", header: "App version", texto: (r) => r.app_version, render: (r) => r.app_version },
@@ -607,13 +607,42 @@ function TabExplorador({
 // --- Componente principal ---
 
 type Tab = "global" | "mtt" | "mapa" | "explorador";
+const TABS: { key: Tab; label: string }[] = [
+  { key: "global", label: "Indicadores globales" },
+  { key: "mtt", label: "Operaciones MTT" },
+  { key: "mapa", label: "Mapa GIS" },
+  { key: "explorador", label: "Explorador" },
+];
+const esTab = (v: string | null): v is Tab => TABS.some((t) => t.key === v);
+
+/** La pestaña abierta vive en el hash de la URL (#mapa) para que un link a
+ *  "mirá el mapa" lleve al mapa, y para que recargar no devuelva siempre a la
+ *  primera pestaña. Se lee del hash y no de un query param para no pelear con
+ *  los parámetros que ya usa la página. */
+function useTabEnUrl(): [Tab, (t: Tab) => void] {
+  const [tab, setTab] = useState<Tab>("global");
+  useEffect(() => {
+    const desdeHash = () => {
+      const h = window.location.hash.replace("#", "");
+      if (esTab(h)) setTab(h);
+    };
+    desdeHash();
+    window.addEventListener("hashchange", desdeHash);
+    return () => window.removeEventListener("hashchange", desdeHash);
+  }, []);
+  const cambiar = useCallback((t: Tab) => {
+    setTab(t);
+    if (typeof window !== "undefined") window.history.replaceState(null, "", `#${t}`);
+  }, []);
+  return [tab, cambiar];
+}
 
 export function OTMonitorCenter({ initial }: { initial: OTMonitorResult }) {
   const [result, setResult] = useState(initial);
   const [refreshing, setRefreshing] = useState(false);
   const [fetchError, setFetchError] = useState("");
   const [auto, setAuto] = useState(true);
-  const [tab, setTab] = useState<Tab>("global");
+  const [tab, setTab] = useTabEnUrl();
   const inFlight = useRef(false);
   const abort = useRef<AbortController | null>(null);
 
@@ -684,10 +713,11 @@ export function OTMonitorCenter({ initial }: { initial: OTMonitorResult }) {
       ) : (
         <>
           <div className="otmonitor-tabs">
-            <button type="button" className={tab === "global" ? "active" : ""} onClick={() => setTab("global")}>Indicadores globales</button>
-            <button type="button" className={tab === "mtt" ? "active" : ""} onClick={() => setTab("mtt")}>Operaciones MTT</button>
-            <button type="button" className={tab === "mapa" ? "active" : ""} onClick={() => setTab("mapa")}>Mapa GIS</button>
-            <button type="button" className={tab === "explorador" ? "active" : ""} onClick={() => setTab("explorador")}>Explorador</button>
+            {TABS.map((t) => (
+              <button key={t.key} type="button" className={tab === t.key ? "active" : ""} onClick={() => setTab(t.key)}>
+                {t.label}
+              </button>
+            ))}
           </div>
           {tab === "global" && <TabGlobal dispositivos={dispositivos} kpis={data.kpis} operadores={operadores} lineas={lineas} estados={estados} modulos={modulos} />}
           {tab === "mtt" && <TabMtt mtt={data.mtt} generadoEn={data.generado_en} />}

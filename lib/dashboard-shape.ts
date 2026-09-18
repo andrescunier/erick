@@ -8,6 +8,8 @@
  * `resto` (JSON crudo).
  */
 
+import { etiquetaDeCampo } from "./etiquetas";
+
 export type Formato = "money_cents" | "percent" | "variation" | "count" | "text";
 
 export type Columna = {
@@ -77,12 +79,10 @@ function formatoDeCampo(key: string): Formato {
   return "count";
 }
 
-function labelDeCampo(key: string): string {
-  return key
-    .replace(/_cents$/i, "")
-    .replace(/_/g, " ")
-    .replace(/^./, (c) => c.toUpperCase());
-}
+// Traduce los nombres de campo conocidos ("tap_count" -> "Taps") y prettifica
+// el resto. Sin esto la pantalla mostraba el vocabulario de las bases en
+// ingles y portugues, que es ilegible para quien no escribio la consulta.
+const labelDeCampo = etiquetaDeCampo;
 
 export function encontrarPctEnVentana(ventana: Record<string, unknown>): number | null {
   for (const [k, v] of Object.entries(ventana)) {

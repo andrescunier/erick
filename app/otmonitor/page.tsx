@@ -1,25 +1,14 @@
-import { cookies } from "next/headers";
-import { redirect, notFound } from "next/navigation";
-import { COOKIE_SESION, verificarSesion, puedeVer } from "@/lib/session";
-import { readOTMonitor } from "@/lib/otmonitor-store";
-import { OTMonitorCenter } from "@/components/OTMonitorCenter";
+import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
-export default async function OTMonitorPage() {
-  const token = cookies().get(COOKIE_SESION)?.value;
-  const session = token ? await verificarSesion(token) : null;
-  if (!session) redirect("/login?next=/otmonitor");
-
-  // Pantalla dedicada a un único dashboard puntual (leandro/otmonitor), no un
-  // agregado como /control: se gatea con puedeVer + notFound, igual que
-  // cualquier /{user}/{project} individual.
-  if (!puedeVer(session, "leandro", "otmonitor")) notFound();
-
-  const initial = await readOTMonitor(session);
-  return (
-    <main className="otmonitor-main">
-      <OTMonitorCenter initial={initial} />
-    </main>
-  );
+/**
+ * La pantalla vive en la ruta canonica /leandro/otmonitor -la misma a la que
+ * apuntan los links del listado de dashboards y el centro de control-, asi
+ * que aca solo queda la redireccion para que un link viejo a /otmonitor siga
+ * funcionando. Tener la pantalla en dos URLs distintas fue justamente el
+ * problema original: la navegacion normal caia en el renderizador generico.
+ */
+export default function OTMonitorAlias() {
+  redirect("/leandro/otmonitor");
 }

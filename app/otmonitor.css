@@ -3,7 +3,55 @@
    .tabla-envoltorio, .buscador) para no desentonar con el resto de erick;
    acá sólo se agrega lo específico de esta pantalla. */
 
-.otmonitor-main { max-width: 1600px; padding-top: 26px; }
+/* Tema oscuro tipo consola NOC, calcado de la paleta del original (GitHub
+   dark: #0d1117 de fondo, #161b22 en las tarjetas, azul #58a6ff en lo activo).
+   Se redefinen los tokens SOLO dentro de esta pantalla: todas las reglas de
+   abajo -y las de globals.css que ya usan var(--...)- se oscurecen solas, y el
+   resto de erick sigue claro. El header del sitio ya es una banda negra, asi
+   que la pantalla oscura arranca pegada a el sin costura. */
+.otmonitor-main {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-2: #1b212b;
+  --text-strong: #ffffff;
+  --text: #c9d1d9;
+  --muted: #8b949e;
+  --muted-2: #6e7681;
+  --invert: #0d1117;
+  --ink-band: #58a6ff;
+  --border: #30363d;
+  --border-strong: #3d444d;
+  --border-soft: #262c36;
+  --good: #3fb950;
+  --good-bg: #12261a;
+  --bad: #f85149;
+  --bad-bg: #2d1416;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --accent-025: #1b212b;
+  --accent-075: #1f3350;
+
+  /* Ancho completo: el original es una consola de borde a borde, no una
+     columna centrada. El contenido igual se limita a 1600px via padding. */
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 26px max(20px, calc((100% - 1600px) / 2)) 64px;
+  background: var(--bg);
+  color: var(--text);
+  min-height: calc(100vh - 52px);
+}
+/* Identificadores tecnicos (serial, base de datos) en monoespaciada roja
+   sobre fondo hundido, igual que el `code`/`.font-mono` del original. */
+.otmonitor-mono {
+  font-family: Consolas, "Fira Code", ui-monospace, monospace;
+  font-size: 11.5px;
+  color: #f85149;
+  background: #21262d;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
 
 .otmonitor-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 18px; }
 .otmonitor-head h1 { margin-bottom: 4px; }
@@ -63,9 +111,9 @@
    poco con la cantidad, igual criterio visual que el plugin
    leaflet.markercluster trae por defecto (small/medium/large). */
 .otmonitor-cluster { display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-weight: 700; font-variant-numeric: tabular-nums; border: 3px solid rgba(255, 255, 255, .6); box-shadow: 0 1px 5px rgba(0, 0, 0, .35); }
-.otmonitor-cluster--small { width: 34px; height: 34px; font-size: 12px; margin: -17px 0 0 -17px; }
-.otmonitor-cluster--medium { width: 42px; height: 42px; font-size: 13px; margin: -21px 0 0 -21px; }
-.otmonitor-cluster--large { width: 52px; height: 52px; font-size: 14px; margin: -26px 0 0 -26px; }
+.otmonitor-cluster--small { font-size: 12px; }
+.otmonitor-cluster--medium { font-size: 13px; }
+.otmonitor-cluster--large { font-size: 14px; }
 .otmonitor-cluster--danger { background: #da3633; }
 .otmonitor-cluster--warning { background: #d97706; }
 .otmonitor-cluster--secondary { background: #6e7681; }
@@ -101,3 +149,46 @@
   .otmonitor-map { height: 420px; }
   .otmonitor-datatable-search { margin-left: 0; width: 100%; }
 }
+
+/* --- Tema oscuro: overrides que deben ganarle a las reglas de arriba --- */
+/* El aviso de error tenia color de texto fijo pensado para fondo claro. */
+.otmonitor-main .otmonitor-alert { color: #ffa198; }
+/* El fondo se pinta sobre todo el viewport y no solo sobre la caja de <main>:
+   si el contenido es mas corto que la pantalla, sin esto asoma una franja
+   clara al pie. z-index -1 lo deja detras de todo, incluido el header. */
+.otmonitor-main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #0d1117;
+  z-index: -1;
+}
+.otmonitor-main h1, .otmonitor-main h2, .otmonitor-main h3 { color: var(--text-strong); }
+/* Controles de formulario: en claro heredaban `background: white` fijo.
+   Los tabs quedan afuera a proposito -son texto con subrayado, no cajas-. */
+.otmonitor-main select,
+.otmonitor-main input,
+.otmonitor-main .otmonitor-refresh button,
+.otmonitor-main .otmonitor-filtros button,
+.otmonitor-main .otmonitor-datatable-export button,
+.otmonitor-main .otmonitor-datatable-length select,
+.otmonitor-main .otmonitor-pagenums button { background: var(--surface); color: var(--text); border-color: var(--border); }
+.otmonitor-main select { color: #e6edf3; background: #0d1117; }
+.otmonitor-main .otmonitor-filtros input,
+.otmonitor-main .otmonitor-datatable-search { background: #0d1117; color: #e6edf3; }
+
+/* Tarjetas KPI mas compactas que el `.tarjeta` generico: son seis en una
+   fila y el original las tiene bajas. El `nowrap` del valor es lo que evita
+   que "-54.1 dBm" parta en dos lineas e infle la altura de las otras cinco
+   (estan todas en la misma fila del grid, asi que la mas alta manda). */
+.otmonitor-main .tarjeta { padding: 16px 18px; box-shadow: none; }
+.otmonitor-main .tarjeta .rotulo { margin-bottom: 8px; letter-spacing: 1.2px; }
+/* margin: 0 en el valor no es cosmetico: son <p>, y el margen por defecto del
+   navegador (1em arriba y abajo) sumaba ~48px de aire muerto por tarjeta. */
+.otmonitor-main .tarjeta .valor { font-size: 34px; white-space: nowrap; margin: 0; }
+.otmonitor-main .tarjeta .otm-sub { margin: 6px 0 0; }
+.otmonitor-main input::placeholder { color: var(--muted-2); }
+.otmonitor-main .otmonitor-tabs button { background: none; }
+.otmonitor-main .otmonitor-subtabs button { background: var(--surface); }
+.otmonitor-main .otmonitor-pagenums button.active { background: var(--accent); color: #0d1117; border-color: var(--accent); }
+.otmonitor-main .otmonitor-subtabs button.active { background: var(--accent); color: #0d1117; border-color: var(--accent); }

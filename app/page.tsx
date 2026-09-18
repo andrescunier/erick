@@ -2,6 +2,7 @@ import Link from "next/link";
 import { headers } from "next/headers";
 import { listDashboards } from "@/lib/github-store";
 import { puedeVer } from "@/lib/session";
+import { ListaTableros } from "@/components/ListaTableros";
 
 export const dynamic = "force-dynamic";
 
@@ -29,47 +30,32 @@ export default async function Pagina() {
 
   const visibles = dashboards.filter((d) => puedeVer({ u: username, a: allowed, admin: isAdmin, t: 0, s: "" }, d.user, d.project));
 
-  const porUsuario = new Map<string, string[]>();
-  for (const { user, project } of visibles) {
-    porUsuario.set(user, [...(porUsuario.get(user) ?? []), project]);
-  }
-
   return (
     <main>
-      <h1>Dashboards</h1>
-      <Link href="/control" className="control-entry"><span>Centro de control</span><strong>Compará proyectos, revisá tendencias y verificá la actualización de tus fuentes →</strong></Link>
+      <h1>Tableros</h1>
       <p className="generado">
         {visibles.length === 0
-          ? "No tenés permiso para ver ningún dashboard."
-          : `${visibles.length} dashboard(s) en ${porUsuario.size} proyecto(s)/usuario(s)`}
+          ? "Tu usuario todavía no tiene ningún tablero habilitado."
+          : `${visibles.length} ${visibles.length === 1 ? "tablero disponible" : "tableros disponibles"} para ${username || "tu usuario"}.`}
       </p>
 
-      {porUsuario.size === 0 ? (
+      {visibles.length === 0 ? (
         <p className="vacio">
           {dashboards.length > 0
-            ? "Tu perfil no incluye ningún dashboard. Contactá al administrador."
+            ? "Tu perfil no incluye ningún tablero. Pedile acceso al administrador."
             : <>
                 Mandá un POST a <code>/api/dashboards/&#123;user&#125;/&#123;project&#125;</code> con tu
                 API key para crear el primero.
               </>}
         </p>
       ) : (
-        <div className="grupos">
-          {[...porUsuario.entries()].map(([user, proyectos]) => (
-            <div className="grupo" key={user}>
-              <h2>{user}</h2>
-              <div className="tarjetas">
-                {proyectos.map((project) => (
-                  <Link className="tarjeta tarjeta-link" href={`/${user}/${project}`} key={project}>
-                    <div className="rotulo">Proyecto</div>
-                    <div className="valor">{project}</div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        <ListaTableros tableros={visibles} />
       )}
+
+      <Link href="/control" className="control-entry">
+        <span>Centro de control</span>
+        <strong>Compará los tableros entre sí, revisá tendencias y verificá cuándo se actualizó cada fuente →</strong>
+      </Link>
     </main>
   );
 }

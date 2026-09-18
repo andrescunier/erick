@@ -1,13 +1,9 @@
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
-const ts = require("typescript");
-const vm = require("node:vm");
-const output = ts.transpileModule(fs.readFileSync("lib/dashboard-shape.ts", "utf8"), {
-  compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2017 }
-}).outputText;
-const context = { exports: {} };
-vm.runInNewContext(output, context);
-const { detectarForma, encontrarPctEnVentana, aplicarPreferencia } = context.exports;
+// loadTS y no vm.runInNewContext: dashboard-shape.ts importa el diccionario de
+// etiquetas, y un contexto de vm pelado no resuelve ese require.
+const { loadTS } = require("../scripts/sincronizar_control.cjs");
+const { detectarForma, encontrarPctEnVentana, aplicarPreferencia } = loadTS("lib/dashboard-shape.ts");
 assert.equal(encontrarPctEnVentana({ variation_pct: 0 }), 0);
 assert.equal(encontrarPctEnVentana({ variation_pct: null }), null);
 const data = { tenants: {
@@ -19,7 +15,11 @@ const shape = detectarForma(data);
 assert.ok(shape.columnas.some(c => c.key === "no_cobrado_cents"));
 assert.equal(shape.stats[0].valor, 1200);
 assert.match(shape.stats[0].cobertura, /1 de 2/);
-assert.ok(!shape.stats.some(c => c.label === "Average ticket"));
+// Un promedio no sube a tarjeta (sumar tickets promedio no significa nada):
+// se chequea por clave, no por rótulo, porque el rótulo ahora se traduce.
+assert.ok(!shape.stats.some(c => c.key === "average_ticket_cents"));
+assert.equal(shape.columnas.find(c => c.key === "average_ticket_cents").label, "Ticket promedio");
+assert.equal(shape.columnas.find(c => c.key === "no_cobrado_cents").label, "No cobrado");
 assert.equal(shape.columnasVentana.length, 1);
 assert.equal(shape.resto.tenants, data.tenants);
 

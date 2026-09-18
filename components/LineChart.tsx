@@ -5,6 +5,11 @@ import type { Formato } from "@/lib/dashboard-shape";
 import type { Point } from "@/lib/control-math";
 
 export type Line = { name: string; points: Point[]; color: string; dashed?: boolean };
+
+// Las marcas del eje salen de dividir el rango en cuartos, asi que caen en
+// valores partidos: un eje de viajes mostraba "10.750,5 viajes", que no existe.
+// Los porcentajes si llevan decimales.
+const tick = (valor: number, format: Formato) => (format === "percent" || format === "variation" ? valor : Math.round(valor));
 export function LineChart({ lines, format, compact = false }: { lines: Line[]; format: Formato; compact?: boolean }) {
   const id = useId().replace(/:/g, "");
   const [hover, setHover] = useState<number | null>(null);
@@ -25,7 +30,7 @@ export function LineChart({ lines, format, compact = false }: { lines: Line[]; f
   }
   return <div className={compact ? "sparkline" : "control-linechart"}>
     <svg viewBox={compact ? "0 0 300 80" : "0 0 820 285"} role="img" aria-label={lines.map(l => l.name).join(" frente a ")}>
-      {!compact && [0, .25, .5, .75, 1].map(r => <g key={r}><line x1={left} x2={left + width} y1={y(min + (max - min) * r)} y2={y(min + (max - min) * r)} stroke="var(--chart-grid, #e5eaf1)" strokeDasharray="3 5" /><text x={left - 12} y={y(min + (max - min) * r) + 4} textAnchor="end">{formatearValor(min + (max - min) * r, format)}</text></g>)}
+      {!compact && [0, .25, .5, .75, 1].map(r => <g key={r}><line x1={left} x2={left + width} y1={y(min + (max - min) * r)} y2={y(min + (max - min) * r)} stroke="var(--chart-grid, #e5eaf1)" strokeDasharray="3 5" /><text x={left - 12} y={y(min + (max - min) * r) + 4} textAnchor="end">{formatearValor(tick(min + (max - min) * r, format), format)}</text></g>)}
       {lines.map((l, n) => <g key={l.name}>
         <defs><linearGradient id={`${id}-${n}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={l.color} stopOpacity=".18" /><stop offset="100%" stopColor={l.color} stopOpacity="0" /></linearGradient></defs>
         {paths(l.points).map((path, i) => <path key={i} d={path} stroke={l.color} strokeWidth={compact ? 2 : 3} fill="none" strokeDasharray={l.dashed ? "7 6" : undefined} strokeLinecap="round" strokeLinejoin="round" />)}

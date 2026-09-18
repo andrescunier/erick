@@ -17,8 +17,8 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Erick — Dashboards",
-  description: "Dashboards que se arman solos a partir de lo que llega por API.",
+  title: "Erick · Tableros OpenPass",
+  description: "Recaudación, emisión y monitoreo de flota: los tableros que se arman con lo que publica cada sistema.",
   icons: { icon: "/icono-openpass.webp" },
 };
 
@@ -41,15 +41,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 priority
               />
             </Link>
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            {/* "Tableros" explícito: antes al índice sólo se volvía haciendo
+                click en el logo, que nadie tiene por qué adivinar que es un
+                link. Y el nombre de quien está conectado, porque los permisos
+                cambian qué tableros se ven y hay usuarios compartidos. */}
+            <nav className="app-nav">
+              <Link href="/" className="salir">Tableros</Link>
               <Link href="/control" className="salir">Centro de control</Link>
               {isAdmin && (
-                <Link href="/admin" className="salir" style={{ textDecoration: "none" }}>
+                <Link href="/admin" className="salir">
                   Usuarios
                 </Link>
               )}
+              <span className="app-usuario" title="Usuario conectado">{conSesion}</span>
               <LogoutButton />
-            </div>
+            </nav>
           </header>
         )}
         {children}

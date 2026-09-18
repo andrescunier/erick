@@ -118,17 +118,24 @@ function esOTMonitorData(value: unknown): value is OTMonitorData {
   );
 }
 
+/**
+ * Adapta el JSON crudo de un dashboard ya leido a `OTMonitorResult`. Existe
+ * aparte de `readOTMonitor` porque la ruta canonica `/[user]/[project]` ya
+ * trae el dato leido (con sus permisos ya chequeados por el middleware) y no
+ * tiene por que volver a pedirlo al store.
+ */
+export function aResultadoOTMonitor(raw: unknown): OTMonitorResult {
+  if (!raw) return { data: null, error: "Todavía no hay datos publicados para este tablero." };
+  if (!esOTMonitorData(raw)) return { data: null, error: "El dato publicado no tiene el formato esperado." };
+  return { data: raw, error: null };
+}
+
 export async function readOTMonitor(session: Sesion): Promise<OTMonitorResult> {
   if (!puedeVer(session, USUARIO, PROYECTO)) {
     return { data: null, error: "No tenés acceso a este tablero." };
   }
   try {
-    const raw = await getDashboard(USUARIO, PROYECTO);
-    if (!raw) return { data: null, error: "Todavía no hay datos publicados para este tablero." };
-    if (!esOTMonitorData(raw)) {
-      return { data: null, error: "El dato publicado no tiene el formato esperado." };
-    }
-    return { data: raw, error: null };
+    return aResultadoOTMonitor(await getDashboard(USUARIO, PROYECTO));
   } catch {
     return {
       data: null,
