@@ -1,20 +1,20 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-18T08:07:22.696575-03:00",
+  "generado_en": "2026-09-18T08:12:21.811103-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-20",
-    "ultima_recepcion": "2026-09-18T08:03:27.318438-03:00",
+    "ultima_recepcion": "2026-09-18T08:11:50.507923-03:00",
     "dias_con_datos": 6,
-    "archivos_leidos": 8058,
+    "archivos_leidos": 8061,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 8056,
+    "sin_tenant": 8059,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 8056,
-    "entidades_observadas": 7731,
+    "eventos_unicos": 8059,
+    "entidades_observadas": 7734,
     "entidades_con_seguimiento": 119,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T08:03:27.318438-03:00",
+        "updatedAt": "2026-09-18T08:11:50.507923-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -13960,13 +13960,28 @@
             "Sale.Rejected",
             "Rechazada",
             "Debit",
-            3,
+            4,
             0,
-            3,
-            3,
+            4,
+            4,
             0,
             0,
-            5641500
+            7522000
+          ],
+          [
+            "2026-09-18T08:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            2,
+            2,
+            0,
+            2,
+            0,
+            1135000,
+            0
           ]
         ]
       },
@@ -13977,7 +13992,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T08:03:27.318438-03:00",
+        "updatedAt": "2026-09-18T08:11:50.507923-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -16062,7 +16077,7 @@
             "402",
             "Provider",
             "ARS",
-            3
+            4
           ]
         ]
       },
@@ -16073,7 +16088,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T08:03:27.318438-03:00",
+        "updatedAt": "2026-09-18T08:11:50.507923-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -17966,7 +17981,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T08:03:27.318438-03:00",
+        "updatedAt": "2026-09-18T08:11:50.507923-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -18918,7 +18933,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T08:03:27.318438-03:00",
+        "updatedAt": "2026-09-18T08:11:50.507923-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -19603,7 +19618,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T08:03:27.318438-03:00",
+        "updatedAt": "2026-09-18T08:11:50.507923-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -20417,7 +20432,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T08:03:27.318438-03:00",
+        "updatedAt": "2026-09-18T08:11:50.507923-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -33058,7 +33073,7 @@
             "Sale.Rejected",
             "Rechazada",
             "pago",
-            3
+            4
           ],
           [
             "2026-09-18T08:00:00",
@@ -33068,17 +33083,26 @@
             "Rechazada",
             "tarjeta",
             1
+          ],
+          [
+            "2026-09-18T08:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            2
           ]
         ]
       }
     ],
     "warnings": [
-      "8056 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "8059 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-18T08:07:28-03:00",
+    "checked_at": "2026-09-18T08:12:28-03:00",
     "cadence_seconds": 300
   }
 }
