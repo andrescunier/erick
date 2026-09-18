@@ -3,21 +3,30 @@
 /**
  * Dashboard NOC de la flota de validadores (leandro/otmonitor). Reemplaza
  * una herramienta vieja en HTML + Bootstrap 5 + DataTables + Chart.js +
- * Leaflet: acá todo es React nativo salvo el mapa, que sigue usando Leaflet
- * (ver components/otmonitor/OTMonitorMap.tsx) porque dibujar ~1300 puntos
- * geográficos a mano no vale la pena reinventarlo.
+ * Leaflet (ver `OT Monitor CABA Buses v1.5/generar_dashboard.py`, función
+ * `generar_html_dashboard`, que es la fuente de verdad de cómo se ve y qué
+ * hace cada pieza de esta pantalla).
  *
- * Los gráficos de la pestaña "Indicadores globales" son barras apiladas
- * hechas con <div>/CSS (mismo criterio que ya usa el resto de erick para
- * `.barra-fondo`/`.analytics-bar`): no hace falta sumar Chart.js para dos
- * gráficos de barras, y así el bundle no crece por una librería que sólo se
- * usaría acá.
+ * Acá todo es React nativo salvo dos piezas que sí replican librerías del
+ * original porque hacen falta para verse/comportarse igual:
+ *  - Los gráficos usan Chart.js real (ver components/otmonitor/ChartCanvas),
+ *    con los mismos tipos y colores que el original (barras apiladas,
+ *    dona, torta, combo barra+línea con doble eje).
+ *  - El mapa sigue en su propio archivo (OTMonitorMap) con Leaflet +
+ *    leaflet.markercluster para agrupar los ~1300 puntos.
+ * Las tres tablas grandes (MTT + 4 sub-vistas del Explorador) usan el
+ * mismo componente DataTable (buscador, orden por columna, selector de
+ * "Show N entries" y paginación numerada, export CSV/Copiar) para no
+ * repetir esa lógica cuatro veces.
  */
 
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { ChartConfiguration } from "chart.js";
 import { BADGE_HEX, type Dispositivo, type OTMonitorData, type OTMonitorResult, type RegistroMTT } from "@/lib/otmonitor-store";
 import { formatearValor } from "@/lib/format";
+import { ChartCanvas } from "@/components/otmonitor/ChartCanvas";
+import { DataTable, type ColumnaTabla } from "@/components/otmonitor/DataTable";
 
 // Leaflet toca `window` al cargarse: nunca puede evaluarse en el servidor.
 const OTMonitorMap = dynamic(() => import("@/components/otmonitor/OTMonitorMap").then((m) => m.OTMonitorMap), {
@@ -48,7 +57,7 @@ function coincideFlota(d: Dispositivo, f: FiltrosFlota): boolean {
 }
 
 function formatFecha(iso: string | null | undefined): string {
-  if (!iso) return "Sin dato";
+  if (!iso || iso === "N/A" || iso === "None") return "Sin dato";
   const t = Date.parse(iso);
   if (!Number.isFinite(t)) return String(iso);
   const parts = Object.fromEntries(
@@ -77,18 +86,6 @@ function modaDe(valores: string[]): string {
     }
   }
   return mejor;
-}
-
-// Paginación simple client-side: no hace falta una librería de grid para
-// ~1300 filas, alcanza con cortar el array ya filtrado. Usar Math.min contra
-// totalPaginas-1 evita mostrar una página vacía cuando un filtro nuevo
-// reduce el total y la página guardada quedó fuera de rango.
-function usePaginacion<T>(filas: T[], porPagina: number) {
-  const [pagina, setPagina] = useState(0);
-  const totalPaginas = Math.max(1, Math.ceil(filas.length / porPagina));
-  const paginaSegura = Math.min(pagina, totalPaginas - 1);
-  const visibles = filas.slice(paginaSegura * porPagina, paginaSegura * porPagina + porPagina);
-  return { visibles, pagina: paginaSegura, totalPaginas, setPagina };
 }
 
 // --- Piezas de UI reutilizadas ---
@@ -146,46 +143,12 @@ function BarraFiltros({
   );
 }
 
-function Pager({ pagina, totalPaginas, total, onPagina }: { pagina: number; totalPaginas: number; total: number; onPagina: (p: number) => void }) {
-  if (totalPaginas <= 1) return null;
-  return (
-    <div className="otmonitor-pager">
-      <span>{formatearValor(total, "count")} registros · página {pagina + 1} de {totalPaginas}</span>
-      <button type="button" disabled={pagina === 0} onClick={() => onPagina(pagina - 1)}>← Anterior</button>
-      <button type="button" disabled={pagina >= totalPaginas - 1} onClick={() => onPagina(pagina + 1)}>Siguiente →</button>
-    </div>
-  );
-}
-
-// --- Gráficos de barras apiladas por operador (Pestaña A) ---
-
-type Segmento = { key: string; label: string; color: string; valor: number };
-type FilaOperador = { operador: string; total: number; segmentos: Segmento[] };
-
-function BarraOperadores({ filas, limite = 12 }: { filas: FilaOperador[]; limite?: number }) {
-  const ordenadas = [...filas].sort((a, b) => b.total - a.total);
-  const visibles = ordenadas.slice(0, limite);
-  const resto = ordenadas.length - visibles.length;
-  if (visibles.length === 0) return <p className="otmonitor-bar-note">Sin dispositivos para los filtros elegidos.</p>;
-  return (
-    <div className="otmonitor-bar-rows">
-      {visibles.map((f) => (
-        <div className="otmonitor-bar-row" key={f.operador}>
-          <span title={f.operador}>{f.operador}</span>
-          <div className="otmonitor-bar-track">
-            {f.segmentos.filter((s) => s.valor > 0).map((s) => (
-              <div key={s.key} className="otmonitor-bar-seg" style={{ width: `${(s.valor / f.total) * 100}%`, background: s.color }} title={`${s.label}: ${s.valor}`} />
-            ))}
-          </div>
-          <span>{f.total}</span>
-        </div>
-      ))}
-      {resto > 0 && <p className="otmonitor-bar-note">+{resto} operador(es) más. Filtrá por operador para verlos en detalle.</p>}
-    </div>
-  );
-}
-
 // --- Pestaña A: Indicadores Globales ---
+
+// Paleta de colores de "Módulos Más Afectados" (dona) — la misma secuencia
+// que usa el original para no perder la asociación módulo→color de un
+// refresco al otro.
+const PALETA_FALLAS = ["#da3633", "#d97706", "#2563eb", "#8b5cf6", "#ec4899", "#06b6d4", "#10b981"];
 
 function TabGlobal({
   dispositivos, kpis, operadores, lineas, estados, modulos,
@@ -197,43 +160,92 @@ function TabGlobal({
   const patch = useCallback((p: Partial<FiltrosFlota>) => setFiltros((f) => ({ ...f, ...p })), []);
   const filtrados = useMemo(() => dispositivos.filter((d) => coincideFlota(d, filtros)), [dispositivos, filtros]);
 
-  const porModulos = useMemo<FilaOperador[]>(() => {
-    const mapa = new Map<string, { total: number; ok: number; falla: number }>();
+  // Gráfico 1: barras verticales apiladas, salud de módulos por operador
+  // (verde = operativo, rojo = con al menos una falla). Igual que
+  // `renderizarCharts` → chartOperadores en el original.
+  const configModulos = useMemo<ChartConfiguration>(() => {
+    const mapa = new Map<string, { ok: number; falla: number }>();
     for (const d of filtrados) {
-      const g = mapa.get(d.operador) ?? { total: 0, ok: 0, falla: 0 };
-      g.total++;
+      const key = d.operador || "Sin operador";
+      const g = mapa.get(key) ?? { ok: 0, falla: 0 };
       if (d.num_fallas > 0) g.falla++; else g.ok++;
-      mapa.set(d.operador, g);
+      mapa.set(key, g);
     }
-    return [...mapa.entries()].map(([operador, g]) => ({
-      operador, total: g.total,
-      segmentos: [
-        { key: "ok", label: "Sin fallas", color: BADGE_HEX.success, valor: g.ok },
-        { key: "falla", label: "Con fallas", color: BADGE_HEX.danger, valor: g.falla },
-      ],
-    }));
+    const labels = [...mapa.keys()];
+    return {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [
+          { label: "Módulos OK (Operativo)", data: labels.map((l) => mapa.get(l)!.ok), backgroundColor: "#238636" },
+          { label: "Módulos con Falla", data: labels.map((l) => mapa.get(l)!.falla), backgroundColor: "#da3633" },
+        ],
+      },
+      options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true } } },
+    };
   }, [filtrados]);
 
-  const porKal = useMemo<FilaOperador[]>(() => {
-    const mapa = new Map<string, { total: number; online: number; medio: number; grave: number; sinDato: number }>();
+  // Gráfico 2: barras verticales apiladas, estado Keep Alive por operador
+  // (verde en línea / naranja leve-medio / rojo grave). "Sin datos KAL" se
+  // suma al grave, igual que hace el `else` final del original.
+  const configKal = useMemo<ChartConfiguration>(() => {
+    const mapa = new Map<string, { online: number; medio: number; grave: number }>();
     for (const d of filtrados) {
-      const g = mapa.get(d.operador) ?? { total: 0, online: 0, medio: 0, grave: 0, sinDato: 0 };
-      g.total++;
-      if (d.estado_kal === "En línea") g.online++;
-      else if (d.estado_kal === "Offline - Leve" || d.estado_kal === "Offline - Medio") g.medio++;
-      else if (d.estado_kal === "Offline - Grave" || d.estado_kal === "Vehículo apagado") g.grave++;
-      else g.sinDato++;
-      mapa.set(d.operador, g);
+      const key = d.operador || "Sin operador";
+      const g = mapa.get(key) ?? { online: 0, medio: 0, grave: 0 };
+      if (d.estado_kal === "En línea" || d.estado_kal === "Operando sin KAL reciente") g.online++;
+      else if (d.estado_kal.includes("Leve") || d.estado_kal.includes("Medio")) g.medio++;
+      else g.grave++;
+      mapa.set(key, g);
     }
-    return [...mapa.entries()].map(([operador, g]) => ({
-      operador, total: g.total,
-      segmentos: [
-        { key: "online", label: "En línea", color: BADGE_HEX.success, valor: g.online },
-        { key: "medio", label: "Offline leve/medio", color: BADGE_HEX.warning, valor: g.medio },
-        { key: "grave", label: "Offline grave/apagado", color: BADGE_HEX.danger, valor: g.grave },
-        { key: "sinDato", label: "Sin dato reciente", color: BADGE_HEX.secondary, valor: g.sinDato },
-      ],
-    }));
+    const labels = [...mapa.keys()];
+    return {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [
+          { label: "En línea / Operando", data: labels.map((l) => mapa.get(l)!.online), backgroundColor: "#238636" },
+          { label: "Offline Leve/Medio", data: labels.map((l) => mapa.get(l)!.medio), backgroundColor: "#d97706" },
+          { label: "Offline Grave/Apagado", data: labels.map((l) => mapa.get(l)!.grave), backgroundColor: "#da3633" },
+        ],
+      },
+      options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true } } },
+    };
+  }, [filtrados]);
+
+  // Gráfico 3: dona, módulos más afectados (uno de cada falla activa).
+  const configFallas = useMemo<ChartConfiguration>(() => {
+    const mapa = new Map<string, number>();
+    for (const d of filtrados) for (const f of modulosDeFallas(d.fallas)) mapa.set(f, (mapa.get(f) ?? 0) + 1);
+    const labels = mapa.size ? [...mapa.keys()] : ["Sin fallas"];
+    const data = mapa.size ? [...mapa.values()] : [1];
+    return {
+      type: "doughnut",
+      data: { labels, datasets: [{ data, backgroundColor: labels.map((_, i) => PALETA_FALLAS[i % PALETA_FALLAS.length]) }] },
+      options: { responsive: true, maintainAspectRatio: false },
+    };
+  }, [filtrados]);
+
+  // Gráfico 4: torta, nivel de cobertura celular por rango de señal.
+  // Mismos cortes que el original: 5★ excelente, 3-4★ buena, 1-2★ débil,
+  // 0 sin señal.
+  const configSignal = useMemo<ChartConfiguration>(() => {
+    let excelente = 0, buena = 0, debil = 0, sinSenal = 0;
+    for (const d of filtrados) {
+      const lvl = d.signal_level;
+      if (lvl >= 5) excelente++;
+      else if (lvl >= 3) buena++;
+      else if (lvl >= 1) debil++;
+      else sinSenal++;
+    }
+    return {
+      type: "pie",
+      data: {
+        labels: ["Excelente (5★)", "Buena (3-4★)", "Débil (1-2★)", "Sin Señal"],
+        datasets: [{ data: [excelente, buena, debil, sinSenal], backgroundColor: ["#238636", "#388bfd", "#d97706", "#da3633"] }],
+      },
+      options: { responsive: true, maintainAspectRatio: false },
+    };
   }, [filtrados]);
 
   return (
@@ -244,34 +256,32 @@ function TabGlobal({
         extra={<span className="otmonitor-contador">{filtrados.length} de {dispositivos.length} dispositivos</span>}
       />
       <div className="tarjetas">
-        <div className="tarjeta"><p className="rotulo">Total monitoreados</p><p className="valor">{formatearValor(kpis.total_monitoreados, "count")}</p></div>
+        <div className="tarjeta otm-accent-blue"><p className="rotulo">Total monitoreados</p><p className="valor">{formatearValor(kpis.total_monitoreados, "count")}</p></div>
         <div className="tarjeta otm-ok"><p className="rotulo">En línea</p><p className="valor">{formatearValor(kpis.en_linea, "count")}</p><p className="otm-sub">{kpis.en_linea_pct.toFixed(1)}% de la flota</p></div>
         <div className="tarjeta otm-warn"><p className="rotulo">Offline leve / medio</p><p className="valor">{formatearValor(kpis.offline_medio, "count")}</p></div>
         <div className="tarjeta otm-bad"><p className="rotulo">Offline grave / apagado</p><p className="valor">{formatearValor(kpis.offline_grave, "count")}</p></div>
         <div className="tarjeta otm-bad"><p className="rotulo">Con fallas de hardware</p><p className="valor">{formatearValor(kpis.con_fallas_hw, "count")}</p><p className="otm-sub">{kpis.con_fallas_hw_pct.toFixed(1)}% de la flota</p></div>
-        <div className="tarjeta"><p className="rotulo">Señal promedio</p><p className="valor">{kpis.senal_promedio_dbm.toFixed(1)} dBm</p></div>
+        <div className="tarjeta otm-accent-cyan"><p className="rotulo">Señal promedio</p><p className="valor">{kpis.senal_promedio_dbm.toFixed(1)} dBm</p></div>
       </div>
       <p className="otmonitor-note">Las tarjetas de arriba son totales de toda la flota (no cambian con los filtros); los gráficos de abajo sí reflejan lo filtrado.</p>
       <div className="otmonitor-charts">
         <div className="otmonitor-chart">
-          <h3>Módulos por operador</h3>
-          <p>Dispositivos con al menos una falla de hardware activa frente a los que están OK.</p>
-          <div className="otmonitor-bar-legend">
-            <span><i style={{ background: BADGE_HEX.success }} />Sin fallas</span>
-            <span><i style={{ background: BADGE_HEX.danger }} />Con fallas</span>
-          </div>
-          <BarraOperadores filas={porModulos} />
+          <h3>Distribución de Salud Módulos por Operador</h3>
+          <ChartCanvas config={configModulos} alto={270} />
         </div>
         <div className="otmonitor-chart">
-          <h3>Estado Keep Alive por operador</h3>
-          <p>Distribución de estados de conectividad de cada operador.</p>
-          <div className="otmonitor-bar-legend">
-            <span><i style={{ background: BADGE_HEX.success }} />En línea</span>
-            <span><i style={{ background: BADGE_HEX.warning }} />Offline leve/medio</span>
-            <span><i style={{ background: BADGE_HEX.danger }} />Offline grave/apagado</span>
-            <span><i style={{ background: BADGE_HEX.secondary }} />Sin dato</span>
-          </div>
-          <BarraOperadores filas={porKal} />
+          <h3>Estado Keep Alive por Operador</h3>
+          <ChartCanvas config={configKal} alto={270} />
+        </div>
+      </div>
+      <div className="otmonitor-charts">
+        <div className="otmonitor-chart">
+          <h3>Módulos Más Afectados (Fallas)</h3>
+          <ChartCanvas config={configFallas} alto={270} />
+        </div>
+        <div className="otmonitor-chart">
+          <h3>Nivel de Cobertura Celular</h3>
+          <ChartCanvas config={configSignal} alto={270} />
         </div>
       </div>
     </>
@@ -294,6 +304,10 @@ function coincideMtt(r: RegistroMTT, f: FiltrosMtt): boolean {
   return true;
 }
 
+function esFechaValida(v: string): boolean {
+  return Boolean(v) && v !== "N/A" && v !== "None";
+}
+
 function TabMtt({ mtt, generadoEn }: { mtt: RegistroMTT[]; generadoEn: string }) {
   const [filtros, setFiltros] = useState<FiltrosMtt>(FILTROS_MTT_VACIOS);
   const bases = useMemo(() => uniqueSorted(mtt.map((r) => r.base_datos_mssql)), [mtt]);
@@ -311,7 +325,88 @@ function TabMtt({ mtt, generadoEn }: { mtt: RegistroMTT[]; generadoEn: string })
   }, [filtrados, generadoEn]);
 
   const versionPredominante = useMemo(() => modaDe(filtrados.map((r) => r.app_version).filter(Boolean)), [filtrados]);
-  const { visibles, pagina, totalPaginas, setPagina } = usePaginacion(filtrados, 50);
+
+  // Gráfico 1: distribución de AppVersion desplegada (barra simple).
+  const configVersiones = useMemo<ChartConfiguration>(() => {
+    const mapa = new Map<string, number>();
+    for (const r of filtrados) {
+      const v = r.app_version;
+      if (v && v !== "N/A" && v !== "None") mapa.set(v, (mapa.get(v) ?? 0) + 1);
+    }
+    const labels = [...mapa.keys()];
+    return {
+      type: "bar",
+      data: { labels, datasets: [{ label: "Unidades Desplegadas", data: labels.map((l) => mapa.get(l)!), backgroundColor: "#388bfd" }] },
+      options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } },
+    };
+  }, [filtrados]);
+
+  // Gráfico 2: combo barra (taps) + línea (buses distintos) por fecha, con
+  // doble eje Y — igual que chartMttTimeline en el original. La fecha se
+  // recorta a los primeros 10 caracteres ("YYYY-MM-DD...") porque así llega
+  // el timestamp de MSSQL en `ultimo_tap`.
+  const configTimeline = useMemo<ChartConfiguration>(() => {
+    const mapa = new Map<string, { taps: number; buses: Set<string> }>();
+    for (const r of filtrados) {
+      if (!esFechaValida(r.ultimo_tap)) continue;
+      const fecha = r.ultimo_tap.substring(0, 10);
+      const g = mapa.get(fecha) ?? { taps: 0, buses: new Set<string>() };
+      g.taps++;
+      if (r.interno && r.interno !== "N/A") g.buses.add(r.interno);
+      mapa.set(fecha, g);
+    }
+    const fechas = [...mapa.keys()].sort();
+    return {
+      type: "bar",
+      data: {
+        labels: fechas,
+        datasets: [
+          {
+            type: "bar",
+            label: "Cantidad de Taps",
+            data: fechas.map((f) => mapa.get(f)!.taps),
+            backgroundColor: "rgba(56, 139, 253, 0.7)",
+            borderColor: "#388bfd",
+            borderWidth: 1,
+            yAxisID: "y",
+          },
+          {
+            type: "line",
+            label: "Buses Operativos",
+            data: fechas.map((f) => mapa.get(f)!.buses.size),
+            borderColor: "#238636",
+            backgroundColor: "#238636",
+            borderWidth: 2,
+            tension: 0.3,
+            fill: false,
+            yAxisID: "y1",
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { type: "linear", position: "left", title: { display: true, text: "Taps" } },
+          y1: { type: "linear", position: "right", title: { display: true, text: "Colectivos" }, grid: { drawOnChartArea: false } },
+        },
+      },
+    } as ChartConfiguration;
+  }, [filtrados]);
+
+  const columnas = useMemo<ColumnaTabla<RegistroMTT>[]>(() => [
+    { key: "base", header: "Base", texto: (r) => r.base_datos_mssql, render: (r) => r.base_datos_mssql },
+    { key: "interno", header: "Interno", texto: (r) => r.interno, ordenar: (r) => Number(r.interno) || r.interno, render: (r) => r.interno },
+    { key: "tap", header: "Último tap", texto: (r) => formatFecha(r.ultimo_tap), ordenar: (r) => Date.parse(r.ultimo_tap) || 0, render: (r) => formatFecha(r.ultimo_tap) },
+    { key: "kal", header: "Último KAL", texto: (r) => formatFecha(r.fecha_kal), ordenar: (r) => Date.parse(r.fecha_kal) || 0, render: (r) => formatFecha(r.fecha_kal) },
+    { key: "estado", header: "Estado KAL", texto: (r) => r.estado_kal, render: (r) => <Badge texto={r.estado_kal} color={r.badge_color_kal} titulo={r.diagnostico_kal} /> },
+    { key: "serial", header: "Serial", texto: (r) => r.serial_number, render: (r) => r.serial_number },
+    { key: "sam", header: "SAM UID", texto: (r) => r.sam_uid, render: (r) => r.sam_uid },
+    { key: "company", header: "Company", texto: (r) => r.id_company, render: (r) => r.id_company },
+    { key: "linea", header: "Línea", texto: (r) => r.linea_mtt, render: (r) => r.linea_mtt },
+    { key: "appver", header: "App version", texto: (r) => r.app_version, render: (r) => r.app_version },
+    { key: "dominio", header: "Dominio", texto: (r) => r.dominio, render: (r) => r.dominio },
+  ], []);
 
   return (
     <>
@@ -345,43 +440,25 @@ function TabMtt({ mtt, generadoEn }: { mtt: RegistroMTT[]; generadoEn: string })
         <button type="button" className="otmonitor-reset" onClick={() => setFiltros(FILTROS_MTT_VACIOS)}>Limpiar filtros</button>
       </div>
       <div className="tarjetas">
-        <div className="tarjeta">
+        <div className="tarjeta otm-accent-cyan">
           <p className="rotulo">Total registros MSSQL</p>
           <p className="valor">{formatearValor(filtrados.length, "count")}</p>
           {filtrados.length !== mtt.length && <p className="otm-sub">de {mtt.length} totales</p>}
         </div>
         <div className="tarjeta otm-ok"><p className="rotulo">Taps recientes (&lt;24hs)</p><p className="valor">{formatearValor(recientes, "count")}</p></div>
-        <div className="tarjeta"><p className="rotulo">Versión app predominante</p><p className="valor" style={{ fontSize: 26 }}>{versionPredominante}</p></div>
+        <div className="tarjeta otm-warn"><p className="rotulo">Versión app predominante</p><p className="valor" style={{ fontSize: 26 }}>{versionPredominante}</p></div>
       </div>
-      <div className="tabla-envoltorio">
-        <table>
-          <thead>
-            <tr>
-              <th>Base</th><th>Interno</th><th>Último tap</th><th>Último KAL</th><th>Estado KAL</th>
-              <th>Serial</th><th>SAM UID</th><th>Company</th><th>Línea</th><th>App version</th><th>Dominio</th>
-            </tr>
-          </thead>
-          <tbody>
-            {visibles.map((r, i) => (
-              <tr key={`${r.serial_number}-${i}`}>
-                <td>{r.base_datos_mssql}</td>
-                <td>{r.interno}</td>
-                <td>{formatFecha(r.ultimo_tap)}</td>
-                <td>{formatFecha(r.fecha_kal)}</td>
-                <td><Badge texto={r.estado_kal} color={r.badge_color_kal} titulo={r.diagnostico_kal} /></td>
-                <td>{r.serial_number}</td>
-                <td>{r.sam_uid}</td>
-                <td>{r.id_company}</td>
-                <td>{r.linea_mtt}</td>
-                <td>{r.app_version}</td>
-                <td>{r.dominio}</td>
-              </tr>
-            ))}
-            {visibles.length === 0 && <tr><td colSpan={11} className="vacio">Sin resultados para estos filtros.</td></tr>}
-          </tbody>
-        </table>
+      <div className="otmonitor-charts">
+        <div className="otmonitor-chart">
+          <h3>Evolución de Taps &amp; Buses por Fecha</h3>
+          <ChartCanvas config={configTimeline} alto={260} />
+        </div>
+        <div className="otmonitor-chart">
+          <h3>Distribución de Versiones de Aplicación (AppVersion)</h3>
+          <ChartCanvas config={configVersiones} alto={260} />
+        </div>
       </div>
-      <Pager pagina={pagina} totalPaginas={totalPaginas} total={filtrados.length} onPagina={setPagina} />
+      <DataTable columnas={columnas} filas={filtrados} rowKey={(r, i) => `${r.serial_number}-${i}`} nombreArchivo="ot-monitor-mtt" />
     </>
   );
 }
@@ -428,79 +505,61 @@ const SUBTABS = [
 ] as const;
 type SubTab = (typeof SUBTABS)[number]["key"];
 
-function TablaModem({ filas }: { filas: Dispositivo[] }) {
-  return (
-    <table>
-      <thead>
-        <tr><th>Serial</th><th>Terminal</th><th>Línea</th><th>Operador</th><th>Estado KAL</th><th>Fallas</th><th>Último dato</th><th>IP</th><th>Tecnología</th><th>dBm</th><th>IMEI</th></tr>
-      </thead>
-      <tbody>
-        {filas.map((d) => (
-          <tr key={d.serial}>
-            <td>{d.serial}</td><td>{d.terminal_id}</td><td>{d.linea}</td><td>{d.operador}</td>
-            <td><Badge texto={d.estado_kal} color={d.badge_color} titulo={d.diagnostico} /></td>
-            <td>{d.fallas}</td><td>{formatFecha(d.time_stamp)}</td><td>{d.ip}</td><td>{d.tecnologia}</td>
-            <td>{d.dbm}</td><td>{d.imei}</td>
-          </tr>
-        ))}
-        {filas.length === 0 && <tr><td colSpan={11} className="vacio">Sin resultados para estos filtros.</td></tr>}
-      </tbody>
-    </table>
-  );
+function useColumnasModem(): ColumnaTabla<Dispositivo>[] {
+  return useMemo(() => [
+    { key: "serial", header: "Serial", texto: (d) => d.serial, render: (d) => d.serial },
+    { key: "terminal", header: "Terminal", texto: (d) => d.terminal_id, render: (d) => d.terminal_id },
+    { key: "linea", header: "Línea", texto: (d) => d.linea, render: (d) => d.linea },
+    { key: "operador", header: "Operador", texto: (d) => d.operador, render: (d) => d.operador },
+    { key: "estado", header: "Estado KAL", texto: (d) => d.estado_kal, render: (d) => <Badge texto={d.estado_kal} color={d.badge_color} titulo={d.diagnostico} /> },
+    { key: "fallas", header: "Fallas", texto: (d) => d.fallas, render: (d) => d.fallas },
+    { key: "dato", header: "Último dato", texto: (d) => formatFecha(d.time_stamp), ordenar: (d) => Date.parse(d.time_stamp) || 0, render: (d) => formatFecha(d.time_stamp) },
+    { key: "ip", header: "IP", texto: (d) => d.ip, render: (d) => d.ip },
+    { key: "tec", header: "Tecnología", texto: (d) => d.tecnologia, render: (d) => d.tecnologia },
+    { key: "dbm", header: "dBm", texto: (d) => String(d.dbm), ordenar: (d) => d.dbm, align: "right", render: (d) => d.dbm },
+    { key: "imei", header: "IMEI", texto: (d) => d.imei, render: (d) => d.imei },
+  ], []);
 }
 
-function TablaGps({ filas }: { filas: Dispositivo[] }) {
-  return (
-    <table>
-      <thead><tr><th>Serial</th><th>Terminal</th><th>Línea</th><th>GPS OK</th><th>Lat</th><th>Lon</th><th>Velocidad</th><th>Satélites</th><th>Fix</th></tr></thead>
-      <tbody>
-        {filas.map((d) => (
-          <tr key={d.serial}>
-            <td>{d.serial}</td><td>{d.terminal_id}</td><td>{d.linea}</td><td>{d.gps_ok}</td>
-            <td>{d.lat.toFixed(5)}</td><td>{d.lon.toFixed(5)}</td><td>{d.speed}</td><td>{d.satellites}</td><td>{d.fix_type}</td>
-          </tr>
-        ))}
-        {filas.length === 0 && <tr><td colSpan={9} className="vacio">Sin resultados para estos filtros.</td></tr>}
-      </tbody>
-    </table>
-  );
+function useColumnasGps(): ColumnaTabla<Dispositivo>[] {
+  return useMemo(() => [
+    { key: "serial", header: "Serial", texto: (d) => d.serial, render: (d) => d.serial },
+    { key: "terminal", header: "Terminal", texto: (d) => d.terminal_id, render: (d) => d.terminal_id },
+    { key: "linea", header: "Línea", texto: (d) => d.linea, render: (d) => d.linea },
+    { key: "gps", header: "GPS OK", texto: (d) => d.gps_ok, render: (d) => d.gps_ok },
+    { key: "lat", header: "Lat", texto: (d) => d.lat.toFixed(5), ordenar: (d) => d.lat, align: "right", render: (d) => d.lat.toFixed(5) },
+    { key: "lon", header: "Lon", texto: (d) => d.lon.toFixed(5), ordenar: (d) => d.lon, align: "right", render: (d) => d.lon.toFixed(5) },
+    { key: "vel", header: "Velocidad", texto: (d) => String(d.speed), ordenar: (d) => d.speed, align: "right", render: (d) => d.speed },
+    { key: "sat", header: "Satélites", texto: (d) => String(d.satellites), ordenar: (d) => d.satellites, align: "right", render: (d) => d.satellites },
+    { key: "fix", header: "Fix", texto: (d) => d.fix_type, render: (d) => d.fix_type },
+  ], []);
 }
 
-function TablaEmv({ filas }: { filas: Dispositivo[] }) {
-  return (
-    <table>
-      <thead><tr><th>Serial</th><th>Terminal</th><th>Línea</th><th>vlib</th><th>SAM</th><th>PSP</th><th>SAM server</th><th>Estado KAL</th></tr></thead>
-      <tbody>
-        {filas.map((d) => (
-          <tr key={d.serial}>
-            <td>{d.serial}</td><td>{d.terminal_id}</td><td>{d.linea}</td><td>{d.vlib_version}</td><td>{d.sam_version}</td>
-            <td className={d.psp_ok === "OK" ? "pct-pos" : "pct-neg"}>{d.psp_ok}</td>
-            <td className={d.sam_server_ok === "OK" ? "pct-pos" : "pct-neg"}>{d.sam_server_ok}</td>
-            <td><Badge texto={d.estado_kal} color={d.badge_color} titulo={d.diagnostico} /></td>
-          </tr>
-        ))}
-        {filas.length === 0 && <tr><td colSpan={8} className="vacio">Sin resultados para estos filtros.</td></tr>}
-      </tbody>
-    </table>
-  );
+function useColumnasEmv(): ColumnaTabla<Dispositivo>[] {
+  return useMemo(() => [
+    { key: "serial", header: "Serial", texto: (d) => d.serial, render: (d) => d.serial },
+    { key: "terminal", header: "Terminal", texto: (d) => d.terminal_id, render: (d) => d.terminal_id },
+    { key: "linea", header: "Línea", texto: (d) => d.linea, render: (d) => d.linea },
+    { key: "vlib", header: "vlib", texto: (d) => d.vlib_version, render: (d) => d.vlib_version },
+    { key: "sam", header: "SAM", texto: (d) => d.sam_version, render: (d) => d.sam_version },
+    { key: "psp", header: "PSP", texto: (d) => d.psp_ok, render: (d) => <span className={d.psp_ok === "OK" ? "pct-pos" : "pct-neg"}>{d.psp_ok}</span> },
+    { key: "samsrv", header: "SAM server", texto: (d) => d.sam_server_ok, render: (d) => <span className={d.sam_server_ok === "OK" ? "pct-pos" : "pct-neg"}>{d.sam_server_ok}</span> },
+    { key: "estado", header: "Estado KAL", texto: (d) => d.estado_kal, render: (d) => <Badge texto={d.estado_kal} color={d.badge_color} titulo={d.diagnostico} /> },
+  ], []);
 }
 
-function TablaSistema({ filas }: { filas: Dispositivo[] }) {
-  return (
-    <table>
-      <thead><tr><th>Serial</th><th>Terminal</th><th>Línea</th><th>Versión</th><th>CPU</th><th>RAM</th><th>Storage libre</th><th>Uptime</th><th>Estado KAL</th></tr></thead>
-      <tbody>
-        {filas.map((d) => (
-          <tr key={d.serial}>
-            <td>{d.serial}</td><td>{d.terminal_id}</td><td>{d.linea}</td><td>{d.version}</td>
-            <td>{d.cpu}%</td><td>{d.ram}%</td><td>{d.storage_free_mb} MB</td><td>{d.uptime_hs.toFixed(1)} hs</td>
-            <td><Badge texto={d.estado_kal} color={d.badge_color} titulo={d.diagnostico} /></td>
-          </tr>
-        ))}
-        {filas.length === 0 && <tr><td colSpan={9} className="vacio">Sin resultados para estos filtros.</td></tr>}
-      </tbody>
-    </table>
-  );
+function useColumnasSistema(): ColumnaTabla<Dispositivo>[] {
+  return useMemo(() => [
+    { key: "serial", header: "Serial", texto: (d) => d.serial, render: (d) => d.serial },
+    { key: "terminal", header: "Terminal", texto: (d) => d.terminal_id, render: (d) => d.terminal_id },
+    { key: "linea", header: "Línea", texto: (d) => d.linea, render: (d) => d.linea },
+    { key: "version", header: "Versión", texto: (d) => d.version, render: (d) => d.version },
+    { key: "cpu", header: "CPU", texto: (d) => String(d.cpu), ordenar: (d) => d.cpu, align: "right", render: (d) => `${d.cpu}%` },
+    { key: "ram", header: "RAM", texto: (d) => String(d.ram), ordenar: (d) => d.ram, align: "right", render: (d) => `${d.ram}%` },
+    { key: "storage", header: "Storage libre", texto: (d) => String(d.storage_free_mb), ordenar: (d) => d.storage_free_mb, align: "right", render: (d) => `${d.storage_free_mb} MB` },
+    { key: "uptime", header: "Uptime", texto: (d) => d.uptime_hs.toFixed(1), ordenar: (d) => d.uptime_hs, align: "right", render: (d) => `${d.uptime_hs.toFixed(1)} hs` },
+    { key: "estado", header: "Estado KAL", texto: (d) => d.estado_kal, render: (d) => <Badge texto={d.estado_kal} color={d.badge_color} titulo={d.diagnostico} /> },
+  ], []);
 }
 
 function TabExplorador({
@@ -515,7 +574,12 @@ function TabExplorador({
     const q = filtros.terminal.trim().toLowerCase();
     return dispositivos.filter((d) => coincideFlota(d, filtros) && (!q || `${d.terminal_id} ${d.serial}`.toLowerCase().includes(q)));
   }, [dispositivos, filtros]);
-  const { visibles, pagina, totalPaginas, setPagina } = usePaginacion(filtrados, 50);
+
+  const columnasModem = useColumnasModem();
+  const columnasGps = useColumnasGps();
+  const columnasEmv = useColumnasEmv();
+  const columnasSistema = useColumnasSistema();
+  const rowKey = useCallback((d: Dispositivo) => d.serial, []);
 
   return (
     <>
@@ -532,13 +596,10 @@ function TabExplorador({
           <button key={t.key} type="button" className={sub === t.key ? "active" : ""} onClick={() => setSub(t.key)}>{t.label}</button>
         ))}
       </div>
-      <div className="tabla-envoltorio">
-        {sub === "modem" && <TablaModem filas={visibles} />}
-        {sub === "gps" && <TablaGps filas={visibles} />}
-        {sub === "emv" && <TablaEmv filas={visibles} />}
-        {sub === "sistema" && <TablaSistema filas={visibles} />}
-      </div>
-      <Pager pagina={pagina} totalPaginas={totalPaginas} total={filtrados.length} onPagina={setPagina} />
+      {sub === "modem" && <DataTable columnas={columnasModem} filas={filtrados} rowKey={rowKey} nombreArchivo="ot-monitor-modem" />}
+      {sub === "gps" && <DataTable columnas={columnasGps} filas={filtrados} rowKey={rowKey} nombreArchivo="ot-monitor-gps" />}
+      {sub === "emv" && <DataTable columnas={columnasEmv} filas={filtrados} rowKey={rowKey} nombreArchivo="ot-monitor-emv" />}
+      {sub === "sistema" && <DataTable columnas={columnasSistema} filas={filtrados} rowKey={rowKey} nombreArchivo="ot-monitor-sistema" />}
     </>
   );
 }

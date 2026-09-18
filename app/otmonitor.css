@@ -35,6 +35,15 @@
 
 .otmonitor-badge { display: inline-block; white-space: nowrap; padding: 4px 10px; border-radius: var(--radius-pill); color: #fff; font-size: 11px; font-weight: 600; }
 
+/* Tarjetas KPI: borde izquierdo de 4px de color, calcado del original
+   (Bootstrap `border-start border-4 border-<color>` en cada card). Sólo se
+   aplica a las tarjetas que llevan una de estas clases modificadoras — el
+   `.tarjeta` genérico (usado en otras pantallas de erick) no cambia. */
+.tarjeta.otm-accent-blue { border-left: 4px solid #388bfd; }
+.tarjeta.otm-accent-cyan { border-left: 4px solid #06b6d4; }
+.tarjeta.otm-ok { border-left: 4px solid var(--good); }
+.tarjeta.otm-warn { border-left: 4px solid #a3620c; }
+.tarjeta.otm-bad { border-left: 4px solid var(--bad); }
 .tarjeta.otm-ok .valor { color: var(--good); }
 .tarjeta.otm-warn .valor { color: #a3620c; }
 .tarjeta.otm-bad .valor { color: var(--bad); }
@@ -43,32 +52,52 @@
 
 .otmonitor-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; align-items: start; }
 .otmonitor-chart { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; min-width: 0; }
-.otmonitor-chart h3 { margin: 0 0 4px; font-size: 15px; }
-.otmonitor-chart > p { margin: 0 0 16px; font-size: 12px; color: var(--muted); }
-.otmonitor-bar-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px; color: var(--muted); margin-bottom: 14px; }
-.otmonitor-bar-legend span { display: inline-flex; align-items: center; gap: 6px; }
-.otmonitor-bar-legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
-.otmonitor-bar-rows { display: flex; flex-direction: column; gap: 10px; }
-.otmonitor-bar-row { display: grid; grid-template-columns: 120px 1fr 46px; align-items: center; gap: 10px; font-size: 11.5px; }
-.otmonitor-bar-row > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text); font-weight: 600; }
-.otmonitor-bar-row > span:last-child { text-align: right; color: var(--muted-2); font-variant-numeric: tabular-nums; }
-.otmonitor-bar-track { display: flex; height: 14px; border-radius: 4px; overflow: hidden; background: var(--surface-2); }
-.otmonitor-bar-seg { height: 100%; }
-.otmonitor-bar-note { margin-top: 12px; font-size: 11px; color: var(--muted-2); }
+.otmonitor-chart h3 { margin: 0 0 14px; font-size: 15px; }
+.otmonitor-chart-canvas { position: relative; width: 100%; }
 
 .otmonitor-map { width: 100%; height: 560px; border-radius: var(--radius); border: 1px solid var(--border-strong); overflow: hidden; z-index: 0; }
 
-.otmonitor-pager { display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin-top: 12px; font-size: 12px; color: var(--muted); }
-.otmonitor-pager button { font: inherit; cursor: pointer; border: 1px solid var(--border); background: white; color: var(--text); border-radius: 6px; padding: 6px 12px; }
-.otmonitor-pager button:disabled { opacity: .4; cursor: default; }
+/* Ícono de cluster del mapa GIS: círculo con la cantidad de dispositivos
+   agrupados adentro, coloreado según la severidad predominante del grupo
+   (ver colorClusterPredominante en OTMonitorMap.tsx). El tamaño crece un
+   poco con la cantidad, igual criterio visual que el plugin
+   leaflet.markercluster trae por defecto (small/medium/large). */
+.otmonitor-cluster { display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-weight: 700; font-variant-numeric: tabular-nums; border: 3px solid rgba(255, 255, 255, .6); box-shadow: 0 1px 5px rgba(0, 0, 0, .35); }
+.otmonitor-cluster--small { width: 34px; height: 34px; font-size: 12px; margin: -17px 0 0 -17px; }
+.otmonitor-cluster--medium { width: 42px; height: 42px; font-size: 13px; margin: -21px 0 0 -21px; }
+.otmonitor-cluster--large { width: 52px; height: 52px; font-size: 14px; margin: -26px 0 0 -26px; }
+.otmonitor-cluster--danger { background: #da3633; }
+.otmonitor-cluster--warning { background: #d97706; }
+.otmonitor-cluster--secondary { background: #6e7681; }
+.otmonitor-cluster--success { background: #238636; }
+
+/* --- DataTable genérico (buscador + orden + paginación + export) --- */
+.otmonitor-datatable-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.otmonitor-datatable-length { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.otmonitor-datatable-length select { font: inherit; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; background: white; color: var(--text); }
+.otmonitor-datatable-export { display: flex; gap: 6px; }
+.otmonitor-datatable-export button { font: inherit; cursor: pointer; border: 1px solid var(--border); background: white; color: var(--text); border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 600; }
+.otmonitor-datatable-export button:hover { border-color: var(--accent); color: var(--accent-hover); }
+.otmonitor-datatable-search { margin-left: auto; font: inherit; padding: 7px 12px; border: 1px solid var(--border); border-radius: 6px; background: white; color: var(--text); min-width: 220px; }
+.otmonitor-th-ord { cursor: pointer; user-select: none; white-space: nowrap; }
+.otmonitor-th-ord:hover { color: var(--text-strong); }
+.otmonitor-th-flecha { display: inline-block; margin-left: 5px; font-size: 9px; color: var(--muted-2); }
+.otmonitor-th-ord.activo .otmonitor-th-flecha { color: var(--accent-hover); }
+.col-right { text-align: right; font-variant-numeric: tabular-nums; }
+.otmonitor-datatable-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 12px; font-size: 12px; color: var(--muted); }
+.otmonitor-pagenums { display: flex; align-items: center; gap: 4px; }
+.otmonitor-pagenums button { font: inherit; cursor: pointer; border: 1px solid var(--border); background: white; color: var(--text); border-radius: 6px; min-width: 30px; padding: 5px 8px; }
+.otmonitor-pagenums button:disabled { opacity: .4; cursor: default; }
+.otmonitor-pagenums button.active { background: var(--ink-band); color: var(--invert); border-color: var(--ink-band); }
+.otmonitor-pagenums-ellipsis { padding: 0 4px; color: var(--muted-2); }
 
 @media (max-width: 950px) {
   .otmonitor-charts { grid-template-columns: 1fr; }
-  .otmonitor-bar-row { grid-template-columns: 90px 1fr 40px; }
 }
 @media (max-width: 650px) {
   .otmonitor-main { padding: 16px 14px 40px; }
   .otmonitor-head { flex-direction: column; align-items: flex-start; }
   .otmonitor-filtros select, .otmonitor-filtros input { min-width: 0; width: 100%; }
   .otmonitor-map { height: 420px; }
+  .otmonitor-datatable-search { margin-left: 0; width: 100%; }
 }
