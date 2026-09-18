@@ -1,20 +1,20 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-18T17:57:23.020432-03:00",
+  "generado_en": "2026-09-18T18:02:29.624716-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-20",
-    "ultima_recepcion": "2026-09-18T17:57:15.636632-03:00",
+    "ultima_recepcion": "2026-09-18T18:02:18.004418-03:00",
     "dias_con_datos": 6,
-    "archivos_leidos": 9764,
+    "archivos_leidos": 9791,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 9762,
+    "sin_tenant": 9789,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 9762,
-    "entidades_observadas": 9338,
+    "eventos_unicos": 9789,
+    "entidades_observadas": 9364,
     "entidades_con_seguimiento": 142,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T17:57:15.636632-03:00",
+        "updatedAt": "2026-09-18T18:02:18.004418-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -15820,12 +15820,12 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "Credit",
-            21,
-            21,
+            23,
+            23,
             0,
-            21,
+            23,
             0,
-            120395032,
+            128895032,
             0
           ],
           [
@@ -15835,12 +15835,12 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
-            27,
-            27,
+            28,
+            28,
             0,
-            27,
+            28,
             0,
-            334307500,
+            337507500,
             0
           ],
           [
@@ -15992,6 +15992,96 @@
             0,
             1300000,
             0
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            2210000,
+            0
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            3,
+            3,
+            0,
+            3,
+            0,
+            40000000,
+            0
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Confirmed",
+            "Aprobada",
+            "Debit",
+            2,
+            2,
+            0,
+            2,
+            0,
+            952500,
+            0
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            2,
+            2,
+            0,
+            2,
+            0,
+            13000000,
+            0
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "P2pInputTransfer.Confirmed",
+            "Aprobada",
+            "Credit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            8247500,
+            0
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "P2pOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            8247500,
+            0
           ]
         ]
       },
@@ -16002,7 +16092,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T17:57:15.636632-03:00",
+        "updatedAt": "2026-09-18T18:02:18.004418-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -18348,7 +18438,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T17:57:15.636632-03:00",
+        "updatedAt": "2026-09-18T18:02:18.004418-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -20556,6 +20646,32 @@
             3,
             3,
             0
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Confirmed",
+            "Aprobada",
+            "Virtual",
+            2,
+            2,
+            0,
+            2,
+            0
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Rejected",
+            "Rechazada",
+            "Virtual",
+            3,
+            0,
+            3,
+            3,
+            0
           ]
         ]
       },
@@ -20566,7 +20682,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T17:57:15.636632-03:00",
+        "updatedAt": "2026-09-18T18:02:18.004418-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -21724,6 +21840,14 @@
             "Physical",
             "No",
             3
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "Normal",
+            "Virtual",
+            "No",
+            2
           ]
         ]
       },
@@ -21734,7 +21858,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T17:57:15.636632-03:00",
+        "updatedAt": "2026-09-18T18:02:18.004418-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -22498,8 +22622,15 @@
             "2026-09-18T17:00:00",
             "sin_tenant",
             "Open",
-            67,
-            67
+            68,
+            68
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "Open",
+            2,
+            2
           ]
         ]
       },
@@ -22510,7 +22641,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T17:57:15.636632-03:00",
+        "updatedAt": "2026-09-18T18:02:18.004418-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -23429,10 +23560,22 @@
             "Sin distribuidor",
             "lending.loanRequest.Confirmed",
             "Aprobada",
-            7,
-            7,
+            8,
+            8,
             0,
-            7,
+            8,
+            0
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "lending.loanRequest.Confirmed",
+            "Aprobada",
+            2,
+            2,
+            0,
+            2,
             0
           ]
         ]
@@ -23444,7 +23587,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T17:57:15.636632-03:00",
+        "updatedAt": "2026-09-18T18:02:18.004418-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -37876,7 +38019,7 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            21
+            23
           ],
           [
             "2026-09-18T17:00:00",
@@ -37885,7 +38028,7 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            27
+            28
           ],
           [
             "2026-09-18T17:00:00",
@@ -37939,7 +38082,7 @@
             "account.Account.Created",
             "Open",
             "cuenta",
-            67
+            68
           ],
           [
             "2026-09-18T17:00:00",
@@ -37948,7 +38091,7 @@
             "cardAccount.Card.Change-State",
             "Delivered",
             "tarjeta",
-            2
+            3
           ],
           [
             "2026-09-18T17:00:00",
@@ -38002,7 +38145,7 @@
             "lending.loanRequest.Confirmed",
             "Aprobada",
             "bnpl",
-            7
+            8
           ],
           [
             "2026-09-18T17:00:00",
@@ -38048,17 +38191,116 @@
             "Aprobada",
             "pago",
             2
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            3
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "Sale.Confirmed",
+            "Aprobada",
+            "pago",
+            2
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "account.Account.Created",
+            "Open",
+            "cuenta",
+            2
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.Card.Change-State",
+            "Normal",
+            "tarjeta",
+            2
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Confirmed",
+            "Aprobada",
+            "tarjeta",
+            2
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.CardHolderAccountRequest.Rejected",
+            "Rechazada",
+            "tarjeta",
+            3
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "lending.loanRequest.Confirmed",
+            "Aprobada",
+            "bnpl",
+            2
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "BankInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            2
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "P2pInputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-18T18:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "P2pOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
           ]
         ]
       }
     ],
     "warnings": [
-      "9762 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "9789 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-18T17:57:25-03:00",
+    "checked_at": "2026-09-18T18:02:32-03:00",
     "cadence_seconds": 300
   }
 }
