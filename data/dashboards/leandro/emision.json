@@ -1,20 +1,20 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-18T13:42:22.858014-03:00",
+  "generado_en": "2026-09-18T13:47:22.329684-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-20",
-    "ultima_recepcion": "2026-09-18T13:41:59.670957-03:00",
+    "ultima_recepcion": "2026-09-18T13:47:19.366839-03:00",
     "dias_con_datos": 6,
-    "archivos_leidos": 8974,
+    "archivos_leidos": 8987,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 8972,
+    "sin_tenant": 8985,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 8972,
-    "entidades_observadas": 8577,
+    "eventos_unicos": 8985,
+    "entidades_observadas": 8590,
     "entidades_con_seguimiento": 133,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T13:41:59.670957-03:00",
+        "updatedAt": "2026-09-18T13:47:19.366839-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -14965,12 +14965,12 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "Credit",
-            11,
-            11,
+            13,
+            13,
             0,
-            11,
+            13,
             0,
-            63289094,
+            69269094,
             0
           ],
           [
@@ -15010,12 +15010,12 @@
             "Sale.Confirmed",
             "Aprobada",
             "Debit",
-            7,
-            7,
+            8,
+            8,
             0,
-            7,
+            8,
             0,
-            31811400,
+            33719200,
             0
           ],
           [
@@ -15070,12 +15070,12 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "Credit",
-            18,
-            18,
+            21,
+            21,
             0,
-            18,
+            21,
             0,
-            15690000,
+            19890000,
             0
           ],
           [
@@ -15122,6 +15122,21 @@
             0,
             39299997,
             0
+          ],
+          [
+            "2026-09-18T13:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "Sale.Confirmed",
+            "Aprobada",
+            "Debit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            1000000,
+            0
           ]
         ]
       },
@@ -15132,7 +15147,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T13:41:59.670957-03:00",
+        "updatedAt": "2026-09-18T13:47:19.366839-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -17358,7 +17373,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T13:41:59.670957-03:00",
+        "updatedAt": "2026-09-18T13:47:19.366839-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -19433,7 +19448,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T13:41:59.670957-03:00",
+        "updatedAt": "2026-09-18T13:47:19.366839-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -20497,7 +20512,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T13:41:59.670957-03:00",
+        "updatedAt": "2026-09-18T13:47:19.366839-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -21226,14 +21241,14 @@
             "2026-09-18T13:00:00",
             "sin_tenant",
             "Open",
-            16,
-            15
+            19,
+            18
           ],
           [
             "2026-09-18T13:00:00",
             "sin_tenant",
             "Preventive Suspension",
-            19,
+            22,
             0
           ]
         ]
@@ -21245,7 +21260,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T13:41:59.670957-03:00",
+        "updatedAt": "2026-09-18T13:47:19.366839-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -22131,7 +22146,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T13:41:59.670957-03:00",
+        "updatedAt": "2026-09-18T13:47:19.366839-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -35735,7 +35750,7 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            11
+            13
           ],
           [
             "2026-09-18T13:00:00",
@@ -35762,7 +35777,7 @@
             "Sale.Confirmed",
             "Aprobada",
             "pago",
-            7
+            8
           ],
           [
             "2026-09-18T13:00:00",
@@ -35807,7 +35822,7 @@
             "account.Account.Change-State",
             "Preventive Suspension",
             "cuenta",
-            19
+            22
           ],
           [
             "2026-09-18T13:00:00",
@@ -35816,7 +35831,7 @@
             "account.Account.Created",
             "Open",
             "cuenta",
-            15
+            18
           ],
           [
             "2026-09-18T13:00:00",
@@ -35888,7 +35903,7 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            18
+            21
           ],
           [
             "2026-09-18T13:00:00",
@@ -35916,17 +35931,26 @@
             "Aprobada",
             "pago",
             5
+          ],
+          [
+            "2026-09-18T13:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "Sale.Confirmed",
+            "Aprobada",
+            "pago",
+            1
           ]
         ]
       }
     ],
     "warnings": [
-      "8972 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "8985 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-18T13:42:25-03:00",
+    "checked_at": "2026-09-18T13:47:24-03:00",
     "cadence_seconds": 300
   }
 }
