@@ -1,20 +1,20 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-17T22:22:26.878707-03:00",
+  "generado_en": "2026-09-17T22:27:24.919047-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-19",
-    "ultima_recepcion": "2026-09-17T22:21:08.373376-03:00",
+    "ultima_recepcion": "2026-09-17T22:24:02.700104-03:00",
     "dias_con_datos": 5,
-    "archivos_leidos": 7730,
+    "archivos_leidos": 7734,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 7728,
+    "sin_tenant": 7732,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 7728,
-    "entidades_observadas": 7421,
+    "eventos_unicos": 7732,
+    "entidades_observadas": 7425,
     "entidades_con_seguimiento": 106,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-17T22:21:08.373376-03:00",
+        "updatedAt": "2026-09-17T22:24:02.700104-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -12940,12 +12940,12 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "Credit",
-            4,
-            4,
+            5,
+            5,
             0,
-            4,
+            5,
             0,
-            6700000,
+            16700000,
             0
           ],
           [
@@ -12961,6 +12961,21 @@
             1,
             0,
             5000000,
+            0
+          ],
+          [
+            "2026-09-17T22:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "PaymentProvider.Confirmed",
+            "Aprobada",
+            "Debit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            300000,
             0
           ],
           [
@@ -12985,12 +13000,12 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
-            2,
-            2,
+            3,
+            3,
             0,
-            2,
+            3,
             0,
-            17670000,
+            19670000,
             0
           ],
           [
@@ -13017,7 +13032,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-17T22:21:08.373376-03:00",
+        "updatedAt": "2026-09-17T22:24:02.700104-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -14903,7 +14918,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-17T22:21:08.373376-03:00",
+        "updatedAt": "2026-09-17T22:24:02.700104-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -16666,7 +16681,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-17T22:21:08.373376-03:00",
+        "updatedAt": "2026-09-17T22:24:02.700104-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -17546,7 +17561,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-17T22:21:08.373376-03:00",
+        "updatedAt": "2026-09-17T22:24:02.700104-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -18170,8 +18185,8 @@
             "2026-09-17T22:00:00",
             "sin_tenant",
             "Open",
-            10,
-            10
+            11,
+            11
           ]
         ]
       },
@@ -18182,7 +18197,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-17T22:21:08.373376-03:00",
+        "updatedAt": "2026-09-17T22:24:02.700104-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -18948,7 +18963,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-17T22:21:08.373376-03:00",
+        "updatedAt": "2026-09-17T22:24:02.700104-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -30653,7 +30668,7 @@
             "BankInputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            4
+            5
           ],
           [
             "2026-09-17T22:00:00",
@@ -30667,11 +30682,20 @@
           [
             "2026-09-17T22:00:00",
             "sin_tenant",
+            "COPPEL S.A.",
+            "PaymentProvider.Confirmed",
+            "Aprobada",
+            "pago",
+            1
+          ],
+          [
+            "2026-09-17T22:00:00",
+            "sin_tenant",
             "Sin distribuidor",
             "account.Account.Created",
             "Open",
             "cuenta",
-            10
+            11
           ],
           [
             "2026-09-17T22:00:00",
@@ -30716,7 +30740,7 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            2
+            3
           ],
           [
             "2026-09-17T22:00:00",
@@ -30731,12 +30755,12 @@
       }
     ],
     "warnings": [
-      "7728 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "7732 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-17T22:22:31-03:00",
+    "checked_at": "2026-09-17T22:27:30-03:00",
     "cadence_seconds": 300
   }
 }
