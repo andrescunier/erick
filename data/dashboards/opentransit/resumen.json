@@ -1,63 +1,63 @@
 {
-  "generado_en": "2026-09-19T08:22:12.166678",
+  "generado_en": "2026-09-19T08:37:12.571818",
   "_procedencia": {
     "sistema": "opentransit — pipeline de archivos (no tiene base de datos ni API HTTP propia)",
     "informe": "business_summary.json (14 de sus 26 campos) + 4 indicadores derivados (no cobrado, validadores sin taps hoy, viajes por tarjeta)",
     "ruta": "C:\\andybot\\opentransit\\emova\\tenants\\artifacts\\<tenant>\\<fecha>\\<run_id>\\structured",
     "insumos_del_informe": "BACKFILE, STPOP, DAILYTAPS, VQR, RECOVERY, STPOP de ayer y JT_EMOVA (CSV diarios de 2 servidores SFTP)",
     "sincronizado_por": "scripts/sincronizar_resumen.py",
-    "sincronizado_en": "2026-09-19T08:22:12",
+    "sincronizado_en": "2026-09-19T08:37:12",
     "tenants_publicados": 32,
     "tenants_declarados_en_config": 25,
     "tenants_sin_declarar": "scabral, tagostosa, tcolegiales, tldevega, triachuelo, tsantafe, tsesentayocho",
-    "dato_mas_nuevo": "2026-09-18 (vlopez)",
+    "dato_mas_nuevo": "2026-09-19 (dotasa)",
     "dato_mas_viejo": "2026-03-31 (lersrl)"
   },
   "tenants": {
     "atlantida": {
       "tenant": "ATLANTIDA",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:18:29.087257-03:00",
-      "transaction_volume": 1468,
-      "money_processed_cents": 153217971,
-      "tap_count": 1795,
-      "average_ticket_cents": 85358,
-      "average_transaction_cents": 104372,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:25:28.398132-03:00",
+      "transaction_volume": 1388,
+      "money_processed_cents": 146762572,
+      "tap_count": 1727,
+      "average_ticket_cents": 84981,
+      "average_transaction_cents": 105737,
       "validators_active_day": 13,
       "validators_active_7d": 13,
-      "money_per_validator_cents": 11785998,
-      "month_projection_cents": 4596539130,
-      "unique_cards": 1299,
+      "money_per_validator_cents": 11289429,
+      "month_projection_cents": 4402877160,
+      "unique_cards": 1215,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 134885707,
+          "money_previous_cents": 153217971,
           "validators_previous": 13,
-          "money_variation_pct": 13.59,
+          "money_variation_pct": -4.21,
           "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 10375824,
-          "money_per_validator_variation_pct": 13.59
+          "money_per_validator_previous_cents": 11785998,
+          "money_per_validator_variation_pct": -4.21
         },
         "7d": {
-          "money_previous_cents": 143521409,
+          "money_previous_cents": 117991691,
           "validators_previous": 13,
-          "money_variation_pct": 6.76,
+          "money_variation_pct": 24.38,
           "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 11040108,
-          "money_per_validator_variation_pct": 6.76
+          "money_per_validator_previous_cents": 9076284,
+          "money_per_validator_variation_pct": 24.38
         },
         "30d": {
-          "money_previous_cents": 105162570,
-          "validators_previous": 11,
-          "money_variation_pct": 45.7,
-          "validators_variation_pct": 18.18,
-          "money_per_validator_previous_cents": 9560234,
-          "money_per_validator_variation_pct": 23.28
+          "money_previous_cents": 115312080,
+          "validators_previous": 12,
+          "money_variation_pct": 27.27,
+          "validators_variation_pct": 8.33,
+          "money_per_validator_previous_cents": 9609340,
+          "money_per_validator_variation_pct": 17.48
         }
       },
-      "no_cobrado_cents": 7441571,
-      "no_cobrado_pct": 4.86,
+      "no_cobrado_cents": 7658915,
+      "no_cobrado_pct": 5.22,
       "validadores_sin_taps_7d": 0,
-      "viajes_por_tarjeta": 1.38
+      "viajes_por_tarjeta": 1.42
     },
     "aumer": {
       "tenant": "AUMER",
@@ -286,48 +286,48 @@
     },
     "dotasa": {
       "tenant": "DOTASA",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:18:40.432924-03:00",
-      "transaction_volume": 294,
-      "money_processed_cents": 33054450,
-      "tap_count": 335,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:25:33.364684-03:00",
+      "transaction_volume": 260,
+      "money_processed_cents": 29206320,
+      "tap_count": 296,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 112430,
-      "validators_active_day": 50,
-      "validators_active_7d": 53,
-      "money_per_validator_cents": 661089,
-      "month_projection_cents": 991633500,
-      "unique_cards": 269,
+      "average_transaction_cents": 112332,
+      "validators_active_day": 44,
+      "validators_active_7d": 52,
+      "money_per_validator_cents": 663780,
+      "month_projection_cents": 876189600,
+      "unique_cards": 230,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 31574400,
+          "money_previous_cents": 33054450,
           "validators_previous": 50,
-          "money_variation_pct": 4.69,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 631488,
-          "money_per_validator_variation_pct": 4.69
+          "money_variation_pct": -11.64,
+          "validators_variation_pct": -12,
+          "money_per_validator_previous_cents": 661089,
+          "money_per_validator_variation_pct": 0.41
         },
         "7d": {
-          "money_previous_cents": 31475730,
-          "validators_previous": 48,
-          "money_variation_pct": 5.02,
-          "validators_variation_pct": 4.17,
-          "money_per_validator_previous_cents": 655744,
-          "money_per_validator_variation_pct": 0.82
+          "money_previous_cents": 28515630,
+          "validators_previous": 46,
+          "money_variation_pct": 2.42,
+          "validators_variation_pct": -4.35,
+          "money_per_validator_previous_cents": 619905,
+          "money_per_validator_variation_pct": 7.08
         },
         "30d": {
-          "money_previous_cents": 23597979,
+          "money_previous_cents": 26441109,
           "validators_previous": 48,
-          "money_variation_pct": 40.07,
-          "validators_variation_pct": 4.17,
-          "money_per_validator_previous_cents": 491625,
-          "money_per_validator_variation_pct": 34.47
+          "money_variation_pct": 10.46,
+          "validators_variation_pct": -8.33,
+          "money_per_validator_previous_cents": 550856,
+          "money_per_validator_variation_pct": 20.5
         }
       },
-      "no_cobrado_cents": 1578720,
-      "no_cobrado_pct": 4.78,
-      "validadores_sin_taps_7d": 3,
-      "viajes_por_tarjeta": 1.25
+      "no_cobrado_cents": 2170740,
+      "no_cobrado_pct": 7.43,
+      "validadores_sin_taps_7d": 8,
+      "viajes_por_tarjeta": 1.29
     },
     "emova": {
       "tenant": "EMOVA",
@@ -84714,7 +84714,7 @@
         "title": "Histórico horario para referencia de viajes",
         "mode": "history",
         "source": "Alarmbot · ventanas completas de 24 horas · sam_dt · estados 0/255",
-        "updatedAt": "2026-09-19T08:23:44.631944-03:00",
+        "updatedAt": "2026-09-19T08:38:45.959780-03:00",
         "description": "Ocho días equivalentes de las últimas ocho semanas. Una observación por empresa, fecha y hora. Las horas sin viajes son cero sólo cuando la consulta completa fue exitosa. No se suman exportaciones superpuestas. Los CSV de recepción de última hora y pendientes de 48 horas no se mezclan con este universo.",
         "columns": [
           "fecha",
@@ -122907,7 +122907,7 @@
   },
   "title": "Transporte · Opentransit y Alarmbot",
   "_sync": {
-    "checked_at": "2026-09-19T08:23:44-03:00",
+    "checked_at": "2026-09-19T08:38:45-03:00",
     "cadence_seconds": 300
   }
 }
