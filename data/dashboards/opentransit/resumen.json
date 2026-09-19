@@ -1,16 +1,16 @@
 {
-  "generado_en": "2026-09-19T08:37:12.571818",
+  "generado_en": "2026-09-19T08:52:12.980988",
   "_procedencia": {
     "sistema": "opentransit — pipeline de archivos (no tiene base de datos ni API HTTP propia)",
     "informe": "business_summary.json (14 de sus 26 campos) + 4 indicadores derivados (no cobrado, validadores sin taps hoy, viajes por tarjeta)",
     "ruta": "C:\\andybot\\opentransit\\emova\\tenants\\artifacts\\<tenant>\\<fecha>\\<run_id>\\structured",
     "insumos_del_informe": "BACKFILE, STPOP, DAILYTAPS, VQR, RECOVERY, STPOP de ayer y JT_EMOVA (CSV diarios de 2 servidores SFTP)",
     "sincronizado_por": "scripts/sincronizar_resumen.py",
-    "sincronizado_en": "2026-09-19T08:37:12",
+    "sincronizado_en": "2026-09-19T08:52:12",
     "tenants_publicados": 32,
     "tenants_declarados_en_config": 25,
     "tenants_sin_declarar": "scabral, tagostosa, tcolegiales, tldevega, triachuelo, tsantafe, tsesentayocho",
-    "dato_mas_nuevo": "2026-09-19 (dotasa)",
+    "dato_mas_nuevo": "2026-09-19 (vlopez)",
     "dato_mas_viejo": "2026-03-31 (lersrl)"
   },
   "tenants": {
@@ -61,214 +61,214 @@
     },
     "aumer": {
       "tenant": "AUMER",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:24:38.099976-03:00",
-      "transaction_volume": 2095,
-      "money_processed_cents": 2702884320,
-      "tap_count": 2095,
-      "average_ticket_cents": 1290160,
-      "average_transaction_cents": 1290160,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:44:44.574388-03:00",
+      "transaction_volume": 2643,
+      "money_processed_cents": 3013952574,
+      "tap_count": 2643,
+      "average_ticket_cents": 1140353,
+      "average_transaction_cents": 1140353,
       "validators_active_day": 23,
       "validators_active_7d": 23,
-      "money_per_validator_cents": 117516710,
-      "month_projection_cents": 81086529600,
-      "unique_cards": 1217,
+      "money_per_validator_cents": 131041416,
+      "month_projection_cents": 90418577220,
+      "unique_cards": 1606,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 2373577303,
+          "money_previous_cents": 2702884320,
           "validators_previous": 23,
-          "money_variation_pct": 13.87,
+          "money_variation_pct": 11.51,
           "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 103199013,
-          "money_per_validator_variation_pct": 13.87
+          "money_per_validator_previous_cents": 117516710,
+          "money_per_validator_variation_pct": 11.51
         },
         "7d": {
-          "money_previous_cents": 1970839108,
-          "validators_previous": 23,
-          "money_variation_pct": 37.14,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 85688657,
-          "money_per_validator_variation_pct": 37.14
+          "money_previous_cents": 2108724592,
+          "validators_previous": 22,
+          "money_variation_pct": 42.93,
+          "validators_variation_pct": 4.55,
+          "money_per_validator_previous_cents": 95851118,
+          "money_per_validator_variation_pct": 36.71
         },
         "30d": {
-          "money_previous_cents": 1482017321,
-          "validators_previous": 23,
-          "money_variation_pct": 82.38,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 64435536,
-          "money_per_validator_variation_pct": 82.38
+          "money_previous_cents": 1662226561,
+          "validators_previous": 21,
+          "money_variation_pct": 81.32,
+          "validators_variation_pct": 9.52,
+          "money_per_validator_previous_cents": 79153646,
+          "money_per_validator_variation_pct": 65.55
         }
       },
-      "no_cobrado_cents": 237127193,
-      "no_cobrado_pct": 8.77,
+      "no_cobrado_cents": 246432398,
+      "no_cobrado_pct": 8.18,
       "validadores_sin_taps_7d": 0,
-      "viajes_por_tarjeta": 1.72
+      "viajes_por_tarjeta": 1.65
     },
     "ausol": {
       "tenant": "AUSOL",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:24:17.464137-03:00",
-      "transaction_volume": 3738,
-      "money_processed_cents": 850185535,
-      "tap_count": 3738,
-      "average_ticket_cents": 227444,
-      "average_transaction_cents": 227444,
-      "validators_active_day": 35,
-      "validators_active_7d": 74,
-      "money_per_validator_cents": 24291015,
-      "month_projection_cents": 25505566050,
-      "unique_cards": 2776,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:44:30.013521-03:00",
+      "transaction_volume": 4048,
+      "money_processed_cents": 899694047,
+      "tap_count": 4048,
+      "average_ticket_cents": 222256,
+      "average_transaction_cents": 222256,
+      "validators_active_day": 36,
+      "validators_active_7d": 77,
+      "money_per_validator_cents": 24991501,
+      "month_projection_cents": 26990821410,
+      "unique_cards": 3124,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 764397329,
+          "money_previous_cents": 850185535,
           "validators_previous": 35,
-          "money_variation_pct": 11.22,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 21839924,
-          "money_per_validator_variation_pct": 11.22
+          "money_variation_pct": 5.82,
+          "validators_variation_pct": 2.86,
+          "money_per_validator_previous_cents": 24291015,
+          "money_per_validator_variation_pct": 2.88
         },
         "7d": {
-          "money_previous_cents": 679534251,
+          "money_previous_cents": 759642766,
           "validators_previous": 34,
-          "money_variation_pct": 25.11,
-          "validators_variation_pct": 2.94,
-          "money_per_validator_previous_cents": 19986302,
-          "money_per_validator_variation_pct": 21.54
+          "money_variation_pct": 18.44,
+          "validators_variation_pct": 5.88,
+          "money_per_validator_previous_cents": 22342434,
+          "money_per_validator_variation_pct": 11.86
         },
         "30d": {
-          "money_previous_cents": 647051408,
-          "validators_previous": 33,
-          "money_variation_pct": 31.39,
-          "validators_variation_pct": 6.06,
-          "money_per_validator_previous_cents": 19607618,
-          "money_per_validator_variation_pct": 23.89
+          "money_previous_cents": 644022986,
+          "validators_previous": 30,
+          "money_variation_pct": 39.7,
+          "validators_variation_pct": 20,
+          "money_per_validator_previous_cents": 21467433,
+          "money_per_validator_variation_pct": 16.42
         }
       },
-      "no_cobrado_cents": 34466839,
-      "no_cobrado_pct": 4.05,
-      "validadores_sin_taps_7d": 39,
-      "viajes_por_tarjeta": 1.35
+      "no_cobrado_cents": 39275253,
+      "no_cobrado_pct": 4.37,
+      "validadores_sin_taps_7d": 41,
+      "viajes_por_tarjeta": 1.3
     },
     "bbelgrano": {
       "tenant": "BBELGRANO",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:25:39.606626-03:00",
-      "transaction_volume": 735,
-      "money_processed_cents": 82685460,
-      "tap_count": 838,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 112497,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:45:30.004202-03:00",
+      "transaction_volume": 759,
+      "money_processed_cents": 85235284,
+      "tap_count": 864,
+      "average_ticket_cents": 98652,
+      "average_transaction_cents": 112299,
       "validators_active_day": 55,
       "validators_active_7d": 58,
-      "money_per_validator_cents": 1503372,
-      "month_projection_cents": 2480563800,
-      "unique_cards": 664,
+      "money_per_validator_cents": 1549732,
+      "month_projection_cents": 2557058520,
+      "unique_cards": 685,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 84066840,
-          "validators_previous": 54,
-          "money_variation_pct": -1.64,
-          "validators_variation_pct": 1.85,
-          "money_per_validator_previous_cents": 1556793,
-          "money_per_validator_variation_pct": -3.43
+          "money_previous_cents": 82685460,
+          "validators_previous": 55,
+          "money_variation_pct": 3.08,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 1503372,
+          "money_per_validator_variation_pct": 3.08
         },
         "7d": {
-          "money_previous_cents": 87816300,
-          "validators_previous": 56,
-          "money_variation_pct": -5.84,
-          "validators_variation_pct": -1.79,
-          "money_per_validator_previous_cents": 1568148,
-          "money_per_validator_variation_pct": -4.13
+          "money_previous_cents": 78343980,
+          "validators_previous": 58,
+          "money_variation_pct": 8.8,
+          "validators_variation_pct": -5.17,
+          "money_per_validator_previous_cents": 1350758,
+          "money_per_validator_variation_pct": 14.73
         },
         "30d": {
-          "money_previous_cents": 63401799,
+          "money_previous_cents": 67382181,
           "validators_previous": 57,
-          "money_variation_pct": 30.42,
+          "money_variation_pct": 26.5,
           "validators_variation_pct": -3.51,
-          "money_per_validator_previous_cents": 1112312,
-          "money_per_validator_variation_pct": 35.16
+          "money_per_validator_previous_cents": 1182144,
+          "money_per_validator_variation_pct": 31.1
         }
       },
-      "no_cobrado_cents": 3552120,
-      "no_cobrado_pct": 4.3,
+      "no_cobrado_cents": 4140241,
+      "no_cobrado_pct": 4.86,
       "validadores_sin_taps_7d": 3,
       "viajes_por_tarjeta": 1.26
     },
     "cadsa": {
       "tenant": "CADSA",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:23:57.812509-03:00",
-      "transaction_volume": 314,
-      "money_processed_cents": 464133131,
-      "tap_count": 314,
-      "average_ticket_cents": 1478131,
-      "average_transaction_cents": 1478131,
-      "validators_active_day": 9,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:44:19.404475-03:00",
+      "transaction_volume": 480,
+      "money_processed_cents": 675194762,
+      "tap_count": 480,
+      "average_ticket_cents": 1406656,
+      "average_transaction_cents": 1406656,
+      "validators_active_day": 8,
       "validators_active_7d": 9,
-      "money_per_validator_cents": 51570348,
-      "month_projection_cents": 13923993930,
-      "unique_cards": 277,
+      "money_per_validator_cents": 84399345,
+      "month_projection_cents": 20255842860,
+      "unique_cards": 417,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 516265860,
+          "money_previous_cents": 464133131,
           "validators_previous": 9,
-          "money_variation_pct": -10.1,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 57362873,
-          "money_per_validator_variation_pct": -10.1
+          "money_variation_pct": 45.47,
+          "validators_variation_pct": -11.11,
+          "money_per_validator_previous_cents": 51570348,
+          "money_per_validator_variation_pct": 63.66
         },
         "7d": {
-          "money_previous_cents": 637234037,
+          "money_previous_cents": 641789324,
           "validators_previous": 9,
-          "money_variation_pct": -27.16,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 70803782,
-          "money_per_validator_variation_pct": -27.16
+          "money_variation_pct": 5.21,
+          "validators_variation_pct": -11.11,
+          "money_per_validator_previous_cents": 71309925,
+          "money_per_validator_variation_pct": 18.36
         },
         "30d": {
-          "money_previous_cents": 491464853,
+          "money_previous_cents": 586113594,
           "validators_previous": 8,
-          "money_variation_pct": -5.56,
-          "validators_variation_pct": 12.5,
-          "money_per_validator_previous_cents": 61433107,
-          "money_per_validator_variation_pct": -16.05
+          "money_variation_pct": 15.2,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 73264199,
+          "money_per_validator_variation_pct": 15.2
         }
       },
-      "no_cobrado_cents": 20245720,
-      "no_cobrado_pct": 4.36,
-      "validadores_sin_taps_7d": 0,
-      "viajes_por_tarjeta": 1.13
+      "no_cobrado_cents": 47577442,
+      "no_cobrado_pct": 7.05,
+      "validadores_sin_taps_7d": 1,
+      "viajes_por_tarjeta": 1.15
     },
     "cunidos": {
       "tenant": "CUNIDOS",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:25:50.253664-03:00",
-      "transaction_volume": 2092,
-      "money_processed_cents": 239077410,
-      "tap_count": 2423,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 114282,
-      "validators_active_day": 97,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:45:36.790380-03:00",
+      "transaction_volume": 1887,
+      "money_processed_cents": 216119687,
+      "tap_count": 2191,
+      "average_ticket_cents": 98640,
+      "average_transaction_cents": 114531,
+      "validators_active_day": 96,
       "validators_active_7d": 100,
-      "money_per_validator_cents": 2464716,
-      "month_projection_cents": 7172322300,
-      "unique_cards": 1874,
+      "money_per_validator_cents": 2251247,
+      "month_projection_cents": 6483590610,
+      "unique_cards": 1715,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 204246900,
-          "validators_previous": 99,
-          "money_variation_pct": 17.05,
-          "validators_variation_pct": -2.02,
-          "money_per_validator_previous_cents": 2063100,
-          "money_per_validator_variation_pct": 19.47
+          "money_previous_cents": 239077410,
+          "validators_previous": 97,
+          "money_variation_pct": -9.6,
+          "validators_variation_pct": -1.03,
+          "money_per_validator_previous_cents": 2464716,
+          "money_per_validator_variation_pct": -8.66
         },
         "7d": {
-          "money_previous_cents": 194971920,
-          "validators_previous": 91,
-          "money_variation_pct": 22.62,
-          "validators_variation_pct": 6.59,
-          "money_per_validator_previous_cents": 2142549,
-          "money_per_validator_variation_pct": 15.04
+          "money_previous_cents": 170896440,
+          "validators_previous": 90,
+          "money_variation_pct": 26.46,
+          "validators_variation_pct": 6.67,
+          "money_per_validator_previous_cents": 1898849,
+          "money_per_validator_variation_pct": 18.56
         },
         "30d": {
           "money_previous_cents": null,
@@ -279,10 +279,10 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 10853700,
-      "no_cobrado_pct": 4.54,
-      "validadores_sin_taps_7d": 3,
-      "viajes_por_tarjeta": 1.29
+      "no_cobrado_cents": 8762135,
+      "no_cobrado_pct": 4.05,
+      "validadores_sin_taps_7d": 4,
+      "viajes_por_tarjeta": 1.28
     },
     "dotasa": {
       "tenant": "DOTASA",
@@ -331,124 +331,124 @@
     },
     "emova": {
       "tenant": "EMOVA",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:18:52.164519-03:00",
-      "transaction_volume": 134088,
-      "money_processed_cents": 31041650690,
-      "tap_count": 185355,
-      "average_ticket_cents": 167471,
-      "average_transaction_cents": 231502,
-      "validators_active_day": 311,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:25:37.295893-03:00",
+      "transaction_volume": 120063,
+      "money_processed_cents": 27276110275,
+      "tap_count": 164659,
+      "average_ticket_cents": 165652,
+      "average_transaction_cents": 227182,
+      "validators_active_day": 315,
       "validators_active_7d": 327,
-      "money_per_validator_cents": 99812382,
-      "month_projection_cents": 931249520700,
-      "unique_cards": 113601,
+      "money_per_validator_cents": 86590826,
+      "month_projection_cents": 818283308250,
+      "unique_cards": 101447,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 31503469775,
-          "validators_previous": 313,
-          "money_variation_pct": -1.47,
-          "validators_variation_pct": -0.64,
-          "money_per_validator_previous_cents": 100650063,
-          "money_per_validator_variation_pct": -0.83
+          "money_previous_cents": 31041650690,
+          "validators_previous": 311,
+          "money_variation_pct": -12.13,
+          "validators_variation_pct": 1.29,
+          "money_per_validator_previous_cents": 99812382,
+          "money_per_validator_variation_pct": -13.25
         },
         "7d": {
-          "money_previous_cents": 32406755615,
+          "money_previous_cents": 27129428000,
           "validators_previous": 315,
-          "money_variation_pct": -4.21,
-          "validators_variation_pct": -1.27,
-          "money_per_validator_previous_cents": 102878589,
-          "money_per_validator_variation_pct": -2.98
+          "money_variation_pct": 0.54,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 86125168,
+          "money_per_validator_variation_pct": 0.54
         },
         "30d": {
-          "money_previous_cents": 30537630740,
-          "validators_previous": 323,
-          "money_variation_pct": 1.65,
-          "validators_variation_pct": -3.72,
-          "money_per_validator_previous_cents": 94543748,
-          "money_per_validator_variation_pct": 5.57
+          "money_previous_cents": 30829838420,
+          "validators_previous": 324,
+          "money_variation_pct": -11.53,
+          "validators_variation_pct": -2.78,
+          "money_per_validator_previous_cents": 95153822,
+          "money_per_validator_variation_pct": -9
         }
       },
-      "no_cobrado_cents": 948188935,
-      "no_cobrado_pct": 3.05,
-      "validadores_sin_taps_7d": 16,
-      "viajes_por_tarjeta": 1.63
+      "no_cobrado_cents": 913181525,
+      "no_cobrado_pct": 3.35,
+      "validadores_sin_taps_7d": 12,
+      "viajes_por_tarjeta": 1.62
     },
     "gco": {
       "tenant": "GCO",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:27:54.865239-03:00",
-      "transaction_volume": 3139,
-      "money_processed_cents": 691479613,
-      "tap_count": 3139,
-      "average_ticket_cents": 220287,
-      "average_transaction_cents": 220287,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:44:24.212469-03:00",
+      "transaction_volume": 3740,
+      "money_processed_cents": 801185643,
+      "tap_count": 3740,
+      "average_ticket_cents": 214221,
+      "average_transaction_cents": 214221,
       "validators_active_day": 47,
       "validators_active_7d": 48,
-      "money_per_validator_cents": 14712332,
-      "month_projection_cents": 20744388390,
-      "unique_cards": 2200,
+      "money_per_validator_cents": 17046503,
+      "month_projection_cents": 24035569290,
+      "unique_cards": 2633,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 675187012,
+          "money_previous_cents": 691479613,
           "validators_previous": 47,
-          "money_variation_pct": 2.41,
+          "money_variation_pct": 15.87,
           "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 14365681,
-          "money_per_validator_variation_pct": 2.41
+          "money_per_validator_previous_cents": 14712332,
+          "money_per_validator_variation_pct": 15.87
         },
         "7d": {
-          "money_previous_cents": 636936353,
-          "validators_previous": 44,
-          "money_variation_pct": 8.56,
-          "validators_variation_pct": 6.82,
-          "money_per_validator_previous_cents": 14475826,
-          "money_per_validator_variation_pct": 1.63
+          "money_previous_cents": 670419547,
+          "validators_previous": 48,
+          "money_variation_pct": 19.51,
+          "validators_variation_pct": -2.08,
+          "money_per_validator_previous_cents": 13967074,
+          "money_per_validator_variation_pct": 22.05
         },
         "30d": {
-          "money_previous_cents": 498944117,
+          "money_previous_cents": 479703857,
           "validators_previous": 43,
-          "money_variation_pct": 38.59,
+          "money_variation_pct": 67.02,
           "validators_variation_pct": 9.3,
-          "money_per_validator_previous_cents": 11603352,
-          "money_per_validator_variation_pct": 26.79
+          "money_per_validator_previous_cents": 11155904,
+          "money_per_validator_variation_pct": 52.8
         }
       },
-      "no_cobrado_cents": 22268966,
-      "no_cobrado_pct": 3.22,
+      "no_cobrado_cents": 27697026,
+      "no_cobrado_pct": 3.46,
       "validadores_sin_taps_7d": 1,
-      "viajes_por_tarjeta": 1.43
+      "viajes_por_tarjeta": 1.42
     },
     "gralroca": {
       "tenant": "GRALROCA",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:26:00.527560-03:00",
-      "transaction_volume": 486,
-      "money_processed_cents": 53577810,
-      "tap_count": 543,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:45:42.770723-03:00",
+      "transaction_volume": 507,
+      "money_processed_cents": 54367170,
+      "tap_count": 551,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 110242,
-      "validators_active_day": 40,
+      "average_transaction_cents": 107233,
+      "validators_active_day": 39,
       "validators_active_7d": 43,
-      "money_per_validator_cents": 1339445,
-      "month_projection_cents": 1607334300,
-      "unique_cards": 462,
+      "money_per_validator_cents": 1394030,
+      "month_projection_cents": 1631015100,
+      "unique_cards": 473,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 50124360,
-          "validators_previous": 37,
-          "money_variation_pct": 6.89,
-          "validators_variation_pct": 8.11,
-          "money_per_validator_previous_cents": 1354712,
-          "money_per_validator_variation_pct": -1.13
+          "money_previous_cents": 53577810,
+          "validators_previous": 40,
+          "money_variation_pct": 1.47,
+          "validators_variation_pct": -2.5,
+          "money_per_validator_previous_cents": 1339445,
+          "money_per_validator_variation_pct": 4.08
         },
         "7d": {
-          "money_previous_cents": 35718540,
-          "validators_previous": 36,
-          "money_variation_pct": 50,
-          "validators_variation_pct": 11.11,
-          "money_per_validator_previous_cents": 992182,
-          "money_per_validator_variation_pct": 35
+          "money_previous_cents": 41342730,
+          "validators_previous": 37,
+          "money_variation_pct": 31.5,
+          "validators_variation_pct": 5.41,
+          "money_per_validator_previous_cents": 1117371,
+          "money_per_validator_variation_pct": 24.76
         },
         "30d": {
           "money_previous_cents": null,
@@ -459,10 +459,10 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 1184040,
-      "no_cobrado_pct": 2.21,
-      "validadores_sin_taps_7d": 3,
-      "viajes_por_tarjeta": 1.18
+      "no_cobrado_cents": 1776060,
+      "no_cobrado_pct": 3.27,
+      "validadores_sin_taps_7d": 4,
+      "viajes_por_tarjeta": 1.16
     },
     "jbjusto": {
       "tenant": "JBJUSTO",
@@ -511,48 +511,48 @@
     },
     "juanbjusto": {
       "tenant": "JUANBJUSTO",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:24:28.128929-03:00",
-      "transaction_volume": 796,
-      "money_processed_cents": 86336250,
-      "tap_count": 875,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:44:38.811078-03:00",
+      "transaction_volume": 915,
+      "money_processed_cents": 101136750,
+      "tap_count": 1025,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 108463,
+      "average_transaction_cents": 110532,
       "validators_active_day": 83,
-      "validators_active_7d": 90,
-      "money_per_validator_cents": 1040196,
-      "month_projection_cents": 2590087500,
-      "unique_cards": 736,
+      "validators_active_7d": 89,
+      "money_per_validator_cents": 1218515,
+      "month_projection_cents": 3034102500,
+      "unique_cards": 837,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 92256450,
-          "validators_previous": 85,
-          "money_variation_pct": -6.42,
-          "validators_variation_pct": -2.35,
-          "money_per_validator_previous_cents": 1085370,
-          "money_per_validator_variation_pct": -4.16
+          "money_previous_cents": 86336250,
+          "validators_previous": 83,
+          "money_variation_pct": 17.14,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 1040196,
+          "money_per_validator_variation_pct": 17.14
         },
         "7d": {
-          "money_previous_cents": 85349550,
-          "validators_previous": 80,
-          "money_variation_pct": 1.16,
-          "validators_variation_pct": 3.75,
-          "money_per_validator_previous_cents": 1066869,
-          "money_per_validator_variation_pct": -2.5
+          "money_previous_cents": 97182152,
+          "validators_previous": 81,
+          "money_variation_pct": 4.07,
+          "validators_variation_pct": 2.47,
+          "money_per_validator_previous_cents": 1199780,
+          "money_per_validator_variation_pct": 1.56
         },
         "30d": {
-          "money_previous_cents": 68803746,
-          "validators_previous": 79,
-          "money_variation_pct": 25.48,
-          "validators_variation_pct": 5.06,
-          "money_per_validator_previous_cents": 870933,
-          "money_per_validator_variation_pct": 19.43
+          "money_previous_cents": 73352754,
+          "validators_previous": 80,
+          "money_variation_pct": 37.88,
+          "validators_variation_pct": 3.75,
+          "money_per_validator_previous_cents": 916909,
+          "money_per_validator_variation_pct": 32.89
         }
       },
-      "no_cobrado_cents": 2762760,
-      "no_cobrado_pct": 3.2,
-      "validadores_sin_taps_7d": 7,
-      "viajes_por_tarjeta": 1.19
+      "no_cobrado_cents": 5130840,
+      "no_cobrado_pct": 5.07,
+      "validadores_sin_taps_7d": 6,
+      "viajes_por_tarjeta": 1.22
     },
     "lersrl": {
       "tenant": "LERSRL",
@@ -576,169 +576,34 @@
     },
     "lnmetropol": {
       "tenant": "LNMETROPOL",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:25:29.532207-03:00",
-      "transaction_volume": 657,
-      "money_processed_cents": 69661020,
-      "tap_count": 706,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:45:21.754866-03:00",
+      "transaction_volume": 644,
+      "money_processed_cents": 68575650,
+      "tap_count": 695,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 106029,
+      "average_transaction_cents": 106484,
       "validators_active_day": 90,
       "validators_active_7d": 95,
-      "money_per_validator_cents": 774011,
-      "month_projection_cents": 2089830600,
-      "unique_cards": 637,
+      "money_per_validator_cents": 761952,
+      "month_projection_cents": 2057269500,
+      "unique_cards": 622,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 65319540,
-          "validators_previous": 92,
-          "money_variation_pct": 6.65,
-          "validators_variation_pct": -2.17,
-          "money_per_validator_previous_cents": 709995,
-          "money_per_validator_variation_pct": 9.02
-        },
-        "7d": {
-          "money_previous_cents": 55156530,
-          "validators_previous": 74,
-          "money_variation_pct": 26.3,
-          "validators_variation_pct": 21.62,
-          "money_per_validator_previous_cents": 745359,
-          "money_per_validator_variation_pct": 3.84
-        },
-        "30d": {
-          "money_previous_cents": 1042481,
-          "validators_previous": 2,
-          "money_variation_pct": 6582.23,
-          "validators_variation_pct": 4400,
-          "money_per_validator_previous_cents": 521240,
-          "money_per_validator_variation_pct": 48.49
-        }
-      },
-      "no_cobrado_cents": 3749460,
-      "no_cobrado_pct": 5.38,
-      "validadores_sin_taps_7d": 5,
-      "viajes_por_tarjeta": 1.11
-    },
-    "metropolitana": {
-      "tenant": "METROPOLITANA",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:25:18.584394-03:00",
-      "transaction_volume": 13220,
-      "money_processed_cents": 3368993000,
-      "tap_count": 17111,
-      "average_ticket_cents": 196890,
-      "average_transaction_cents": 254841,
-      "validators_active_day": 183,
-      "validators_active_7d": 194,
-      "money_per_validator_cents": 18409798,
-      "month_projection_cents": 101069790000,
-      "unique_cards": 10996,
-      "comparison_windows": {
-        "1d": {
-          "money_previous_cents": 3475298150,
-          "validators_previous": 179,
-          "money_variation_pct": -3.06,
-          "validators_variation_pct": 2.23,
-          "money_per_validator_previous_cents": 19415073,
-          "money_per_validator_variation_pct": -5.18
-        },
-        "7d": {
-          "money_previous_cents": 3403812860,
-          "validators_previous": 183,
-          "money_variation_pct": -1.02,
+          "money_previous_cents": 69661020,
+          "validators_previous": 90,
+          "money_variation_pct": -1.56,
           "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 18600070,
-          "money_per_validator_variation_pct": -1.02
-        },
-        "30d": {
-          "money_previous_cents": 3458530875,
-          "validators_previous": 176,
-          "money_variation_pct": -2.59,
-          "validators_variation_pct": 3.98,
-          "money_per_validator_previous_cents": 19650744,
-          "money_per_validator_variation_pct": -6.32
-        }
-      },
-      "no_cobrado_cents": 203225390,
-      "no_cobrado_pct": 6.03,
-      "validadores_sin_taps_7d": 11,
-      "viajes_por_tarjeta": 1.56
-    },
-    "microomnibus": {
-      "tenant": "MICROOMNIBUS",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:26:10.201243-03:00",
-      "transaction_volume": 138,
-      "money_processed_cents": 16379220,
-      "tap_count": 166,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 118690,
-      "validators_active_day": 39,
-      "validators_active_7d": 43,
-      "money_per_validator_cents": 419980,
-      "month_projection_cents": 491376600,
-      "unique_cards": 133,
-      "comparison_windows": {
-        "1d": {
-          "money_previous_cents": 14109810,
-          "validators_previous": 39,
-          "money_variation_pct": 16.08,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 361790,
-          "money_per_validator_variation_pct": 16.08
+          "money_per_validator_previous_cents": 774011,
+          "money_per_validator_variation_pct": -1.56
         },
         "7d": {
-          "money_previous_cents": 16675230,
-          "validators_previous": 38,
-          "money_variation_pct": -1.78,
-          "validators_variation_pct": 2.63,
-          "money_per_validator_previous_cents": 438822,
-          "money_per_validator_variation_pct": -4.29
-        },
-        "30d": {
-          "money_previous_cents": 11846375,
-          "validators_previous": 33,
-          "money_variation_pct": 38.26,
-          "validators_variation_pct": 18.18,
-          "money_per_validator_previous_cents": 358981,
-          "money_per_validator_variation_pct": 16.99
-        }
-      },
-      "no_cobrado_cents": 1480050,
-      "no_cobrado_pct": 9.04,
-      "validadores_sin_taps_7d": 4,
-      "viajes_por_tarjeta": 1.25
-    },
-    "nrumbos": {
-      "tenant": "NRUMBOS",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:26:19.876979-03:00",
-      "transaction_volume": 1366,
-      "money_processed_cents": 154418550,
-      "tap_count": 1565,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 113044,
-      "validators_active_day": 83,
-      "validators_active_7d": 87,
-      "money_per_validator_cents": 1860464,
-      "month_projection_cents": 4632556500,
-      "unique_cards": 1250,
-      "comparison_windows": {
-        "1d": {
-          "money_previous_cents": 145340910,
-          "validators_previous": 79,
-          "money_variation_pct": 6.25,
-          "validators_variation_pct": 5.06,
-          "money_per_validator_previous_cents": 1839758,
-          "money_per_validator_variation_pct": 1.13
-        },
-        "7d": {
-          "money_previous_cents": 130441740,
-          "validators_previous": 80,
-          "money_variation_pct": 18.38,
-          "validators_variation_pct": 3.75,
-          "money_per_validator_previous_cents": 1630522,
-          "money_per_validator_variation_pct": 14.1
+          "money_previous_cents": 110147165,
+          "validators_previous": 72,
+          "money_variation_pct": -37.74,
+          "validators_variation_pct": 25,
+          "money_per_validator_previous_cents": 1529822,
+          "money_per_validator_variation_pct": -50.19
         },
         "30d": {
           "money_previous_cents": null,
@@ -749,100 +614,235 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 6610890,
-      "no_cobrado_pct": 4.28,
-      "validadores_sin_taps_7d": 4,
+      "no_cobrado_cents": 3946800,
+      "no_cobrado_pct": 5.76,
+      "validadores_sin_taps_7d": 5,
+      "viajes_por_tarjeta": 1.12
+    },
+    "metropolitana": {
+      "tenant": "METROPOLITANA",
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:45:07.807530-03:00",
+      "transaction_volume": 12976,
+      "money_processed_cents": 3330976515,
+      "tap_count": 16824,
+      "average_ticket_cents": 197990,
+      "average_transaction_cents": 256703,
+      "validators_active_day": 180,
+      "validators_active_7d": 193,
+      "money_per_validator_cents": 18505425,
+      "month_projection_cents": 99929295450,
+      "unique_cards": 10801,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 3368993000,
+          "validators_previous": 183,
+          "money_variation_pct": -1.13,
+          "validators_variation_pct": -1.64,
+          "money_per_validator_previous_cents": 18409798,
+          "money_per_validator_variation_pct": 0.52
+        },
+        "7d": {
+          "money_previous_cents": 2832123250,
+          "validators_previous": 171,
+          "money_variation_pct": 17.61,
+          "validators_variation_pct": 5.26,
+          "money_per_validator_previous_cents": 16562124,
+          "money_per_validator_variation_pct": 11.73
+        },
+        "30d": {
+          "money_previous_cents": 3376286545,
+          "validators_previous": 178,
+          "money_variation_pct": -1.34,
+          "validators_variation_pct": 1.12,
+          "money_per_validator_previous_cents": 18967902,
+          "money_per_validator_variation_pct": -2.44
+        }
+      },
+      "no_cobrado_cents": 217179345,
+      "no_cobrado_pct": 6.52,
+      "validadores_sin_taps_7d": 13,
+      "viajes_por_tarjeta": 1.56
+    },
+    "microomnibus": {
+      "tenant": "MICROOMNIBUS",
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:45:48.195994-03:00",
+      "transaction_volume": 134,
+      "money_processed_cents": 15282153,
+      "tap_count": 155,
+      "average_ticket_cents": 98595,
+      "average_transaction_cents": 114046,
+      "validators_active_day": 34,
+      "validators_active_7d": 43,
+      "money_per_validator_cents": 449475,
+      "month_projection_cents": 458464590,
+      "unique_cards": 122,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 16379220,
+          "validators_previous": 39,
+          "money_variation_pct": -6.7,
+          "validators_variation_pct": -12.82,
+          "money_per_validator_previous_cents": 419980,
+          "money_per_validator_variation_pct": 7.02
+        },
+        "7d": {
+          "money_previous_cents": 10952370,
+          "validators_previous": 36,
+          "money_variation_pct": 39.53,
+          "validators_variation_pct": -5.56,
+          "money_per_validator_previous_cents": 304232,
+          "money_per_validator_variation_pct": 47.74
+        },
+        "30d": {
+          "money_previous_cents": 10709123,
+          "validators_previous": 35,
+          "money_variation_pct": 42.7,
+          "validators_variation_pct": -2.86,
+          "money_per_validator_previous_cents": 305975,
+          "money_per_validator_variation_pct": 46.9
+        }
+      },
+      "no_cobrado_cents": 1085370,
+      "no_cobrado_pct": 7.1,
+      "validadores_sin_taps_7d": 9,
+      "viajes_por_tarjeta": 1.27
+    },
+    "nrumbos": {
+      "tenant": "NRUMBOS",
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:45:53.191475-03:00",
+      "transaction_volume": 1351,
+      "money_processed_cents": 152938500,
+      "tap_count": 1550,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 113204,
+      "validators_active_day": 82,
+      "validators_active_7d": 87,
+      "money_per_validator_cents": 1865104,
+      "month_projection_cents": 4588155000,
+      "unique_cards": 1239,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 154418550,
+          "validators_previous": 83,
+          "money_variation_pct": -0.96,
+          "validators_variation_pct": -1.2,
+          "money_per_validator_previous_cents": 1860464,
+          "money_per_validator_variation_pct": 0.25
+        },
+        "7d": {
+          "money_previous_cents": 128567010,
+          "validators_previous": 82,
+          "money_variation_pct": 18.96,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 1567890,
+          "money_per_validator_variation_pct": 18.96
+        },
+        "30d": {
+          "money_previous_cents": null,
+          "validators_previous": null,
+          "money_variation_pct": null,
+          "validators_variation_pct": null,
+          "money_per_validator_previous_cents": null,
+          "money_per_validator_variation_pct": null
+        }
+      },
+      "no_cobrado_cents": 5032170,
+      "no_cobrado_pct": 3.29,
+      "validadores_sin_taps_7d": 5,
       "viajes_por_tarjeta": 1.25
     },
     "nudosa": {
       "tenant": "NUDOSA",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:23:45.712443-03:00",
-      "transaction_volume": 963,
-      "money_processed_cents": 108126724,
-      "tap_count": 1096,
-      "average_ticket_cents": 98656,
-      "average_transaction_cents": 112281,
-      "validators_active_day": 144,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:44:03.234658-03:00",
+      "transaction_volume": 912,
+      "money_processed_cents": 101136750,
+      "tap_count": 1026,
+      "average_ticket_cents": 98574,
+      "average_transaction_cents": 110896,
+      "validators_active_day": 138,
       "validators_active_7d": 157,
-      "money_per_validator_cents": 750880,
-      "month_projection_cents": 3243801720,
-      "unique_cards": 884,
+      "money_per_validator_cents": 732875,
+      "month_projection_cents": 3034102500,
+      "unique_cards": 831,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 90085710,
+          "money_previous_cents": 108126724,
           "validators_previous": 144,
-          "money_variation_pct": 20.03,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 625595,
-          "money_per_validator_variation_pct": 20.03
+          "money_variation_pct": -6.46,
+          "validators_variation_pct": -4.17,
+          "money_per_validator_previous_cents": 750880,
+          "money_per_validator_variation_pct": -2.4
         },
         "7d": {
-          "money_previous_cents": 101728770,
-          "validators_previous": 145,
-          "money_variation_pct": 6.29,
-          "validators_variation_pct": -0.69,
-          "money_per_validator_previous_cents": 701578,
-          "money_per_validator_variation_pct": 7.03
+          "money_previous_cents": 90085710,
+          "validators_previous": 139,
+          "money_variation_pct": 12.27,
+          "validators_variation_pct": -0.72,
+          "money_per_validator_previous_cents": 648099,
+          "money_per_validator_variation_pct": 13.08
         },
         "30d": {
-          "money_previous_cents": 87473633,
-          "validators_previous": 142,
-          "money_variation_pct": 23.61,
-          "validators_variation_pct": 1.41,
-          "money_per_validator_previous_cents": 616012,
-          "money_per_validator_variation_pct": 21.89
+          "money_previous_cents": 78091304,
+          "validators_previous": 140,
+          "money_variation_pct": 29.51,
+          "validators_variation_pct": -1.43,
+          "money_per_validator_previous_cents": 557795,
+          "money_per_validator_variation_pct": 31.39
         }
       },
-      "no_cobrado_cents": 6997772,
-      "no_cobrado_pct": 6.47,
-      "validadores_sin_taps_7d": 13,
-      "viajes_por_tarjeta": 1.24
+      "no_cobrado_cents": 4242810,
+      "no_cobrado_pct": 4.2,
+      "validadores_sin_taps_7d": 19,
+      "viajes_por_tarjeta": 1.23
     },
     "rsuratlantico": {
       "tenant": "RSURATLANTICO",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:26:29.469263-03:00",
-      "transaction_volume": 3965,
-      "money_processed_cents": 1603468329,
-      "tap_count": 3965,
-      "average_ticket_cents": 404406,
-      "average_transaction_cents": 404406,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:45:59.013182-03:00",
+      "transaction_volume": 4280,
+      "money_processed_cents": 1727516700,
+      "tap_count": 4280,
+      "average_ticket_cents": 403625,
+      "average_transaction_cents": 403625,
       "validators_active_day": 63,
       "validators_active_7d": 67,
-      "money_per_validator_cents": 25451878,
-      "month_projection_cents": 48104049870,
-      "unique_cards": 2677,
+      "money_per_validator_cents": 27420900,
+      "month_projection_cents": 51825501000,
+      "unique_cards": 2958,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 1283113184,
-          "validators_previous": 61,
-          "money_variation_pct": 24.97,
-          "validators_variation_pct": 3.28,
-          "money_per_validator_previous_cents": 21034642,
-          "money_per_validator_variation_pct": 21
+          "money_previous_cents": 1603468329,
+          "validators_previous": 63,
+          "money_variation_pct": 7.74,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 25451878,
+          "money_per_validator_variation_pct": 7.74
         },
         "7d": {
-          "money_previous_cents": 1150725230,
-          "validators_previous": 50,
-          "money_variation_pct": 39.34,
-          "validators_variation_pct": 26,
-          "money_per_validator_previous_cents": 23014505,
-          "money_per_validator_variation_pct": 10.59
+          "money_previous_cents": 1337869913,
+          "validators_previous": 53,
+          "money_variation_pct": 29.12,
+          "validators_variation_pct": 18.87,
+          "money_per_validator_previous_cents": 25242829,
+          "money_per_validator_variation_pct": 8.63
         },
         "30d": {
-          "money_previous_cents": 351284114,
-          "validators_previous": 19,
-          "money_variation_pct": 356.46,
-          "validators_variation_pct": 231.58,
-          "money_per_validator_previous_cents": 18488638,
-          "money_per_validator_variation_pct": 37.66
+          "money_previous_cents": 411318842,
+          "validators_previous": 24,
+          "money_variation_pct": 319.99,
+          "validators_variation_pct": 162.5,
+          "money_per_validator_previous_cents": 17138285,
+          "money_per_validator_variation_pct": 60
         }
       },
-      "no_cobrado_cents": 70721474,
-      "no_cobrado_pct": 4.41,
+      "no_cobrado_cents": 82992881,
+      "no_cobrado_pct": 4.8,
       "validadores_sin_taps_7d": 4,
-      "viajes_por_tarjeta": 1.48
+      "viajes_por_tarjeta": 1.45
     },
     "salta": {
       "tenant": "SALTA",
@@ -891,34 +891,34 @@
     },
     "scabral": {
       "tenant": "SCABRAL",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T09:03:45.266459-03:00",
-      "transaction_volume": 82,
-      "money_processed_cents": 8289475,
-      "tap_count": 85,
-      "average_ticket_cents": 97523,
-      "average_transaction_cents": 101091,
-      "validators_active_day": 9,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:46:05.053469-03:00",
+      "transaction_volume": 40,
+      "money_processed_cents": 4144140,
+      "tap_count": 42,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 103604,
+      "validators_active_day": 8,
       "validators_active_7d": 12,
-      "money_per_validator_cents": 921053,
-      "month_projection_cents": 248684250,
-      "unique_cards": 81,
+      "money_per_validator_cents": 518018,
+      "month_projection_cents": 124324200,
+      "unique_cards": 40,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 8288280,
-          "validators_previous": 8,
-          "money_variation_pct": 0.01,
-          "validators_variation_pct": 12.5,
-          "money_per_validator_previous_cents": 1036035,
-          "money_per_validator_variation_pct": -11.1
+          "money_previous_cents": 8289475,
+          "validators_previous": 9,
+          "money_variation_pct": -50.01,
+          "validators_variation_pct": -11.11,
+          "money_per_validator_previous_cents": 921053,
+          "money_per_validator_variation_pct": -43.76
         },
         "7d": {
-          "money_previous_cents": 9077640,
+          "money_previous_cents": 5624190,
           "validators_previous": 8,
-          "money_variation_pct": -8.68,
-          "validators_variation_pct": 12.5,
-          "money_per_validator_previous_cents": 1134705,
-          "money_per_validator_variation_pct": -18.83
+          "money_variation_pct": -26.32,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 703024,
+          "money_per_validator_variation_pct": -26.32
         },
         "30d": {
           "money_previous_cents": null,
@@ -929,9 +929,9 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 959407,
-      "no_cobrado_pct": 11.57,
-      "validadores_sin_taps_7d": 3,
+      "no_cobrado_cents": 98670,
+      "no_cobrado_pct": 2.38,
+      "validadores_sin_taps_7d": 4,
       "viajes_por_tarjeta": 1.05
     },
     "stmsaupe": {
@@ -981,214 +981,34 @@
     },
     "tagostosa": {
       "tenant": "TAGOSTOSA",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T09:04:00.133543-03:00",
-      "transaction_volume": 889,
-      "money_processed_cents": 99262020,
-      "tap_count": 1006,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 111656,
-      "validators_active_day": 48,
-      "validators_active_7d": 50,
-      "money_per_validator_cents": 2067959,
-      "month_projection_cents": 2977860600,
-      "unique_cards": 821,
-      "comparison_windows": {
-        "1d": {
-          "money_previous_cents": 87618960,
-          "validators_previous": 48,
-          "money_variation_pct": 13.29,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 1825395,
-          "money_per_validator_variation_pct": 13.29
-        },
-        "7d": {
-          "money_previous_cents": 78047970,
-          "validators_previous": 43,
-          "money_variation_pct": 27.18,
-          "validators_variation_pct": 11.63,
-          "money_per_validator_previous_cents": 1815069,
-          "money_per_validator_variation_pct": 13.93
-        },
-        "30d": {
-          "money_previous_cents": null,
-          "validators_previous": null,
-          "money_variation_pct": null,
-          "validators_variation_pct": null,
-          "money_per_validator_previous_cents": null,
-          "money_per_validator_variation_pct": null
-        }
-      },
-      "no_cobrado_cents": 4538820,
-      "no_cobrado_pct": 4.57,
-      "validadores_sin_taps_7d": 2,
-      "viajes_por_tarjeta": 1.23
-    },
-    "tcolegiales": {
-      "tenant": "TCOLEGIALES",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T09:04:16.367727-03:00",
-      "transaction_volume": 236,
-      "money_processed_cents": 24864840,
-      "tap_count": 252,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 105359,
-      "validators_active_day": 26,
-      "validators_active_7d": 30,
-      "money_per_validator_cents": 956340,
-      "month_projection_cents": 745945200,
-      "unique_cards": 233,
-      "comparison_windows": {
-        "1d": {
-          "money_previous_cents": 25456860,
-          "validators_previous": 24,
-          "money_variation_pct": -2.33,
-          "validators_variation_pct": 8.33,
-          "money_per_validator_previous_cents": 1060702,
-          "money_per_validator_variation_pct": -9.84
-        },
-        "7d": {
-          "money_previous_cents": 22891440,
-          "validators_previous": 25,
-          "money_variation_pct": 8.62,
-          "validators_variation_pct": 4,
-          "money_per_validator_previous_cents": 915658,
-          "money_per_validator_variation_pct": 4.44
-        },
-        "30d": {
-          "money_previous_cents": null,
-          "validators_previous": null,
-          "money_variation_pct": null,
-          "validators_variation_pct": null,
-          "money_per_validator_previous_cents": null,
-          "money_per_validator_variation_pct": null
-        }
-      },
-      "no_cobrado_cents": 1381380,
-      "no_cobrado_pct": 5.56,
-      "validadores_sin_taps_7d": 4,
-      "viajes_por_tarjeta": 1.08
-    },
-    "tldevega": {
-      "tenant": "TLDEVEGA",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T09:04:31.678620-03:00",
-      "transaction_volume": 297,
-      "money_processed_cents": 34238490,
-      "tap_count": 347,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 115281,
-      "validators_active_day": 50,
-      "validators_active_7d": 52,
-      "money_per_validator_cents": 684770,
-      "month_projection_cents": 1027154700,
-      "unique_cards": 275,
-      "comparison_windows": {
-        "1d": {
-          "money_previous_cents": 32659770,
-          "validators_previous": 49,
-          "money_variation_pct": 4.83,
-          "validators_variation_pct": 2.04,
-          "money_per_validator_previous_cents": 666526,
-          "money_per_validator_variation_pct": 2.74
-        },
-        "7d": {
-          "money_previous_cents": 27134250,
-          "validators_previous": 49,
-          "money_variation_pct": 26.18,
-          "validators_variation_pct": 2.04,
-          "money_per_validator_previous_cents": 553760,
-          "money_per_validator_variation_pct": 23.66
-        },
-        "30d": {
-          "money_previous_cents": null,
-          "validators_previous": null,
-          "money_variation_pct": null,
-          "validators_variation_pct": null,
-          "money_per_validator_previous_cents": null,
-          "money_per_validator_variation_pct": null
-        }
-      },
-      "no_cobrado_cents": 1677390,
-      "no_cobrado_pct": 4.9,
-      "validadores_sin_taps_7d": 2,
-      "viajes_por_tarjeta": 1.26
-    },
-    "tndejulio": {
-      "tenant": "TNDEJULIO",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:24:58.562286-03:00",
-      "transaction_volume": 459,
-      "money_processed_cents": 49236330,
-      "tap_count": 499,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 107269,
-      "validators_active_day": 33,
-      "validators_active_7d": 33,
-      "money_per_validator_cents": 1492010,
-      "month_projection_cents": 1477089900,
-      "unique_cards": 427,
-      "comparison_windows": {
-        "1d": {
-          "money_previous_cents": 44302830,
-          "validators_previous": 31,
-          "money_variation_pct": 11.14,
-          "validators_variation_pct": 6.45,
-          "money_per_validator_previous_cents": 1429124,
-          "money_per_validator_variation_pct": 4.4
-        },
-        "7d": {
-          "money_previous_cents": 37001250,
-          "validators_previous": 25,
-          "money_variation_pct": 33.07,
-          "validators_variation_pct": 32,
-          "money_per_validator_previous_cents": 1480050,
-          "money_per_validator_variation_pct": 0.81
-        },
-        "30d": {
-          "money_previous_cents": null,
-          "validators_previous": null,
-          "money_variation_pct": null,
-          "validators_variation_pct": null,
-          "money_per_validator_previous_cents": null,
-          "money_per_validator_variation_pct": null
-        }
-      },
-      "no_cobrado_cents": 2368080,
-      "no_cobrado_pct": 4.81,
-      "validadores_sin_taps_7d": 0,
-      "viajes_por_tarjeta": 1.17
-    },
-    "triachuelo": {
-      "tenant": "TRIACHUELO",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T09:04:45.805197-03:00",
-      "transaction_volume": 819,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:46:10.177902-03:00",
+      "transaction_volume": 824,
       "money_processed_cents": 90875070,
       "tap_count": 921,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 110959,
-      "validators_active_day": 136,
-      "validators_active_7d": 147,
-      "money_per_validator_cents": 668199,
+      "average_transaction_cents": 110285,
+      "validators_active_day": 48,
+      "validators_active_7d": 49,
+      "money_per_validator_cents": 1893231,
       "month_projection_cents": 2726252100,
-      "unique_cards": 755,
+      "unique_cards": 759,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 86829600,
-          "validators_previous": 128,
-          "money_variation_pct": 4.66,
-          "validators_variation_pct": 6.25,
-          "money_per_validator_previous_cents": 678356,
-          "money_per_validator_variation_pct": -1.5
+          "money_previous_cents": 99262020,
+          "validators_previous": 48,
+          "money_variation_pct": -8.45,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 2067959,
+          "money_per_validator_variation_pct": -8.45
         },
         "7d": {
-          "money_previous_cents": 72226440,
-          "validators_previous": 134,
-          "money_variation_pct": 25.82,
-          "validators_variation_pct": 1.49,
-          "money_per_validator_previous_cents": 539003,
-          "money_per_validator_variation_pct": 23.97
+          "money_previous_cents": 72719790,
+          "validators_previous": 45,
+          "money_variation_pct": 24.97,
+          "validators_variation_pct": 6.67,
+          "money_per_validator_previous_cents": 1615995,
+          "money_per_validator_variation_pct": 17.16
         },
         "30d": {
           "money_previous_cents": null,
@@ -1199,41 +1019,221 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 3552120,
-      "no_cobrado_pct": 3.91,
-      "validadores_sin_taps_7d": 11,
+      "no_cobrado_cents": 3749460,
+      "no_cobrado_pct": 4.13,
+      "validadores_sin_taps_7d": 1,
+      "viajes_por_tarjeta": 1.21
+    },
+    "tcolegiales": {
+      "tenant": "TCOLEGIALES",
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:46:15.784405-03:00",
+      "transaction_volume": 261,
+      "money_processed_cents": 27824940,
+      "tap_count": 282,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 106609,
+      "validators_active_day": 27,
+      "validators_active_7d": 29,
+      "money_per_validator_cents": 1030553,
+      "month_projection_cents": 834748200,
+      "unique_cards": 244,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 24864840,
+          "validators_previous": 26,
+          "money_variation_pct": 11.9,
+          "validators_variation_pct": 3.85,
+          "money_per_validator_previous_cents": 956340,
+          "money_per_validator_variation_pct": 7.76
+        },
+        "7d": {
+          "money_previous_cents": 23680800,
+          "validators_previous": 25,
+          "money_variation_pct": 17.5,
+          "validators_variation_pct": 8,
+          "money_per_validator_previous_cents": 947232,
+          "money_per_validator_variation_pct": 8.8
+        },
+        "30d": {
+          "money_previous_cents": null,
+          "validators_previous": null,
+          "money_variation_pct": null,
+          "validators_variation_pct": null,
+          "money_per_validator_previous_cents": null,
+          "money_per_validator_variation_pct": null
+        }
+      },
+      "no_cobrado_cents": 1184040,
+      "no_cobrado_pct": 4.26,
+      "validadores_sin_taps_7d": 2,
+      "viajes_por_tarjeta": 1.16
+    },
+    "tldevega": {
+      "tenant": "TLDEVEGA",
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:46:21.091550-03:00",
+      "transaction_volume": 302,
+      "money_processed_cents": 33153120,
+      "tap_count": 336,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 109779,
+      "validators_active_day": 49,
+      "validators_active_7d": 52,
+      "money_per_validator_cents": 676594,
+      "month_projection_cents": 994593600,
+      "unique_cards": 276,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 34238490,
+          "validators_previous": 50,
+          "money_variation_pct": -3.17,
+          "validators_variation_pct": -2,
+          "money_per_validator_previous_cents": 684770,
+          "money_per_validator_variation_pct": -1.19
+        },
+        "7d": {
+          "money_previous_cents": 26344890,
+          "validators_previous": 49,
+          "money_variation_pct": 25.84,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 537651,
+          "money_per_validator_variation_pct": 25.84
+        },
+        "30d": {
+          "money_previous_cents": null,
+          "validators_previous": null,
+          "money_variation_pct": null,
+          "validators_variation_pct": null,
+          "money_per_validator_previous_cents": null,
+          "money_per_validator_variation_pct": null
+        }
+      },
+      "no_cobrado_cents": 1578720,
+      "no_cobrado_pct": 4.76,
+      "validadores_sin_taps_7d": 3,
       "viajes_por_tarjeta": 1.22
+    },
+    "tndejulio": {
+      "tenant": "TNDEJULIO",
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:44:55.946230-03:00",
+      "transaction_volume": 405,
+      "money_processed_cents": 42822780,
+      "tap_count": 434,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 105735,
+      "validators_active_day": 30,
+      "validators_active_7d": 33,
+      "money_per_validator_cents": 1427426,
+      "month_projection_cents": 1284683400,
+      "unique_cards": 387,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 49236330,
+          "validators_previous": 33,
+          "money_variation_pct": -13.03,
+          "validators_variation_pct": -9.09,
+          "money_per_validator_previous_cents": 1492010,
+          "money_per_validator_variation_pct": -4.33
+        },
+        "7d": {
+          "money_previous_cents": 34731840,
+          "validators_previous": 30,
+          "money_variation_pct": 23.3,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 1157728,
+          "money_per_validator_variation_pct": 23.3
+        },
+        "30d": {
+          "money_previous_cents": null,
+          "validators_previous": null,
+          "money_variation_pct": null,
+          "validators_variation_pct": null,
+          "money_per_validator_previous_cents": null,
+          "money_per_validator_variation_pct": null
+        }
+      },
+      "no_cobrado_cents": 2269410,
+      "no_cobrado_pct": 5.3,
+      "validadores_sin_taps_7d": 3,
+      "viajes_por_tarjeta": 1.12
+    },
+    "triachuelo": {
+      "tenant": "TRIACHUELO",
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:46:26.560293-03:00",
+      "transaction_volume": 808,
+      "money_processed_cents": 94032510,
+      "tap_count": 953,
+      "average_ticket_cents": 98670,
+      "average_transaction_cents": 116377,
+      "validators_active_day": 132,
+      "validators_active_7d": 147,
+      "money_per_validator_cents": 712368,
+      "month_projection_cents": 2820975300,
+      "unique_cards": 741,
+      "comparison_windows": {
+        "1d": {
+          "money_previous_cents": 90875070,
+          "validators_previous": 136,
+          "money_variation_pct": 3.47,
+          "validators_variation_pct": -2.94,
+          "money_per_validator_previous_cents": 668199,
+          "money_per_validator_variation_pct": 6.61
+        },
+        "7d": {
+          "money_previous_cents": 77434946,
+          "validators_previous": 135,
+          "money_variation_pct": 21.43,
+          "validators_variation_pct": -2.22,
+          "money_per_validator_previous_cents": 573592,
+          "money_per_validator_variation_pct": 24.19
+        },
+        "30d": {
+          "money_previous_cents": null,
+          "validators_previous": null,
+          "money_variation_pct": null,
+          "validators_variation_pct": null,
+          "money_per_validator_previous_cents": null,
+          "money_per_validator_variation_pct": null
+        }
+      },
+      "no_cobrado_cents": 4341480,
+      "no_cobrado_pct": 4.62,
+      "validadores_sin_taps_7d": 15,
+      "viajes_por_tarjeta": 1.29
     },
     "tsantafe": {
       "tenant": "TSANTAFE",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T09:04:59.662458-03:00",
-      "transaction_volume": 60,
-      "money_processed_cents": 6117540,
-      "tap_count": 62,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:46:33.544029-03:00",
+      "transaction_volume": 65,
+      "money_processed_cents": 6413550,
+      "tap_count": 65,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 101959,
-      "validators_active_day": 22,
-      "validators_active_7d": 51,
-      "money_per_validator_cents": 278070,
-      "month_projection_cents": 183526200,
-      "unique_cards": 59,
+      "average_transaction_cents": 98670,
+      "validators_active_day": 23,
+      "validators_active_7d": 54,
+      "money_per_validator_cents": 278850,
+      "month_projection_cents": 192406500,
+      "unique_cards": 65,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 7005570,
-          "validators_previous": 24,
-          "money_variation_pct": -12.68,
-          "validators_variation_pct": -8.33,
-          "money_per_validator_previous_cents": 291899,
-          "money_per_validator_variation_pct": -4.74
+          "money_previous_cents": 6117540,
+          "validators_previous": 22,
+          "money_variation_pct": 4.84,
+          "validators_variation_pct": 4.55,
+          "money_per_validator_previous_cents": 278070,
+          "money_per_validator_variation_pct": 0.28
         },
         "7d": {
-          "money_previous_cents": 5426850,
-          "validators_previous": 18,
-          "money_variation_pct": 12.73,
-          "validators_variation_pct": 22.22,
-          "money_per_validator_previous_cents": 301492,
-          "money_per_validator_variation_pct": -7.77
+          "money_previous_cents": 7202910,
+          "validators_previous": 19,
+          "money_variation_pct": -10.96,
+          "validators_variation_pct": 21.05,
+          "money_per_validator_previous_cents": 379101,
+          "money_per_validator_variation_pct": -26.44
         },
         "30d": {
           "money_previous_cents": null,
@@ -1244,41 +1244,41 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 0,
-      "no_cobrado_pct": 0,
-      "validadores_sin_taps_7d": 29,
-      "viajes_por_tarjeta": 1.05
+      "no_cobrado_cents": 592020,
+      "no_cobrado_pct": 9.23,
+      "validadores_sin_taps_7d": 31,
+      "viajes_por_tarjeta": 1
     },
     "tsesentayocho": {
       "tenant": "TSESENTAYOCHO",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T09:05:14.109410-03:00",
-      "transaction_volume": 11,
-      "money_processed_cents": 1085370,
-      "tap_count": 11,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 98670,
-      "validators_active_day": 10,
-      "validators_active_7d": 40,
-      "money_per_validator_cents": 108537,
-      "month_projection_cents": 32561100,
-      "unique_cards": 11,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:46:39.184064-03:00",
+      "transaction_volume": 16,
+      "money_processed_cents": 1574821,
+      "tap_count": 16,
+      "average_ticket_cents": 98426,
+      "average_transaction_cents": 98426,
+      "validators_active_day": 11,
+      "validators_active_7d": 38,
+      "money_per_validator_cents": 143166,
+      "month_projection_cents": 47244630,
+      "unique_cards": 16,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 1776060,
-          "validators_previous": 14,
-          "money_variation_pct": -38.89,
-          "validators_variation_pct": -28.57,
-          "money_per_validator_previous_cents": 126861,
-          "money_per_validator_variation_pct": -14.44
+          "money_previous_cents": 1085370,
+          "validators_previous": 10,
+          "money_variation_pct": 45.1,
+          "validators_variation_pct": 10,
+          "money_per_validator_previous_cents": 108537,
+          "money_per_validator_variation_pct": 31.91
         },
         "7d": {
-          "money_previous_cents": 1578720,
-          "validators_previous": 10,
-          "money_variation_pct": -31.25,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 157872,
-          "money_per_validator_variation_pct": -31.25
+          "money_previous_cents": 2466750,
+          "validators_previous": 12,
+          "money_variation_pct": -36.16,
+          "validators_variation_pct": -8.33,
+          "money_per_validator_previous_cents": 205562,
+          "money_per_validator_variation_pct": -30.35
         },
         "30d": {
           "money_previous_cents": null,
@@ -1289,15 +1289,15 @@
           "money_per_validator_variation_pct": null
         }
       },
-      "no_cobrado_cents": 197340,
-      "no_cobrado_pct": 18.18,
-      "validadores_sin_taps_7d": 30,
+      "no_cobrado_cents": 98670,
+      "no_cobrado_pct": 6.27,
+      "validadores_sin_taps_7d": 27,
       "viajes_por_tarjeta": 1
     },
     "tucuman": {
       "tenant": "TUCUMAN",
-      "process_date": "2026-09-15",
-      "process_ts": "2026-09-15T08:25:51.921249-03:00",
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:44:15.002182-03:00",
       "transaction_volume": 0,
       "money_processed_cents": 0,
       "tap_count": 0,
@@ -1316,93 +1316,93 @@
     },
     "vderocha": {
       "tenant": "VDEROCHA",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:25:08.691438-03:00",
-      "transaction_volume": 1327,
-      "money_processed_cents": 150669090,
-      "tap_count": 1527,
-      "average_ticket_cents": 98670,
-      "average_transaction_cents": 113541,
-      "validators_active_day": 56,
-      "validators_active_7d": 56,
-      "money_per_validator_cents": 2690519,
-      "month_projection_cents": 4520072700,
-      "unique_cards": 1181,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:45:01.089209-03:00",
+      "transaction_volume": 1406,
+      "money_processed_cents": 164234863,
+      "tap_count": 1665,
+      "average_ticket_cents": 98640,
+      "average_transaction_cents": 116810,
+      "validators_active_day": 57,
+      "validators_active_7d": 59,
+      "money_per_validator_cents": 2881313,
+      "month_projection_cents": 4927045890,
+      "unique_cards": 1231,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 144452880,
-          "validators_previous": 55,
-          "money_variation_pct": 4.3,
-          "validators_variation_pct": 1.82,
-          "money_per_validator_previous_cents": 2626416,
-          "money_per_validator_variation_pct": 2.44
+          "money_previous_cents": 150669090,
+          "validators_previous": 56,
+          "money_variation_pct": 9,
+          "validators_variation_pct": 1.79,
+          "money_per_validator_previous_cents": 2690519,
+          "money_per_validator_variation_pct": 7.09
         },
         "7d": {
-          "money_previous_cents": 134487210,
-          "validators_previous": 55,
-          "money_variation_pct": 12.03,
-          "validators_variation_pct": 1.82,
-          "money_per_validator_previous_cents": 2445222,
-          "money_per_validator_variation_pct": 10.03
+          "money_previous_cents": 136855290,
+          "validators_previous": 56,
+          "money_variation_pct": 20.01,
+          "validators_variation_pct": 1.79,
+          "money_per_validator_previous_cents": 2443844,
+          "money_per_validator_variation_pct": 17.9
         },
         "30d": {
-          "money_previous_cents": 119885315,
+          "money_previous_cents": 125382033,
           "validators_previous": 54,
-          "money_variation_pct": 25.68,
-          "validators_variation_pct": 3.7,
-          "money_per_validator_previous_cents": 2220098,
-          "money_per_validator_variation_pct": 21.19
+          "money_variation_pct": 30.99,
+          "validators_variation_pct": 5.56,
+          "money_per_validator_previous_cents": 2321890,
+          "money_per_validator_variation_pct": 24.09
         }
       },
-      "no_cobrado_cents": 4834830,
-      "no_cobrado_pct": 3.21,
-      "validadores_sin_taps_7d": 0,
-      "viajes_por_tarjeta": 1.29
+      "no_cobrado_cents": 6405752,
+      "no_cobrado_pct": 3.9,
+      "validadores_sin_taps_7d": 2,
+      "viajes_por_tarjeta": 1.35
     },
     "vlopez": {
       "tenant": "VLOPEZ",
-      "process_date": "2026-09-18",
-      "process_ts": "2026-09-18T12:24:48.356935-03:00",
-      "transaction_volume": 345,
-      "money_processed_cents": 37001250,
-      "tap_count": 375,
+      "process_date": "2026-09-19",
+      "process_ts": "2026-09-19T08:44:50.258125-03:00",
+      "transaction_volume": 249,
+      "money_processed_cents": 26048880,
+      "tap_count": 264,
       "average_ticket_cents": 98670,
-      "average_transaction_cents": 107250,
-      "validators_active_day": 32,
+      "average_transaction_cents": 104614,
+      "validators_active_day": 30,
       "validators_active_7d": 34,
-      "money_per_validator_cents": 1156289,
-      "month_projection_cents": 1110037500,
-      "unique_cards": 329,
+      "money_per_validator_cents": 868296,
+      "month_projection_cents": 781466400,
+      "unique_cards": 235,
       "comparison_windows": {
         "1d": {
-          "money_previous_cents": 36113220,
-          "validators_previous": 33,
-          "money_variation_pct": 2.46,
-          "validators_variation_pct": -3.03,
-          "money_per_validator_previous_cents": 1094340,
-          "money_per_validator_variation_pct": 5.66
+          "money_previous_cents": 37001250,
+          "validators_previous": 32,
+          "money_variation_pct": -29.6,
+          "validators_variation_pct": -6.25,
+          "money_per_validator_previous_cents": 1156289,
+          "money_per_validator_variation_pct": -24.91
         },
         "7d": {
-          "money_previous_cents": 31475730,
+          "money_previous_cents": 27824940,
           "validators_previous": 30,
-          "money_variation_pct": 17.55,
-          "validators_variation_pct": 6.67,
-          "money_per_validator_previous_cents": 1049191,
-          "money_per_validator_variation_pct": 10.21
+          "money_variation_pct": -6.38,
+          "validators_variation_pct": 0,
+          "money_per_validator_previous_cents": 927498,
+          "money_per_validator_variation_pct": -6.38
         },
         "30d": {
-          "money_previous_cents": 34307102,
-          "validators_previous": 32,
-          "money_variation_pct": 7.85,
-          "validators_variation_pct": 0,
-          "money_per_validator_previous_cents": 1072097,
-          "money_per_validator_variation_pct": 7.85
+          "money_previous_cents": 36107751,
+          "validators_previous": 35,
+          "money_variation_pct": -27.86,
+          "validators_variation_pct": -14.29,
+          "money_per_validator_previous_cents": 1031650,
+          "money_per_validator_variation_pct": -15.83
         }
       },
-      "no_cobrado_cents": 1085370,
-      "no_cobrado_pct": 2.93,
-      "validadores_sin_taps_7d": 2,
-      "viajes_por_tarjeta": 1.14
+      "no_cobrado_cents": 888030,
+      "no_cobrado_pct": 3.41,
+      "validadores_sin_taps_7d": 4,
+      "viajes_por_tarjeta": 1.12
     }
   },
   "_analytics": {
@@ -1415,7 +1415,7 @@
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\resumen_diario.csv",
         "mode": "history",
         "cadenceMinutes": 1440,
-        "updatedAt": "2026-09-18T12:28:02.028020-03:00",
+        "updatedAt": "2026-09-19T08:47:02.056736-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -6552,6 +6552,202 @@
             37001250,
             375,
             345
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            146762572,
+            1727,
+            1388
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            3013952574,
+            2643,
+            2643
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            899694047,
+            4048,
+            4048
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            85235284,
+            864,
+            759
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            675194762,
+            480,
+            480
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            216119687,
+            2191,
+            1887
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            29206320,
+            296,
+            260
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            27276110275,
+            164659,
+            120063
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            801185643,
+            3740,
+            3740
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            54367170,
+            551,
+            507
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            101136750,
+            1025,
+            915
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            68575650,
+            695,
+            644
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            3330976515,
+            16824,
+            12976
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            15282153,
+            155,
+            134
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            152938500,
+            1550,
+            1351
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            101136750,
+            1026,
+            912
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            1727516700,
+            4280,
+            4280
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            4144140,
+            42,
+            40
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            90875070,
+            921,
+            824
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            27824940,
+            282,
+            261
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            33153120,
+            336,
+            302
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            42822780,
+            434,
+            405
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            94032510,
+            953,
+            808
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            6413550,
+            65,
+            65
+          ],
+          [
+            "2026-09-19",
+            "TSESENTAYOCHO",
+            1574821,
+            16,
+            16
+          ],
+          [
+            "2026-09-19",
+            "TUCUMAN",
+            0,
+            0,
+            0
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            164234863,
+            1665,
+            1406
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            26048880,
+            264,
+            249
           ]
         ]
       },
@@ -6562,7 +6758,7 @@
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_estados.csv",
         "mode": "history",
         "cadenceMinutes": 1440,
-        "updatedAt": "2026-09-18T12:28:05.228640-03:00",
+        "updatedAt": "2026-09-19T08:47:05.351932-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -19561,6 +19757,510 @@
             11,
             1085370,
             1085370
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            "PRESENTACION",
+            "PAID",
+            1637,
+            139103657,
+            0
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            "PRESENTACION",
+            "UNPAID",
+            90,
+            7658915,
+            7658915
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            "PRESENTACION",
+            "PAID",
+            2498,
+            2767520176,
+            0
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            "PRESENTACION",
+            "UNPAID",
+            145,
+            246432398,
+            246432398
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            "PRESENTACION",
+            "PAID",
+            3885,
+            860418794,
+            0
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            "PRESENTACION",
+            "UNPAID",
+            163,
+            39275253,
+            39275253
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            "PRESENTACION",
+            "PAID",
+            822,
+            81095043,
+            0
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            "PRESENTACION",
+            "UNPAID",
+            42,
+            4140241,
+            4140241
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            "PRESENTACION",
+            "PAID",
+            459,
+            627617320,
+            0
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            "PRESENTACION",
+            "UNPAID",
+            21,
+            47577442,
+            47577442
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            "PRESENTACION",
+            "PAID",
+            2102,
+            207357552,
+            0
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            "PRESENTACION",
+            "UNPAID",
+            89,
+            8762135,
+            8762135
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            "PRESENTACION",
+            "PAID",
+            274,
+            27035580,
+            0
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            "PRESENTACION",
+            "UNPAID",
+            22,
+            2170740,
+            2170740
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "PRESENTACION",
+            "PAID",
+            158601,
+            26362928750,
+            0
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "PRESENTACION",
+            "UNPAID",
+            5334,
+            913181525,
+            913181525
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "PRESENTACION",
+            "ZERO",
+            724,
+            0,
+            0
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            "PRESENTACION",
+            "PAID",
+            3609,
+            773488617,
+            0
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            "PRESENTACION",
+            "UNPAID",
+            131,
+            27697026,
+            27697026
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            "PRESENTACION",
+            "PAID",
+            533,
+            52591110,
+            0
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            "PRESENTACION",
+            "UNPAID",
+            18,
+            1776060,
+            1776060
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            "PRESENTACION",
+            "PAID",
+            973,
+            96005910,
+            0
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            "PRESENTACION",
+            "UNPAID",
+            52,
+            5130840,
+            5130840
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            "PRESENTACION",
+            "PAID",
+            655,
+            64628850,
+            0
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            "PRESENTACION",
+            "UNPAID",
+            40,
+            3946800,
+            3946800
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            "PRESENTACION",
+            "PAID",
+            15772,
+            3113797170,
+            0
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            "PRESENTACION",
+            "UNPAID",
+            1052,
+            217179345,
+            217179345
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            "PRESENTACION",
+            "PAID",
+            144,
+            14196783,
+            0
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            "PRESENTACION",
+            "UNPAID",
+            11,
+            1085370,
+            1085370
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            "PRESENTACION",
+            "PAID",
+            1499,
+            147906330,
+            0
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            "PRESENTACION",
+            "UNPAID",
+            51,
+            5032170,
+            5032170
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "PRESENTACION",
+            "PAID",
+            982,
+            96893940,
+            0
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "PRESENTACION",
+            "UNPAID",
+            43,
+            4242810,
+            4242810
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "PRESENTACION",
+            "ZERO",
+            1,
+            0,
+            0
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            "PRESENTACION",
+            "PAID",
+            4116,
+            1644523819,
+            0
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            "PRESENTACION",
+            "UNPAID",
+            164,
+            82992881,
+            82992881
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            "PRESENTACION",
+            "PAID",
+            41,
+            4045470,
+            0
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            "PRESENTACION",
+            "UNPAID",
+            1,
+            98670,
+            98670
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            "PRESENTACION",
+            "PAID",
+            883,
+            87125610,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            "PRESENTACION",
+            "UNPAID",
+            38,
+            3749460,
+            3749460
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            "PRESENTACION",
+            "PAID",
+            270,
+            26640900,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            "PRESENTACION",
+            "UNPAID",
+            12,
+            1184040,
+            1184040
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            "PRESENTACION",
+            "PAID",
+            320,
+            31574400,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            "PRESENTACION",
+            "UNPAID",
+            16,
+            1578720,
+            1578720
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            "PRESENTACION",
+            "PAID",
+            411,
+            40553370,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            "PRESENTACION",
+            "UNPAID",
+            23,
+            2269410,
+            2269410
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            "PRESENTACION",
+            "PAID",
+            909,
+            89691030,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            "PRESENTACION",
+            "UNPAID",
+            44,
+            4341480,
+            4341480
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            "PRESENTACION",
+            "PAID",
+            59,
+            5821530,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            "PRESENTACION",
+            "UNPAID",
+            6,
+            592020,
+            592020
+          ],
+          [
+            "2026-09-19",
+            "TSESENTAYOCHO",
+            "PRESENTACION",
+            "PAID",
+            15,
+            1476151,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TSESENTAYOCHO",
+            "PRESENTACION",
+            "UNPAID",
+            1,
+            98670,
+            98670
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            "PRESENTACION",
+            "PAID",
+            1600,
+            157829111,
+            0
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            "PRESENTACION",
+            "UNPAID",
+            65,
+            6405752,
+            6405752
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            "PRESENTACION",
+            "PAID",
+            255,
+            25160850,
+            0
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            "PRESENTACION",
+            "UNPAID",
+            9,
+            888030,
+            888030
           ]
         ]
       },
@@ -19571,7 +20271,7 @@
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_estados.csv",
         "mode": "history",
         "cadenceMinutes": 1440,
-        "updatedAt": "2026-09-18T12:28:05.228640-03:00",
+        "updatedAt": "2026-09-19T08:47:05.351932-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -27285,6 +27985,326 @@
             "0",
             375,
             37001250
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            "TAP",
+            "0",
+            1726,
+            146673773
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            "TAP",
+            "255",
+            1,
+            88799
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            "TAP",
+            "0",
+            2635,
+            3000246100
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            "TAP",
+            "255",
+            8,
+            13706474
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            "TAP",
+            "0",
+            4047,
+            899495217
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            "TAP",
+            "255",
+            1,
+            198830
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            "TAP",
+            "0",
+            864,
+            85235284
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            "TAP",
+            "0",
+            480,
+            675194762
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            "TAP",
+            "0",
+            2189,
+            215926246
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            "TAP",
+            "255",
+            2,
+            193441
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            "TAP",
+            "0",
+            296,
+            29206320
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "TAP",
+            "0",
+            163432,
+            27067573395
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "TAP",
+            "255",
+            1227,
+            208536880
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            "TAP",
+            "0",
+            3739,
+            800986813
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            "TAP",
+            "255",
+            1,
+            198830
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            "TAP",
+            "0",
+            551,
+            54367170
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            "TAP",
+            "0",
+            1025,
+            101136750
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            "TAP",
+            "0",
+            695,
+            68575650
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            "TAP",
+            "0",
+            16823,
+            3330806515
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            "TAP",
+            "255",
+            1,
+            170000
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            "TAP",
+            "0",
+            155,
+            15282153
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            "TAP",
+            "0",
+            1549,
+            152839830
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            "TAP",
+            "255",
+            1,
+            98670
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "TAP",
+            "0",
+            1026,
+            101136750
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            "TAP",
+            "0",
+            4277,
+            1725467492
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            "TAP",
+            "255",
+            3,
+            2049208
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            "TAP",
+            "0",
+            42,
+            4144140
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            "TAP",
+            "0",
+            920,
+            90776400
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            "TAP",
+            "255",
+            1,
+            98670
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            "TAP",
+            "0",
+            282,
+            27824940
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            "TAP",
+            "0",
+            336,
+            33153120
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            "TAP",
+            "0",
+            433,
+            42724110
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            "TAP",
+            "255",
+            1,
+            98670
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            "TAP",
+            "0",
+            952,
+            93933840
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            "TAP",
+            "255",
+            1,
+            98670
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            "TAP",
+            "0",
+            65,
+            6413550
+          ],
+          [
+            "2026-09-19",
+            "TSESENTAYOCHO",
+            "TAP",
+            "0",
+            16,
+            1574821
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            "TAP",
+            "0",
+            1659,
+            163642843
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            "TAP",
+            "255",
+            6,
+            592020
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            "TAP",
+            "0",
+            264,
+            26048880
           ]
         ]
       },
@@ -27295,7 +28315,7 @@
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_marcas.csv",
         "mode": "history",
         "cadenceMinutes": 1440,
-        "updatedAt": "2026-09-18T12:28:05.105730-03:00",
+        "updatedAt": "2026-09-19T08:47:05.204349-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -47304,6 +48324,776 @@
             "VISA Débito",
             134,
             13221780
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            "Mastercard Crédito",
+            91,
+            8080709
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            "Mastercard Débito",
+            445,
+            39515555
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            "VISA Crédito",
+            273,
+            24242127
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            "VISA Débito",
+            918,
+            74924181
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            "Mastercard Crédito",
+            266,
+            365600013
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            "Mastercard Débito",
+            857,
+            972564355
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            "VISA Crédito",
+            563,
+            639895268
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            "VISA Débito",
+            957,
+            1035892938
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            "Mastercard Crédito",
+            222,
+            48773009
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            "Mastercard Débito",
+            966,
+            218752780
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            "VISA Crédito",
+            815,
+            177714272
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            "VISA Débito",
+            2045,
+            454453986
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            "Mastercard Crédito",
+            97,
+            9570990
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            "Mastercard Débito",
+            214,
+            21111481
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            "VISA Crédito",
+            181,
+            17859270
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            "VISA Débito",
+            372,
+            36693543
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            "Mastercard Crédito",
+            32,
+            60737160
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            "Mastercard Débito",
+            173,
+            243960926
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            "VISA Crédito",
+            92,
+            125523464
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            "VISA Débito",
+            183,
+            244973212
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            "Mastercard Crédito",
+            228,
+            22477265
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            "Mastercard Débito",
+            539,
+            53179231
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            "VISA Crédito",
+            454,
+            44784483
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            "VISA Débito",
+            970,
+            95678708
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            "Mastercard Crédito",
+            28,
+            2762760
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            "Mastercard Débito",
+            93,
+            9176310
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            "VISA Crédito",
+            53,
+            5229510
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            "VISA Débito",
+            122,
+            12037740
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "Mastercard Crédito",
+            13727,
+            2317316995
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "Mastercard Débito",
+            36089,
+            5985653560
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "SIN_IDENTIFICAR",
+            724,
+            0
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "VISA Crédito",
+            48353,
+            8017091315
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "VISA Débito",
+            65766,
+            10956048405
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            "Mastercard Crédito",
+            179,
+            36783551
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            "Mastercard Débito",
+            1032,
+            225652226
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            "VISA Crédito",
+            464,
+            97884011
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            "VISA Débito",
+            2065,
+            440865855
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            "Mastercard Crédito",
+            52,
+            5130840
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            "Mastercard Débito",
+            137,
+            13517790
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            "VISA Crédito",
+            112,
+            11051040
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            "VISA Débito",
+            250,
+            24667500
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            "Mastercard Crédito",
+            97,
+            9570990
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            "Mastercard Débito",
+            281,
+            27726270
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            "VISA Crédito",
+            208,
+            20523360
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            "VISA Débito",
+            439,
+            43316130
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            "Mastercard Crédito",
+            67,
+            6610890
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            "Mastercard Débito",
+            171,
+            16872570
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            "VISA Crédito",
+            128,
+            12629760
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            "VISA Débito",
+            329,
+            32462430
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            "Mastercard Crédito",
+            275,
+            52578485
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            "Mastercard Débito",
+            5142,
+            1024514395
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            "VISA Crédito",
+            1237,
+            245201420
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            "VISA Débito",
+            10170,
+            2008682215
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            "Mastercard Crédito",
+            12,
+            1184040
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            "Mastercard Débito",
+            43,
+            4242810
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            "VISA Crédito",
+            20,
+            1961703
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            "VISA Débito",
+            80,
+            7893600
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            "Mastercard Crédito",
+            130,
+            12827100
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            "Mastercard Débito",
+            434,
+            42822780
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            "VISA Crédito",
+            295,
+            29107650
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            "VISA Débito",
+            691,
+            68180970
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "Mastercard Crédito",
+            100,
+            9867000
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "Mastercard Débito",
+            286,
+            28219620
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "SIN_IDENTIFICAR",
+            1,
+            0
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "VISA Crédito",
+            212,
+            20918040
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "VISA Débito",
+            427,
+            42132090
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            "Mastercard Crédito",
+            223,
+            89712358
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            "Mastercard Débito",
+            917,
+            378984064
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            "VISA Crédito",
+            788,
+            302126879
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            "VISA Débito",
+            2352,
+            956693399
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            "Mastercard Crédito",
+            7,
+            690690
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            "Mastercard Débito",
+            6,
+            592020
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            "VISA Crédito",
+            16,
+            1578720
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            "VISA Débito",
+            13,
+            1282710
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            "Mastercard Crédito",
+            87,
+            8584290
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            "Mastercard Débito",
+            251,
+            24766170
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            "VISA Crédito",
+            178,
+            17563260
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            "VISA Débito",
+            405,
+            39961350
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            "Mastercard Crédito",
+            17,
+            1677390
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            "Mastercard Débito",
+            75,
+            7400250
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            "VISA Crédito",
+            62,
+            6117540
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            "VISA Débito",
+            128,
+            12629760
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            "Mastercard Crédito",
+            29,
+            2861430
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            "Mastercard Débito",
+            101,
+            9965670
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            "VISA Crédito",
+            51,
+            5032170
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            "VISA Débito",
+            155,
+            15293850
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            "Mastercard Crédito",
+            72,
+            7104240
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            "Mastercard Débito",
+            91,
+            8978970
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            "VISA Crédito",
+            73,
+            7202910
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            "VISA Débito",
+            198,
+            19536660
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            "Mastercard Crédito",
+            76,
+            7498920
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            "Mastercard Débito",
+            222,
+            21904740
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            "VISA Crédito",
+            172,
+            16971240
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            "VISA Débito",
+            483,
+            47657610
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            "Mastercard Crédito",
+            7,
+            690690
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            "Mastercard Débito",
+            14,
+            1381380
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            "VISA Crédito",
+            17,
+            1677390
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            "VISA Débito",
+            27,
+            2664090
+          ],
+          [
+            "2026-09-19",
+            "TSESENTAYOCHO",
+            "Mastercard Crédito",
+            2,
+            197340
+          ],
+          [
+            "2026-09-19",
+            "TSESENTAYOCHO",
+            "Mastercard Débito",
+            3,
+            292111
+          ],
+          [
+            "2026-09-19",
+            "TSESENTAYOCHO",
+            "VISA Crédito",
+            4,
+            394680
+          ],
+          [
+            "2026-09-19",
+            "TSESENTAYOCHO",
+            "VISA Débito",
+            7,
+            690690
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            "Mastercard Crédito",
+            163,
+            16079311
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            "Mastercard Débito",
+            459,
+            45285631
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            "VISA Crédito",
+            361,
+            35604274
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            "VISA Débito",
+            682,
+            67265647
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            "Mastercard Crédito",
+            32,
+            3157440
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            "Mastercard Débito",
+            64,
+            6314880
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            "VISA Crédito",
+            61,
+            6018870
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            "VISA Débito",
+            107,
+            10557690
           ]
         ]
       },
@@ -47314,7 +49104,7 @@
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_medios_pago.csv",
         "mode": "history",
         "cadenceMinutes": 1440,
-        "updatedAt": "2026-09-18T12:28:04.971477-03:00",
+        "updatedAt": "2026-09-19T08:47:05.024502-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -57320,6 +59110,384 @@
             "PAYMOBILE",
             148,
             14603160
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            "CARTAO",
+            1501,
+            126693998
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            "PAYMOBILE",
+            226,
+            20068574
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            "CARTAO",
+            2490,
+            2862966778
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            "PAYMOBILE",
+            153,
+            150985796
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            "CARTAO",
+            3530,
+            787911230
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            "PAYMOBILE",
+            518,
+            111782817
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            "CARTAO",
+            646,
+            63733022
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            "PAYMOBILE",
+            218,
+            21502262
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            "CARTAO",
+            467,
+            662035044
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            "PAYMOBILE",
+            13,
+            13159718
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            "CARTAO",
+            1462,
+            144216550
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            "PAYMOBILE",
+            729,
+            71903137
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            "CARTAO",
+            230,
+            22694100
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            "PAYMOBILE",
+            66,
+            6512220
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "CARTAO",
+            112062,
+            18543032405
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            "PAYMOBILE",
+            52597,
+            8733077870
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            "CARTAO",
+            3516,
+            755792752
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            "PAYMOBILE",
+            224,
+            45392891
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            "CARTAO",
+            349,
+            34435830
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            "PAYMOBILE",
+            202,
+            19931340
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            "CARTAO",
+            752,
+            74199840
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            "PAYMOBILE",
+            273,
+            26936910
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            "CARTAO",
+            480,
+            47361600
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            "PAYMOBILE",
+            215,
+            21214050
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            "CARTAO",
+            16076,
+            3183843925
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            "PAYMOBILE",
+            748,
+            147132590
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            "CARTAO",
+            131,
+            12914073
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            "PAYMOBILE",
+            24,
+            2368080
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            "CARTAO",
+            1224,
+            120772080
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            "PAYMOBILE",
+            326,
+            32166420
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "CARTAO",
+            804,
+            79232010
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            "PAYMOBILE",
+            222,
+            21904740
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            "CARTAO",
+            4077,
+            1657748332
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            "PAYMOBILE",
+            203,
+            69768368
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            "CARTAO",
+            25,
+            2466750
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            "PAYMOBILE",
+            17,
+            1677390
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            "CARTAO",
+            701,
+            69167670
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            "PAYMOBILE",
+            220,
+            21707400
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            "CARTAO",
+            210,
+            20720700
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            "PAYMOBILE",
+            72,
+            7104240
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            "CARTAO",
+            252,
+            24864840
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            "PAYMOBILE",
+            84,
+            8288280
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            "CARTAO",
+            309,
+            30489030
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            "PAYMOBILE",
+            125,
+            12333750
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            "CARTAO",
+            724,
+            71437080
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            "PAYMOBILE",
+            229,
+            22595430
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            "CARTAO",
+            44,
+            4341480
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            "PAYMOBILE",
+            21,
+            2072070
+          ],
+          [
+            "2026-09-19",
+            "TSESENTAYOCHO",
+            "CARTAO",
+            6,
+            588121
+          ],
+          [
+            "2026-09-19",
+            "TSESENTAYOCHO",
+            "PAYMOBILE",
+            10,
+            986700
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            "CARTAO",
+            1180,
+            116403307
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            "PAYMOBILE",
+            485,
+            47831556
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            "CARTAO",
+            192,
+            18944640
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            "PAYMOBILE",
+            72,
+            7104240
           ]
         ]
       },
@@ -57330,7 +59498,7 @@
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_recovery.csv",
         "mode": "history",
         "cadenceMinutes": 1440,
-        "updatedAt": "2026-09-18T12:28:05.340570-03:00",
+        "updatedAt": "2026-09-19T08:47:05.495782-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -62180,6 +64348,222 @@
             98670,
             98670,
             0
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            19,
+            1768962,
+            976789,
+            792173
+          ],
+          [
+            "2026-09-19",
+            "AUMER",
+            48,
+            72211320,
+            40699234,
+            31512086
+          ],
+          [
+            "2026-09-19",
+            "AUSOL",
+            33,
+            10140341,
+            6362573,
+            3777768
+          ],
+          [
+            "2026-09-19",
+            "BBELGRANO",
+            7,
+            683245,
+            493350,
+            189895
+          ],
+          [
+            "2026-09-19",
+            "CADSA",
+            9,
+            25307150,
+            19233434,
+            6073716
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            18,
+            1776060,
+            1184040,
+            592020
+          ],
+          [
+            "2026-09-19",
+            "DOTASA",
+            4,
+            368039,
+            98670,
+            269369
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            2233,
+            575091495,
+            264571525,
+            310519970
+          ],
+          [
+            "2026-09-19",
+            "GCO",
+            30,
+            6660807,
+            3161397,
+            3499410
+          ],
+          [
+            "2026-09-19",
+            "GRALROCA",
+            8,
+            789360,
+            690690,
+            98670
+          ],
+          [
+            "2026-09-19",
+            "JUANBJUSTO",
+            11,
+            1176242,
+            888030,
+            288212
+          ],
+          [
+            "2026-09-19",
+            "LNMETROPOL",
+            24,
+            2356383,
+            2356383,
+            0
+          ],
+          [
+            "2026-09-19",
+            "METROPOLITANA",
+            370,
+            122690735,
+            38780430,
+            83910305
+          ],
+          [
+            "2026-09-19",
+            "MICROOMNIBUS",
+            2,
+            197340,
+            197340,
+            0
+          ],
+          [
+            "2026-09-19",
+            "NRUMBOS",
+            13,
+            1282710,
+            1085370,
+            197340
+          ],
+          [
+            "2026-09-19",
+            "NUDOSA",
+            17,
+            1947430,
+            1085370,
+            862060
+          ],
+          [
+            "2026-09-19",
+            "RSURATLANTICO",
+            60,
+            26758834,
+            16083887,
+            10674947
+          ],
+          [
+            "2026-09-19",
+            "SCABRAL",
+            3,
+            296010,
+            296010,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TAGOSTOSA",
+            14,
+            1476151,
+            986700,
+            489451
+          ],
+          [
+            "2026-09-19",
+            "TCOLEGIALES",
+            1,
+            98670,
+            98670,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TLDEVEGA",
+            6,
+            592020,
+            493350,
+            98670
+          ],
+          [
+            "2026-09-19",
+            "TNDEJULIO",
+            8,
+            789360,
+            789360,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TRIACHUELO",
+            13,
+            1278811,
+            884131,
+            394680
+          ],
+          [
+            "2026-09-19",
+            "TSANTAFE",
+            2,
+            197340,
+            197340,
+            0
+          ],
+          [
+            "2026-09-19",
+            "TUCUMAN",
+            22,
+            5676190,
+            5676190,
+            0
+          ],
+          [
+            "2026-09-19",
+            "VDEROCHA",
+            21,
+            2060990,
+            1480050,
+            580940
+          ],
+          [
+            "2026-09-19",
+            "VLOPEZ",
+            5,
+            493350,
+            493350,
+            0
           ]
         ]
       },
@@ -62190,7 +64574,7 @@
         "source": "C:\\andybot\\opentransit\\emova\\tenants\\datos_bi\\detalle_vqr.csv",
         "mode": "history",
         "cadenceMinutes": 1440,
-        "updatedAt": "2026-09-18T12:28:05.279966-03:00",
+        "updatedAt": "2026-09-19T08:47:05.424003-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -62738,6 +65122,30 @@
             793810990,
             130186545,
             4214
+          ],
+          [
+            "2026-09-19",
+            "ATLANTIDA",
+            495,
+            43955505,
+            15695326,
+            10
+          ],
+          [
+            "2026-09-19",
+            "CUNIDOS",
+            9,
+            888030,
+            197340,
+            7
+          ],
+          [
+            "2026-09-19",
+            "EMOVA",
+            7300,
+            1020608690,
+            50919210,
+            6179
           ]
         ]
       },
@@ -84714,7 +87122,7 @@
         "title": "Histórico horario para referencia de viajes",
         "mode": "history",
         "source": "Alarmbot · ventanas completas de 24 horas · sam_dt · estados 0/255",
-        "updatedAt": "2026-09-19T08:38:45.959780-03:00",
+        "updatedAt": "2026-09-19T08:53:44.422465-03:00",
         "description": "Ocho días equivalentes de las últimas ocho semanas. Una observación por empresa, fecha y hora. Las horas sin viajes son cero sólo cuando la consulta completa fue exitosa. No se suman exportaciones superpuestas. Los CSV de recepción de última hora y pendientes de 48 horas no se mezclan con este universo.",
         "columns": [
           "fecha",
@@ -122907,7 +125315,7 @@
   },
   "title": "Transporte · Opentransit y Alarmbot",
   "_sync": {
-    "checked_at": "2026-09-19T08:38:45-03:00",
+    "checked_at": "2026-09-19T08:53:44-03:00",
     "cadence_seconds": 300
   }
 }
