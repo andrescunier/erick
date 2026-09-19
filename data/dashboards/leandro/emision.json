@@ -1,20 +1,20 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-19T03:58:47.232493-03:00",
+  "generado_en": "2026-09-19T04:03:46.716217-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-21",
-    "ultima_recepcion": "2026-09-19T03:54:22.860510-03:00",
+    "ultima_recepcion": "2026-09-19T04:02:55.872931-03:00",
     "dias_con_datos": 7,
-    "archivos_leidos": 10604,
+    "archivos_leidos": 10607,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 10602,
+    "sin_tenant": 10605,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 10602,
-    "entidades_observadas": 10146,
+    "eventos_unicos": 10605,
+    "entidades_observadas": 10149,
     "entidades_con_seguimiento": 158,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-19T03:54:22.860510-03:00",
+        "updatedAt": "2026-09-19T04:02:55.872931-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -17346,6 +17346,21 @@
           [
             "2026-09-19T03:00:00",
             "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            13500000,
+            0
+          ],
+          [
+            "2026-09-19T03:00:00",
+            "sin_tenant",
             "TR Argentina S.A.",
             "AuthorizationCard.Rejected",
             "Rechazada",
@@ -17417,6 +17432,36 @@
             0,
             6550000,
             0
+          ],
+          [
+            "2026-09-19T04:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "AuthorizationCard.Rejected",
+            "Rechazada",
+            "Debit",
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            3209700
+          ],
+          [
+            "2026-09-19T04:00:00",
+            "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "Debit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            8500000,
+            0
           ]
         ]
       },
@@ -17427,7 +17472,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-19T03:54:22.860510-03:00",
+        "updatedAt": "2026-09-19T04:02:55.872931-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -19903,6 +19948,16 @@
             "Local",
             "ARS",
             2
+          ],
+          [
+            "2026-09-19T04:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "AuthorizationCard.Rejected",
+            "310",
+            "Local",
+            "ARS",
+            1
           ]
         ]
       },
@@ -19913,7 +19968,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-19T03:54:22.860510-03:00",
+        "updatedAt": "2026-09-19T04:02:55.872931-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -22365,7 +22420,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-19T03:54:22.860510-03:00",
+        "updatedAt": "2026-09-19T04:02:55.872931-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -23637,7 +23692,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-19T03:54:22.860510-03:00",
+        "updatedAt": "2026-09-19T04:02:55.872931-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -24469,7 +24524,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-19T03:54:22.860510-03:00",
+        "updatedAt": "2026-09-19T04:02:55.872931-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -25487,7 +25542,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-19T03:54:22.860510-03:00",
+        "updatedAt": "2026-09-19T04:02:55.872931-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -41355,6 +41410,15 @@
           [
             "2026-09-19T03:00:00",
             "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
+          ],
+          [
+            "2026-09-19T03:00:00",
+            "sin_tenant",
             "TR Argentina S.A.",
             "AuthorizationCard.Rejected",
             "Rechazada",
@@ -41396,17 +41460,35 @@
             "Aprobada",
             "pago",
             1
+          ],
+          [
+            "2026-09-19T04:00:00",
+            "sin_tenant",
+            "COPPEL S.A.",
+            "AuthorizationCard.Rejected",
+            "Rechazada",
+            "tarjeta",
+            1
+          ],
+          [
+            "2026-09-19T04:00:00",
+            "sin_tenant",
+            "Go Pay S.A.S.",
+            "BankOutputTransfer.Confirmed",
+            "Aprobada",
+            "transferencia",
+            1
           ]
         ]
       }
     ],
     "warnings": [
-      "10602 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "10605 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-19T03:58:50-03:00",
+    "checked_at": "2026-09-19T04:03:49-03:00",
     "cadence_seconds": 300
   }
 }
