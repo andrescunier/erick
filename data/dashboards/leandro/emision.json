@@ -1,21 +1,21 @@
 {
   "title": "Emisión · Leandro",
-  "generado_en": "2026-09-18T22:27:24.968405-03:00",
+  "generado_en": "2026-09-18T22:32:26.284042-03:00",
   "_procedencia": {
     "sistema": "Leandro · notificaciones BHUB recibidas vía n8n",
     "fuente": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
     "periodo_desde": "2026-08-20",
-    "ultima_recepcion": "2026-09-18T22:27:17.009561-03:00",
+    "ultima_recepcion": "2026-09-18T22:31:46.032555-03:00",
     "dias_con_datos": 6,
-    "archivos_leidos": 10408,
+    "archivos_leidos": 10412,
     "pings_excluidos": 2,
     "sin_id_evento": 0,
     "sin_id_entidad": 0,
-    "sin_tenant": 10406,
+    "sin_tenant": 10410,
     "sin_fecha_origen": 0,
-    "eventos_unicos": 10406,
-    "entidades_observadas": 9953,
-    "entidades_con_seguimiento": 156,
+    "eventos_unicos": 10410,
+    "entidades_observadas": 9956,
+    "entidades_con_seguimiento": 157,
     "alcance": "Agregados sin nombres de personas, cuentas, tarjetas, IDs de operaciones ni headers del webhook."
   },
   "_analytics": {
@@ -30,7 +30,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T22:27:17.009561-03:00",
+        "updatedAt": "2026-09-18T22:31:46.032555-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -16810,12 +16810,12 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "Debit",
-            5,
-            5,
+            7,
+            7,
             0,
-            5,
+            7,
             0,
-            36513940,
+            42213940,
             0
           ],
           [
@@ -16877,6 +16877,21 @@
             0,
             10490000,
             0
+          ],
+          [
+            "2026-09-18T22:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "Sale.Confirmed",
+            "Aprobada",
+            "Debit",
+            1,
+            1,
+            0,
+            1,
+            0,
+            1000000,
+            0
           ]
         ]
       },
@@ -16887,7 +16902,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T22:27:17.009561-03:00",
+        "updatedAt": "2026-09-18T22:31:46.032555-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -19323,7 +19338,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T22:27:17.009561-03:00",
+        "updatedAt": "2026-09-18T22:31:46.032555-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -21723,7 +21738,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T22:27:17.009561-03:00",
+        "updatedAt": "2026-09-18T22:31:46.032555-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -22933,18 +22948,18 @@
           [
             "2026-09-18T22:00:00",
             "sin_tenant",
-            "Normal",
-            "Virtual",
+            "InTransit",
+            "Physical",
             "No",
-            4
+            1
           ],
           [
             "2026-09-18T22:00:00",
             "sin_tenant",
-            "PendingPacked",
-            "Physical",
+            "Normal",
+            "Virtual",
             "No",
-            1
+            4
           ]
         ]
       },
@@ -22955,7 +22970,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T22:27:17.009561-03:00",
+        "updatedAt": "2026-09-18T22:31:46.032555-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -23766,7 +23781,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "snapshot",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T22:27:17.009561-03:00",
+        "updatedAt": "2026-09-18T22:31:46.032555-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -24748,7 +24763,7 @@
         "source": "C:\\andybot\\leandro\\eventos\\<tenant>\\<fecha>\\<evento>.json",
         "mode": "events",
         "cadenceMinutes": 5,
-        "updatedAt": "2026-09-18T22:27:17.009561-03:00",
+        "updatedAt": "2026-09-18T22:31:46.032555-03:00",
         "columns": [
           "fecha",
           "tenant",
@@ -40107,7 +40122,7 @@
             "BankOutputTransfer.Confirmed",
             "Aprobada",
             "transferencia",
-            5
+            7
           ],
           [
             "2026-09-18T22:00:00",
@@ -40135,6 +40150,15 @@
             "Open",
             "cuenta",
             2
+          ],
+          [
+            "2026-09-18T22:00:00",
+            "sin_tenant",
+            "Sin distribuidor",
+            "cardAccount.Card.Change-State",
+            "InTransit",
+            "tarjeta",
+            1
           ],
           [
             "2026-09-18T22:00:00",
@@ -40180,17 +40204,26 @@
             "Aprobada",
             "transferencia",
             7
+          ],
+          [
+            "2026-09-18T22:00:00",
+            "sin_tenant",
+            "TR Argentina S.A.",
+            "Sale.Confirmed",
+            "Aprobada",
+            "pago",
+            1
           ]
         ]
       }
     ],
     "warnings": [
-      "10406 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
+      "10410 notificaciones sin tenant identificado. Distribuidor no reemplaza tenant.",
       "Hay préstamos sin moneda declarada: sus importes no se publican como ARS."
     ]
   },
   "_sync": {
-    "checked_at": "2026-09-18T22:27:30-03:00",
+    "checked_at": "2026-09-18T22:32:32-03:00",
     "cadence_seconds": 300
   }
 }
